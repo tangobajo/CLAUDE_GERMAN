@@ -20,10 +20,12 @@ Este repo tiene configurados los siguientes marketplaces en `.claude/settings.js
 ```
 claude plugin install marketing-skills@marketingskills
 claude plugin install ui-ux-pro-max@ui-ux-pro-max-skill
+claude plugin install context-engineering@context-engineering-marketplace
 ```
 
 - [marketingskills](https://github.com/coreyhaines31/marketingskills): 50 skills de marketing (CRO, copywriting, SEO, ads pagos, growth).
 - [ui-ux-pro-max-skill](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill): inteligencia de diseño UI/UX (estilos, paletas, tipografías, charts, guías por stack).
+- [Agent-Skills-for-Context-Engineering](https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering): 17 skills de context engineering y harness engineering para sistemas de agentes de IA (compresión de contexto, coordinación multi-agente, memoria, diseño de herramientas, evaluación, harnesses autónomos, etc.).
 
 ## Skills
 
