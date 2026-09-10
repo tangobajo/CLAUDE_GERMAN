@@ -28,6 +28,7 @@ claude plugin install ui-ux-pro-max@ui-ux-pro-max-skill
 ## Skills
 
 - [`stop-slop`](.claude/skills/stop-slop/SKILL.md) ([fuente](https://github.com/hardikpandya/stop-slop)): elimina patrones típicos de escritura generada por IA al redactar o revisar texto.
+- [`remotion-*`](.agents/skills) (12 skills, [fuente](https://github.com/remotion-dev/skills)): buenas prácticas, creación, render, captions, mapas, markup, multimedia, SaaS, studio, upgrade e interactividad con [Remotion](https://www.remotion.dev/). Instaladas con `npx skills add remotion-dev/skills`; `.claude/skills/remotion-*` son symlinks a `.agents/skills/remotion-*`.
 
 ## Cómo contribuir
 
