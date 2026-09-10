@@ -5,9 +5,16 @@
         "source": "github",
         "repo": "coreyhaines31/marketingskills"
       }
+    },
+    "ui-ux-pro-max-skill": {
+      "source": {
+        "source": "github",
+        "repo": "nextlevelbuilder/ui-ux-pro-max-skill"
+      }
     }
   },
   "enabledPlugins": {
-    "marketing-skills": true
+    "marketing-skills": true,
+    "ui-ux-pro-max": true
   }
 }

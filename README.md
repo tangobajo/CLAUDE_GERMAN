@@ -15,11 +15,15 @@ Aquí experimento, aprendo y construyo proyectos usando Claude Code como asisten
 
 ## Plugins de Claude Code
 
-Este repo tiene configurado el marketplace [marketingskills](https://github.com/coreyhaines31/marketingskills) en `.claude/settings.json`. Para terminar de instalarlo localmente, ejecutá una vez:
+Este repo tiene configurados los siguientes marketplaces en `.claude/settings.json`. Para terminar de instalarlos localmente, ejecutá una vez cada uno:
 
 ```
 claude plugin install marketing-skills@marketingskills
+claude plugin install ui-ux-pro-max@ui-ux-pro-max-skill
 ```
+
+- [marketingskills](https://github.com/coreyhaines31/marketingskills): 50 skills de marketing (CRO, copywriting, SEO, ads pagos, growth).
+- [ui-ux-pro-max-skill](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill): inteligencia de diseño UI/UX (estilos, paletas, tipografías, charts, guías por stack).
 
 ## Skills
 
