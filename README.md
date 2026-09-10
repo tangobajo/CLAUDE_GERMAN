@@ -13,6 +13,14 @@ Aquí experimento, aprendo y construyo proyectos usando Claude Code como asisten
 - [x] Crear este repositorio
 - [ ] Seguir explorando
 
+## Plugins de Claude Code
+
+Este repo tiene configurado el marketplace [marketingskills](https://github.com/coreyhaines31/marketingskills) en `.claude/settings.json`. Para terminar de instalarlo localmente, ejecutá una vez:
+
+```
+claude plugin install marketing-skills@marketingskills
+```
+
 ## Cómo contribuir
 
 1. Crea una rama: `git checkout -b mi-mejora`
