@@ -21,6 +21,10 @@ Este repo tiene configurado el marketplace [marketingskills](https://github.com/
 claude plugin install marketing-skills@marketingskills
 ```
 
+## Skills
+
+- [`stop-slop`](.claude/skills/stop-slop/SKILL.md) ([fuente](https://github.com/hardikpandya/stop-slop)): elimina patrones típicos de escritura generada por IA al redactar o revisar texto.
+
 ## Cómo contribuir
 
 1. Crea una rama: `git checkout -b mi-mejora`
