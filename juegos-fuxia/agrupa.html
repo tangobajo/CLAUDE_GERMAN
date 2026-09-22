@@ -7,23 +7,24 @@
 <link rel="icon" href="assets/logo-fuxia-games-icono.svg" type="image/svg+xml">
 <link rel="stylesheet" href="shared.css">
 <style>
-  .ag-consigna { text-align: center; font-size: .9rem; color: var(--fx-texto-suave); margin: 0; }
+  .ag-consigna { text-align: center; font-size: .9rem; color: var(--md-texto-suave); margin: 0; }
 
   .ag-resueltos { display: flex; flex-direction: column; gap: 8px; }
   .ag-resuelto {
-    border-radius: 8px;
+    border-radius: 6px;
     padding: 10px 12px;
     text-align: center;
-    color: #120E14;
+    color: var(--md-tinta);
     animation: ag-aparecer .3s ease-out;
   }
   @keyframes ag-aparecer { from { opacity: 0; transform: scale(.94); } to { opacity: 1; transform: scale(1); } }
   .ag-resuelto__cat { font-weight: 800; font-size: .88rem; text-transform: uppercase; letter-spacing: .4px; }
   .ag-resuelto__items { font-size: .84rem; margin-top: 2px; }
-  .ag-resuelto[data-dif="amarillo"] { background: var(--fx-amarillo); }
-  .ag-resuelto[data-dif="verde"]    { background: var(--fx-verde);    color: #fff; }
-  .ag-resuelto[data-dif="azul"]     { background: var(--fx-azul);     color: #fff; }
-  .ag-resuelto[data-dif="morado"]   { background: var(--fx-morado);   color: #fff; }
+  /* Los cuatro pasteles de Connections llevan texto oscuro, no blanco. */
+  .ag-resuelto[data-dif="amarillo"] { background: var(--juego-amarillo); }
+  .ag-resuelto[data-dif="verde"]    { background: var(--juego-verde); }
+  .ag-resuelto[data-dif="azul"]     { background: var(--juego-azul); }
+  .ag-resuelto[data-dif="morado"]   { background: var(--juego-morado); }
 
   .ag-grilla { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
   .ag-ficha {
@@ -33,10 +34,10 @@
     justify-content: center;
     text-align: center;
     padding: 4px 3px;
-    border: 0;
-    border-radius: 8px;
-    background: var(--fx-superficie-2);
-    color: var(--fx-texto);
+    border: 1px solid var(--md-borde);
+    border-radius: 6px;
+    background: var(--md-superficie);
+    color: var(--md-tinta);
     font-family: inherit;
     font-weight: 700;
     font-size: clamp(.58rem, 2.7vw, .86rem);
@@ -47,17 +48,29 @@
     hyphens: auto;
     transition: background .12s, transform .12s;
   }
-  .ag-ficha:hover:not([disabled]) { background: #322a37; }
-  .ag-ficha[aria-pressed="true"] { background: var(--fx-fucsia); color: #fff; transform: scale(.96); }
-  .ag-ficha[disabled] { opacity: .35; cursor: default; }
+  /* El :not([aria-pressed="true"]) no es decorativo: sin el, el hover le gana
+     en especificidad al estado elegido y la ficha queda ilegible. */
+  .ag-ficha:hover:not([disabled]):not([aria-pressed="true"]) {
+    background: var(--md-superficie-2);
+    border-color: var(--md-borde-fuerte);
+  }
+  /* La ficha elegida va en tinta, no en el naranja de marca: el naranja al
+     lado de los cuatro colores de dificultad se lee como un quinto grupo. */
+  .ag-ficha[aria-pressed="true"] {
+    background: var(--md-tinta);
+    border-color: var(--md-tinta);
+    color: #fff;
+    transform: scale(.96);
+  }
+  .ag-ficha[disabled] { opacity: .4; cursor: default; }
   .ag-ficha--error { animation: ag-sacudir .4s; }
   @keyframes ag-sacudir {
     0%,100% { transform: translateX(0); } 20%,60% { transform: translateX(-5px); } 40%,80% { transform: translateX(5px); }
   }
 
-  .ag-vidas { display: flex; align-items: center; justify-content: center; gap: 8px; font-size: .84rem; color: var(--fx-texto-suave); }
-  .ag-vida { width: 13px; height: 13px; border-radius: 50%; background: var(--fx-fucsia); display: inline-block; }
-  .ag-vida[data-gastada] { background: var(--fx-borde); }
+  .ag-vidas { display: flex; align-items: center; justify-content: center; gap: 8px; font-size: .84rem; color: var(--md-texto-suave); }
+  .ag-vida { width: 13px; height: 13px; border-radius: 50%; background: var(--md-naranja); display: inline-block; }
+  .ag-vida[data-gastada] { background: var(--md-borde); }
 
   .ag-acciones { display: flex; gap: 8px; }
   .ag-acciones .fx-btn { flex: 1; }
@@ -313,7 +326,7 @@
     panel.className = 'fx-resultado';
     panel.innerHTML =
       '<h2>' + (gano ? '¡Los cuatro grupos!' : 'Se te acabaron los errores') + '</h2>' +
-      '<p style="margin:0;color:var(--fx-texto-suave);font-size:.9rem">' +
+      '<p style="margin:0;color:var(--md-texto-suave);font-size:.9rem">' +
         (gano ? 'Con ' + errores + (errores === 1 ? ' error.' : ' errores.')
               : 'Arriba quedan las 4 categorías de hoy.') + '</p>' +
       '<div class="fx-resultado__stats">' +

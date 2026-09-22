@@ -4,28 +4,50 @@
    ========================================================================== */
 
 :root {
-  /* Marca */
-  --fx-fucsia:        #E6007E;
-  --fx-fucsia-claro:  #FF3DA5;
-  --fx-fucsia-suave:  rgba(230, 0, 126, .14);
-  --fx-fondo:         #120E14;
-  --fx-superficie:    #1C161F;
-  --fx-superficie-2:  #251E29;
-  --fx-borde:         #3A343E;
-  --fx-texto:         #FFFFFF;
-  --fx-texto-suave:   #B8AFBF;
 
-  /* Estados de juego */
-  --fx-verde:         #4CAF50;
-  --fx-amarillo:      #F5C518;
-  --fx-azul:          #2E7DD1;
-  --fx-morado:        #8B5CF6;
-  --fx-error:         #E8524F;
+  /* ------------------------------------------------------------------------
+     PALETA DE MANSO DIARIO
+     Estos son los únicos colores que hay que tocar para alinear los juegos
+     con el diario. Salieron de muestrear la home: el naranja del header, la
+     tinta de los titulares y el gris del fondo de página.
+     ---------------------------------------------------------------------- */
+  --md-naranja:       #E76F2E;   /* acento de marca: botones, rachas, foco */
+  --md-naranja-hover: #D15E1F;
+  --md-naranja-suave: rgba(231, 111, 46, .13);
+  --md-naranja-texto: #A8450E;   /* el naranja oscurecido, para texto y links:
+                                    el naranja de marca sobre fondo claro da 2.5:1
+                                    y no llega al mínimo de contraste */
+  --md-tinta:         #252525;   /* titulares, pills, texto principal */
+  --md-texto-suave:   #4A4A4A;   /* bajadas, texto secundario */
+  --md-fondo:         #E7E7E5;   /* fondo de página del diario */
+  --md-superficie:    #FFFFFF;   /* tarjetas y paneles */
+  --md-superficie-2:  #F0F0EE;   /* hover, teclado, celdas */
+  --md-borde:         #D6D6D4;   /* divisores */
+  --md-borde-fuerte:  #B9B9B6;
 
-  --fx-radio:         14px;
-  --fx-sombra:        0 8px 28px rgba(0, 0, 0, .45);
-  --fx-serif:         Georgia, "Times New Roman", serif;
-  --fx-sans:          system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  /* ------------------------------------------------------------------------
+     COLORES DE JUEGO
+     No son de Manso Diario: son la convención de Wordle y Connections. Salvo
+     que haya una razón fuerte, conviene dejarlos — el lector ya los tiene
+     aprendidos de esos juegos y los lee sin pensar.
+     ---------------------------------------------------------------------- */
+  --juego-correcta:   #6AAA64;   /* Wordle: letra en su lugar */
+  --juego-presente:   #C9B458;   /* Wordle: letra en otra posición */
+  --juego-ausente:    #787C7E;   /* Wordle: letra que no está */
+  --juego-tecla:      #D3D6DA;   /* Wordle: tecla sin usar */
+  --juego-amarillo:   #F9DF6D;   /* Connections: grupo más fácil */
+  --juego-verde:      #A0C35A;
+  --juego-azul:       #B0C4EF;
+  --juego-morado:     #BA81C5;   /* Connections: el que tiene trampa */
+  --juego-error:      #C0392B;   /* respuesta incorrecta en Trivia */
+
+  --md-radio:  10px;
+  --md-sombra: 0 1px 3px rgba(37, 37, 37, .10);
+
+  /* El titular del diario es una sans muy pesada, así que los títulos van en
+     sans bold y no en serif: una serif al lado de esos titulares desentona. */
+  --md-titulo: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --md-texto-fuente: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
 * { box-sizing: border-box; }
@@ -33,9 +55,9 @@
 html, body {
   margin: 0;
   padding: 0;
-  background: var(--fx-fondo);
-  color: var(--fx-texto);
-  font-family: var(--fx-sans);
+  background: var(--md-fondo);
+  color: var(--md-tinta);
+  font-family: var(--md-texto-fuente);
   -webkit-text-size-adjust: 100%;
 }
 
@@ -45,16 +67,18 @@ body {
   flex-direction: column;
 }
 
-/* ---------- Cabecera ---------- */
+/* ---------- Cabecera ----------
+   Deliberadamente sobria: el diario ya tiene su propia banda naranja arriba
+   del iframe, y repetirla acá se leería como una segunda barra de navegación. */
 
 .fx-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 12px;
-  padding: 12px 16px;
-  background: linear-gradient(90deg, rgba(230, 0, 126, .22), rgba(230, 0, 126, 0));
-  border-bottom: 1px solid var(--fx-borde);
+  padding: 11px 16px;
+  background: var(--md-superficie);
+  border-bottom: 2px solid var(--md-tinta);
 }
 
 .fx-header__marca {
@@ -67,37 +91,34 @@ body {
 }
 
 .fx-header__logo { height: 34px; width: auto; display: block; }
+.fx-header__logo--icono { height: 30px; }
 
 .fx-header__juego {
-  font-family: var(--fx-serif);
-  font-size: 1.02rem;
-  font-weight: 700;
-  letter-spacing: .3px;
+  font-family: var(--md-titulo);
+  font-size: 1.05rem;
+  font-weight: 800;
+  letter-spacing: -.2px;
   margin: 0;
   line-height: 1.15;
 }
 
-/* El logo del encabezado del juego es el icono cuadrado, no el completo:
-   el nombre del juego ya dice dónde está y así entra sin cortarse. */
-.fx-header__logo--icono { height: 30px; }
-
 .fx-header__fecha {
-  font-size: .78rem;
-  color: var(--fx-texto-suave);
+  font-size: .76rem;
+  color: var(--md-texto-suave);
   white-space: nowrap;
 }
 
 .fx-volver {
   font-size: .8rem;
-  color: var(--fx-texto-suave);
+  color: var(--md-tinta);
   text-decoration: none;
-  border: 1px solid var(--fx-borde);
+  border: 1px solid var(--md-borde-fuerte);
   border-radius: 999px;
   padding: 5px 12px;
   white-space: nowrap;
 }
 
-.fx-volver:hover { border-color: var(--fx-fucsia); color: var(--fx-texto); }
+.fx-volver:hover { border-color: var(--md-naranja); color: var(--md-naranja-texto); }
 
 /* ---------- Layout ---------- */
 
@@ -117,15 +138,17 @@ body {
 .fx-intro { text-align: center; }
 
 .fx-intro h1 {
-  font-family: var(--fx-serif);
-  font-size: 1.7rem;
+  font-family: var(--md-titulo);
+  font-size: 1.75rem;
+  font-weight: 800;
+  letter-spacing: -.6px;
+  line-height: 1.12;
   margin: 0 0 6px;
-  line-height: 1.2;
 }
 
 .fx-intro p {
   margin: 0;
-  color: var(--fx-texto-suave);
+  color: var(--md-texto-suave);
   font-size: .95rem;
   line-height: 1.5;
 }
@@ -142,29 +165,31 @@ body {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  background: var(--fx-superficie);
-  border: 1px solid var(--fx-borde);
-  border-radius: var(--fx-radio);
+  background: var(--md-superficie);
+  border: 1px solid var(--md-borde);
+  border-radius: var(--md-radio);
   padding: 18px;
   text-decoration: none;
   color: inherit;
+  box-shadow: var(--md-sombra);
   transition: border-color .15s, transform .15s;
 }
 
-.fx-tarjeta:hover { border-color: var(--fx-fucsia); transform: translateY(-2px); }
+.fx-tarjeta:hover { border-color: var(--md-naranja); transform: translateY(-2px); }
 
 .fx-tarjeta__emojis { font-size: 1.25rem; letter-spacing: 2px; line-height: 1; }
 
 .fx-tarjeta__titulo {
-  font-family: var(--fx-serif);
-  font-size: 1.22rem;
-  font-weight: 700;
+  font-family: var(--md-titulo);
+  font-size: 1.25rem;
+  font-weight: 800;
+  letter-spacing: -.3px;
   margin: 0;
 }
 
 .fx-tarjeta__desc {
   margin: 0;
-  color: var(--fx-texto-suave);
+  color: var(--md-texto-suave);
   font-size: .9rem;
   line-height: 1.45;
   flex: 1;
@@ -176,7 +201,7 @@ body {
   gap: 8px;
   flex-wrap: wrap;
   font-size: .82rem;
-  color: var(--fx-texto-suave);
+  color: var(--md-texto-suave);
   min-height: 24px;
 }
 
@@ -184,11 +209,19 @@ body {
   display: inline-block;
   border-radius: 999px;
   padding: 3px 10px;
-  font-size: .75rem;
-  border: 1px solid var(--fx-borde);
+  font-size: .74rem;
+  font-weight: 700;
+  border: 1px solid var(--md-borde-fuerte);
 }
 
-.fx-chip--jugado { background: var(--fx-fucsia-suave); border-color: var(--fx-fucsia); color: var(--fx-texto); }
+/* El chip "jugado hoy" copia el pill de categoría del diario: fondo tinta,
+   texto blanco, versalitas. */
+.fx-chip--jugado {
+  background: var(--md-tinta);
+  border-color: var(--md-tinta);
+  color: #fff;
+  letter-spacing: .4px;
+}
 
 /* ---------- Botones ---------- */
 
@@ -198,11 +231,11 @@ body {
   justify-content: center;
   gap: 8px;
   width: 100%;
-  border: 0;
-  border-radius: 10px;
+  border: 1px solid var(--md-naranja);
+  border-radius: 8px;
   padding: 12px 16px;
-  background: var(--fx-fucsia);
-  color: #fff;
+  background: var(--md-naranja);
+  color: var(--md-tinta);
   font-family: inherit;
   font-size: .95rem;
   font-weight: 700;
@@ -211,49 +244,71 @@ body {
   text-align: center;
 }
 
-.fx-btn:hover { background: var(--fx-fucsia-claro); }
-.fx-btn:disabled { opacity: .45; cursor: not-allowed; }
+.fx-btn:hover { background: var(--md-naranja-hover); border-color: var(--md-naranja-hover); }
+/* Deshabilitado va a gris, no a naranja translucido: un naranja al 40% se
+   sigue leyendo como boton activo. */
+.fx-btn:disabled {
+  background: var(--md-borde);
+  border-color: var(--md-borde);
+  color: var(--md-texto-suave);
+  cursor: not-allowed;
+}
 
 .fx-btn--secundario {
-  background: transparent;
-  border: 1px solid var(--fx-borde);
-  color: var(--fx-texto);
+  background: var(--md-superficie);
+  border-color: var(--md-borde-fuerte);
+  color: var(--md-tinta);
   font-weight: 600;
 }
 
-.fx-btn--secundario:hover { background: var(--fx-superficie-2); border-color: var(--fx-fucsia); }
+.fx-btn--secundario:hover {
+  background: var(--md-superficie-2);
+  border-color: var(--md-naranja);
+  color: var(--md-naranja-texto);
+}
 
 .fx-btn--auto { width: auto; }
+
+/* Foco visible con el naranja de marca, para teclado y lectores de pantalla. */
+.fx-btn:focus-visible,
+.fx-volver:focus-visible,
+.fx-tarjeta:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--md-naranja);
+  outline-offset: 2px;
+}
 
 /* ---------- Mensajes ---------- */
 
 .fx-aviso {
-  border: 1px solid var(--fx-borde);
-  border-left: 3px solid var(--fx-fucsia);
-  border-radius: 8px;
-  background: var(--fx-superficie);
+  border: 1px solid var(--md-borde);
+  border-left: 3px solid var(--md-naranja);
+  border-radius: 6px;
+  background: var(--md-superficie);
   padding: 12px 14px;
   font-size: .88rem;
   line-height: 1.5;
-  color: var(--fx-texto-suave);
+  color: var(--md-texto-suave);
 }
 
-.fx-aviso--error { border-left-color: var(--fx-error); }
+.fx-aviso--error { border-left-color: var(--juego-error); }
 
 .fx-toast {
   position: fixed;
   left: 50%;
   bottom: 24px;
   transform: translateX(-50%) translateY(12px);
-  background: var(--fx-superficie-2);
-  border: 1px solid var(--fx-fucsia);
+  background: var(--md-tinta);
+  color: #fff;
   border-radius: 999px;
   padding: 10px 18px;
   font-size: .85rem;
+  font-weight: 600;
   opacity: 0;
   pointer-events: none;
   transition: opacity .2s, transform .2s;
   z-index: 50;
+  box-shadow: 0 4px 14px rgba(37, 37, 37, .25);
 }
 
 .fx-toast.visible { opacity: 1; transform: translateX(-50%) translateY(0); }
@@ -261,9 +316,10 @@ body {
 /* ---------- Panel de resultado ---------- */
 
 .fx-resultado {
-  background: var(--fx-superficie);
-  border: 1px solid var(--fx-borde);
-  border-radius: var(--fx-radio);
+  background: var(--md-superficie);
+  border: 1px solid var(--md-borde);
+  border-radius: var(--md-radio);
+  box-shadow: var(--md-sombra);
   padding: 18px;
   text-align: center;
   display: flex;
@@ -272,8 +328,10 @@ body {
 }
 
 .fx-resultado h2 {
-  font-family: var(--fx-serif);
-  font-size: 1.3rem;
+  font-family: var(--md-titulo);
+  font-size: 1.35rem;
+  font-weight: 800;
+  letter-spacing: -.3px;
   margin: 0;
 }
 
@@ -293,10 +351,22 @@ body {
 }
 
 .fx-stat { display: flex; flex-direction: column; gap: 2px; }
-.fx-stat__num { font-size: 1.5rem; font-weight: 700; font-family: var(--fx-serif); }
-.fx-stat__rotulo { font-size: .72rem; color: var(--fx-texto-suave); text-transform: uppercase; letter-spacing: .6px; }
 
-.fx-proximo { font-size: .82rem; color: var(--fx-texto-suave); margin: 0; }
+.fx-stat__num {
+  font-size: 1.55rem;
+  font-weight: 800;
+  font-family: var(--md-titulo);
+  letter-spacing: -.5px;
+}
+
+.fx-stat__rotulo {
+  font-size: .7rem;
+  color: var(--md-texto-suave);
+  text-transform: uppercase;
+  letter-spacing: .7px;
+}
+
+.fx-proximo { font-size: .82rem; color: var(--md-texto-suave); margin: 0; }
 
 /* ---------- Pie ---------- */
 
@@ -305,11 +375,11 @@ body {
   text-align: center;
   font-size: .76rem;
   line-height: 1.6;
-  color: var(--fx-texto-suave);
-  border-top: 1px solid var(--fx-borde);
+  color: var(--md-texto-suave);
+  border-top: 1px solid var(--md-borde);
 }
 
-.fx-footer a { color: var(--fx-fucsia-claro); }
+.fx-footer a { color: var(--md-naranja-texto); }
 
 /* ---------- Utilidades ---------- */
 

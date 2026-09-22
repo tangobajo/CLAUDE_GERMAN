@@ -442,23 +442,61 @@ rachas, el "ya jugaste hoy", que el texto compartido no filtre la respuesta, que
 
 ---
 
-## 8. El logo
+## 8. Colores y logo
+
+Los juegos usan la paleta de Manso Diario, no una propia. Los valores salieron de
+muestrear la home del diario, y viven todos juntos arriba de `shared.css`:
+
+```css
+:root {
+  --md-naranja:       #E76F2E;   /* banda del header y badges del diario */
+  --md-naranja-hover: #D15E1F;
+  --md-naranja-texto: #A8450E;   /* links: ver la nota de contraste abajo */
+  --md-tinta:         #252525;   /* titulares y pills de categoría */
+  --md-texto-suave:   #4A4A4A;   /* bajadas */
+  --md-fondo:         #E7E7E5;   /* fondo de página */
+  --md-superficie:    #FFFFFF;   /* tarjetas */
+  --md-borde:         #D6D6D4;   /* divisores */
+}
+```
+
+El fondo de los juegos es **el mismo gris que el cuerpo del diario**, así que el iframe
+no aparece como un recuadro pegado encima de la nota: se funde con la página.
+
+Tres decisiones que conviene no revertir sin mirar el contraste:
+
+- **Los botones naranjas llevan texto oscuro, no blanco.** Blanco sobre `#E76F2E` da
+  3.13:1 y no llega al 4.5:1 que pide WCAG para texto normal; con tinta da 4.90:1. Además
+  es lo que hace el propio diario: el "MUNDO" del header y los números de los badges van
+  en oscuro sobre naranja.
+- **Los links usan `--md-naranja-texto` (`#A8450E`), no el naranja de marca.** El naranja
+  puro como color de texto sobre el gris de fondo da 2.53:1, ilegible. El oscurecido da 4.81:1.
+- **Las celdas verde y amarilla de Palabra del Día llevan texto oscuro.** Wordle las pone en
+  blanco, pero ahí el contraste es 2.78:1 y 2.07:1. Con tinta pasan a 5.51:1 y 7.41:1.
+
+Los cuatro colores de dificultad de Agrupá (`--juego-amarillo`, `--juego-verde`,
+`--juego-azul`, `--juego-morado`) **no son de Manso Diario**: son la convención de
+Connections y por eso están en un bloque aparte. Conviene dejarlos como están, porque el
+lector ya los tiene aprendidos de ese juego y los lee sin pensar. La ficha seleccionada va
+en tinta y no en naranja justamente para que el naranja no se lea como un quinto grupo.
+
+### El logo
 
 `assets/logo-fuxia-games.svg` (completo, para la portada) y
 `assets/logo-fuxia-games-icono.svg` (solo el cuadrado, para la cabecera de los juegos) son
-**provisorios**: los armé porque no tenía acceso al repo de Fuxia Games. Para poner los
-reales, pisá esos dos archivos conservando el nombre — no hay que tocar ni el HTML ni el CSS.
+**provisorios**: los armé porque no tenía acceso al repo de Fuxia Games. Están dibujados en
+la paleta del diario —cuadrado en tinta, puntos en naranja y blanco— para que no compitan
+con la identidad de Manso Diario.
 
-La paleta está en las variables CSS de arriba de `shared.css` (`:root`). Si el `AGENTS.md`
-de Fuxia Games define otros valores de marca, se cambian ahí y se propagan a las cuatro
-páginas:
+Para poner los reales, pisá esos dos archivos conservando el nombre: no hay que tocar ni el
+HTML ni el CSS. Si el logo real viene en la paleta fucsia de Fuxia Games, va a destacar
+bastante sobre el gris del diario; en ese caso conviene pedir una versión monocromática para
+la cabecera.
 
-```css
---fx-fucsia:       #E6007E;   /* primario */
---fx-fucsia-claro: #FF3DA5;   /* hover */
---fx-fondo:        #120E14;
-```
+### Tipografía
 
-Los cuatro colores de dificultad de Agrupá (`--fx-amarillo`, `--fx-verde`, `--fx-azul`,
-`--fx-morado`) siguen la convención de Connections y conviene dejarlos como están: el
-lector ya los tiene aprendidos de otros juegos.
+Los títulos van en la sans del sistema en peso 800 con tracking negativo, para acercarse a
+la sans pesada de los titulares del diario. No se cargan fuentes externas (ni Google Fonts
+ni ningún CDN), así que el juego funciona offline y no agrega peso en mobile. Si querés
+usar la fuente real de Manso Diario, se cambia en `--md-titulo` y hay que servir el archivo
+de la fuente desde el mismo dominio.

@@ -20,19 +20,22 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 2px solid var(--fx-borde);
-    border-radius: 6px;
-    font-family: var(--fx-serif);
+    border: 2px solid var(--juego-tecla);
+    border-radius: 4px;
+    background: var(--md-superficie);
+    color: var(--md-tinta);
+    font-family: var(--md-titulo);
     font-size: clamp(1.4rem, 7vw, 2rem);
-    font-weight: 700;
+    font-weight: 800;
     text-transform: uppercase;
-    background: transparent;
     user-select: none;
   }
-  .pd-celda[data-lleno] { border-color: #5a5261; }
-  .pd-celda[data-estado="correcta"] { background: var(--fx-verde);    border-color: var(--fx-verde);    color: #fff; }
-  .pd-celda[data-estado="presente"] { background: var(--fx-amarillo);  border-color: var(--fx-amarillo); color: #120E14; }
-  .pd-celda[data-estado="ausente"]  { background: var(--fx-borde);     border-color: var(--fx-borde);    color: #fff; }
+  .pd-celda[data-lleno] { border-color: var(--md-borde-fuerte); }
+  /* Verde y amarillo llevan texto oscuro: el blanco de Wordle sobre estos dos
+     colores da 2.8:1 y 2.1:1, muy por debajo del mínimo legible. */
+  .pd-celda[data-estado="correcta"] { background: var(--juego-correcta); border-color: var(--juego-correcta); color: var(--md-tinta); }
+  .pd-celda[data-estado="presente"] { background: var(--juego-presente); border-color: var(--juego-presente); color: var(--md-tinta); }
+  .pd-celda[data-estado="ausente"]  { background: var(--juego-ausente);  border-color: var(--juego-ausente);  color: #fff; }
 
   .pd-fila--error { animation: pd-sacudir .4s; }
   @keyframes pd-sacudir {
@@ -48,9 +51,9 @@
     min-width: 0;
     height: 52px;
     border: 0;
-    border-radius: 5px;
-    background: var(--fx-superficie-2);
-    color: var(--fx-texto);
+    border-radius: 4px;
+    background: var(--juego-tecla);
+    color: var(--md-tinta);
     font-family: inherit;
     font-size: .92rem;
     font-weight: 700;
@@ -58,20 +61,20 @@
     text-transform: uppercase;
     padding: 0 2px;
   }
-  .pd-tecla:hover { background: #322a37; }
+  .pd-tecla:hover { background: var(--md-borde-fuerte); }
   .pd-tecla--ancha { flex: 1.6 1 auto; font-size: .74rem; }
-  .pd-tecla[data-estado="correcta"] { background: var(--fx-verde);   color: #fff; }
-  .pd-tecla[data-estado="presente"] { background: var(--fx-amarillo); color: #120E14; }
-  .pd-tecla[data-estado="ausente"]  { background: #241f28; color: #6b6272; }
+  .pd-tecla[data-estado="correcta"] { background: var(--juego-correcta); color: var(--md-tinta); }
+  .pd-tecla[data-estado="presente"] { background: var(--juego-presente); color: var(--md-tinta); }
+  .pd-tecla[data-estado="ausente"]  { background: var(--juego-ausente);  color: #fff; }
 
   .pd-pista {
     text-align: center;
     font-size: .88rem;
-    color: var(--fx-texto-suave);
+    color: var(--md-texto-suave);
     line-height: 1.5;
     margin: 0;
   }
-  .pd-pista strong { color: var(--fx-texto); font-weight: 600; }
+  .pd-pista strong { color: var(--md-tinta); font-weight: 700; }
 
   @media (max-height: 700px) { .pd-tecla { height: 44px; } }
 </style>
@@ -111,7 +114,7 @@
   var JUEGO = 'palabra';
   var LARGO = 5;
   var INTENTOS = 6;
-  var EMOJI = { correcta: '🟩', presente: '🟨', ausente: '⬛' };
+  var EMOJI = { correcta: '🟩', presente: '🟨', ausente: '⬜' };
   var FILAS_TECLADO = [
     ['Q','W','E','R','T','Y','U','I','O','P'],
     ['A','S','D','F','G','H','J','K','L','Ñ'],
@@ -330,9 +333,9 @@
     panel.className = 'fx-resultado';
     panel.innerHTML =
       '<h2>' + (gano ? tituloVictoria(intentos.length) : '¡Casi!') + '</h2>' +
-      '<p style="margin:0;color:var(--fx-texto-suave);font-size:.9rem">' +
+      '<p style="margin:0;color:var(--md-texto-suave);font-size:.9rem">' +
         (gano ? 'La resolviste en ' + intentos.length + (intentos.length === 1 ? ' intento.' : ' intentos.')
-              : 'La palabra era <strong style="color:var(--fx-texto)">' + escapar(palabraDisplay) + '</strong>.') +
+              : 'La palabra era <strong style="color:var(--md-tinta)">' + escapar(palabraDisplay) + '</strong>.') +
       '</p>' +
       '<div class="fx-resultado__stats">' +
         stat(racha.racha, 'Racha') +
