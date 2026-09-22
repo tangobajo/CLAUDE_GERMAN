@@ -1,0 +1,204 @@
+{
+  "juego": "palabra-del-dia",
+  "fecha_dia_1": "2026-10-01",
+  "revisar": {
+    "verificar": [
+      1,
+      2,
+      15,
+      24,
+      25,
+      26
+    ],
+    "dias_duplicados": [],
+    "notas": []
+  },
+  "dias": [
+    {
+      "dia": 1,
+      "palabra": "ZONDA",
+      "palabra_display": "ZONDA",
+      "pista": "Viento cálido y seco típico de Cuyo; también nombre de un departamento sanjuanino",
+      "verificar": true
+    },
+    {
+      "dia": 2,
+      "palabra": "ULLUM",
+      "palabra_display": "ULLUM",
+      "pista": "Departamento de San Juan, conocido por su embalse/dique",
+      "verificar": true
+    },
+    {
+      "dia": 3,
+      "palabra": "VINAS",
+      "palabra_display": "VIÑAS",
+      "pista": "Cultivo base de la vitivinicultura cuyana"
+    },
+    {
+      "dia": 4,
+      "palabra": "PARRA",
+      "palabra_display": "PARRA",
+      "pista": "Planta de la vid, típica del paisaje de los viñedos"
+    },
+    {
+      "dia": 5,
+      "palabra": "ANDES",
+      "palabra_display": "ANDES",
+      "pista": "Cordillera que bordea la provincia de San Juan"
+    },
+    {
+      "dia": 6,
+      "palabra": "TONEL",
+      "palabra_display": "TONEL",
+      "pista": "Recipiente de madera para añejar vino"
+    },
+    {
+      "dia": 7,
+      "palabra": "CUECA",
+      "palabra_display": "CUECA",
+      "pista": "Danza folklórica tradicional de la región de Cuyo"
+    },
+    {
+      "dia": 8,
+      "palabra": "FOGON",
+      "palabra_display": "FOGÓN",
+      "pista": "Fuego alrededor del cual se canta y se cuenta el folklore"
+    },
+    {
+      "dia": 9,
+      "palabra": "SOLAR",
+      "palabra_display": "SOLAR",
+      "pista": "Relacionado al sol; San Juan es la 'Tierra del Sol'"
+    },
+    {
+      "dia": 10,
+      "palabra": "ASADO",
+      "palabra_display": "ASADO",
+      "pista": "Comida tradicional argentina, infaltable en reuniones cuyanas"
+    },
+    {
+      "dia": 11,
+      "palabra": "TORTA",
+      "palabra_display": "TORTA",
+      "pista": "También 'torta al rescoldo', receta criolla tradicional"
+    },
+    {
+      "dia": 12,
+      "palabra": "CERRO",
+      "palabra_display": "CERRO",
+      "pista": "Elevación típica del paisaje precordillerano sanjuanino"
+    },
+    {
+      "dia": 13,
+      "palabra": "VALLE",
+      "palabra_display": "VALLE",
+      "pista": "Como el Valle de Tulum o el Valle Fértil, en San Juan"
+    },
+    {
+      "dia": 14,
+      "palabra": "RIEGO",
+      "palabra_display": "RIEGO",
+      "pista": "Sistema esencial para la agricultura en tierra de oasis"
+    },
+    {
+      "dia": 15,
+      "palabra": "DIQUE",
+      "palabra_display": "DIQUE",
+      "pista": "Como el Dique Ullum o el Dique Cuesta del Viento",
+      "verificar": true
+    },
+    {
+      "dia": 16,
+      "palabra": "FERIA",
+      "palabra_display": "FERIA",
+      "pista": "Evento popular con puestos de productos regionales"
+    },
+    {
+      "dia": 17,
+      "palabra": "PLAZA",
+      "palabra_display": "PLAZA",
+      "pista": "Punto de encuentro central en cada pueblo cuyano"
+    },
+    {
+      "dia": 18,
+      "palabra": "MINAS",
+      "palabra_display": "MINAS",
+      "pista": "Actividad minera, históricamente importante en San Juan"
+    },
+    {
+      "dia": 19,
+      "palabra": "OASIS",
+      "palabra_display": "OASIS",
+      "pista": "Así se describe a San Juan en medio del desierto cuyano"
+    },
+    {
+      "dia": 20,
+      "palabra": "LOMAS",
+      "palabra_display": "LOMAS",
+      "pista": "Elevaciones suaves del paisaje sanjuanino"
+    },
+    {
+      "dia": 21,
+      "palabra": "CANTO",
+      "palabra_display": "CANTO",
+      "pista": "El canto cuyano acompaña la tonada y la cueca"
+    },
+    {
+      "dia": 22,
+      "palabra": "BAILE",
+      "palabra_display": "BAILE",
+      "pista": "Las peñas folklóricas siempre tienen baile"
+    },
+    {
+      "dia": 23,
+      "palabra": "FINCA",
+      "palabra_display": "FINCA",
+      "pista": "Nombre común para las propiedades vitivinícolas cuyanas"
+    },
+    {
+      "dia": 24,
+      "palabra": "OLIVO",
+      "palabra_display": "OLIVO",
+      "pista": "Cultivo en crecimiento en la producción sanjuanina",
+      "verificar": true
+    },
+    {
+      "dia": 25,
+      "palabra": "NOGAL",
+      "palabra_display": "NOGAL",
+      "pista": "Árbol de la nuez, cultivo tradicional de Pocito y Caucete",
+      "verificar": true
+    },
+    {
+      "dia": 26,
+      "palabra": "MELON",
+      "palabra_display": "MELÓN",
+      "pista": "Fruta emblemática de Media Agua, San Juan",
+      "verificar": true
+    },
+    {
+      "dia": 27,
+      "palabra": "CANAL",
+      "palabra_display": "CANAL",
+      "pista": "Canal de riego, parte del sistema de acequias cuyano"
+    },
+    {
+      "dia": 28,
+      "palabra": "HORNO",
+      "palabra_display": "HORNO",
+      "pista": "El horno de barro, tradicional en las fincas criollas"
+    },
+    {
+      "dia": 29,
+      "palabra": "TAPIA",
+      "palabra_display": "TAPIA",
+      "pista": "Muro de adobe, típico de la arquitectura rural cuyana"
+    },
+    {
+      "dia": 30,
+      "palabra": "CIELO",
+      "palabra_display": "CIELO",
+      "pista": "Cielo despejado, sello de la Fiesta Nacional del Sol"
+    }
+  ]
+}

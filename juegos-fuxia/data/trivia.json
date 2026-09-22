@@ -1,0 +1,2157 @@
+{
+  "juego": "trivia-cuyana",
+  "fecha_dia_1": "2026-10-01",
+  "revisar": {
+    "verificar": [
+      {
+        "dia": 3,
+        "preguntas": [
+          3,
+          4,
+          5
+        ]
+      },
+      {
+        "dia": 4,
+        "preguntas": [
+          3
+        ]
+      },
+      {
+        "dia": 6,
+        "preguntas": [
+          2,
+          4
+        ]
+      },
+      {
+        "dia": 8,
+        "preguntas": [
+          1,
+          4,
+          5
+        ]
+      },
+      {
+        "dia": 11,
+        "preguntas": [
+          3,
+          4,
+          5
+        ]
+      },
+      {
+        "dia": 12,
+        "preguntas": [
+          3
+        ]
+      },
+      {
+        "dia": 14,
+        "preguntas": [
+          2,
+          4
+        ]
+      },
+      {
+        "dia": 16,
+        "preguntas": [
+          1,
+          4,
+          5
+        ]
+      },
+      {
+        "dia": 19,
+        "preguntas": [
+          3,
+          4,
+          5
+        ]
+      },
+      {
+        "dia": 20,
+        "preguntas": [
+          3
+        ]
+      },
+      {
+        "dia": 22,
+        "preguntas": [
+          2,
+          4
+        ]
+      },
+      {
+        "dia": 24,
+        "preguntas": [
+          1,
+          4,
+          5
+        ]
+      },
+      {
+        "dia": 27,
+        "preguntas": [
+          3,
+          4,
+          5
+        ]
+      },
+      {
+        "dia": 28,
+        "preguntas": [
+          3
+        ]
+      },
+      {
+        "dia": 30,
+        "preguntas": [
+          2,
+          4
+        ]
+      }
+    ],
+    "dias_duplicados": [
+      [
+        1,
+        9,
+        17,
+        25
+      ],
+      [
+        2,
+        10,
+        18,
+        26
+      ],
+      [
+        3,
+        11,
+        19,
+        27
+      ],
+      [
+        4,
+        12,
+        20,
+        28
+      ],
+      [
+        5,
+        13,
+        21,
+        29
+      ],
+      [
+        6,
+        14,
+        22,
+        30
+      ],
+      [
+        7,
+        15,
+        23
+      ],
+      [
+        8,
+        16,
+        24
+      ]
+    ],
+    "preguntas_unicas": 40,
+    "preguntas_totales": 150,
+    "con_link_nota": 0,
+    "notas": [
+      "verificar: preguntas marcadas \"Si\" en la planilla. Confirmar el dato antes de publicarlas como respuesta correcta. No se muestra en pantalla al lector.",
+      "dias_duplicados: el banco tiene solo 8 dias distintos de preguntas repetidos en ciclo, asi que el lector ve las mismas 5 preguntas cada 8 dias.",
+      "con_link_nota: cuantas preguntas tienen URL cargada. En 0 el boton \"Leer la nota\" nunca aparece; se activa solo al completar la columna \"Link nota\" de la planilla."
+    ]
+  },
+  "dias": [
+    {
+      "dia": 1,
+      "preguntas": [
+        {
+          "n": 1,
+          "pregunta": "¿En qué provincia argentina nació Domingo Faustino Sarmiento?",
+          "opciones": [
+            "San Juan",
+            "Mendoza",
+            "San Luis",
+            "La Rioja"
+          ],
+          "respuesta": 0,
+          "link_nota": null
+        },
+        {
+          "n": 2,
+          "pregunta": "¿Cómo se llama el viento cálido y seco típico de la región de Cuyo?",
+          "opciones": [
+            "Pampero",
+            "Zonda",
+            "Sudestada",
+            "Puelche"
+          ],
+          "respuesta": 1,
+          "link_nota": null
+        },
+        {
+          "n": 3,
+          "pregunta": "¿Cuál es la actividad económica histórica más asociada a San Juan?",
+          "opciones": [
+            "Pesca",
+            "Vitivinicultura",
+            "Ganadería ovina",
+            "Forestación"
+          ],
+          "respuesta": 1,
+          "link_nota": null
+        },
+        {
+          "n": 4,
+          "pregunta": "¿Qué cordillera bordea a la provincia de San Juan?",
+          "opciones": [
+            "Sierras Pampeanas",
+            "Andes",
+            "Sierra de la Ventana",
+            "Macizo del Deseado"
+          ],
+          "respuesta": 1,
+          "link_nota": null
+        },
+        {
+          "n": 5,
+          "pregunta": "La 'Fiesta Nacional del Sol' se celebra principalmente en:",
+          "opciones": [
+            "San Juan",
+            "Mendoza",
+            "Catamarca",
+            "Salta"
+          ],
+          "respuesta": 0,
+          "link_nota": null
+        }
+      ]
+    },
+    {
+      "dia": 2,
+      "preguntas": [
+        {
+          "n": 1,
+          "pregunta": "¿Qué fruto es la base de la vitivinicultura cuyana?",
+          "opciones": [
+            "Manzana",
+            "Uva",
+            "Durazno",
+            "Ciruela"
+          ],
+          "respuesta": 1,
+          "link_nota": null
+        },
+        {
+          "n": 2,
+          "pregunta": "¿Cómo se llama la danza tradicional emblemática de Cuyo?",
+          "opciones": [
+            "Chamamé",
+            "Cueca cuyana",
+            "Malambo puro",
+            "Candombe"
+          ],
+          "respuesta": 1,
+          "link_nota": null
+        },
+        {
+          "n": 3,
+          "pregunta": "¿Qué instrumento es central en la música folklórica cuyana?",
+          "opciones": [
+            "Bandoneón",
+            "Guitarra",
+            "Trompeta",
+            "Saxo"
+          ],
+          "respuesta": 1,
+          "link_nota": null
+        },
+        {
+          "n": 4,
+          "pregunta": "Un sistema de canales para llevar agua a los cultivos se llama:",
+          "opciones": [
+            "Acequia",
+            "Tranquera",
+            "Alambrado",
+            "Corral"
+          ],
+          "respuesta": 0,
+          "link_nota": null
+        },
+        {
+          "n": 5,
+          "pregunta": "San Juan suele describirse, por su clima árido y sus oasis de cultivo, como:",
+          "opciones": [
+            "Un oasis en el desierto",
+            "Una selva subtropical",
+            "Una zona de estepa fría",
+            "Un humedal"
+          ],
+          "respuesta": 0,
+          "link_nota": null
+        }
+      ]
+    },
+    {
+      "dia": 3,
+      "preguntas": [
+        {
+          "n": 1,
+          "pregunta": "¿Cuál es la capital de la provincia de San Juan?",
+          "opciones": [
+            "Rawson",
+            "Chimbas",
+            "San Juan (Capital)",
+            "Pocito"
+          ],
+          "respuesta": 2,
+          "link_nota": null
+        },
+        {
+          "n": 2,
+          "pregunta": "¿Qué departamento sanjuanino le da nombre al viento característico de la región?",
+          "opciones": [
+            "Ullum",
+            "Zonda",
+            "Iglesia",
+            "Calingasta"
+          ],
+          "respuesta": 1,
+          "link_nota": null
+        },
+        {
+          "n": 3,
+          "pregunta": "El embalse Ullum se usa principalmente para:",
+          "opciones": [
+            "Riego y generación de energía",
+            "Pesca deportiva exclusiva",
+            "Navegación de carga",
+            "Extracción de sal"
+          ],
+          "respuesta": 0,
+          "link_nota": null,
+          "verificar": true
+        },
+        {
+          "n": 4,
+          "pregunta": "¿Qué cultivo, además de la vid, es tradicional en el departamento de Pocito?",
+          "opciones": [
+            "Nuez",
+            "Café",
+            "Cacao",
+            "Arroz"
+          ],
+          "respuesta": 0,
+          "link_nota": null,
+          "verificar": true
+        },
+        {
+          "n": 5,
+          "pregunta": "El fruto emblemático de la localidad de Media Agua es:",
+          "opciones": [
+            "El melón",
+            "El coco",
+            "La piña",
+            "El plátano"
+          ],
+          "respuesta": 0,
+          "link_nota": null,
+          "verificar": true
+        }
+      ]
+    },
+    {
+      "dia": 4,
+      "preguntas": [
+        {
+          "n": 1,
+          "pregunta": "¿Qué recipiente se usa tradicionalmente para añejar el vino?",
+          "opciones": [
+            "Tonel de madera",
+            "Bidón plástico",
+            "Damajuana de vidrio solamente",
+            "Bolsa de arpillera"
+          ],
+          "respuesta": 0,
+          "link_nota": null
+        },
+        {
+          "n": 2,
+          "pregunta": "¿Cómo se llama la comida a base de maíz, típica del norte y Cuyo argentino?",
+          "opciones": [
+            "Locro",
+            "Sushi",
+            "Paella",
+            "Risotto"
+          ],
+          "respuesta": 0,
+          "link_nota": null
+        },
+        {
+          "n": 3,
+          "pregunta": "El 'arrope' es un dulce tradicional cuyano elaborado principalmente con:",
+          "opciones": [
+            "Frutas cocidas en almíbar",
+            "Leche condensada",
+            "Chocolate",
+            "Miel de caña"
+          ],
+          "respuesta": 0,
+          "link_nota": null,
+          "verificar": true
+        },
+        {
+          "n": 4,
+          "pregunta": "¿Qué ave es un símbolo habitual de los Andes en la fauna regional?",
+          "opciones": [
+            "Pingüino",
+            "Cóndor",
+            "Flamenco rosado",
+            "Tucán"
+          ],
+          "respuesta": 1,
+          "link_nota": null
+        },
+        {
+          "n": 5,
+          "pregunta": "El guanaco es un animal típico de:",
+          "opciones": [
+            "La selva misionera",
+            "Las zonas andinas y precordilleranas",
+            "Los esteros del litoral",
+            "Las costas patagónicas"
+          ],
+          "respuesta": 1,
+          "link_nota": null
+        }
+      ]
+    },
+    {
+      "dia": 5,
+      "preguntas": [
+        {
+          "n": 1,
+          "pregunta": "¿Qué material se usa tradicionalmente para las paredes de las construcciones rurales cuyanas?",
+          "opciones": [
+            "Adobe",
+            "Concreto armado exclusivamente",
+            "Vidrio",
+            "Bambú"
+          ],
+          "respuesta": 0,
+          "link_nota": null
+        },
+        {
+          "n": 2,
+          "pregunta": "La 'tonada' es, en la música cuyana, principalmente:",
+          "opciones": [
+            "Un género/canción de raíz cuyana",
+            "Un instrumento de percusión",
+            "Un tipo de vino",
+            "Una danza de salón europea"
+          ],
+          "respuesta": 0,
+          "link_nota": null
+        },
+        {
+          "n": 3,
+          "pregunta": "¿Qué se celebra tradicionalmente en la Fiesta de la Vendimia?",
+          "opciones": [
+            "La cosecha de la uva",
+            "El inicio del invierno",
+            "La siembra de trigo",
+            "La llegada de la lluvia"
+          ],
+          "respuesta": 0,
+          "link_nota": null
+        },
+        {
+          "n": 4,
+          "pregunta": "El desierto que rodea a los oasis cultivados de San Juan se conoce, en general, como parte de:",
+          "opciones": [
+            "La región de Cuyo árido",
+            "La selva amazónica",
+            "La puna húmeda",
+            "El litoral fluvial"
+          ],
+          "respuesta": 0,
+          "link_nota": null
+        },
+        {
+          "n": 5,
+          "pregunta": "¿Qué tipo de clima predomina en la provincia de San Juan?",
+          "opciones": [
+            "Árido y seco, con oasis de riego",
+            "Tropical húmedo",
+            "Polar",
+            "Ecuatorial"
+          ],
+          "respuesta": 0,
+          "link_nota": null
+        }
+      ]
+    },
+    {
+      "dia": 6,
+      "preguntas": [
+        {
+          "n": 1,
+          "pregunta": "El 'horno de barro' se usa tradicionalmente en el campo cuyano para:",
+          "opciones": [
+            "Cocinar pan y comidas al rescoldo",
+            "Fundir metales industriales",
+            "Calentar agua de pileta",
+            "Secar ladrillos únicamente"
+          ],
+          "respuesta": 0,
+          "link_nota": null
+        },
+        {
+          "n": 2,
+          "pregunta": "¿Qué fruto seco es un cultivo tradicional en Caucete y Pocito?",
+          "opciones": [
+            "La nuez",
+            "El maní",
+            "La almendra amazónica",
+            "El anacardo"
+          ],
+          "respuesta": 0,
+          "link_nota": null,
+          "verificar": true
+        },
+        {
+          "n": 3,
+          "pregunta": "¿Cómo se le llama comúnmente a la persona que trabaja podando la vid?",
+          "opciones": [
+            "Podador/viñatero",
+            "Tornero",
+            "Herrero",
+            "Cantero"
+          ],
+          "respuesta": 0,
+          "link_nota": null
+        },
+        {
+          "n": 4,
+          "pregunta": "La expresión 'tierra del sol y del buen vino' suele asociarse a:",
+          "opciones": [
+            "San Juan",
+            "Ushuaia",
+            "Formosa",
+            "Bariloche"
+          ],
+          "respuesta": 0,
+          "link_nota": null,
+          "verificar": true
+        },
+        {
+          "n": 5,
+          "pregunta": "¿Qué elemento del paisaje sanjuanino se forma al embalsar un río con una presa?",
+          "opciones": [
+            "Un dique/embalse",
+            "Un volcán",
+            "Un géiser",
+            "Un arrecife"
+          ],
+          "respuesta": 0,
+          "link_nota": null
+        }
+      ]
+    },
+    {
+      "dia": 7,
+      "preguntas": [
+        {
+          "n": 1,
+          "pregunta": "¿Qué bebida se produce principalmente con la uva cosechada en Cuyo?",
+          "opciones": [
+            "Vino",
+            "Cerveza",
+            "Sidra",
+            "Whisky"
+          ],
+          "respuesta": 0,
+          "link_nota": null
+        },
+        {
+          "n": 2,
+          "pregunta": "El 'chivito' o cabrito es una carne tradicional asociada a la cocina:",
+          "opciones": [
+            "Cuyana/criolla",
+            "Nórdica",
+            "Mediterránea",
+            "Asiática"
+          ],
+          "respuesta": 0,
+          "link_nota": null
+        },
+        {
+          "n": 3,
+          "pregunta": "¿Cómo se llama la planta trepadora de la que se cosecha la uva?",
+          "opciones": [
+            "Parra/vid",
+            "Palmera",
+            "Helecho",
+            "Bambú"
+          ],
+          "respuesta": 0,
+          "link_nota": null
+        },
+        {
+          "n": 4,
+          "pregunta": "El 'malbec' es principalmente un:",
+          "opciones": [
+            "Tipo de uva/vino",
+            "Instrumento musical",
+            "Baile folklórico",
+            "Plato criollo"
+          ],
+          "respuesta": 0,
+          "link_nota": null
+        },
+        {
+          "n": 5,
+          "pregunta": "En una peña folklórica, el 'fogón' es:",
+          "opciones": [
+            "El fuego alrededor del cual se canta y comparte",
+            "Un tipo de guitarra",
+            "Una prenda de vestir",
+            "Un plato de pastas"
+          ],
+          "respuesta": 0,
+          "link_nota": null
+        }
+      ]
+    },
+    {
+      "dia": 8,
+      "preguntas": [
+        {
+          "n": 1,
+          "pregunta": "¿Qué elemento de riego se abre y cierra para distribuir el agua entre fincas?",
+          "opciones": [
+            "La compuerta/toma",
+            "El molino de viento",
+            "El silo",
+            "El invernadero"
+          ],
+          "respuesta": 0,
+          "link_nota": null,
+          "verificar": true
+        },
+        {
+          "n": 2,
+          "pregunta": "La 'humita' es una comida tradicional a base de:",
+          "opciones": [
+            "Maíz",
+            "Papa",
+            "Arroz",
+            "Lentejas"
+          ],
+          "respuesta": 0,
+          "link_nota": null
+        },
+        {
+          "n": 3,
+          "pregunta": "¿Qué tipo de paisaje predomina entre los viñedos y el pie de la cordillera en San Juan?",
+          "opciones": [
+            "Precordillera árida con oasis de cultivo",
+            "Selva tropical densa",
+            "Pantano costero",
+            "Tundra helada"
+          ],
+          "respuesta": 0,
+          "link_nota": null
+        },
+        {
+          "n": 4,
+          "pregunta": "El 'zorro' que habita zonas áridas y de monte cuyano suele ser de la especie:",
+          "opciones": [
+            "Zorro gris/colorado regional",
+            "Zorro ártico",
+            "Zorro voador",
+            "No hay zorros en la región"
+          ],
+          "respuesta": 0,
+          "link_nota": null,
+          "verificar": true
+        },
+        {
+          "n": 5,
+          "pregunta": "¿Qué tradición está asociada a marcar el ganado con hierro caliente?",
+          "opciones": [
+            "La marcada/yerra",
+            "La vendimia",
+            "El carnaval",
+            "La trilla"
+          ],
+          "respuesta": 0,
+          "link_nota": null,
+          "verificar": true
+        }
+      ]
+    },
+    {
+      "dia": 9,
+      "preguntas": [
+        {
+          "n": 1,
+          "pregunta": "¿En qué provincia argentina nació Domingo Faustino Sarmiento?",
+          "opciones": [
+            "San Juan",
+            "Mendoza",
+            "San Luis",
+            "La Rioja"
+          ],
+          "respuesta": 0,
+          "link_nota": null
+        },
+        {
+          "n": 2,
+          "pregunta": "¿Cómo se llama el viento cálido y seco típico de la región de Cuyo?",
+          "opciones": [
+            "Pampero",
+            "Zonda",
+            "Sudestada",
+            "Puelche"
+          ],
+          "respuesta": 1,
+          "link_nota": null
+        },
+        {
+          "n": 3,
+          "pregunta": "¿Cuál es la actividad económica histórica más asociada a San Juan?",
+          "opciones": [
+            "Pesca",
+            "Vitivinicultura",
+            "Ganadería ovina",
+            "Forestación"
+          ],
+          "respuesta": 1,
+          "link_nota": null
+        },
+        {
+          "n": 4,
+          "pregunta": "¿Qué cordillera bordea a la provincia de San Juan?",
+          "opciones": [
+            "Sierras Pampeanas",
+            "Andes",
+            "Sierra de la Ventana",
+            "Macizo del Deseado"
+          ],
+          "respuesta": 1,
+          "link_nota": null
+        },
+        {
+          "n": 5,
+          "pregunta": "La 'Fiesta Nacional del Sol' se celebra principalmente en:",
+          "opciones": [
+            "San Juan",
+            "Mendoza",
+            "Catamarca",
+            "Salta"
+          ],
+          "respuesta": 0,
+          "link_nota": null
+        }
+      ]
+    },
+    {
+      "dia": 10,
+      "preguntas": [
+        {
+          "n": 1,
+          "pregunta": "¿Qué fruto es la base de la vitivinicultura cuyana?",
+          "opciones": [
+            "Manzana",
+            "Uva",
+            "Durazno",
+            "Ciruela"
+          ],
+          "respuesta": 1,
+          "link_nota": null
+        },
+        {
+          "n": 2,
+          "pregunta": "¿Cómo se llama la danza tradicional emblemática de Cuyo?",
+          "opciones": [
+            "Chamamé",
+            "Cueca cuyana",
+            "Malambo puro",
+            "Candombe"
+          ],
+          "respuesta": 1,
+          "link_nota": null
+        },
+        {
+          "n": 3,
+          "pregunta": "¿Qué instrumento es central en la música folklórica cuyana?",
+          "opciones": [
+            "Bandoneón",
+            "Guitarra",
+            "Trompeta",
+            "Saxo"
+          ],
+          "respuesta": 1,
+          "link_nota": null
+        },
+        {
+          "n": 4,
+          "pregunta": "Un sistema de canales para llevar agua a los cultivos se llama:",
+          "opciones": [
+            "Acequia",
+            "Tranquera",
+            "Alambrado",
+            "Corral"
+          ],
+          "respuesta": 0,
+          "link_nota": null
+        },
+        {
+          "n": 5,
+          "pregunta": "San Juan suele describirse, por su clima árido y sus oasis de cultivo, como:",
+          "opciones": [
+            "Un oasis en el desierto",
+            "Una selva subtropical",
+            "Una zona de estepa fría",
+            "Un humedal"
+          ],
+          "respuesta": 0,
+          "link_nota": null
+        }
+      ]
+    },
+    {
+      "dia": 11,
+      "preguntas": [
+        {
+          "n": 1,
+          "pregunta": "¿Cuál es la capital de la provincia de San Juan?",
+          "opciones": [
+            "Rawson",
+            "Chimbas",
+            "San Juan (Capital)",
+            "Pocito"
+          ],
+          "respuesta": 2,
+          "link_nota": null
+        },
+        {
+          "n": 2,
+          "pregunta": "¿Qué departamento sanjuanino le da nombre al viento característico de la región?",
+          "opciones": [
+            "Ullum",
+            "Zonda",
+            "Iglesia",
+            "Calingasta"
+          ],
+          "respuesta": 1,
+          "link_nota": null
+        },
+        {
+          "n": 3,
+          "pregunta": "El embalse Ullum se usa principalmente para:",
+          "opciones": [
+            "Riego y generación de energía",
+            "Pesca deportiva exclusiva",
+            "Navegación de carga",
+            "Extracción de sal"
+          ],
+          "respuesta": 0,
+          "link_nota": null,
+          "verificar": true
+        },
+        {
+          "n": 4,
+          "pregunta": "¿Qué cultivo, además de la vid, es tradicional en el departamento de Pocito?",
+          "opciones": [
+            "Nuez",
+            "Café",
+            "Cacao",
+            "Arroz"
+          ],
+          "respuesta": 0,
+          "link_nota": null,
+          "verificar": true
+        },
+        {
+          "n": 5,
+          "pregunta": "El fruto emblemático de la localidad de Media Agua es:",
+          "opciones": [
+            "El melón",
+            "El coco",
+            "La piña",
+            "El plátano"
+          ],
+          "respuesta": 0,
+          "link_nota": null,
+          "verificar": true
+        }
+      ]
+    },
+    {
+      "dia": 12,
+      "preguntas": [
+        {
+          "n": 1,
+          "pregunta": "¿Qué recipiente se usa tradicionalmente para añejar el vino?",
+          "opciones": [
+            "Tonel de madera",
+            "Bidón plástico",
+            "Damajuana de vidrio solamente",
+            "Bolsa de arpillera"
+          ],
+          "respuesta": 0,
+          "link_nota": null
+        },
+        {
+          "n": 2,
+          "pregunta": "¿Cómo se llama la comida a base de maíz, típica del norte y Cuyo argentino?",
+          "opciones": [
+            "Locro",
+            "Sushi",
+            "Paella",
+            "Risotto"
+          ],
+          "respuesta": 0,
+          "link_nota": null
+        },
+        {
+          "n": 3,
+          "pregunta": "El 'arrope' es un dulce tradicional cuyano elaborado principalmente con:",
+          "opciones": [
+            "Frutas cocidas en almíbar",
+            "Leche condensada",
+            "Chocolate",
+            "Miel de caña"
+          ],
+          "respuesta": 0,
+          "link_nota": null,
+          "verificar": true
+        },
+        {
+          "n": 4,
+          "pregunta": "¿Qué ave es un símbolo habitual de los Andes en la fauna regional?",
+          "opciones": [
+            "Pingüino",
+            "Cóndor",
+            "Flamenco rosado",
+            "Tucán"
+          ],
+          "respuesta": 1,
+          "link_nota": null
+        },
+        {
+          "n": 5,
+          "pregunta": "El guanaco es un animal típico de:",
+          "opciones": [
+            "La selva misionera",
+            "Las zonas andinas y precordilleranas",
+            "Los esteros del litoral",
+            "Las costas patagónicas"
+          ],
+          "respuesta": 1,
+          "link_nota": null
+        }
+      ]
+    },
+    {
+      "dia": 13,
+      "preguntas": [
+        {
+          "n": 1,
+          "pregunta": "¿Qué material se usa tradicionalmente para las paredes de las construcciones rurales cuyanas?",
+          "opciones": [
+            "Adobe",
+            "Concreto armado exclusivamente",
+            "Vidrio",
+            "Bambú"
+          ],
+          "respuesta": 0,
+          "link_nota": null
+        },
+        {
+          "n": 2,
+          "pregunta": "La 'tonada' es, en la música cuyana, principalmente:",
+          "opciones": [
+            "Un género/canción de raíz cuyana",
+            "Un instrumento de percusión",
+            "Un tipo de vino",
+            "Una danza de salón europea"
+          ],
+          "respuesta": 0,
+          "link_nota": null
+        },
+        {
+          "n": 3,
+          "pregunta": "¿Qué se celebra tradicionalmente en la Fiesta de la Vendimia?",
+          "opciones": [
+            "La cosecha de la uva",
+            "El inicio del invierno",
+            "La siembra de trigo",
+            "La llegada de la lluvia"
+          ],
+          "respuesta": 0,
+          "link_nota": null
+        },
+        {
+          "n": 4,
+          "pregunta": "El desierto que rodea a los oasis cultivados de San Juan se conoce, en general, como parte de:",
+          "opciones": [
+            "La región de Cuyo árido",
+            "La selva amazónica",
+            "La puna húmeda",
+            "El litoral fluvial"
+          ],
+          "respuesta": 0,
+          "link_nota": null
+        },
+        {
+          "n": 5,
+          "pregunta": "¿Qué tipo de clima predomina en la provincia de San Juan?",
+          "opciones": [
+            "Árido y seco, con oasis de riego",
+            "Tropical húmedo",
+            "Polar",
+            "Ecuatorial"
+          ],
+          "respuesta": 0,
+          "link_nota": null
+        }
+      ]
+    },
+    {
+      "dia": 14,
+      "preguntas": [
+        {
+          "n": 1,
+          "pregunta": "El 'horno de barro' se usa tradicionalmente en el campo cuyano para:",
+          "opciones": [
+            "Cocinar pan y comidas al rescoldo",
+            "Fundir metales industriales",
+            "Calentar agua de pileta",
+            "Secar ladrillos únicamente"
+          ],
+          "respuesta": 0,
+          "link_nota": null
+        },
+        {
+          "n": 2,
+          "pregunta": "¿Qué fruto seco es un cultivo tradicional en Caucete y Pocito?",
+          "opciones": [
+            "La nuez",
+            "El maní",
+            "La almendra amazónica",
+            "El anacardo"
+          ],
+          "respuesta": 0,
+          "link_nota": null,
+          "verificar": true
+        },
+        {
+          "n": 3,
+          "pregunta": "¿Cómo se le llama comúnmente a la persona que trabaja podando la vid?",
+          "opciones": [
+            "Podador/viñatero",
+            "Tornero",
+            "Herrero",
+            "Cantero"
+          ],
+          "respuesta": 0,
+          "link_nota": null
+        },
+        {
+          "n": 4,
+          "pregunta": "La expresión 'tierra del sol y del buen vino' suele asociarse a:",
+          "opciones": [
+            "San Juan",
+            "Ushuaia",
+            "Formosa",
+            "Bariloche"
+          ],
+          "respuesta": 0,
+          "link_nota": null,
+          "verificar": true
+        },
+        {
+          "n": 5,
+          "pregunta": "¿Qué elemento del paisaje sanjuanino se forma al embalsar un río con una presa?",
+          "opciones": [
+            "Un dique/embalse",
+            "Un volcán",
+            "Un géiser",
+            "Un arrecife"
+          ],
+          "respuesta": 0,
+          "link_nota": null
+        }
+      ]
+    },
+    {
+      "dia": 15,
+      "preguntas": [
+        {
+          "n": 1,
+          "pregunta": "¿Qué bebida se produce principalmente con la uva cosechada en Cuyo?",
+          "opciones": [
+            "Vino",
+            "Cerveza",
+            "Sidra",
+            "Whisky"
+          ],
+          "respuesta": 0,
+          "link_nota": null
+        },
+        {
+          "n": 2,
+          "pregunta": "El 'chivito' o cabrito es una carne tradicional asociada a la cocina:",
+          "opciones": [
+            "Cuyana/criolla",
+            "Nórdica",
+            "Mediterránea",
+            "Asiática"
+          ],
+          "respuesta": 0,
+          "link_nota": null
+        },
+        {
+          "n": 3,
+          "pregunta": "¿Cómo se llama la planta trepadora de la que se cosecha la uva?",
+          "opciones": [
+            "Parra/vid",
+            "Palmera",
+            "Helecho",
+            "Bambú"
+          ],
+          "respuesta": 0,
+          "link_nota": null
+        },
+        {
+          "n": 4,
+          "pregunta": "El 'malbec' es principalmente un:",
+          "opciones": [
+            "Tipo de uva/vino",
+            "Instrumento musical",
+            "Baile folklórico",
+            "Plato criollo"
+          ],
+          "respuesta": 0,
+          "link_nota": null
+        },
+        {
+          "n": 5,
+          "pregunta": "En una peña folklórica, el 'fogón' es:",
+          "opciones": [
+            "El fuego alrededor del cual se canta y comparte",
+            "Un tipo de guitarra",
+            "Una prenda de vestir",
+            "Un plato de pastas"
+          ],
+          "respuesta": 0,
+          "link_nota": null
+        }
+      ]
+    },
+    {
+      "dia": 16,
+      "preguntas": [
+        {
+          "n": 1,
+          "pregunta": "¿Qué elemento de riego se abre y cierra para distribuir el agua entre fincas?",
+          "opciones": [
+            "La compuerta/toma",
+            "El molino de viento",
+            "El silo",
+            "El invernadero"
+          ],
+          "respuesta": 0,
+          "link_nota": null,
+          "verificar": true
+        },
+        {
+          "n": 2,
+          "pregunta": "La 'humita' es una comida tradicional a base de:",
+          "opciones": [
+            "Maíz",
+            "Papa",
+            "Arroz",
+            "Lentejas"
+          ],
+          "respuesta": 0,
+          "link_nota": null
+        },
+        {
+          "n": 3,
+          "pregunta": "¿Qué tipo de paisaje predomina entre los viñedos y el pie de la cordillera en San Juan?",
+          "opciones": [
+            "Precordillera árida con oasis de cultivo",
+            "Selva tropical densa",
+            "Pantano costero",
+            "Tundra helada"
+          ],
+          "respuesta": 0,
+          "link_nota": null
+        },
+        {
+          "n": 4,
+          "pregunta": "El 'zorro' que habita zonas áridas y de monte cuyano suele ser de la especie:",
+          "opciones": [
+            "Zorro gris/colorado regional",
+            "Zorro ártico",
+            "Zorro voador",
+            "No hay zorros en la región"
+          ],
+          "respuesta": 0,
+          "link_nota": null,
+          "verificar": true
+        },
+        {
+          "n": 5,
+          "pregunta": "¿Qué tradición está asociada a marcar el ganado con hierro caliente?",
+          "opciones": [
+            "La marcada/yerra",
+            "La vendimia",
+            "El carnaval",
+            "La trilla"
+          ],
+          "respuesta": 0,
+          "link_nota": null,
+          "verificar": true
+        }
+      ]
+    },
+    {
+      "dia": 17,
+      "preguntas": [
+        {
+          "n": 1,
+          "pregunta": "¿En qué provincia argentina nació Domingo Faustino Sarmiento?",
+          "opciones": [
+            "San Juan",
+            "Mendoza",
+            "San Luis",
+            "La Rioja"
+          ],
+          "respuesta": 0,
+          "link_nota": null
+        },
+        {
+          "n": 2,
+          "pregunta": "¿Cómo se llama el viento cálido y seco típico de la región de Cuyo?",
+          "opciones": [
+            "Pampero",
+            "Zonda",
+            "Sudestada",
+            "Puelche"
+          ],
+          "respuesta": 1,
+          "link_nota": null
+        },
+        {
+          "n": 3,
+          "pregunta": "¿Cuál es la actividad económica histórica más asociada a San Juan?",
+          "opciones": [
+            "Pesca",
+            "Vitivinicultura",
+            "Ganadería ovina",
+            "Forestación"
+          ],
+          "respuesta": 1,
+          "link_nota": null
+        },
+        {
+          "n": 4,
+          "pregunta": "¿Qué cordillera bordea a la provincia de San Juan?",
+          "opciones": [
+            "Sierras Pampeanas",
+            "Andes",
+            "Sierra de la Ventana",
+            "Macizo del Deseado"
+          ],
+          "respuesta": 1,
+          "link_nota": null
+        },
+        {
+          "n": 5,
+          "pregunta": "La 'Fiesta Nacional del Sol' se celebra principalmente en:",
+          "opciones": [
+            "San Juan",
+            "Mendoza",
+            "Catamarca",
+            "Salta"
+          ],
+          "respuesta": 0,
+          "link_nota": null
+        }
+      ]
+    },
+    {
+      "dia": 18,
+      "preguntas": [
+        {
+          "n": 1,
+          "pregunta": "¿Qué fruto es la base de la vitivinicultura cuyana?",
+          "opciones": [
+            "Manzana",
+            "Uva",
+            "Durazno",
+            "Ciruela"
+          ],
+          "respuesta": 1,
+          "link_nota": null
+        },
+        {
+          "n": 2,
+          "pregunta": "¿Cómo se llama la danza tradicional emblemática de Cuyo?",
+          "opciones": [
+            "Chamamé",
+            "Cueca cuyana",
+            "Malambo puro",
+            "Candombe"
+          ],
+          "respuesta": 1,
+          "link_nota": null
+        },
+        {
+          "n": 3,
+          "pregunta": "¿Qué instrumento es central en la música folklórica cuyana?",
+          "opciones": [
+            "Bandoneón",
+            "Guitarra",
+            "Trompeta",
+            "Saxo"
+          ],
+          "respuesta": 1,
+          "link_nota": null
+        },
+        {
+          "n": 4,
+          "pregunta": "Un sistema de canales para llevar agua a los cultivos se llama:",
+          "opciones": [
+            "Acequia",
+            "Tranquera",
+            "Alambrado",
+            "Corral"
+          ],
+          "respuesta": 0,
+          "link_nota": null
+        },
+        {
+          "n": 5,
+          "pregunta": "San Juan suele describirse, por su clima árido y sus oasis de cultivo, como:",
+          "opciones": [
+            "Un oasis en el desierto",
+            "Una selva subtropical",
+            "Una zona de estepa fría",
+            "Un humedal"
+          ],
+          "respuesta": 0,
+          "link_nota": null
+        }
+      ]
+    },
+    {
+      "dia": 19,
+      "preguntas": [
+        {
+          "n": 1,
+          "pregunta": "¿Cuál es la capital de la provincia de San Juan?",
+          "opciones": [
+            "Rawson",
+            "Chimbas",
+            "San Juan (Capital)",
+            "Pocito"
+          ],
+          "respuesta": 2,
+          "link_nota": null
+        },
+        {
+          "n": 2,
+          "pregunta": "¿Qué departamento sanjuanino le da nombre al viento característico de la región?",
+          "opciones": [
+            "Ullum",
+            "Zonda",
+            "Iglesia",
+            "Calingasta"
+          ],
+          "respuesta": 1,
+          "link_nota": null
+        },
+        {
+          "n": 3,
+          "pregunta": "El embalse Ullum se usa principalmente para:",
+          "opciones": [
+            "Riego y generación de energía",
+            "Pesca deportiva exclusiva",
+            "Navegación de carga",
+            "Extracción de sal"
+          ],
+          "respuesta": 0,
+          "link_nota": null,
+          "verificar": true
+        },
+        {
+          "n": 4,
+          "pregunta": "¿Qué cultivo, además de la vid, es tradicional en el departamento de Pocito?",
+          "opciones": [
+            "Nuez",
+            "Café",
+            "Cacao",
+            "Arroz"
+          ],
+          "respuesta": 0,
+          "link_nota": null,
+          "verificar": true
+        },
+        {
+          "n": 5,
+          "pregunta": "El fruto emblemático de la localidad de Media Agua es:",
+          "opciones": [
+            "El melón",
+            "El coco",
+            "La piña",
+            "El plátano"
+          ],
+          "respuesta": 0,
+          "link_nota": null,
+          "verificar": true
+        }
+      ]
+    },
+    {
+      "dia": 20,
+      "preguntas": [
+        {
+          "n": 1,
+          "pregunta": "¿Qué recipiente se usa tradicionalmente para añejar el vino?",
+          "opciones": [
+            "Tonel de madera",
+            "Bidón plástico",
+            "Damajuana de vidrio solamente",
+            "Bolsa de arpillera"
+          ],
+          "respuesta": 0,
+          "link_nota": null
+        },
+        {
+          "n": 2,
+          "pregunta": "¿Cómo se llama la comida a base de maíz, típica del norte y Cuyo argentino?",
+          "opciones": [
+            "Locro",
+            "Sushi",
+            "Paella",
+            "Risotto"
+          ],
+          "respuesta": 0,
+          "link_nota": null
+        },
+        {
+          "n": 3,
+          "pregunta": "El 'arrope' es un dulce tradicional cuyano elaborado principalmente con:",
+          "opciones": [
+            "Frutas cocidas en almíbar",
+            "Leche condensada",
+            "Chocolate",
+            "Miel de caña"
+          ],
+          "respuesta": 0,
+          "link_nota": null,
+          "verificar": true
+        },
+        {
+          "n": 4,
+          "pregunta": "¿Qué ave es un símbolo habitual de los Andes en la fauna regional?",
+          "opciones": [
+            "Pingüino",
+            "Cóndor",
+            "Flamenco rosado",
+            "Tucán"
+          ],
+          "respuesta": 1,
+          "link_nota": null
+        },
+        {
+          "n": 5,
+          "pregunta": "El guanaco es un animal típico de:",
+          "opciones": [
+            "La selva misionera",
+            "Las zonas andinas y precordilleranas",
+            "Los esteros del litoral",
+            "Las costas patagónicas"
+          ],
+          "respuesta": 1,
+          "link_nota": null
+        }
+      ]
+    },
+    {
+      "dia": 21,
+      "preguntas": [
+        {
+          "n": 1,
+          "pregunta": "¿Qué material se usa tradicionalmente para las paredes de las construcciones rurales cuyanas?",
+          "opciones": [
+            "Adobe",
+            "Concreto armado exclusivamente",
+            "Vidrio",
+            "Bambú"
+          ],
+          "respuesta": 0,
+          "link_nota": null
+        },
+        {
+          "n": 2,
+          "pregunta": "La 'tonada' es, en la música cuyana, principalmente:",
+          "opciones": [
+            "Un género/canción de raíz cuyana",
+            "Un instrumento de percusión",
+            "Un tipo de vino",
+            "Una danza de salón europea"
+          ],
+          "respuesta": 0,
+          "link_nota": null
+        },
+        {
+          "n": 3,
+          "pregunta": "¿Qué se celebra tradicionalmente en la Fiesta de la Vendimia?",
+          "opciones": [
+            "La cosecha de la uva",
+            "El inicio del invierno",
+            "La siembra de trigo",
+            "La llegada de la lluvia"
+          ],
+          "respuesta": 0,
+          "link_nota": null
+        },
+        {
+          "n": 4,
+          "pregunta": "El desierto que rodea a los oasis cultivados de San Juan se conoce, en general, como parte de:",
+          "opciones": [
+            "La región de Cuyo árido",
+            "La selva amazónica",
+            "La puna húmeda",
+            "El litoral fluvial"
+          ],
+          "respuesta": 0,
+          "link_nota": null
+        },
+        {
+          "n": 5,
+          "pregunta": "¿Qué tipo de clima predomina en la provincia de San Juan?",
+          "opciones": [
+            "Árido y seco, con oasis de riego",
+            "Tropical húmedo",
+            "Polar",
+            "Ecuatorial"
+          ],
+          "respuesta": 0,
+          "link_nota": null
+        }
+      ]
+    },
+    {
+      "dia": 22,
+      "preguntas": [
+        {
+          "n": 1,
+          "pregunta": "El 'horno de barro' se usa tradicionalmente en el campo cuyano para:",
+          "opciones": [
+            "Cocinar pan y comidas al rescoldo",
+            "Fundir metales industriales",
+            "Calentar agua de pileta",
+            "Secar ladrillos únicamente"
+          ],
+          "respuesta": 0,
+          "link_nota": null
+        },
+        {
+          "n": 2,
+          "pregunta": "¿Qué fruto seco es un cultivo tradicional en Caucete y Pocito?",
+          "opciones": [
+            "La nuez",
+            "El maní",
+            "La almendra amazónica",
+            "El anacardo"
+          ],
+          "respuesta": 0,
+          "link_nota": null,
+          "verificar": true
+        },
+        {
+          "n": 3,
+          "pregunta": "¿Cómo se le llama comúnmente a la persona que trabaja podando la vid?",
+          "opciones": [
+            "Podador/viñatero",
+            "Tornero",
+            "Herrero",
+            "Cantero"
+          ],
+          "respuesta": 0,
+          "link_nota": null
+        },
+        {
+          "n": 4,
+          "pregunta": "La expresión 'tierra del sol y del buen vino' suele asociarse a:",
+          "opciones": [
+            "San Juan",
+            "Ushuaia",
+            "Formosa",
+            "Bariloche"
+          ],
+          "respuesta": 0,
+          "link_nota": null,
+          "verificar": true
+        },
+        {
+          "n": 5,
+          "pregunta": "¿Qué elemento del paisaje sanjuanino se forma al embalsar un río con una presa?",
+          "opciones": [
+            "Un dique/embalse",
+            "Un volcán",
+            "Un géiser",
+            "Un arrecife"
+          ],
+          "respuesta": 0,
+          "link_nota": null
+        }
+      ]
+    },
+    {
+      "dia": 23,
+      "preguntas": [
+        {
+          "n": 1,
+          "pregunta": "¿Qué bebida se produce principalmente con la uva cosechada en Cuyo?",
+          "opciones": [
+            "Vino",
+            "Cerveza",
+            "Sidra",
+            "Whisky"
+          ],
+          "respuesta": 0,
+          "link_nota": null
+        },
+        {
+          "n": 2,
+          "pregunta": "El 'chivito' o cabrito es una carne tradicional asociada a la cocina:",
+          "opciones": [
+            "Cuyana/criolla",
+            "Nórdica",
+            "Mediterránea",
+            "Asiática"
+          ],
+          "respuesta": 0,
+          "link_nota": null
+        },
+        {
+          "n": 3,
+          "pregunta": "¿Cómo se llama la planta trepadora de la que se cosecha la uva?",
+          "opciones": [
+            "Parra/vid",
+            "Palmera",
+            "Helecho",
+            "Bambú"
+          ],
+          "respuesta": 0,
+          "link_nota": null
+        },
+        {
+          "n": 4,
+          "pregunta": "El 'malbec' es principalmente un:",
+          "opciones": [
+            "Tipo de uva/vino",
+            "Instrumento musical",
+            "Baile folklórico",
+            "Plato criollo"
+          ],
+          "respuesta": 0,
+          "link_nota": null
+        },
+        {
+          "n": 5,
+          "pregunta": "En una peña folklórica, el 'fogón' es:",
+          "opciones": [
+            "El fuego alrededor del cual se canta y comparte",
+            "Un tipo de guitarra",
+            "Una prenda de vestir",
+            "Un plato de pastas"
+          ],
+          "respuesta": 0,
+          "link_nota": null
+        }
+      ]
+    },
+    {
+      "dia": 24,
+      "preguntas": [
+        {
+          "n": 1,
+          "pregunta": "¿Qué elemento de riego se abre y cierra para distribuir el agua entre fincas?",
+          "opciones": [
+            "La compuerta/toma",
+            "El molino de viento",
+            "El silo",
+            "El invernadero"
+          ],
+          "respuesta": 0,
+          "link_nota": null,
+          "verificar": true
+        },
+        {
+          "n": 2,
+          "pregunta": "La 'humita' es una comida tradicional a base de:",
+          "opciones": [
+            "Maíz",
+            "Papa",
+            "Arroz",
+            "Lentejas"
+          ],
+          "respuesta": 0,
+          "link_nota": null
+        },
+        {
+          "n": 3,
+          "pregunta": "¿Qué tipo de paisaje predomina entre los viñedos y el pie de la cordillera en San Juan?",
+          "opciones": [
+            "Precordillera árida con oasis de cultivo",
+            "Selva tropical densa",
+            "Pantano costero",
+            "Tundra helada"
+          ],
+          "respuesta": 0,
+          "link_nota": null
+        },
+        {
+          "n": 4,
+          "pregunta": "El 'zorro' que habita zonas áridas y de monte cuyano suele ser de la especie:",
+          "opciones": [
+            "Zorro gris/colorado regional",
+            "Zorro ártico",
+            "Zorro voador",
+            "No hay zorros en la región"
+          ],
+          "respuesta": 0,
+          "link_nota": null,
+          "verificar": true
+        },
+        {
+          "n": 5,
+          "pregunta": "¿Qué tradición está asociada a marcar el ganado con hierro caliente?",
+          "opciones": [
+            "La marcada/yerra",
+            "La vendimia",
+            "El carnaval",
+            "La trilla"
+          ],
+          "respuesta": 0,
+          "link_nota": null,
+          "verificar": true
+        }
+      ]
+    },
+    {
+      "dia": 25,
+      "preguntas": [
+        {
+          "n": 1,
+          "pregunta": "¿En qué provincia argentina nació Domingo Faustino Sarmiento?",
+          "opciones": [
+            "San Juan",
+            "Mendoza",
+            "San Luis",
+            "La Rioja"
+          ],
+          "respuesta": 0,
+          "link_nota": null
+        },
+        {
+          "n": 2,
+          "pregunta": "¿Cómo se llama el viento cálido y seco típico de la región de Cuyo?",
+          "opciones": [
+            "Pampero",
+            "Zonda",
+            "Sudestada",
+            "Puelche"
+          ],
+          "respuesta": 1,
+          "link_nota": null
+        },
+        {
+          "n": 3,
+          "pregunta": "¿Cuál es la actividad económica histórica más asociada a San Juan?",
+          "opciones": [
+            "Pesca",
+            "Vitivinicultura",
+            "Ganadería ovina",
+            "Forestación"
+          ],
+          "respuesta": 1,
+          "link_nota": null
+        },
+        {
+          "n": 4,
+          "pregunta": "¿Qué cordillera bordea a la provincia de San Juan?",
+          "opciones": [
+            "Sierras Pampeanas",
+            "Andes",
+            "Sierra de la Ventana",
+            "Macizo del Deseado"
+          ],
+          "respuesta": 1,
+          "link_nota": null
+        },
+        {
+          "n": 5,
+          "pregunta": "La 'Fiesta Nacional del Sol' se celebra principalmente en:",
+          "opciones": [
+            "San Juan",
+            "Mendoza",
+            "Catamarca",
+            "Salta"
+          ],
+          "respuesta": 0,
+          "link_nota": null
+        }
+      ]
+    },
+    {
+      "dia": 26,
+      "preguntas": [
+        {
+          "n": 1,
+          "pregunta": "¿Qué fruto es la base de la vitivinicultura cuyana?",
+          "opciones": [
+            "Manzana",
+            "Uva",
+            "Durazno",
+            "Ciruela"
+          ],
+          "respuesta": 1,
+          "link_nota": null
+        },
+        {
+          "n": 2,
+          "pregunta": "¿Cómo se llama la danza tradicional emblemática de Cuyo?",
+          "opciones": [
+            "Chamamé",
+            "Cueca cuyana",
+            "Malambo puro",
+            "Candombe"
+          ],
+          "respuesta": 1,
+          "link_nota": null
+        },
+        {
+          "n": 3,
+          "pregunta": "¿Qué instrumento es central en la música folklórica cuyana?",
+          "opciones": [
+            "Bandoneón",
+            "Guitarra",
+            "Trompeta",
+            "Saxo"
+          ],
+          "respuesta": 1,
+          "link_nota": null
+        },
+        {
+          "n": 4,
+          "pregunta": "Un sistema de canales para llevar agua a los cultivos se llama:",
+          "opciones": [
+            "Acequia",
+            "Tranquera",
+            "Alambrado",
+            "Corral"
+          ],
+          "respuesta": 0,
+          "link_nota": null
+        },
+        {
+          "n": 5,
+          "pregunta": "San Juan suele describirse, por su clima árido y sus oasis de cultivo, como:",
+          "opciones": [
+            "Un oasis en el desierto",
+            "Una selva subtropical",
+            "Una zona de estepa fría",
+            "Un humedal"
+          ],
+          "respuesta": 0,
+          "link_nota": null
+        }
+      ]
+    },
+    {
+      "dia": 27,
+      "preguntas": [
+        {
+          "n": 1,
+          "pregunta": "¿Cuál es la capital de la provincia de San Juan?",
+          "opciones": [
+            "Rawson",
+            "Chimbas",
+            "San Juan (Capital)",
+            "Pocito"
+          ],
+          "respuesta": 2,
+          "link_nota": null
+        },
+        {
+          "n": 2,
+          "pregunta": "¿Qué departamento sanjuanino le da nombre al viento característico de la región?",
+          "opciones": [
+            "Ullum",
+            "Zonda",
+            "Iglesia",
+            "Calingasta"
+          ],
+          "respuesta": 1,
+          "link_nota": null
+        },
+        {
+          "n": 3,
+          "pregunta": "El embalse Ullum se usa principalmente para:",
+          "opciones": [
+            "Riego y generación de energía",
+            "Pesca deportiva exclusiva",
+            "Navegación de carga",
+            "Extracción de sal"
+          ],
+          "respuesta": 0,
+          "link_nota": null,
+          "verificar": true
+        },
+        {
+          "n": 4,
+          "pregunta": "¿Qué cultivo, además de la vid, es tradicional en el departamento de Pocito?",
+          "opciones": [
+            "Nuez",
+            "Café",
+            "Cacao",
+            "Arroz"
+          ],
+          "respuesta": 0,
+          "link_nota": null,
+          "verificar": true
+        },
+        {
+          "n": 5,
+          "pregunta": "El fruto emblemático de la localidad de Media Agua es:",
+          "opciones": [
+            "El melón",
+            "El coco",
+            "La piña",
+            "El plátano"
+          ],
+          "respuesta": 0,
+          "link_nota": null,
+          "verificar": true
+        }
+      ]
+    },
+    {
+      "dia": 28,
+      "preguntas": [
+        {
+          "n": 1,
+          "pregunta": "¿Qué recipiente se usa tradicionalmente para añejar el vino?",
+          "opciones": [
+            "Tonel de madera",
+            "Bidón plástico",
+            "Damajuana de vidrio solamente",
+            "Bolsa de arpillera"
+          ],
+          "respuesta": 0,
+          "link_nota": null
+        },
+        {
+          "n": 2,
+          "pregunta": "¿Cómo se llama la comida a base de maíz, típica del norte y Cuyo argentino?",
+          "opciones": [
+            "Locro",
+            "Sushi",
+            "Paella",
+            "Risotto"
+          ],
+          "respuesta": 0,
+          "link_nota": null
+        },
+        {
+          "n": 3,
+          "pregunta": "El 'arrope' es un dulce tradicional cuyano elaborado principalmente con:",
+          "opciones": [
+            "Frutas cocidas en almíbar",
+            "Leche condensada",
+            "Chocolate",
+            "Miel de caña"
+          ],
+          "respuesta": 0,
+          "link_nota": null,
+          "verificar": true
+        },
+        {
+          "n": 4,
+          "pregunta": "¿Qué ave es un símbolo habitual de los Andes en la fauna regional?",
+          "opciones": [
+            "Pingüino",
+            "Cóndor",
+            "Flamenco rosado",
+            "Tucán"
+          ],
+          "respuesta": 1,
+          "link_nota": null
+        },
+        {
+          "n": 5,
+          "pregunta": "El guanaco es un animal típico de:",
+          "opciones": [
+            "La selva misionera",
+            "Las zonas andinas y precordilleranas",
+            "Los esteros del litoral",
+            "Las costas patagónicas"
+          ],
+          "respuesta": 1,
+          "link_nota": null
+        }
+      ]
+    },
+    {
+      "dia": 29,
+      "preguntas": [
+        {
+          "n": 1,
+          "pregunta": "¿Qué material se usa tradicionalmente para las paredes de las construcciones rurales cuyanas?",
+          "opciones": [
+            "Adobe",
+            "Concreto armado exclusivamente",
+            "Vidrio",
+            "Bambú"
+          ],
+          "respuesta": 0,
+          "link_nota": null
+        },
+        {
+          "n": 2,
+          "pregunta": "La 'tonada' es, en la música cuyana, principalmente:",
+          "opciones": [
+            "Un género/canción de raíz cuyana",
+            "Un instrumento de percusión",
+            "Un tipo de vino",
+            "Una danza de salón europea"
+          ],
+          "respuesta": 0,
+          "link_nota": null
+        },
+        {
+          "n": 3,
+          "pregunta": "¿Qué se celebra tradicionalmente en la Fiesta de la Vendimia?",
+          "opciones": [
+            "La cosecha de la uva",
+            "El inicio del invierno",
+            "La siembra de trigo",
+            "La llegada de la lluvia"
+          ],
+          "respuesta": 0,
+          "link_nota": null
+        },
+        {
+          "n": 4,
+          "pregunta": "El desierto que rodea a los oasis cultivados de San Juan se conoce, en general, como parte de:",
+          "opciones": [
+            "La región de Cuyo árido",
+            "La selva amazónica",
+            "La puna húmeda",
+            "El litoral fluvial"
+          ],
+          "respuesta": 0,
+          "link_nota": null
+        },
+        {
+          "n": 5,
+          "pregunta": "¿Qué tipo de clima predomina en la provincia de San Juan?",
+          "opciones": [
+            "Árido y seco, con oasis de riego",
+            "Tropical húmedo",
+            "Polar",
+            "Ecuatorial"
+          ],
+          "respuesta": 0,
+          "link_nota": null
+        }
+      ]
+    },
+    {
+      "dia": 30,
+      "preguntas": [
+        {
+          "n": 1,
+          "pregunta": "El 'horno de barro' se usa tradicionalmente en el campo cuyano para:",
+          "opciones": [
+            "Cocinar pan y comidas al rescoldo",
+            "Fundir metales industriales",
+            "Calentar agua de pileta",
+            "Secar ladrillos únicamente"
+          ],
+          "respuesta": 0,
+          "link_nota": null
+        },
+        {
+          "n": 2,
+          "pregunta": "¿Qué fruto seco es un cultivo tradicional en Caucete y Pocito?",
+          "opciones": [
+            "La nuez",
+            "El maní",
+            "La almendra amazónica",
+            "El anacardo"
+          ],
+          "respuesta": 0,
+          "link_nota": null,
+          "verificar": true
+        },
+        {
+          "n": 3,
+          "pregunta": "¿Cómo se le llama comúnmente a la persona que trabaja podando la vid?",
+          "opciones": [
+            "Podador/viñatero",
+            "Tornero",
+            "Herrero",
+            "Cantero"
+          ],
+          "respuesta": 0,
+          "link_nota": null
+        },
+        {
+          "n": 4,
+          "pregunta": "La expresión 'tierra del sol y del buen vino' suele asociarse a:",
+          "opciones": [
+            "San Juan",
+            "Ushuaia",
+            "Formosa",
+            "Bariloche"
+          ],
+          "respuesta": 0,
+          "link_nota": null,
+          "verificar": true
+        },
+        {
+          "n": 5,
+          "pregunta": "¿Qué elemento del paisaje sanjuanino se forma al embalsar un río con una presa?",
+          "opciones": [
+            "Un dique/embalse",
+            "Un volcán",
+            "Un géiser",
+            "Un arrecife"
+          ],
+          "respuesta": 0,
+          "link_nota": null
+        }
+      ]
+    }
+  ]
+}
