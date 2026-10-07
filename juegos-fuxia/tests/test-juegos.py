@@ -44,6 +44,11 @@ try:
         p = ctx.new_page(); p.on('pageerror', lambda e: errores.append('index: ' + str(e)))
         p.goto(BASE + '/index.html'); p.wait_for_selector('.card'); p.wait_for_timeout(700)
         chk('index: 3 tarjetas', p.locator('.card').count() == 3)
+        chk('index: la tarjeta dice solo "Trivia"',
+            p.locator('.card[data-juego="trivia"] h2').inner_text().strip() == 'Trivia',
+            p.locator('.card[data-juego="trivia"] h2').inner_text())
+        chk('index: sin rastros de "Cuyana"',
+            'cuyana' not in p.locator('body').inner_text().lower())
         hoy = p.locator('#hoy').inner_text()
         chk('index: el ticker carga el dia', 'desafío #' in hoy or 'Arrancamos' in hoy, hoy)
         chk('index: el logo de Fuxia carga', p.evaluate(
@@ -189,6 +194,8 @@ try:
             p6.click('#fg-copiar'); p6.wait_for_timeout(500)
             t6 = p6.evaluate('() => navigator.clipboard.readText()')
             chk('trivia: comparte marca y link', 'FUXIA GAMES' in t6 and 'mansodiario.com' in t6, t6)
+            chk('trivia: ya no se llama "Cuyana"',
+                'cuyana' not in t6.lower() and 'cuyana' not in p6.locator('body').inner_text().lower(), t6)
             chk('trivia: NO revela preguntas ni respuestas', all(len(l) < 60 for l in t6.split('\n')), t6)
             p6.reload(); p6.wait_for_selector('.fg-result'); p6.wait_for_timeout(300)
             chk('trivia: al recargar muestra el resultado', p6.locator('.fg-result').is_visible())

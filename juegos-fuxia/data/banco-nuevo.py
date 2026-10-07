@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Preguntas nuevas de Trivia Cuyana, fuera de San Juan y Cuyo.
+"""Preguntas nuevas de Trivia, fuera de San Juan y Cuyo.
 
 Cada entrada es (tema, pregunta, respuesta_correcta, [3 distractores], verificar).
 La correcta va SIEMPRE primera acá; armar-trivia.py baraja las opciones y calcula

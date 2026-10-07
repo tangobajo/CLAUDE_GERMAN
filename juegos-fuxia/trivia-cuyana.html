@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Trivia Cuyana · Fuxia Games</title>
+<title>Trivia · Fuxia Games</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@500;600;700&family=Barlow+Condensed:ital,wght@0,600;0,700;1,700;1,800&family=Merriweather:wght@700;900&display=swap" rel="stylesheet">
@@ -40,7 +40,7 @@
      aria-label="Ir a la portada de Manso Diario"><span class="logo">MANSO<b>!</b>DIARIO</span><small>Juegos · San Juan · Argentina</small></a>
   <div class="fg-streak" id="racha" title="Racha">🔥 0</div>
 </header>
-<div class="fg-titlebar"><h1>TRIVIA CUYANA<b>!</b></h1><a class="fg-back" href="index.html">← Juegos</a></div>
+<div class="fg-titlebar"><h1>TRIVIA<b>!</b></h1><a class="fg-back" href="index.html">← Juegos</a></div>
 <div class="fg-wrap">
   <div id="app"><p class="fg-sub">Cargando…</p></div>
 </div>
@@ -102,12 +102,12 @@
       FG.guardar(JUEGO, 'hoy', estado); actualizarRacha(); verResultado();
     }
     function textoCompartir() {
-      return 'FUXIA GAMES · Trivia Cuyana #' + ctx.diaN + ' ' + aciertos() + '/' + preguntas.length + '\n' +
+      return 'FUXIA GAMES · Trivia #' + ctx.diaN + ' ' + aciertos() + '/' + preguntas.length + '\n' +
         estado.respuestas.map(function (r, i) { return r === preguntas[i].respuesta ? '🟩' : '🟥'; }).join('');
     }
     function verResultado() {
       var n = aciertos(), t = preguntas.length;
-      var msg = n === t ? '¡Sos un experto cuyano!' : n >= 3 ? '¡Muy bien!' : n >= 1 ? 'Seguí practicando' : 'Mañana hay revancha';
+      var msg = n === t ? '¡Puntaje perfecto!' : n >= 3 ? '¡Muy bien!' : n >= 1 ? 'Seguí practicando' : 'Mañana hay revancha';
       app.innerHTML = barra() + '<div class="fg-result"><h2 class="gradient-text">' + msg + '</h2>' +
         '<p>Acertaste <b style="color:var(--md-dark)">' + n + ' de ' + t + '</b> preguntas.</p>' +
         '<div class="fg-grid-share">' + estado.respuestas.map(function (r, i) { return r === preguntas[i].respuesta ? '🟩' : '🟥'; }).join('') + '</div>' +

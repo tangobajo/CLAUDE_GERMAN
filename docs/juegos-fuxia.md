@@ -9,7 +9,7 @@ juegos-fuxia/
 ├── index.html              portada con las 3 tarjetas
 ├── palabra-del-dia.html    Wordle en español
 ├── agrupa.html             Connections
-├── trivia-cuyana.html      5 preguntas por día
+├── trivia-cuyana.html      Trivia · 5 preguntas por día
 ├── shared.css              estilos comunes
 ├── shared.js               FG.*: día, rachas, compartir
 ├── logo-fuxia-games.png
@@ -73,6 +73,13 @@ Solo 23 de los 30 días traen contenido distinto. Son idénticos entre sí: 5/17
 (ver §2).
 
 ## 2. El banco de Trivia
+
+> **El juego se llama "Trivia", el archivo sigue siendo `trivia-cuyana.html`.** Se dejó así
+> a propósito: si ya está embebido en WordPress, renombrarlo rompe el `src` del iframe y la
+> página queda en blanco. El nombre del archivo no lo ve el lector. Si alguna vez querés
+> renombrarlo, hay que cambiar también el `href` de la tarjeta en `index.html` y el `src`
+> del iframe en WordPress, en ese orden.
+
 
 ### Cómo está armado
 
