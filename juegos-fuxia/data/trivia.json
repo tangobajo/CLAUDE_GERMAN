@@ -14,7 +14,6 @@
      ],
      "respuesta": "A",
      "tema": "san-juan",
-     "link_nota": null,
      "verificar": false
     },
     {
@@ -27,7 +26,6 @@
      ],
      "respuesta": "B",
      "tema": "argentina",
-     "link_nota": null,
      "verificar": false
     },
     {
@@ -40,7 +38,6 @@
      ],
      "respuesta": "D",
      "tema": "deportes",
-     "link_nota": null,
      "verificar": false
     },
     {
@@ -53,7 +50,6 @@
      ],
      "respuesta": "D",
      "tema": "espectaculos",
-     "link_nota": null,
      "verificar": false
     },
     {
@@ -66,7 +62,6 @@
      ],
      "respuesta": "B",
      "tema": "ciencia",
-     "link_nota": null,
      "verificar": false
     }
    ]
@@ -84,7 +79,6 @@
      ],
      "respuesta": "B",
      "tema": "san-juan",
-     "link_nota": null,
      "verificar": false
     },
     {
@@ -97,7 +91,6 @@
      ],
      "respuesta": "B",
      "tema": "san-juan",
-     "link_nota": null,
      "verificar": false
     },
     {
@@ -110,7 +103,6 @@
      ],
      "respuesta": "A",
      "tema": "argentina",
-     "link_nota": null,
      "verificar": false
     },
     {
@@ -123,7 +115,6 @@
      ],
      "respuesta": "D",
      "tema": "deportes",
-     "link_nota": null,
      "verificar": true
     },
     {
@@ -136,7 +127,6 @@
      ],
      "respuesta": "D",
      "tema": "espectaculos",
-     "link_nota": null,
      "verificar": false
     }
    ]
@@ -154,7 +144,6 @@
      ],
      "respuesta": "B",
      "tema": "san-juan",
-     "link_nota": null,
      "verificar": false
     },
     {
@@ -167,7 +156,6 @@
      ],
      "respuesta": "B",
      "tema": "ciencia",
-     "link_nota": null,
      "verificar": false
     },
     {
@@ -180,7 +168,6 @@
      ],
      "respuesta": "D",
      "tema": "san-juan",
-     "link_nota": null,
      "verificar": false
     },
     {
@@ -193,7 +180,6 @@
      ],
      "respuesta": "D",
      "tema": "argentina",
-     "link_nota": null,
      "verificar": false
     },
     {
@@ -206,7 +192,6 @@
      ],
      "respuesta": "B",
      "tema": "deportes",
-     "link_nota": null,
      "verificar": false
     }
    ]
@@ -224,7 +209,6 @@
      ],
      "respuesta": "A",
      "tema": "san-juan",
-     "link_nota": null,
      "verificar": false
     },
     {
@@ -237,7 +221,6 @@
      ],
      "respuesta": "D",
      "tema": "espectaculos",
-     "link_nota": null,
      "verificar": false
     },
     {
@@ -250,7 +233,6 @@
      ],
      "respuesta": "A",
      "tema": "ciencia",
-     "link_nota": null,
      "verificar": true
     },
     {
@@ -263,7 +245,6 @@
      ],
      "respuesta": "C",
      "tema": "san-juan",
-     "link_nota": null,
      "verificar": false
     },
     {
@@ -276,7 +257,6 @@
      ],
      "respuesta": "A",
      "tema": "argentina",
-     "link_nota": null,
      "verificar": false
     }
    ]
@@ -294,7 +274,6 @@
      ],
      "respuesta": "A",
      "tema": "san-juan",
-     "link_nota": null,
      "verificar": false
     },
     {
@@ -307,7 +286,6 @@
      ],
      "respuesta": "B",
      "tema": "deportes",
-     "link_nota": null,
      "verificar": false
     },
     {
@@ -320,7 +298,6 @@
      ],
      "respuesta": "B",
      "tema": "espectaculos",
-     "link_nota": null,
      "verificar": false
     },
     {
@@ -333,7 +310,6 @@
      ],
      "respuesta": "D",
      "tema": "ciencia",
-     "link_nota": null,
      "verificar": false
     },
     {
@@ -346,7 +322,6 @@
      ],
      "respuesta": "B",
      "tema": "san-juan",
-     "link_nota": null,
      "verificar": false
     }
    ]
@@ -364,7 +339,6 @@
      ],
      "respuesta": "D",
      "tema": "san-juan",
-     "link_nota": null,
      "verificar": false
     },
     {
@@ -377,7 +351,6 @@
      ],
      "respuesta": "B",
      "tema": "argentina",
-     "link_nota": null,
      "verificar": false
     },
     {
@@ -390,7 +363,6 @@
      ],
      "respuesta": "B",
      "tema": "deportes",
-     "link_nota": null,
      "verificar": false
     },
     {
@@ -403,7 +375,6 @@
      ],
      "respuesta": "C",
      "tema": "espectaculos",
-     "link_nota": null,
      "verificar": false
     },
     {
@@ -416,7 +387,6 @@
      ],
      "respuesta": "A",
      "tema": "ciencia",
-     "link_nota": null,
      "verificar": false
     }
    ]
@@ -434,7 +404,6 @@
      ],
      "respuesta": "A",
      "tema": "san-juan",
-     "link_nota": null,
      "verificar": false
     },
     {
@@ -447,7 +416,6 @@
      ],
      "respuesta": "D",
      "tema": "san-juan",
-     "link_nota": null,
      "verificar": false
     },
     {
@@ -460,7 +428,6 @@
      ],
      "respuesta": "B",
      "tema": "argentina",
-     "link_nota": null,
      "verificar": true
     },
     {
@@ -473,7 +440,6 @@
      ],
      "respuesta": "C",
      "tema": "deportes",
-     "link_nota": null,
      "verificar": false
     },
     {
@@ -486,7 +452,6 @@
      ],
      "respuesta": "B",
      "tema": "espectaculos",
-     "link_nota": null,
      "verificar": false
     }
    ]
@@ -504,7 +469,6 @@
      ],
      "respuesta": "D",
      "tema": "san-juan",
-     "link_nota": null,
      "verificar": false
     },
     {
@@ -517,7 +481,6 @@
      ],
      "respuesta": "B",
      "tema": "ciencia",
-     "link_nota": null,
      "verificar": false
     },
     {
@@ -530,7 +493,6 @@
      ],
      "respuesta": "B",
      "tema": "san-juan",
-     "link_nota": null,
      "verificar": true
     },
     {
@@ -543,7 +505,6 @@
      ],
      "respuesta": "A",
      "tema": "argentina",
-     "link_nota": null,
      "verificar": false
     },
     {
@@ -556,7 +517,6 @@
      ],
      "respuesta": "A",
      "tema": "deportes",
-     "link_nota": null,
      "verificar": false
     }
    ]
@@ -574,7 +534,6 @@
      ],
      "respuesta": "C",
      "tema": "san-juan",
-     "link_nota": null,
      "verificar": false
     },
     {
@@ -587,7 +546,6 @@
      ],
      "respuesta": "D",
      "tema": "espectaculos",
-     "link_nota": null,
      "verificar": false
     },
     {
@@ -600,7 +558,6 @@
      ],
      "respuesta": "A",
      "tema": "ciencia",
-     "link_nota": null,
      "verificar": false
     },
     {
@@ -613,7 +570,6 @@
      ],
      "respuesta": "C",
      "tema": "san-juan",
-     "link_nota": null,
      "verificar": false
     },
     {
@@ -626,7 +582,6 @@
      ],
      "respuesta": "C",
      "tema": "argentina",
-     "link_nota": null,
      "verificar": false
     }
    ]
@@ -644,7 +599,6 @@
      ],
      "respuesta": "C",
      "tema": "san-juan",
-     "link_nota": null,
      "verificar": false
     },
     {
@@ -657,7 +611,6 @@
      ],
      "respuesta": "D",
      "tema": "deportes",
-     "link_nota": null,
      "verificar": false
     },
     {
@@ -670,7 +623,6 @@
      ],
      "respuesta": "D",
      "tema": "espectaculos",
-     "link_nota": null,
      "verificar": false
     },
     {
@@ -683,7 +635,6 @@
      ],
      "respuesta": "A",
      "tema": "ciencia",
-     "link_nota": null,
      "verificar": false
     },
     {
@@ -696,7 +647,6 @@
      ],
      "respuesta": "A",
      "tema": "san-juan",
-     "link_nota": null,
      "verificar": false
     }
    ]
@@ -714,7 +664,6 @@
      ],
      "respuesta": "C",
      "tema": "san-juan",
-     "link_nota": null,
      "verificar": false
     },
     {
@@ -727,7 +676,6 @@
      ],
      "respuesta": "B",
      "tema": "argentina",
-     "link_nota": null,
      "verificar": false
     },
     {
@@ -740,7 +688,6 @@
      ],
      "respuesta": "A",
      "tema": "deportes",
-     "link_nota": null,
      "verificar": false
     },
     {
@@ -753,7 +700,6 @@
      ],
      "respuesta": "D",
      "tema": "espectaculos",
-     "link_nota": null,
      "verificar": false
     },
     {
@@ -766,7 +712,6 @@
      ],
      "respuesta": "D",
      "tema": "ciencia",
-     "link_nota": null,
      "verificar": false
     }
    ]
@@ -784,7 +729,6 @@
      ],
      "respuesta": "D",
      "tema": "san-juan",
-     "link_nota": null,
      "verificar": false
     },
     {
@@ -797,7 +741,6 @@
      ],
      "respuesta": "B",
      "tema": "san-juan",
-     "link_nota": null,
      "verificar": true
     },
     {
@@ -810,7 +753,6 @@
      ],
      "respuesta": "B",
      "tema": "argentina",
-     "link_nota": null,
      "verificar": false
     },
     {
@@ -823,7 +765,6 @@
      ],
      "respuesta": "D",
      "tema": "deportes",
-     "link_nota": null,
      "verificar": false
     },
     {
@@ -836,7 +777,6 @@
      ],
      "respuesta": "C",
      "tema": "espectaculos",
-     "link_nota": null,
      "verificar": false
     }
    ]
@@ -854,7 +794,6 @@
      ],
      "respuesta": "A",
      "tema": "san-juan",
-     "link_nota": null,
      "verificar": true
     },
     {
@@ -867,7 +806,6 @@
      ],
      "respuesta": "C",
      "tema": "ciencia",
-     "link_nota": null,
      "verificar": true
     },
     {
@@ -880,7 +818,6 @@
      ],
      "respuesta": "D",
      "tema": "san-juan",
-     "link_nota": null,
      "verificar": true
     },
     {
@@ -893,7 +830,6 @@
      ],
      "respuesta": "D",
      "tema": "argentina",
-     "link_nota": null,
      "verificar": false
     },
     {
@@ -906,7 +842,6 @@
      ],
      "respuesta": "B",
      "tema": "deportes",
-     "link_nota": null,
      "verificar": true
     }
    ]
@@ -924,7 +859,6 @@
      ],
      "respuesta": "A",
      "tema": "san-juan",
-     "link_nota": null,
      "verificar": true
     },
     {
@@ -937,7 +871,6 @@
      ],
      "respuesta": "B",
      "tema": "espectaculos",
-     "link_nota": null,
      "verificar": false
     },
     {
@@ -950,7 +883,6 @@
      ],
      "respuesta": "B",
      "tema": "ciencia",
-     "link_nota": null,
      "verificar": false
     },
     {
@@ -963,7 +895,6 @@
      ],
      "respuesta": "B",
      "tema": "argentina",
-     "link_nota": null,
      "verificar": false
     },
     {
@@ -976,7 +907,6 @@
      ],
      "respuesta": "D",
      "tema": "deportes",
-     "link_nota": null,
      "verificar": false
     }
    ]
@@ -994,7 +924,6 @@
      ],
      "respuesta": "A",
      "tema": "san-juan",
-     "link_nota": null,
      "verificar": true
     },
     {
@@ -1007,7 +936,6 @@
      ],
      "respuesta": "C",
      "tema": "espectaculos",
-     "link_nota": null,
      "verificar": false
     },
     {
@@ -1020,7 +948,6 @@
      ],
      "respuesta": "B",
      "tema": "ciencia",
-     "link_nota": null,
      "verificar": false
     },
     {
@@ -1033,7 +960,6 @@
      ],
      "respuesta": "C",
      "tema": "argentina",
-     "link_nota": null,
      "verificar": false
     },
     {
@@ -1046,7 +972,6 @@
      ],
      "respuesta": "A",
      "tema": "deportes",
-     "link_nota": null,
      "verificar": false
     }
    ]
@@ -1064,7 +989,6 @@
      ],
      "respuesta": "B",
      "tema": "san-juan",
-     "link_nota": null,
      "verificar": false
     },
     {
@@ -1077,7 +1001,6 @@
      ],
      "respuesta": "D",
      "tema": "espectaculos",
-     "link_nota": null,
      "verificar": false
     },
     {
@@ -1090,7 +1013,6 @@
      ],
      "respuesta": "A",
      "tema": "ciencia",
-     "link_nota": null,
      "verificar": false
     },
     {
@@ -1103,7 +1025,6 @@
      ],
      "respuesta": "B",
      "tema": "argentina",
-     "link_nota": null,
      "verificar": false
     },
     {
@@ -1116,7 +1037,6 @@
      ],
      "respuesta": "D",
      "tema": "deportes",
-     "link_nota": null,
      "verificar": false
     }
    ]
@@ -1134,7 +1054,6 @@
      ],
      "respuesta": "B",
      "tema": "san-juan",
-     "link_nota": null,
      "verificar": false
     },
     {
@@ -1147,7 +1066,6 @@
      ],
      "respuesta": "A",
      "tema": "espectaculos",
-     "link_nota": null,
      "verificar": false
     },
     {
@@ -1160,7 +1078,6 @@
      ],
      "respuesta": "D",
      "tema": "ciencia",
-     "link_nota": null,
      "verificar": false
     },
     {
@@ -1173,7 +1090,6 @@
      ],
      "respuesta": "C",
      "tema": "argentina",
-     "link_nota": null,
      "verificar": false
     },
     {
@@ -1186,7 +1102,6 @@
      ],
      "respuesta": "A",
      "tema": "deportes",
-     "link_nota": null,
      "verificar": false
     }
    ]
@@ -1204,7 +1119,6 @@
      ],
      "respuesta": "A",
      "tema": "san-juan",
-     "link_nota": null,
      "verificar": true
     },
     {
@@ -1217,7 +1131,6 @@
      ],
      "respuesta": "A",
      "tema": "espectaculos",
-     "link_nota": null,
      "verificar": false
     },
     {
@@ -1230,7 +1143,6 @@
      ],
      "respuesta": "D",
      "tema": "ciencia",
-     "link_nota": null,
      "verificar": false
     },
     {
@@ -1243,7 +1155,6 @@
      ],
      "respuesta": "A",
      "tema": "argentina",
-     "link_nota": null,
      "verificar": false
     },
     {
@@ -1256,7 +1167,6 @@
      ],
      "respuesta": "A",
      "tema": "deportes",
-     "link_nota": null,
      "verificar": false
     }
    ]
@@ -1274,7 +1184,6 @@
      ],
      "respuesta": "D",
      "tema": "san-juan",
-     "link_nota": null,
      "verificar": false
     },
     {
@@ -1287,7 +1196,6 @@
      ],
      "respuesta": "C",
      "tema": "espectaculos",
-     "link_nota": null,
      "verificar": false
     },
     {
@@ -1300,7 +1208,6 @@
      ],
      "respuesta": "B",
      "tema": "ciencia",
-     "link_nota": null,
      "verificar": true
     },
     {
@@ -1313,7 +1220,6 @@
      ],
      "respuesta": "C",
      "tema": "argentina",
-     "link_nota": null,
      "verificar": false
     },
     {
@@ -1326,7 +1232,6 @@
      ],
      "respuesta": "C",
      "tema": "deportes",
-     "link_nota": null,
      "verificar": false
     }
    ]
@@ -1344,7 +1249,6 @@
      ],
      "respuesta": "D",
      "tema": "san-juan",
-     "link_nota": null,
      "verificar": false
     },
     {
@@ -1357,7 +1261,6 @@
      ],
      "respuesta": "C",
      "tema": "espectaculos",
-     "link_nota": null,
      "verificar": false
     },
     {
@@ -1370,7 +1273,6 @@
      ],
      "respuesta": "C",
      "tema": "ciencia",
-     "link_nota": null,
      "verificar": true
     },
     {
@@ -1383,7 +1285,6 @@
      ],
      "respuesta": "D",
      "tema": "argentina",
-     "link_nota": null,
      "verificar": false
     },
     {
@@ -1396,7 +1297,6 @@
      ],
      "respuesta": "A",
      "tema": "deportes",
-     "link_nota": null,
      "verificar": false
     }
    ]
@@ -1414,7 +1314,6 @@
      ],
      "respuesta": "C",
      "tema": "san-juan",
-     "link_nota": null,
      "verificar": false
     },
     {
@@ -1427,7 +1326,6 @@
      ],
      "respuesta": "C",
      "tema": "espectaculos",
-     "link_nota": null,
      "verificar": false
     },
     {
@@ -1440,7 +1338,6 @@
      ],
      "respuesta": "B",
      "tema": "ciencia",
-     "link_nota": null,
      "verificar": false
     },
     {
@@ -1453,7 +1350,6 @@
      ],
      "respuesta": "D",
      "tema": "argentina",
-     "link_nota": null,
      "verificar": false
     },
     {
@@ -1466,7 +1362,6 @@
      ],
      "respuesta": "B",
      "tema": "deportes",
-     "link_nota": null,
      "verificar": false
     }
    ]
@@ -1484,7 +1379,6 @@
      ],
      "respuesta": "A",
      "tema": "san-juan",
-     "link_nota": null,
      "verificar": false
     },
     {
@@ -1497,7 +1391,6 @@
      ],
      "respuesta": "A",
      "tema": "espectaculos",
-     "link_nota": null,
      "verificar": false
     },
     {
@@ -1510,7 +1403,6 @@
      ],
      "respuesta": "B",
      "tema": "ciencia",
-     "link_nota": null,
      "verificar": false
     },
     {
@@ -1523,7 +1415,6 @@
      ],
      "respuesta": "C",
      "tema": "argentina",
-     "link_nota": null,
      "verificar": false
     },
     {
@@ -1536,7 +1427,6 @@
      ],
      "respuesta": "C",
      "tema": "deportes",
-     "link_nota": null,
      "verificar": false
     }
    ]
@@ -1554,7 +1444,6 @@
      ],
      "respuesta": "D",
      "tema": "san-juan",
-     "link_nota": null,
      "verificar": false
     },
     {
@@ -1567,7 +1456,6 @@
      ],
      "respuesta": "D",
      "tema": "espectaculos",
-     "link_nota": null,
      "verificar": false
     },
     {
@@ -1580,7 +1468,6 @@
      ],
      "respuesta": "C",
      "tema": "ciencia",
-     "link_nota": null,
      "verificar": false
     },
     {
@@ -1593,7 +1480,6 @@
      ],
      "respuesta": "D",
      "tema": "argentina",
-     "link_nota": null,
      "verificar": true
     },
     {
@@ -1606,7 +1492,6 @@
      ],
      "respuesta": "C",
      "tema": "deportes",
-     "link_nota": null,
      "verificar": false
     }
    ]
@@ -1624,7 +1509,6 @@
      ],
      "respuesta": "D",
      "tema": "san-juan",
-     "link_nota": null,
      "verificar": false
     },
     {
@@ -1637,7 +1521,6 @@
      ],
      "respuesta": "D",
      "tema": "espectaculos",
-     "link_nota": null,
      "verificar": false
     },
     {
@@ -1650,7 +1533,6 @@
      ],
      "respuesta": "C",
      "tema": "ciencia",
-     "link_nota": null,
      "verificar": false
     },
     {
@@ -1663,7 +1545,6 @@
      ],
      "respuesta": "B",
      "tema": "argentina",
-     "link_nota": null,
      "verificar": false
     },
     {
@@ -1676,7 +1557,6 @@
      ],
      "respuesta": "B",
      "tema": "deportes",
-     "link_nota": null,
      "verificar": false
     }
    ]
@@ -1694,7 +1574,6 @@
      ],
      "respuesta": "A",
      "tema": "san-juan",
-     "link_nota": null,
      "verificar": false
     },
     {
@@ -1707,7 +1586,6 @@
      ],
      "respuesta": "A",
      "tema": "espectaculos",
-     "link_nota": null,
      "verificar": false
     },
     {
@@ -1720,7 +1598,6 @@
      ],
      "respuesta": "C",
      "tema": "ciencia",
-     "link_nota": null,
      "verificar": false
     },
     {
@@ -1733,7 +1610,6 @@
      ],
      "respuesta": "C",
      "tema": "argentina",
-     "link_nota": null,
      "verificar": false
     },
     {
@@ -1746,7 +1622,6 @@
      ],
      "respuesta": "A",
      "tema": "deportes",
-     "link_nota": null,
      "verificar": false
     }
    ]
@@ -1764,7 +1639,6 @@
      ],
      "respuesta": "A",
      "tema": "san-juan",
-     "link_nota": null,
      "verificar": false
     },
     {
@@ -1777,7 +1651,6 @@
      ],
      "respuesta": "B",
      "tema": "espectaculos",
-     "link_nota": null,
      "verificar": false
     },
     {
@@ -1790,7 +1663,6 @@
      ],
      "respuesta": "C",
      "tema": "ciencia",
-     "link_nota": null,
      "verificar": false
     },
     {
@@ -1803,7 +1675,6 @@
      ],
      "respuesta": "C",
      "tema": "argentina",
-     "link_nota": null,
      "verificar": true
     },
     {
@@ -1816,7 +1687,6 @@
      ],
      "respuesta": "A",
      "tema": "deportes",
-     "link_nota": null,
      "verificar": false
     }
    ]
@@ -1834,7 +1704,6 @@
      ],
      "respuesta": "D",
      "tema": "san-juan",
-     "link_nota": null,
      "verificar": true
     },
     {
@@ -1847,7 +1716,6 @@
      ],
      "respuesta": "C",
      "tema": "espectaculos",
-     "link_nota": null,
      "verificar": false
     },
     {
@@ -1860,7 +1728,6 @@
      ],
      "respuesta": "A",
      "tema": "ciencia",
-     "link_nota": null,
      "verificar": false
     },
     {
@@ -1873,7 +1740,6 @@
      ],
      "respuesta": "A",
      "tema": "argentina",
-     "link_nota": null,
      "verificar": false
     },
     {
@@ -1886,7 +1752,6 @@
      ],
      "respuesta": "A",
      "tema": "deportes",
-     "link_nota": null,
      "verificar": false
     }
    ]
@@ -1904,7 +1769,6 @@
      ],
      "respuesta": "C",
      "tema": "san-juan",
-     "link_nota": null,
      "verificar": false
     },
     {
@@ -1917,7 +1781,6 @@
      ],
      "respuesta": "B",
      "tema": "espectaculos",
-     "link_nota": null,
      "verificar": false
     },
     {
@@ -1930,7 +1793,6 @@
      ],
      "respuesta": "A",
      "tema": "ciencia",
-     "link_nota": null,
      "verificar": false
     },
     {
@@ -1943,7 +1805,6 @@
      ],
      "respuesta": "B",
      "tema": "argentina",
-     "link_nota": null,
      "verificar": false
     },
     {
@@ -1956,7 +1817,6 @@
      ],
      "respuesta": "C",
      "tema": "deportes",
-     "link_nota": null,
      "verificar": true
     }
    ]
@@ -1974,7 +1834,6 @@
      ],
      "respuesta": "D",
      "tema": "san-juan",
-     "link_nota": null,
      "verificar": true
     },
     {
@@ -1987,7 +1846,6 @@
      ],
      "respuesta": "A",
      "tema": "espectaculos",
-     "link_nota": null,
      "verificar": false
     },
     {
@@ -2000,7 +1858,6 @@
      ],
      "respuesta": "B",
      "tema": "ciencia",
-     "link_nota": null,
      "verificar": false
     },
     {
@@ -2013,7 +1870,6 @@
      ],
      "respuesta": "C",
      "tema": "argentina",
-     "link_nota": null,
      "verificar": false
     },
     {
@@ -2026,7 +1882,6 @@
      ],
      "respuesta": "C",
      "tema": "deportes",
-     "link_nota": null,
      "verificar": false
     }
    ]
@@ -2044,7 +1899,6 @@
      ],
      "respuesta": "C",
      "tema": "san-juan",
-     "link_nota": null,
      "verificar": false
     },
     {
@@ -2057,7 +1911,6 @@
      ],
      "respuesta": "B",
      "tema": "espectaculos",
-     "link_nota": null,
      "verificar": true
     },
     {
@@ -2070,7 +1923,6 @@
      ],
      "respuesta": "C",
      "tema": "ciencia",
-     "link_nota": null,
      "verificar": false
     },
     {
@@ -2083,7 +1935,6 @@
      ],
      "respuesta": "D",
      "tema": "argentina",
-     "link_nota": null,
      "verificar": false
     },
     {
@@ -2096,7 +1947,6 @@
      ],
      "respuesta": "C",
      "tema": "deportes",
-     "link_nota": null,
      "verificar": false
     }
    ]
@@ -2113,7 +1963,6 @@
    ],
    "respuesta": "B",
    "tema": "ciencia",
-   "link_nota": null,
    "verificar": false
   },
   {
@@ -2126,7 +1975,6 @@
    ],
    "respuesta": "B",
    "tema": "deportes",
-   "link_nota": null,
    "verificar": false
   },
   {
@@ -2139,7 +1987,6 @@
    ],
    "respuesta": "A",
    "tema": "ciencia",
-   "link_nota": null,
    "verificar": false
   },
   {
@@ -2152,7 +1999,6 @@
    ],
    "respuesta": "C",
    "tema": "ciencia",
-   "link_nota": null,
    "verificar": true
   },
   {
@@ -2165,7 +2011,6 @@
    ],
    "respuesta": "D",
    "tema": "ciencia",
-   "link_nota": null,
    "verificar": false
   },
   {
@@ -2178,7 +2023,6 @@
    ],
    "respuesta": "A",
    "tema": "ciencia",
-   "link_nota": null,
    "verificar": false
   }
  ]

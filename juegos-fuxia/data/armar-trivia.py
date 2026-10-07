@@ -49,7 +49,6 @@ def armar(pregunta, correcta, distractores, tema, verificar):
         '_correcta': correcta,
         '_distractores': list(distractores),
         'tema': tema,
-        'link_nota': None,
         'verificar': bool(verificar),
     }
 
@@ -69,7 +68,7 @@ def fijar_opciones(preguntas):
         q['opciones'] = opciones
         q['respuesta'] = 'ABCD'[pos]
         # el orden de las claves es el que se ve en el archivo
-        for k in ('tema', 'link_nota', 'verificar'):
+        for k in ('tema', 'verificar'):
             q[k] = q.pop(k)
     return preguntas
 

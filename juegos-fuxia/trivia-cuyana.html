@@ -79,10 +79,6 @@
       h += '</div>';
       if (respondida) {
         h += '<div class="veredicto">' + (elegida === p.respuesta ? '¡Correcto! 🎉' : 'Ups, no era esa.') + '</div><div class="fg-actions">';
-        // Solo http(s): FG.esc escapa comillas pero no filtra el esquema, así que
-        // un "javascript:..." mal pegado en la planilla quedaría clickeable.
-        var url = p.link_nota && /^https?:\/\//i.test(String(p.link_nota).trim()) ? String(p.link_nota).trim() : null;
-        if (url) h += '<a class="btn btn-cyan" target="_blank" rel="noopener noreferrer" href="' + FG.esc(url) + '">Leer la nota</a>';
         h += '<button class="btn btn-primary" id="sig">' + (estado.pos === preguntas.length - 1 ? 'Ver resultado' : 'Siguiente ▶') + '</button></div>';
       }
       app.innerHTML = h;

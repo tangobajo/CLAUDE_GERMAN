@@ -102,8 +102,6 @@ button { font-family: inherit; }
 .btn:disabled { opacity: .4; cursor: not-allowed; pointer-events: none; }
 .btn-primary { background: var(--md-orange); border-color: var(--md-orange); color: #1d1d1d; }
 .btn-primary:hover { background: var(--md-dark); border-color: var(--md-dark); color: #fff; }
-.btn-cyan { background: var(--md-dark); border-color: var(--md-dark); color: #fff; }   /* "Leer la nota" */
-.btn-cyan:hover { background: var(--md-orange); border-color: var(--md-orange); color: #1d1d1d; }
 .btn-ghost { background: transparent; }
 .btn-block { width: 100%; }
 .fg-actions { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-top: 14px; }

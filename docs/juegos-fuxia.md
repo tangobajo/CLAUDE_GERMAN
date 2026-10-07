@@ -72,23 +72,6 @@ Solo 23 de los 30 días traen contenido distinto. Son idénticos entre sí: 5/17
 7/19, 8/20 y 9/21. Palabra del Día sí tiene las 30 palabras únicas, y Trivia ahora también
 (ver §2).
 
-### 1.4 "Leer la nota" está apagado a propósito
-
-`trivia-cuyana.html` tiene implementado un botón **"Leer la nota"**: al responder, si la
-pregunta trae una URL en `link_nota`, aparece un botón que lleva a esa nota. Sirve para que
-el juego empuje tráfico a los artículos, pero obliga a emparejar cada pregunta con una nota
-a mano.
-
-**Hoy está desactivado**: las 150 preguntas tienen `link_nota` en `null`, así que el botón
-no se dibuja nunca. No hay nada que mantener. Si alguna vez lo querés usar, completás el
-campo en `data/trivia.json` y aparece solo en esa pregunta:
-
-```json
-"link_nota": "https://mansodiario.com/2026/10/la-fiesta-nacional-del-sol/"
-```
-
-Tiene que empezar con `http://` o `https://`; cualquier otra cosa se descarta en silencio.
-
 ## 2. El banco de Trivia
 
 ### Cómo está armado
@@ -335,12 +318,11 @@ juego, no la grilla de emojis. Es una limitación de Facebook, no del código.
 | `← Juegos` del titlebar | portada de **juegos** | no |
 | `FUXIA GAMES` del pie, y su logo | **instagram.com/fuxiagames** | pestaña nueva |
 | `mansodiario.com` del pie | portada de **Manso Diario** | pestaña nueva |
-| "Leer la nota" (cuando exista) | la nota del JSON | pestaña nueva |
 
 El `target="_top"` del encabezado no es decorativo: sin eso, al tocar la marca Manso Diario
-se cargaría entero adentro del recuadro embebido en la nota. Instagram y las notas abren en
-pestaña nueva en vez de reemplazar la ventana, porque el lector suele estar en medio de una
-partida.
+se cargaría entero adentro del recuadro embebido en la nota. Instagram y los botones de
+compartir abren en pestaña nueva en vez de reemplazar la ventana, porque el lector suele
+estar en medio de una partida.
 
 Si cambia alguno de los dos dominios:
 
@@ -358,10 +340,9 @@ cd juegos-fuxia && python3 -m http.server 8777 &
 python3 tests/test-juegos.py
 ```
 
-68 casos en Chromium: las 4 pantallas, una partida completa de cada juego, las rachas, el
+65 casos en Chromium: las 4 pantallas, una partida completa de cada juego, las rachas, el
 "ya jugaste hoy", los seis botones de compartir con sus URL revisadas una por una para que
-ninguna filtre la respuesta, el botón "Leer la nota" con URL válida y el descarte de una
-inválida, y que los links se comporten bien embebidos en una nota (la marca reemplaza la
+ninguna filtre la respuesta, y que los links se comporten bien embebidos en una nota (la marca reemplaza la
 ventana entera, Instagram abre pestaña nueva y deja la partida intacta).
 
 El script levanta Chromium solo; `mansodiario.com` e `instagram.com` se interceptan porque
