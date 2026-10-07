@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Prueba index, Palabra del Día y Agrupá en Chromium, sueltos y en iframe.
+"""Prueba los 3 juegos y la portada en Chromium, sueltos y embebidos en iframe.
 
 Antes de correr:  cd juegos-fuxia && python3 -m http.server 8777
 Después:          python3 tests/test-juegos.py
@@ -126,6 +126,52 @@ try:
         chk('agrupa: comparte marca y link', 'FUXIA GAMES' in t3 and 'mansodiario.com' in t3, t3)
         chk('agrupa: NO revela las categorias',
             not any(c.strip().upper() in t3.upper() for c in cats), t3)
+
+        # ─────────────────────────── TRIVIA ───────────────────────────
+        import json, shutil
+        shutil.copy(DIR + '/data/trivia.json', DIR + '/data/_trivia.bak')
+        d = json.load(open(DIR + '/data/trivia.json', encoding='utf-8'))
+        d['dias'][0]['preguntas'][0]['link_nota'] = 'https://mansodiario.com/nota-de-prueba'
+        d['dias'][0]['preguntas'][1]['link_nota'] = 'javascript:alert(1)'
+        json.dump(d, open(DIR + '/data/trivia.json', 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
+        try:
+            p6 = ctx.new_page(); p6.on('pageerror', lambda e: errores.append('trivia: ' + str(e)))
+            p6.goto(BASE + '/trivia-cuyana.html'); p6.wait_for_selector('.op'); p6.wait_for_timeout(500)
+            chk('trivia: 4 opciones', p6.locator('.op').count() == 4)
+            chk('trivia: 5 pasos de progreso', p6.locator('.paso').count() == 5)
+            cuerpo = p6.locator('body').inner_text().lower()
+            chk('trivia: no filtra "verificar" ni el tema',
+                'verificar' not in cuerpo and 'san-juan' not in cuerpo)
+            p6.locator('.op').nth(0).click(); p6.wait_for_timeout(350)
+            a = p6.locator('a.btn-cyan')
+            # inner_text() devuelve LEER LA NOTA: el CSS lo pone en mayúsculas
+            chk('trivia: con link_nota aparece "Leer la nota"',
+                a.count() == 1 and a.text_content().strip() == 'Leer la nota', a.count())
+            chk('trivia: el href es la URL cargada',
+                a.get_attribute('href') == 'https://mansodiario.com/nota-de-prueba')
+            chk('trivia: la nota abre en pestana nueva', a.get_attribute('target') == '_blank')
+            chk('trivia: marca cual era la correcta', p6.locator('.op.correcta').count() == 1)
+            p6.click('#sig'); p6.wait_for_timeout(300)
+            p6.locator('.op').nth(0).click(); p6.wait_for_timeout(350)
+            chk('trivia: un link javascript: se descarta', p6.locator('a.btn-cyan').count() == 0,
+                p6.locator('a.btn-cyan').get_attribute('href') if p6.locator('a.btn-cyan').count() else '')
+            p6.click('#sig'); p6.wait_for_timeout(300)
+            for _ in range(3):
+                p6.locator('.op').nth(0).click(); p6.wait_for_timeout(300)
+                p6.click('#sig'); p6.wait_for_timeout(300)
+            p6.wait_for_selector('.fg-result')
+            chk('trivia: panel de resultado', p6.locator('.fg-result').is_visible())
+            chk('trivia: marcador sobre 5', 'de 5' in p6.locator('.fg-result').inner_text())
+            chk('trivia: racha = 1',
+                p6.evaluate("() => localStorage.getItem('fuxiagames_trivia_racha')") == '1')
+            p6.click('#share'); p6.wait_for_timeout(500)
+            t6 = p6.evaluate('() => navigator.clipboard.readText()')
+            chk('trivia: comparte marca y link', 'FUXIA GAMES' in t6 and 'mansodiario.com' in t6, t6)
+            chk('trivia: NO revela preguntas ni respuestas', all(len(l) < 60 for l in t6.split('\n')), t6)
+            p6.reload(); p6.wait_for_selector('.fg-result'); p6.wait_for_timeout(300)
+            chk('trivia: al recargar muestra el resultado', p6.locator('.fg-result').is_visible())
+        finally:
+            shutil.move(DIR + '/data/_trivia.bak', DIR + '/data/trivia.json')
 
         # ──────────────── los links, embebidos en una nota ────────────────
         wrapper('agrupa.html')

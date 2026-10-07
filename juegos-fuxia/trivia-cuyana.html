@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Trivia Cuyana · Fuxia Games</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@500;600;700&family=Barlow+Condensed:ital,wght@0,600;0,700;1,700;1,800&family=Merriweather:wght@700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+<style>
+  .progreso { display: flex; gap: 6px; margin-bottom: 14px; }
+  .paso { flex: 1; height: 6px; border-radius: 2px; background: #c4c4c1; }
+  .paso.ok { background: var(--fg-ok); }
+  .paso.mal { background: var(--fg-error); }
+  .paso.ahora { background: var(--md-orange); }
+  .pregunta-n { color: var(--md-orange); font-family: var(--font-display); font-weight: 700; font-size: .95rem; letter-spacing: 1.2px; text-transform: uppercase; }
+  .pregunta { font-family: var(--font-serif); font-size: 1.3rem; font-weight: 900; line-height: 1.3; margin: 6px 0 16px; color: var(--md-dark); }
+  .opciones { display: flex; flex-direction: column; gap: 9px; }
+  .op {
+    display: flex; align-items: center; gap: 12px; text-align: left; width: 100%;
+    background: #fff; color: var(--md-dark); border: 2px solid var(--md-line); border-radius: 4px;
+    padding: 12px 14px; font-size: 1.05rem; font-weight: 600; cursor: pointer;
+  }
+  .op:hover { border-color: var(--md-dark); }
+  .op i { font-style: normal; font-family: var(--font-display); font-weight: 800; width: 28px; height: 28px; flex: none;
+    display: inline-flex; align-items: center; justify-content: center; border-radius: 3px; background: var(--md-dark); color: #fff; }
+  .opciones.listo .op { pointer-events: none; }
+  .op.correcta { background: var(--fg-ok); border-color: var(--fg-ok); color: #fff; }
+  .op.correcta i { background: rgba(0,0,0,.25); }
+  .op.elegida-mal { background: var(--fg-error); border-color: var(--fg-error); color: #fff; }
+  .op.elegida-mal i { background: rgba(0,0,0,.25); }
+  .opciones.listo .op:not(.correcta):not(.elegida-mal) { opacity: .5; }
+  .veredicto { margin-top: 14px; font-family: var(--font-display); font-weight: 700; text-transform: uppercase; letter-spacing: .8px; text-align: center; font-size: 1.2rem; }
+</style>
+</head>
+<body>
+<header class="fg-masthead">
+  <a class="fg-brand" href="https://mansodiario.com" target="_top" rel="noopener"
+     aria-label="Ir a la portada de Manso Diario"><span class="logo">MANSO<b>!</b>DIARIO</span><small>Juegos · San Juan · Argentina</small></a>
+  <div class="fg-streak" id="racha" title="Racha">🔥 0</div>
+</header>
+<div class="fg-titlebar"><h1>TRIVIA CUYANA<b>!</b></h1><a class="fg-back" href="index.html">← Juegos</a></div>
+<div class="fg-wrap">
+  <div id="app"><p class="fg-sub">Cargando…</p></div>
+</div>
+
+<script src="shared.js"></script>
+<script>
+(function () {
+  var JUEGO = 'trivia', LETRAS = 'ABCD';
+
+  FG.iniciar({ json: 'data/trivia.json', clave: 'dias' }, function (entrada, ctx) {
+    var preguntas = entrada.preguntas;
+    var estado = FG.estadoDeHoy(JUEGO, ctx.diaN) || { dia: ctx.diaN, pos: 0, respuestas: [], terminado: false };
+    var app = document.getElementById('app'), elRacha = document.getElementById('racha');
+
+    function actualizarRacha() { elRacha.textContent = '🔥 ' + FG.rachaVigente(JUEGO, ctx.diaN); }
+    function aciertos() {
+      return estado.respuestas.filter(function (r, i) { return r === preguntas[i].respuesta; }).length;
+    }
+    function barra() {
+      return '<div class="progreso">' + preguntas.map(function (p, i) {
+        var c = i < estado.respuestas.length ? (estado.respuestas[i] === p.respuesta ? 'ok' : 'mal') : (i === estado.pos ? 'ahora' : '');
+        return '<div class="paso ' + c + '"></div>';
+      }).join('') + '</div>';
+    }
+
+    function verPregunta() {
+      var p = preguntas[estado.pos], elegida = estado.respuestas[estado.pos];   // elegida = letra o undefined
+      var respondida = elegida !== undefined;
+      var h = barra() + '<div class="pregunta-n">Pregunta ' + (estado.pos + 1) + ' de ' + preguntas.length + '</div>' +
+        '<div class="pregunta">' + FG.esc(p.pregunta) + '</div><div class="opciones' + (respondida ? ' listo' : '') + '" id="ops">';
+      p.opciones.forEach(function (o, i) {
+        var L = LETRAS[i], cls = 'op';
+        if (respondida) { if (L === p.respuesta) cls += ' correcta'; else if (L === elegida) cls += ' elegida-mal'; }
+        h += '<button class="' + cls + '" data-l="' + L + '"><i>' + L + '</i><span>' + FG.esc(o) + '</span></button>';
+      });
+      h += '</div>';
+      if (respondida) {
+        h += '<div class="veredicto">' + (elegida === p.respuesta ? '¡Correcto! 🎉' : 'Ups, no era esa.') + '</div><div class="fg-actions">';
+        // Solo http(s): FG.esc escapa comillas pero no filtra el esquema, así que
+        // un "javascript:..." mal pegado en la planilla quedaría clickeable.
+        var url = p.link_nota && /^https?:\/\//i.test(String(p.link_nota).trim()) ? String(p.link_nota).trim() : null;
+        if (url) h += '<a class="btn btn-cyan" target="_blank" rel="noopener noreferrer" href="' + FG.esc(url) + '">Leer la nota</a>';
+        h += '<button class="btn btn-primary" id="sig">' + (estado.pos === preguntas.length - 1 ? 'Ver resultado' : 'Siguiente ▶') + '</button></div>';
+      }
+      app.innerHTML = h;
+      if (!respondida) {
+        Array.prototype.forEach.call(app.querySelectorAll('.op'), function (b) {
+          b.onclick = function () { responder(b.dataset.l); };
+        });
+      } else {
+        document.getElementById('sig').onclick = siguiente;
+      }
+    }
+    function responder(L) {
+      estado.respuestas[estado.pos] = L;
+      FG.guardar(JUEGO, 'hoy', estado);
+      verPregunta();
+    }
+    function siguiente() {
+      if (estado.pos < preguntas.length - 1) { estado.pos++; FG.guardar(JUEGO, 'hoy', estado); verPregunta(); return; }
+      estado.terminado = true;
+      FG.registrarFin(JUEGO, ctx.diaN, true);          // la racha cuenta días seguidos completados
+      FG.guardar(JUEGO, 'hoy', estado); actualizarRacha(); verResultado();
+    }
+    function textoCompartir() {
+      return 'FUXIA GAMES · Trivia Cuyana #' + ctx.diaN + ' ' + aciertos() + '/' + preguntas.length + '\n' +
+        estado.respuestas.map(function (r, i) { return r === preguntas[i].respuesta ? '🟩' : '🟥'; }).join('');
+    }
+    function verResultado() {
+      var n = aciertos(), t = preguntas.length;
+      var msg = n === t ? '¡Sos un experto cuyano!' : n >= 3 ? '¡Muy bien!' : n >= 1 ? 'Seguí practicando' : 'Mañana hay revancha';
+      app.innerHTML = barra() + '<div class="fg-result"><h2 class="gradient-text">' + msg + '</h2>' +
+        '<p>Acertaste <b style="color:var(--md-dark)">' + n + ' de ' + t + '</b> preguntas.</p>' +
+        '<div class="fg-grid-share">' + estado.respuestas.map(function (r, i) { return r === preguntas[i].respuesta ? '🟩' : '🟥'; }).join('') + '</div>' +
+        '<div class="fg-actions"><button class="btn btn-primary" id="share">Compartir resultado</button></div>' +
+        '<p class="fg-next">Nuevas preguntas en <b id="cuenta"></b></p></div>';
+      document.getElementById('share').onclick = function () { FG.compartir(textoCompartir()); };
+      FG.cuentaRegresiva(document.getElementById('cuenta'));
+    }
+
+    actualizarRacha();
+    if (estado.terminado) verResultado(); else verPregunta();
+  });
+})();
+</script>
+</body>
+</html>

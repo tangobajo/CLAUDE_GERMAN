@@ -9,7 +9,7 @@ juegos-fuxia/
 ├── index.html              portada con las 3 tarjetas
 ├── palabra-del-dia.html    Wordle en español
 ├── agrupa.html             Connections
-├── trivia-cuyana.html      5 preguntas por día      ← FALTA, ver §1
+├── trivia-cuyana.html      5 preguntas por día
 ├── shared.css              estilos comunes
 ├── shared.js               FG.*: día, rachas, compartir
 ├── logo-fuxia-games.png
@@ -24,22 +24,9 @@ juegos-fuxia/
 
 ---
 
-## 1. Lo único que falta
+## 1. Pendientes de contenido
 
-**`trivia-cuyana.html` no está en el repo.** Es el único archivo del proyecto que falta.
-`index.html` lo enlaza, así que hoy la tercera tarjeta lleva a un 404.
-
-El `data/trivia.json` nuevo **mantiene exactamente el mismo formato que el anterior**
-(`dia1`, `dias[].preguntas[]` con `pregunta`, `opciones` y `respuesta` como letra), así que
-el `trivia-cuyana.html` que ya tengas funciona con el banco nuevo sin tocarle una línea.
-Los campos `tema` y `link_nota` que se agregaron son extra: el código que no los conoce
-simplemente los ignora.
-
----
-
-## 2. Pendientes de contenido
-
-### 2.1 Preguntas y datos marcados "Verificar"
+### 1.1 Preguntas y datos marcados "Verificar"
 
 | Archivo | A revisar |
 |---|---|
@@ -69,7 +56,7 @@ dato puede quedar viejo o admitir discusión: cuántos Mundiales ganó Argentina
 ganó más Libertadores, cuántos Nobel tiene el país, cuál es el desierto cálido más extenso,
 el río más caudaloso, el idioma con más hablantes nativos, cuántos huesos tiene el cuerpo.
 
-### 2.2 `OASIS` repetido en Agrupá (días 5, 17 y 29)
+### 1.2 `OASIS` repetido en Agrupá (días 5, 17 y 29)
 
 En esos tres días `OASIS` está en dos categorías a la vez: *Accidentes geográficos cuyanos*
 y *Elementos del paisaje sanjuanino*. La grilla muestra dos fichas con el mismo texto.
@@ -79,33 +66,28 @@ El juego **no se rompe** —`agrupa.html` identifica las fichas por posición, n
 cualquiera de las dos— pero el lector ve dos fichas idénticas y no entiende por qué.
 Conviene cambiar una de las dos.
 
-### 2.3 Agrupá repite días dentro del mes
+### 1.3 Agrupá repite días dentro del mes
 
 Solo 23 de los 30 días traen contenido distinto. Son idénticos entre sí: 5/17/29, 6/18/30,
 7/19, 8/20 y 9/21. Palabra del Día sí tiene las 30 palabras únicas, y Trivia ahora también
-(ver §3).
+(ver §2).
 
-### 2.4 El botón "Leer la nota" todavía no existe en el código
+### 1.4 Ninguna pregunta tiene cargado el link a la nota
 
-`trivia.json` ya trae el campo `link_nota` en todas las preguntas, en `null`. Para que
-aparezca el botón hay que agregar esto en `trivia-cuyana.html`, donde se muestra la
-devolución de cada pregunta:
+El botón **"Leer la nota" ya está implementado** en `trivia-cuyana.html`: al responder, si la
+pregunta trae `link_nota`, aparece un botón que abre la nota en pestaña nueva.
 
-```js
-// Solo http(s): si en el JSON quedó pegado cualquier otra cosa, se descarta.
-var url = q.link_nota && /^https?:\/\//i.test(q.link_nota) ? q.link_nota : null;
-if (url) {
-  html += '<a class="btn btn-cyan" href="' + FG.esc(url) + '" target="_blank" ' +
-          'rel="noopener noreferrer">Leer la nota</a>';
-}
+Lo que falta es contenido: las 150 preguntas tienen `link_nota` en `null`, así que el botón
+no se dibuja nunca. Para activarlo en una pregunta, completá el campo en `data/trivia.json`:
+
+```json
+"link_nota": "https://mansodiario.com/2026/10/la-fiesta-nacional-del-sol/"
 ```
 
-La clase `btn-cyan` ya está en `shared.css` y el comentario del archivo dice que es
-justamente para este botón.
+Tiene que empezar con `http://` o `https://`; cualquier otra cosa se descarta en silencio,
+para que un valor mal pegado no termine siendo un link ejecutable.
 
----
-
-## 3. El banco de Trivia
+## 2. El banco de Trivia
 
 ### Cómo está armado
 
@@ -154,7 +136,7 @@ suficientes: hacen falta `DIAS × 5` únicas, con `DIAS` de ellas locales.
 
 ---
 
-## 4. Los otros dos bancos
+## 3. Los otros dos bancos
 
 ### `data/palabras.json`
 
@@ -182,11 +164,11 @@ suficientes: hacen falta `DIAS × 5` únicas, con `DIAS` de ellas locales.
 
 Los 4 grupos van en orden `amarillo`, `verde`, `azul`, `morado` (convención de Connections:
 amarillo el más fácil, morado el de la trampa). **Los 16 ítems del día tienen que ser
-distintos entre sí** — ver §2.2.
+distintos entre sí** — ver §1.2.
 
 ---
 
-## 5. Cómo se calcula el día
+## 4. Cómo se calcula el día
 
 `shared.js` expone `FG.calcularIndiceDelDia(fechaLanzamiento, largoDelBanco)`:
 
@@ -217,7 +199,7 @@ https://mansodiario.com/juegos-fuxia/trivia-cuyana.html?fecha=2026-10-15
 
 ---
 
-## 6. Qué se guarda en el navegador
+## 5. Qué se guarda en el navegador
 
 Todo el estado vive en el `localStorage` del lector. No hay servidor ni cuentas. **Si cambia
 de dispositivo o borra la caché, pierde la racha** — es una decisión consciente.
@@ -235,7 +217,7 @@ una copia en memoria: el juego anda igual pero no recuerda nada al recargar.
 
 ---
 
-## 7. Cómo se sube y se embebe
+## 6. Cómo se sube y se embebe
 
 Copiá la carpeta `juegos-fuxia/` completa al servidor, **dentro del mismo dominio que Manso
 Diario**:
@@ -297,7 +279,7 @@ Si usás plugin de caché, excluí `/juegos-fuxia/data/*.json` o ponele un TTL c
 
 ---
 
-## 8. Cómo navega el lector
+## 7. Cómo navega el lector
 
 | Elemento | A dónde va | Sale del iframe |
 |---|---|---|
@@ -321,7 +303,7 @@ grep -rn "mansodiario.com\|instagram.com" *.html shared.js
 
 ---
 
-## 9. Tests
+## 8. Tests
 
 ```bash
 cd juegos-fuxia && python3 -m http.server 8777 &
