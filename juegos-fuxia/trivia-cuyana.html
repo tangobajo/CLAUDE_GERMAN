@@ -115,9 +115,9 @@
       app.innerHTML = barra() + '<div class="fg-result"><h2 class="gradient-text">' + msg + '</h2>' +
         '<p>Acertaste <b style="color:var(--md-dark)">' + n + ' de ' + t + '</b> preguntas.</p>' +
         '<div class="fg-grid-share">' + estado.respuestas.map(function (r, i) { return r === preguntas[i].respuesta ? '🟩' : '🟥'; }).join('') + '</div>' +
-        '<div class="fg-actions"><button class="btn btn-primary" id="share">Compartir resultado</button></div>' +
+        '<div id="compartir"></div>' +
         '<p class="fg-next">Nuevas preguntas en <b id="cuenta"></b></p></div>';
-      document.getElementById('share').onclick = function () { FG.compartir(textoCompartir()); };
+      FG.pintarCompartir(document.getElementById('compartir'), textoCompartir(), JUEGO);
       FG.cuentaRegresiva(document.getElementById('cuenta'));
     }
 

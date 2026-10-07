@@ -178,9 +178,9 @@
       el.innerHTML = '<div class="fg-result"><h2 class="gradient-text">' + (estado.gano ? (estado.errores === 0 ? '¡Perfecto!' : '¡Lo lograste!') : 'Se acabaron los intentos') + '</h2>' +
         '<p>' + (estado.gano ? 'Errores: ' + estado.errores + ' de ' + MAX_ERRORES + '.' : 'Estos eran los grupos que faltaban.') + '</p>' +
         '<div class="fg-grid-share">' + FG.esc(estado.filas.join('\n')) + '</div>' +
-        '<div class="fg-actions"><button class="btn btn-primary" id="share">Compartir resultado</button></div>' +
+        '<div id="compartir"></div>' +
         '<p class="fg-next">Nuevo desafío en <b id="cuenta"></b></p></div>';
-      document.getElementById('share').onclick = function () { FG.compartir(textoCompartir()); };
+      FG.pintarCompartir(document.getElementById('compartir'), textoCompartir(), JUEGO);
       FG.cuentaRegresiva(document.getElementById('cuenta'));
       pintar();
     }

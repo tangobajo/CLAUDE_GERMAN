@@ -146,3 +146,44 @@ button { font-family: inherit; }
 @media (prefers-reduced-motion: reduce) {
   * { animation: none !important; transition: none !important; }
 }
+
+/* ── Botones de compartir ──
+   El menú nativo del celular ya cubre todo, pero en escritorio no existe: sin
+   estos botones al lector solo le queda copiar y pegar a mano. */
+.fg-share-row {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.fg-share-btn {
+  width: 44px;                 /* 44px es el mínimo cómodo para el dedo */
+  height: 44px;
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--md-line);
+  border-radius: var(--radius-sm);
+  background: #fff;
+  color: var(--md-dark);
+  cursor: pointer;
+  padding: 0;
+  text-decoration: none;
+  transition: background .12s, border-color .12s, color .12s, transform .1s;
+}
+
+.fg-share-btn svg { width: 20px; height: 20px; fill: currentColor; display: block; }
+.fg-share-btn:active { transform: translateY(1px); }
+
+/* Al pasar por encima toma el color de cada red, así se reconoce de un vistazo. */
+.fg-share-whatsapp:hover { background: #25D366; border-color: #25D366; color: #fff; }
+.fg-share-telegram:hover { background: #229ED9; border-color: #229ED9; color: #fff; }
+.fg-share-x:hover        { background: #000000; border-color: #000000; color: #fff; }
+.fg-share-facebook:hover { background: #1877F2; border-color: #1877F2; color: #fff; }
+.fg-share-mail:hover,
+.fg-share-copiar:hover   { background: var(--md-dark); border-color: var(--md-dark); color: #fff; }
+
+.fg-share-btn:focus-visible { outline: 3px solid var(--md-orange); outline-offset: 2px; }

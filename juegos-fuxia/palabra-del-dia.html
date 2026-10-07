@@ -157,9 +157,9 @@
         '<p>' + (estado.gano ? 'La resolviste en ' + estado.intentos.length + ' de ' + INTENTOS + '.' : 'La palabra de hoy era:') + '</p>' +
         '<p style="font-family:var(--font-display);font-weight:800;font-style:italic;text-transform:uppercase;font-size:2.4rem;color:var(--md-dark);margin:2px 0">' + FG.esc(entrada.mostrar) + '</p>' +
         (entrada.pista ? '<p class="pista"><b>¿Sabías que?</b> ' + FG.esc(entrada.pista) + '</p>' : '') +
-        '<div class="fg-actions"><button class="btn btn-primary" id="share">Compartir resultado</button></div>' +
+        '<div id="compartir"></div>' +
         '<p class="fg-next">Próxima palabra en <b id="cuenta"></b></p></div>';
-      document.getElementById('share').onclick = function () { FG.compartir(textoCompartir()); };
+      FG.pintarCompartir(document.getElementById('compartir'), textoCompartir(), JUEGO);
       FG.cuentaRegresiva(document.getElementById('cuenta'));
     }
 

@@ -4,7 +4,7 @@
 Antes de correr:  cd juegos-fuxia && python3 -m http.server 8777
 Después:          python3 tests/test-juegos.py
 """
-import os, sys, glob
+import os, sys, glob, urllib.parse as up
 from playwright.sync_api import sync_playwright
 
 BASE = os.environ.get('FUXIA_BASE', 'http://localhost:8777')
@@ -84,10 +84,45 @@ try:
         chk('palabra: cuenta regresiva corriendo', ':' in p2.locator('#cuenta').inner_text())
         racha = p2.evaluate("() => localStorage.getItem('fuxiagames_palabra_racha')")
         chk('palabra: racha = 1', racha == '1', racha)
-        p2.click('#share'); p2.wait_for_timeout(500)
+        chk('palabra: 6 botones de compartir', p2.locator('.fg-share-btn').count() == 6,
+            p2.locator('.fg-share-btn').count())
+        p2.click('#fg-copiar'); p2.wait_for_timeout(500)
         txt = p2.evaluate('() => navigator.clipboard.readText()')
         chk('palabra: comparte marca y link', 'FUXIA GAMES' in txt and 'mansodiario.com' in txt, txt)
         chk('palabra: NO revela la palabra', resp not in txt.upper(), txt)
+
+        # Cada botón arma su propia URL: si alguna filtrara la respuesta, el que
+        # recibe el mensaje vería la palabra antes de jugar.
+        hrefs = {}
+        bs = p2.locator('.fg-share-btn')
+        for i in range(bs.count()):
+            red = bs.nth(i).get_attribute('class').split()[-1].replace('fg-share-', '')
+            hrefs[red] = bs.nth(i).get_attribute('href')
+        chk('compartir: WhatsApp', 'wa.me' in (hrefs.get('whatsapp') or ''))
+        chk('compartir: Telegram', 't.me/share' in (hrefs.get('telegram') or ''))
+        chk('compartir: X', 'twitter.com/intent' in (hrefs.get('x') or ''))
+        chk('compartir: Facebook', 'facebook.com/sharer' in (hrefs.get('facebook') or ''))
+        chk('compartir: Mail es mailto', (hrefs.get('mail') or '').startswith('mailto:'))
+        chk('compartir: las 5 redes en pestana nueva',
+            all(bs.nth(i).get_attribute('target') == '_blank' for i in range(5)))
+        chk('compartir: las 5 con noopener noreferrer', all(
+            'noopener' in (bs.nth(i).get_attribute('rel') or '') and
+            'noreferrer' in (bs.nth(i).get_attribute('rel') or '') for i in range(5)))
+        chk('compartir: todos con aria-label',
+            all(bs.nth(i).get_attribute('aria-label') for i in range(bs.count())))
+        chk('compartir: area de toque de 44px', p2.evaluate(
+            "() => { const r = document.querySelector('.fg-share-btn').getBoundingClientRect();"
+            "        return r.width >= 44 && r.height >= 44; }"))
+        for red, h in hrefs.items():
+            if h:
+                chk('compartir: %s NO revela la palabra' % red,
+                    resp not in up.unquote(h).upper(), up.unquote(h)[:80])
+        wa = up.unquote(hrefs['whatsapp'])
+        chk('compartir: WhatsApp lleva la grilla y el link',
+            '\U0001F7E9' in wa and 'mansodiario.com' in wa, wa[:80])
+        ml = up.unquote(hrefs['mail'])
+        chk('compartir: el mail trae asunto y cuerpo',
+            'subject=FUXIA GAMES' in ml and '\U0001F7E9' in ml.split('body=')[1], ml[:70])
         p2.reload(); p2.wait_for_selector('.fg-result'); p2.wait_for_timeout(400)
         chk('palabra: al recargar muestra el resultado', p2.locator('.fg-result').is_visible())
         chk('palabra: teclado deshabilitado', 'off' in (p2.locator('#kb').get_attribute('class') or ''))
@@ -121,7 +156,8 @@ try:
         chk('agrupa: 4 grupos resueltos', p3.locator('.grupo').count() == 4)
         chk('agrupa: sin errores gastados', p3.locator('.vida.off').count() == 0)
         cats = p3.locator('.grupo b').all_inner_texts()
-        p3.click('#share'); p3.wait_for_timeout(500)
+        chk('agrupa: 6 botones de compartir', p3.locator('.fg-share-btn').count() == 6)
+        p3.click('#fg-copiar'); p3.wait_for_timeout(500)
         t3 = p3.evaluate('() => navigator.clipboard.readText()')
         chk('agrupa: comparte marca y link', 'FUXIA GAMES' in t3 and 'mansodiario.com' in t3, t3)
         chk('agrupa: NO revela las categorias',
@@ -164,7 +200,8 @@ try:
             chk('trivia: marcador sobre 5', 'de 5' in p6.locator('.fg-result').inner_text())
             chk('trivia: racha = 1',
                 p6.evaluate("() => localStorage.getItem('fuxiagames_trivia_racha')") == '1')
-            p6.click('#share'); p6.wait_for_timeout(500)
+            chk('trivia: 6 botones de compartir', p6.locator('.fg-share-btn').count() == 6)
+            p6.click('#fg-copiar'); p6.wait_for_timeout(500)
             t6 = p6.evaluate('() => navigator.clipboard.readText()')
             chk('trivia: comparte marca y link', 'FUXIA GAMES' in t6 and 'mansodiario.com' in t6, t6)
             chk('trivia: NO revela preguntas ni respuestas', all(len(l) < 60 for l in t6.split('\n')), t6)

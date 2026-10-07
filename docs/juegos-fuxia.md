@@ -72,20 +72,22 @@ Solo 23 de los 30 días traen contenido distinto. Son idénticos entre sí: 5/17
 7/19, 8/20 y 9/21. Palabra del Día sí tiene las 30 palabras únicas, y Trivia ahora también
 (ver §2).
 
-### 1.4 Ninguna pregunta tiene cargado el link a la nota
+### 1.4 "Leer la nota" está apagado a propósito
 
-El botón **"Leer la nota" ya está implementado** en `trivia-cuyana.html`: al responder, si la
-pregunta trae `link_nota`, aparece un botón que abre la nota en pestaña nueva.
+`trivia-cuyana.html` tiene implementado un botón **"Leer la nota"**: al responder, si la
+pregunta trae una URL en `link_nota`, aparece un botón que lleva a esa nota. Sirve para que
+el juego empuje tráfico a los artículos, pero obliga a emparejar cada pregunta con una nota
+a mano.
 
-Lo que falta es contenido: las 150 preguntas tienen `link_nota` en `null`, así que el botón
-no se dibuja nunca. Para activarlo en una pregunta, completá el campo en `data/trivia.json`:
+**Hoy está desactivado**: las 150 preguntas tienen `link_nota` en `null`, así que el botón
+no se dibuja nunca. No hay nada que mantener. Si alguna vez lo querés usar, completás el
+campo en `data/trivia.json` y aparece solo en esa pregunta:
 
 ```json
 "link_nota": "https://mansodiario.com/2026/10/la-fiesta-nacional-del-sol/"
 ```
 
-Tiene que empezar con `http://` o `https://`; cualquier otra cosa se descarta en silencio,
-para que un valor mal pegado no termine siendo un link ejecutable.
+Tiene que empezar con `http://` o `https://`; cualquier otra cosa se descarta en silencio.
 
 ## 2. El banco de Trivia
 
@@ -279,7 +281,53 @@ Si usás plugin de caché, excluí `/juegos-fuxia/data/*.json` o ponele un TTL c
 
 ---
 
-## 7. Cómo navega el lector
+## 7. Compartir
+
+Al terminar, cada juego muestra una fila de botones: **WhatsApp, Telegram, X, Facebook,
+mail y copiar**. En celular, además, aparece arriba el botón grande "Compartir resultado",
+que abre el menú del sistema con todo lo que el lector tenga instalado.
+
+La fila de botones no es redundante: `navigator.share` **solo existe en celular**. En
+escritorio, sin esos botones, al lector le queda únicamente copiar y pegar a mano, que es
+donde se cae la mayoría. WhatsApp va primero porque es donde más se comparte acá.
+
+Lo que se manda es el encabezado, la grilla de emojis y el link. **Nunca la respuesta**:
+hay un test que revisa las URL de los seis botones una por una y falla si alguna filtra la
+palabra del día o las categorías de Agrupá.
+
+```
+FUXIA GAMES · Palabra del Día #1 3/6
+⬛🟨⬛⬛🟩
+🟩🟨⬛🟩🟩
+🟩🟩🟩🟩🟩
+https://mansodiario.com
+```
+
+### Falta completar a dónde apunta el link
+
+Arriba de `shared.js` está esto:
+
+```js
+var URL_JUEGO = {
+  palabra: SITE_URL,   // p. ej. 'https://mansodiario.com/juegos/palabra-del-dia/'
+  agrupa:  SITE_URL,
+  trivia:  SITE_URL
+};
+```
+
+Mientras queden en `SITE_URL`, el que recibe el mensaje **cae en la portada del diario** y
+tiene que buscar el juego. Poniendo la URL de la página de WordPress de cada juego entra
+directo, y además la vista previa del link en WhatsApp o Facebook muestra el título y la
+imagen de esa página en vez de los de la home.
+
+Para que esa vista previa quede bien, conviene que cada página de WordPress tenga su propia
+imagen de portada y su descripción: eso se configura en WordPress (Yoast, Rank Math o el
+plugin de SEO que uses), no acá.
+
+Facebook es el único que **descarta el texto** y solo levanta la URL: comparte el link al
+juego, no la grilla de emojis. Es una limitación de Facebook, no del código.
+
+## 8. Cómo navega el lector
 
 | Elemento | A dónde va | Sale del iframe |
 |---|---|---|
@@ -303,17 +351,18 @@ grep -rn "mansodiario.com\|instagram.com" *.html shared.js
 
 ---
 
-## 8. Tests
+## 9. Tests
 
 ```bash
 cd juegos-fuxia && python3 -m http.server 8777 &
 python3 tests/test-juegos.py
 ```
 
-35 casos en Chromium: las 3 pantallas, una partida completa de Palabra del Día y otra de
-Agrupá, las rachas, el "ya jugaste hoy", que el texto que se comparte no filtre la respuesta
-ni las categorías, y que los links se comporten bien embebidos en una nota (el logo
-reemplaza la ventana entera, Instagram abre pestaña nueva y deja la partida intacta).
+68 casos en Chromium: las 4 pantallas, una partida completa de cada juego, las rachas, el
+"ya jugaste hoy", los seis botones de compartir con sus URL revisadas una por una para que
+ninguna filtre la respuesta, el botón "Leer la nota" con URL válida y el descarte de una
+inválida, y que los links se comporten bien embebidos en una nota (la marca reemplaza la
+ventana entera, Instagram abre pestaña nueva y deja la partida intacta).
 
 El script levanta Chromium solo; `mansodiario.com` e `instagram.com` se interceptan porque
 el entorno de prueba no los alcanza.
