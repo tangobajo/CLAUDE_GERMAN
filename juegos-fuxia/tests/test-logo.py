@@ -40,6 +40,17 @@ try:
             pie=p.locator('.fx-footer a[href*="mansodiario"]')
             chk('%-21s el link del pie tambien sale del iframe' % archivo,
                 pie.get_attribute('target')=='_top', pie.get_attribute('target'))
+            ig=p.locator('.fx-footer a[href*="instagram"]')
+            chk('%-21s "Fuxia Games" del pie va a Instagram' % archivo,
+                ig.count()==1 and ig.get_attribute('href')=='https://instagram.com/fuxiagames',
+                ig.get_attribute('href'))
+            chk('%-21s Instagram abre en pestana nueva' % archivo,
+                ig.get_attribute('target')=='_blank', ig.get_attribute('target'))
+            chk('%-21s Instagram lleva rel noopener noreferrer' % archivo,
+                'noopener' in (ig.get_attribute('rel') or '') and
+                'noreferrer' in (ig.get_attribute('rel') or ''), ig.get_attribute('rel'))
+            chk('%-21s el texto del link dice Fuxia Games' % archivo,
+                ig.inner_text().strip()=='Fuxia Games', ig.inner_text())
             p.click('.fx-header__home'); p.wait_for_timeout(500)
             chk('%-21s click directo -> portada' % archivo,
                 p.locator('#portada').count()==1, p.url)
@@ -57,6 +68,22 @@ try:
             chk('%-21s el iframe ya no existe (no quedo adentro)' % archivo,
                 p.locator('#j').count()==0, 'el iframe sigue ahi')
             p.close()
+
+        # Instagram, desde adentro del iframe, tiene que abrir una pestana nueva
+        # y dejar la partida intacta donde estaba.
+        wrapper('agrupa.html')
+        p=ctx.new_page(); p.goto(BASE+'/_wrapper-logo.html'); p.wait_for_timeout(400)
+        ctx.route('**://instagram.com/**', lambda r: r.fulfill(
+            status=200, content_type='text/html', body='<h1 id="ig">INSTAGRAM</h1>'))
+        antes=len(ctx.pages)
+        with ctx.expect_page() as nueva:
+            p.frame_locator('#j').locator('.fx-footer a[href*="instagram"]').click()
+        tab=nueva.value; tab.wait_for_load_state(); 
+        chk('Instagram abre en una pestana nueva', len(ctx.pages)==antes+1, len(ctx.pages))
+        chk('la pestana nueva es Instagram', 'instagram.com' in tab.url, tab.url)
+        chk('el juego sigue abierto en la pestana original',
+            p.locator('#j').count()==1 and p.frame_locator('#j').locator('.ag-ficha').count()==16)
+        tab.close(); p.close()
 
         # el "← Juegos" NO debe salir del iframe: es navegacion interna
         wrapper('agrupa.html')

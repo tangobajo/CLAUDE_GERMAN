@@ -415,6 +415,7 @@ Dentro de los juegos hay dos clases de link y se comportan distinto a propósito
 | "Manso Diario" en el pie | portada de **Manso Diario** | sí (`target="_top"`) |
 | "← Juegos" | portada de **juegos** (`index.html`) | no |
 | "Ver los otros juegos" | portada de **juegos** (`index.html`) | no |
+| "Fuxia Games" en el pie | **instagram.com/fuxiagames** | pestaña nueva (`target="_blank"`) |
 | "Leer la nota" (Trivia) | la nota que diga el JSON | pestaña nueva (`target="_blank"`) |
 
 El `target="_top"` no es decorativo: **sin eso, al tocar el logo Manso Diario se cargaría
@@ -422,18 +423,22 @@ entero adentro del recuadro de 900 px embebido en la nota**, con el diario metid
 de sí mismo. Con `_top` la navegación reemplaza la ventana completa, que es lo que espera
 el lector.
 
+Instagram y las notas abren en **pestaña nueva** en vez de reemplazar la ventana: el lector
+suele estar en medio de una partida y sacarlo del juego le costaría el intento del día.
+
 El área de toque del logo es de 44×44 px aunque el dibujo mida 30: se agranda con un
 pseudo-elemento invisible, así entra cómodo con el dedo sin correr el logo de lugar.
 
 ### Cambiar el dominio
 
 La URL de la portada está escrita en dos lugares de cada uno de los 4 HTML (el logo y el
-pie), más la constante `URL_MANSO` de `shared.js` que arma el texto de compartir. Si alguna
-vez cambia el dominio:
+pie), más la constante `URL_MANSO` de `shared.js` que arma el texto de compartir. El
+Instagram de Fuxia Games está en el pie de los mismos 4 archivos. Si alguna vez cambia
+alguno de los dos:
 
 ```bash
 cd juegos-fuxia
-grep -rn "mansodiario.com" *.html shared.js
+grep -rn "mansodiario.com\|instagram.com" *.html shared.js
 ```
 
 ### Notas sobre el iframe
