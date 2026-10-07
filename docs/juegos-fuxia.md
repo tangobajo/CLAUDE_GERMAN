@@ -1,33 +1,54 @@
-# Fuxia Games para Manso Diario
+# Fuxia Games · Juegos de Manso Diario
 
-Tres juegos diarios que corren enteros en el navegador del lector: sin backend, sin
-base de datos, sin Firebase y sin librerías externas. Se suben como archivos estáticos
-y se embeben en WordPress con un `<iframe>`.
+Tres juegos diarios que corren enteros en el navegador del lector: sin backend, sin base de
+datos y sin cuentas. Se suben como archivos estáticos y se embeben en WordPress con un
+`<iframe>`.
 
-| Juego | Archivo | Datos | Contenido por día |
-|---|---|---|---|
-| Palabra del Día | `palabra-del-dia.html` | `data/palabras.json` | 1 palabra de 5 letras |
-| Agrupá | `agrupa.html` | `data/categorias.json` | 4 categorías × 4 ítems |
-| Trivia Cuyana | `trivia-cuyana.html` | `data/trivia.json` | 5 preguntas |
+```
+juegos-fuxia/
+├── index.html              portada con las 3 tarjetas
+├── palabra-del-dia.html    Wordle en español
+├── agrupa.html             Connections
+├── trivia-cuyana.html      5 preguntas por día      ← FALTA, ver §1
+├── shared.css              estilos comunes
+├── shared.js               FG.*: día, rachas, compartir
+├── logo-fuxia-games.png
+└── data/
+    ├── palabras.json
+    ├── categorias.json
+    ├── trivia.json            el banco que usa el juego
+    ├── trivia-original.json   el banco viejo de 40 preguntas, se conserva como fuente
+    ├── banco-nuevo.py         las preguntas nuevas, para editar a mano
+    └── armar-trivia.py        fusiona los dos y reparte los 30 días
+```
 
 ---
 
-## 1. Pendientes antes de publicar
+## 1. Lo único que falta
 
-Estas tres cosas salieron de revisar el banco de los primeros 30 días. Ninguna rompe
-el código: son decisiones de contenido tuyas.
+**`trivia-cuyana.html` no está en el repo.** Es el único archivo del proyecto que falta.
+`index.html` lo enlaza, así que hoy la tercera tarjeta lleva a un 404.
 
-### 1.1 Preguntas marcadas "Verificar"
+El `data/trivia.json` nuevo **mantiene exactamente el mismo formato que el anterior**
+(`dia1`, `dias[].preguntas[]` con `pregunta`, `opciones` y `respuesta` como letra), así que
+el `trivia-cuyana.html` que ya tengas funciona con el banco nuevo sin tocarle una línea.
+Los campos `tema` y `link_nota` que se agregaron son extra: el código que no los conoce
+simplemente los ignora.
 
-La planilla marca con **Sí** en la columna `Verificar` los datos que conviene confirmar
-antes de publicarlos como respuesta correcta. Eso se convirtió al campo `"verificar": true`
-en los JSON. **No se muestra nunca en pantalla**: es solo para tu seguimiento interno.
+---
 
-| Archivo | Ítems a verificar |
+## 2. Pendientes de contenido
+
+### 2.1 Preguntas y datos marcados "Verificar"
+
+| Archivo | A revisar |
 |---|---|
 | `palabras.json` | 6 palabras |
-| `categorias.json` | 52 categorías, repartidas en 28 de los 30 días |
-| `trivia.json` | 33 preguntas, repartidas en 15 de los 30 días |
+| `categorias.json` | 52 grupos, repartidos en 28 de los 30 días |
+| `trivia.json` | 20 preguntas (8 del banco viejo + 12 nuevas) |
+
+El campo `"verificar": true` **no se muestra nunca al lector**: es tu checklist. Cuando
+confirmes un dato, poné `false` o borrá el campo.
 
 Para listar lo que falta revisar:
 
@@ -35,510 +56,282 @@ Para listar lo que falta revisar:
 cd juegos-fuxia
 python3 - <<'PY'
 import json
-for f in ['palabras','categorias','trivia']:
-    d = json.load(open('data/%s.json' % f))
-    print('\n===', f, '->', d['revisar'])
+d = json.load(open('data/trivia.json'))
+for dia in d['dias']:
+    for q in dia['preguntas']:
+        if q['verificar']:
+            print('día %2d · %s · %s' % (dia['dia'], q['tema'], q['pregunta']))
 PY
 ```
 
-Cuando confirmes un dato, **borrá el campo `"verificar": true`** de ese ítem. El juego
-funciona igual con o sin el campo; es tu checklist.
+Las 12 nuevas marcadas son casi todas del tipo "el más grande / el que más ganó", donde el
+dato puede quedar viejo o admitir discusión: cuántos Mundiales ganó Argentina, qué club
+ganó más Libertadores, cuántos Nobel tiene el país, cuál es el desierto cálido más extenso,
+el río más caudaloso, el idioma con más hablantes nativos, cuántos huesos tiene el cuerpo.
 
-### 1.2 Ítem repetido en Agrupá (días 5, 17 y 29)
+### 2.2 `OASIS` repetido en Agrupá (días 5, 17 y 29)
 
-En esos tres días **`OASIS` aparece en dos categorías a la vez** (`Accidentes geográficos
-cuyanos` y `Elementos del paisaje sanjuanino`). La grilla muestra dos fichas con el mismo
-texto y el lector no tiene forma de saber cuál va en cada grupo.
+En esos tres días `OASIS` está en dos categorías a la vez: *Accidentes geográficos cuyanos*
+y *Elementos del paisaje sanjuanino*. La grilla muestra dos fichas con el mismo texto.
 
-El juego no se rompe —cada ficha se maneja por su propio id interno, así que el puzzle se
-sigue pudiendo resolver— pero es confuso. **Cambiá uno de los dos `OASIS` en la planilla**
-por otra palabra antes de que salgan esos días. Está registrado en
-`data/categorias.json` → `revisar.items_duplicados_en_el_dia`.
+El juego **no se rompe** —`agrupa.html` identifica las fichas por posición, no por texto, y
+`comunes()` compara como multiconjunto, así que el puzzle se resuelve igual tomando
+cualquiera de las dos— pero el lector ve dos fichas idénticas y no entiende por qué.
+Conviene cambiar una de las dos.
 
-### 1.3 El banco repite días dentro del mismo mes
+### 2.3 Agrupá repite días dentro del mes
 
-No todos los 30 días traen contenido distinto:
+Solo 23 de los 30 días traen contenido distinto. Son idénticos entre sí: 5/17/29, 6/18/30,
+7/19, 8/20 y 9/21. Palabra del Día sí tiene las 30 palabras únicas, y Trivia ahora también
+(ver §3).
 
-| Juego | Días con contenido único | Qué pasa |
-|---|---|---|
-| Palabra del Día | **30 de 30** ✅ | ninguna palabra se repite |
-| Agrupá | **23 de 30** | los días 5/17/29, 6/18/30, 7/19, 8/20 y 9/21 son idénticos entre sí |
-| Trivia Cuyana | **8 de 30** | solo hay 8 días distintos; el lector ve las mismas 5 preguntas cada 8 días |
+### 2.4 El botón "Leer la nota" todavía no existe en el código
 
-Trivia es el caso más fuerte: **40 preguntas únicas repartidas en 150 lugares**. Si el
-objetivo es retención, conviene ampliar ese banco antes del lanzamiento. Está registrado
-en el bloque `revisar.dias_duplicados` de cada JSON.
-
-### 1.4 Ninguna pregunta tiene "Link nota" cargado
-
-La columna `Link nota` de la planilla está vacía en las 150 preguntas, así que hoy el botón
-**"Leer la nota"** no aparece nunca. El código está listo y probado: apenas cargues una URL
-en esa columna, el botón sale solo. Ver §3.3.
-
----
-
-## 2. Cómo se calcula el día
-
-`shared.js` expone la función que usan los tres juegos:
+`trivia.json` ya trae el campo `link_nota` en todas las preguntas, en `null`. Para que
+aparezca el botón hay que agregar esto en `trivia-cuyana.html`, donde se muestra la
+devolución de cada pregunta:
 
 ```js
-FuxiaGames.calcularIndiceDelDia(fechaLanzamiento, largoDelBanco)  // -> 0 .. largo-1
-```
-
-- Toma la fecha civil de **San Juan**, restando 3 horas fijas del UTC. San Juan no aplica
-  horario de verano, así que el desfase es constante todo el año.
-- El contenido cambia a la **medianoche de San Juan**, no a la de UTC. Sin este ajuste el
-  juego cambiaría de palabra a las 21:00 hora local.
-- No depende del reloj ni de la zona horaria del dispositivo del lector: alguien que abra
-  la página desde Madrid ve el mismo juego que alguien en San Juan.
-- Cuando se termina el banco, **vuelve a empezar** (es un módulo). Con 30 días cargados, el
-  día 31 muestra otra vez el día 1.
-- **Antes del día 1 devuelve 0**, es decir el día 1. Así se puede probar el contenido antes
-  del lanzamiento sin ver una pantalla vacía.
-
-### Cambiar la fecha de "día 1" / reiniciar el ciclo
-
-La fecha vive en el campo `fecha_dia_1` de cada JSON — **no está hardcodeada en el código**.
-Para reiniciar el ciclo, editá ese campo en los tres archivos:
-
-```json
-{
-  "juego": "palabra-del-dia",
-  "fecha_dia_1": "2026-10-01",     <-- cambiá esto
-  "dias": [ ... ]
+// Solo http(s): si en el JSON quedó pegado cualquier otra cosa, se descarta.
+var url = q.link_nota && /^https?:\/\//i.test(q.link_nota) ? q.link_nota : null;
+if (url) {
+  html += '<a class="btn btn-cyan" href="' + FG.esc(url) + '" target="_blank" ' +
+          'rel="noopener noreferrer">Leer la nota</a>';
 }
 ```
 
-Formato `YYYY-MM-DD`. Poniendo la fecha de hoy, el lector vuelve a ver el día 1.
-
-> Los tres archivos pueden tener fechas distintas si querés arrancar un juego antes que
-> otro. Hoy los tres están en `2026-10-01`, que es el día 1 que fija la hoja `Instrucciones`
-> de la planilla.
-
-Ojo: cambiar `fecha_dia_1` **no borra las rachas** que ya tenga guardadas el lector. Para
-eso tendría que limpiar los datos del sitio en su navegador.
+La clase `btn-cyan` ya está en `shared.css` y el comentario del archivo dice que es
+justamente para este botón.
 
 ---
 
-## 3. Cómo agregar contenido nuevo
+## 3. El banco de Trivia
 
-El formato de cada JSON es un espejo de la hoja de la planilla, así que la próxima planilla
-se convierte igual. El script que hace la conversión está en
-`juegos-fuxia/data/convertir-planilla.py`:
+### Cómo está armado
+
+150 preguntas únicas en 30 días × 5, **sin que se repita ninguna en el ciclo**. Antes eran
+40 únicas repartidas en 150 lugares: el lector veía las mismas 5 preguntas cada 8 días.
+
+| Tema | Preguntas |
+|---|---|
+| `san-juan` | 40 |
+| `argentina` | 28 |
+| `deportes` | 28 |
+| `espectaculos` | 27 |
+| `ciencia` | 27 |
+
+**La pregunta 1 de cada día es siempre de San Juan / Cuyo**, y las otras 4 rotan entre los
+temas generales, así ningún día queda con cuatro preguntas del mismo palo. Quedan 6
+preguntas en la clave `reserva` del JSON: no se publican, están ahí para no perderlas.
+
+La letra de la respuesta correcta está repartida pareja (A 38, B 38, C 37, D 37). No es
+cosmético: barajando cada pregunta por separado salía A 54 y B 24, y el que marcaba siempre
+A acertaba el 36%.
+
+### Cómo agregar preguntas
+
+Editá `data/banco-nuevo.py` y agregá tuplas al final de la lista `NUEVAS`:
+
+```python
+("deportes", "¿Qué club ganó la Copa Libertadores 2024?",
+ "Botafogo", ["Atlético Mineiro", "River Plate", "Peñarol"], True),
+#  ^tema      ^pregunta
+#             ^la correcta va SIEMPRE primera    ^los 3 distractores   ^verificar
+```
+
+Temas válidos: `argentina`, `deportes`, `espectaculos`, `ciencia`. Después:
 
 ```bash
-# editá las constantes XLSX / OUT / FECHA_DIA_1 de arriba del script y corré:
-pip install openpyxl
-python3 juegos-fuxia/data/convertir-planilla.py
+python3 juegos-fuxia/data/armar-trivia.py
 ```
 
-El script valida mientras convierte: que las palabras sean de 5 letras, que cada día de
-Agrupá tenga las 4 dificultades y que cada día de Trivia tenga 5 preguntas. Si algo no
-cierra, corta y avisa en qué día.
+El script baraja las opciones, calcula la letra, reparte los días y te imprime un informe
+con los totales por tema, la distribución de letras y cuántas quedaron para verificar.
+**No escribas `trivia.json` a mano**: lo pisa el script en la próxima corrida.
 
-Si preferís editar el JSON a mano, este es el formato exacto.
-
-### 3.1 `data/palabras.json` — hoja "Palabra del Dia"
-
-```json
-{
-  "juego": "palabra-del-dia",
-  "fecha_dia_1": "2026-10-01",
-  "revisar": { "...": "diagnóstico, no lo lee el juego" },
-  "dias": [
-    {
-      "dia": 1,
-      "palabra": "ZONDA",
-      "palabra_display": "ZONDA",
-      "pista": "Viento cálido y seco típico de Cuyo; también nombre de un departamento sanjuanino",
-      "verificar": true
-    }
-  ]
-}
-```
-
-| Campo | Columna de la planilla | Obligatorio | Notas |
-|---|---|---|---|
-| `dia` | `Día` | sí | 1, 2, 3… en orden |
-| `palabra` | `Palabra (sin tilde)` | sí | **5 letras, mayúsculas, sin tilde**. Es contra esto que se compara lo que tipea el lector. La `Ñ` sí se acepta |
-| `palabra_display` | `Palabra (con tilde)` | sí | Lo que se muestra al revelar la respuesta. Si no lleva tilde, repetí `palabra` |
-| `pista` | `Tema / Pista` | sí | Se muestra arriba del tablero desde el arranque |
-| `verificar` | `Verificar` = Sí | no | Solo para tu control. Nunca se muestra |
-
-La columna `Fecha (ref.)` de la planilla **no se convierte**: es una referencia visual. La
-fecha real sale de `fecha_dia_1` + la posición en el array.
-
-### 3.2 `data/categorias.json` — hoja "Agrupa"
-
-Cuatro filas de la planilla = un día. Una fila por dificultad.
-
-```json
-{
-  "juego": "agrupa",
-  "fecha_dia_1": "2026-10-01",
-  "dias": [
-    {
-      "dia": 1,
-      "grupos": [
-        { "dificultad": "amarillo", "categoria": "Comidas típicas de Cuyo",
-          "items": ["EMPANADA", "LOCRO", "HUMITA", "ASADO"] },
-        { "dificultad": "verde",    "categoria": "Instrumentos del folklore",
-          "items": ["GUITARRA", "BOMBO", "ACORDEON", "VIOLIN"] },
-        { "dificultad": "azul",     "categoria": "Palabras del mundo del vino",
-          "items": ["COSECHA", "RACIMO", "BODEGA", "VARIETAL"] },
-        { "dificultad": "morado",   "categoria": "Departamentos de San Juan",
-          "items": ["CAPITAL", "RAWSON", "CHIMBAS", "POCITO"], "verificar": true }
-      ]
-    }
-  ]
-}
-```
-
-| Campo | Columna | Notas |
-|---|---|---|
-| `dificultad` | `Dificultad` | En minúscula: `amarillo`, `verde`, `azul`, `morado`. Convención de Connections: amarillo = más fácil, morado = el que tiene trampa |
-| `categoria` | `Categoría` | Se revela recién cuando el lector acierta ese grupo |
-| `items` | `Ítem 1` a `Ítem 4` | Exactamente 4, en mayúsculas |
-| `verificar` | `Verificar` = Sí | Solo para tu control |
-
-**Reglas que conviene respetar:**
-
-- Los 4 grupos tienen que estar, uno por cada dificultad, y en ese orden.
-- **Los 16 ítems del día tienen que ser distintos entre sí.** Si una palabra se repite en
-  dos categorías, el lector ve dos fichas iguales y no puede resolver el puzzle sin adivinar
-  (es lo que pasa hoy con `OASIS`, §1.2).
-- Ítems cortos: en un celular de 320 px de ancho, las palabras de más de ~11 caracteres
-  entran justas.
-- El orden de la grilla se mezcla solo, con una semilla derivada del número de día: siempre
-  igual para todos los lectores y estable si recargan la página.
-
-### 3.3 `data/trivia.json` — hoja "Trivia Cuyana"
-
-Cinco filas de la planilla = un día. Una fila por pregunta.
-
-```json
-{
-  "juego": "trivia-cuyana",
-  "fecha_dia_1": "2026-10-01",
-  "dias": [
-    {
-      "dia": 1,
-      "preguntas": [
-        {
-          "n": 1,
-          "pregunta": "¿En qué provincia argentina nació Domingo Faustino Sarmiento?",
-          "opciones": ["San Juan", "Mendoza", "San Luis", "La Rioja"],
-          "respuesta": 0,
-          "link_nota": null,
-          "verificar": true
-        }
-      ]
-    }
-  ]
-}
-```
-
-| Campo | Columna | Notas |
-|---|---|---|
-| `n` | `N° Pregunta` | 1 a 5 |
-| `pregunta` | `Pregunta` | Texto plano |
-| `opciones` | `Opción A` a `Opción D` | Siempre 4, en ese orden |
-| `respuesta` | `Respuesta` | **Número, no letra.** A→`0`, B→`1`, C→`2`, D→`3` |
-| `link_nota` | `Link nota (opcional)` | `null` o una URL. Ver abajo |
-| `verificar` | `Verificar` = Sí | Solo para tu control. **No se muestra al lector** |
-
-**El botón "Leer la nota":** si `link_nota` trae una URL, al responder esa pregunta aparece
-un botón que la abre en una pestaña nueva. Si es `null`, no aparece nada.
-
-```json
-"link_nota": "https://mansodiario.com/2026/10/la-fiesta-nacional-del-sol/"
-```
-
-Tiene que empezar con `http://` o `https://`; cualquier otra cosa se descarta en silencio,
-para que un valor mal pegado en la planilla no termine ejecutándose en la página.
+Si querés más de 30 días, cambiá `DIAS` arriba de `armar-trivia.py` y cargá preguntas
+suficientes: hacen falta `DIAS × 5` únicas, con `DIAS` de ellas locales.
 
 ---
 
-## 4. Qué se guarda en el navegador
+## 4. Los otros dos bancos
 
-Todo el estado del jugador vive en el `localStorage` de su navegador. No hay servidor, no
-hay cuentas, no se manda nada a ningún lado. **Si el lector cambia de dispositivo o borra la
-caché, pierde la racha** — es una decisión consciente del proyecto.
+### `data/palabras.json`
 
-Dos claves por juego:
+```json
+{ "dia1": "2026-10-07",
+  "palabras": [
+    { "dia": 1, "palabra": "ZONDA", "mostrar": "ZONDA",
+      "pista": "Viento cálido y seco típico de Cuyo…", "verificar": true } ] }
+```
+
+| Campo | Notas |
+|---|---|
+| `palabra` | **5 letras, mayúsculas, sin tildes ni Ñ.** Es contra esto que se compara lo que tipea el lector, y el teclado en pantalla no tiene tecla Ñ |
+| `mostrar` | lo que se ve al revelar la respuesta; acá sí van tildes (`VIÑAS`, `FOGÓN`) |
+| `pista` | se muestra en el panel de resultado, como "¿Sabías que?" |
+
+### `data/categorias.json`
+
+```json
+{ "dia1": "2026-10-07",
+  "dias": [ { "dia": 1, "grupos": [
+    { "dificultad": "amarillo", "categoria": "Comidas típicas de Cuyo",
+      "items": ["EMPANADA","LOCRO","HUMITA","ASADO"], "verificar": false } ] } ] }
+```
+
+Los 4 grupos van en orden `amarillo`, `verde`, `azul`, `morado` (convención de Connections:
+amarillo el más fácil, morado el de la trampa). **Los 16 ítems del día tienen que ser
+distintos entre sí** — ver §2.2.
+
+---
+
+## 5. Cómo se calcula el día
+
+`shared.js` expone `FG.calcularIndiceDelDia(fechaLanzamiento, largoDelBanco)`:
+
+- Usa la fecha civil de **San Juan**, restando 3 horas fijas del UTC. San Juan no aplica
+  horario de verano, así que el desfase es constante.
+- El contenido cambia a la **medianoche de San Juan**, no a la de UTC.
+- No depende del reloj del dispositivo del lector.
+- Devuelve **-1 si el juego todavía no arrancó**, y ahí los juegos muestran "¡Muy pronto!"
+  con la fecha de inicio.
+- Cuando se termina el banco vuelve a empezar (módulo).
+
+### Cambiar la fecha de "día 1"
+
+Está en el campo `dia1` de cada JSON, no en el código. Para reiniciar el ciclo, poné la
+fecha de hoy en los tres archivos (formato `YYYY-MM-DD`). Hoy los tres están en
+`2026-10-07`.
+
+Cambiar `dia1` **no borra las rachas** que ya tenga guardadas el lector.
+
+### Vista previa de otro día
+
+`shared.js` acepta `?fecha=AAAA-MM-DD` en la URL para ver el juego de cualquier día sin
+esperar. En ese modo no se guarda nada en el navegador:
+
+```
+https://mansodiario.com/juegos-fuxia/trivia-cuyana.html?fecha=2026-10-15
+```
+
+---
+
+## 6. Qué se guarda en el navegador
+
+Todo el estado vive en el `localStorage` del lector. No hay servidor ni cuentas. **Si cambia
+de dispositivo o borra la caché, pierde la racha** — es una decisión consciente.
+
+Tres claves por juego, con prefijo `fuxiagames_[juego]_`:
 
 | Clave | Contenido |
 |---|---|
-| `fuxiagames_palabra_estado` | la partida de hoy: intentos, si ganó, y la fecha |
-| `fuxiagames_palabra_racha` | `actual`, `maxima`, `jugados`, `ganados`, `ultimoDiaJugado` |
-| `fuxiagames_agrupa_estado` / `_racha` | ídem para Agrupá |
-| `fuxiagames_trivia_estado` / `_racha` | ídem para Trivia |
+| `fuxiagames_palabra_hoy` | la partida del día: intentos, si terminó, si ganó |
+| `fuxiagames_palabra_racha` | días seguidos ganados |
+| `fuxiagames_palabra_ultimoDia` | número de día de la última partida terminada |
 
-- **Si ya jugó hoy**, el juego muestra el resultado del día en vez de dejarlo jugar otra vez.
-  Lo decide comparando el campo `fecha` del estado guardado contra la fecha de hoy en San Juan.
-- La partida se guarda **a medida que avanza**, no solo al terminar: si cierra el navegador
-  a mitad de camino, al volver retoma donde estaba.
-- La racha cuenta **días ganados seguidos**. Perder la corta. Saltarse un día la corta.
-- Si el navegador está en modo incógnito o bloquea el almacenamiento, los juegos **funcionan
-  igual**, solo que no recuerdan nada. La portada avisa con un cartel.
-
-### Compartir resultado
-
-Los tres juegos arman una grilla de emojis al estilo Wordle **sin revelar la respuesta**,
-más el link de vuelta a `mansodiario.com`:
-
-```
-Fuxia Games · Palabra del Día #1 — 3/6
-
-⬛🟨⬛⬛🟩
-🟩🟨⬛🟩🟩
-🟩🟩🟩🟩🟩
-
-Jugá en https://mansodiario.com
-```
-
-Usa la **Web Share API** (el menú nativo de compartir del celular) y, donde no existe,
-copia al portapapeles. Está verificado que el texto compartido no contiene ni la palabra
-secreta, ni los nombres de las categorías, ni las preguntas.
+Ídem con `agrupa` y `trivia`. Si el navegador bloquea el almacenamiento, `shared.js` cae a
+una copia en memoria: el juego anda igual pero no recuerda nada al recargar.
 
 ---
 
-## 5. Cómo se sube al hosting
+## 7. Cómo se sube y se embebe
 
-Copiá la carpeta `juegos-fuxia/` completa al servidor, **dentro del mismo dominio que
-Manso Diario**:
+Copiá la carpeta `juegos-fuxia/` completa al servidor, **dentro del mismo dominio que Manso
+Diario**:
 
 ```
-mansodiario.com/
-└── juegos-fuxia/
-    ├── index.html
-    ├── palabra-del-dia.html
-    ├── agrupa.html
-    ├── trivia-cuyana.html
-    ├── shared.css
-    ├── shared.js
-    ├── assets/
-    │   ├── logo-fuxia-games.svg
-    │   └── logo-fuxia-games-icono.svg
-    └── data/
-        ├── palabras.json
-        ├── categorias.json
-        └── trivia.json
+mansodiario.com/juegos-fuxia/
 ```
 
-Se puede subir por FTP, por el administrador de archivos del hosting, o con el plugin
-*File Manager* de WordPress. No hace falta compilar nada.
+### Tiene que ser el mismo dominio
 
-### ⚠️ Tiene que ser el mismo dominio
+Si los juegos se sirven desde otro dominio que el de la página de WordPress que los embebe,
+Chrome y Safari **particionan el `localStorage` del iframe**: la racha se guarda en un
+compartimento aparte, la portada no ve que el lector ya jugó, y en Safari con "Prevent
+cross-site tracking" —prendido por defecto— el almacenamiento se borra a los 7 días. Un
+subdominio (`juegos.mansodiario.com`) también cuenta como otro dominio.
 
-**Esto es importante y no es negociable.** Si los juegos se sirven desde un dominio distinto
-al de la página de WordPress que los embebe (por ejemplo `juegos.otrositio.com` dentro de
-`mansodiario.com`), Chrome y Safari **particionan el `localStorage` del iframe**. Consecuencias:
+### Se tiene que servir por HTTP
 
-- la racha del lector se guarda en un compartimento aparte,
-- la portada `index.html` no ve que ya jugó,
-- y en Safari con "Prevent cross-site tracking" activado —que viene **prendido por defecto**—
-  el almacenamiento directamente se borra a los 7 días.
-
-Lo verifiqué en Chromium: con el iframe en el mismo origen el estado se comparte bien; con
-el iframe en otro origen, la página directa no ve nada de lo guardado dentro del iframe.
-
-**Subilo a `mansodiario.com/juegos-fuxia/` y listo.** Un subdominio (`juegos.mansodiario.com`)
-también es cross-origin para el `localStorage`: no sirve.
-
-### Los archivos se tienen que servir por HTTP
-
-Los juegos leen su contenido con `fetch()` desde `data/*.json`. Abrir el HTML con doble clic
-desde el escritorio (`file://`) **no funciona**: el navegador bloquea esas lecturas. Para
-probar en tu máquina antes de subir:
+Los juegos leen su contenido con `fetch()`. Abrir el HTML con doble clic desde el escritorio
+(`file://`) no funciona; `shared.js` ya muestra un mensaje explicándolo. Para probar local:
 
 ```bash
-cd juegos-fuxia
-python3 -m http.server 8777
-# abrir http://localhost:8777/index.html
+cd juegos-fuxia && python3 -m http.server 8777
 ```
 
----
+### El iframe en WordPress
 
-## 6. Cómo se embebe en WordPress
-
-Cada juego es un archivo independiente y se embebe solo. Creá una página de WordPress
-("Juegos", "Palabra del Día", etc.), pasá el editor a **HTML personalizado** y pegá:
-
-### Portada con los 3 juegos
-
-```html
-<iframe src="https://mansodiario.com/juegos-fuxia/index.html"
-        title="Juegos de Fuxia Games"
-        width="100%" height="1100"
-        style="border:0;max-width:900px;margin:0 auto;display:block"
-        loading="lazy"></iframe>
-```
-
-### Palabra del Día
+Una página de WordPress por juego, editor en **HTML personalizado**:
 
 ```html
 <iframe src="https://mansodiario.com/juegos-fuxia/palabra-del-dia.html"
-        title="Palabra del Día"
-        width="100%" height="900"
-        style="border:0;max-width:600px;margin:0 auto;display:block"
+        title="Palabra del Día" width="100%" height="900"
+        style="border:0;max-width:560px;margin:0 auto;display:block"
         loading="lazy"></iframe>
 ```
 
-### Agrupá
+Altos sugeridos: portada 1000, Palabra 900, Agrupá 1000, Trivia 800. Si ves scroll interno,
+subí el `height`.
+
+`shared.js` además manda su alto real al padre por `postMessage` (`{tipo:
+'fuxiagames-alto', alto, juego}`), así que si querés un iframe que se ajuste solo, en la
+página de WordPress:
 
 ```html
-<iframe src="https://mansodiario.com/juegos-fuxia/agrupa.html"
-        title="Agrupá"
-        width="100%" height="1000"
-        style="border:0;max-width:600px;margin:0 auto;display:block"
-        loading="lazy"></iframe>
+<script>
+window.addEventListener('message', function (e) {
+  if (e.data && e.data.tipo === 'fuxiagames-alto') {
+    var f = document.querySelector('iframe[src*="juegos-fuxia"]');
+    if (f) f.style.height = (e.data.alto + 20) + 'px';
+  }
+});
+</script>
 ```
 
-### Trivia Cuyana
+**No le pongas `sandbox` al iframe** sin incluir `allow-top-navigation-by-user-activation`,
+o el logo deja de poder volver a la portada.
 
-```html
-<iframe src="https://mansodiario.com/juegos-fuxia/trivia-cuyana.html"
-        title="Trivia Cuyana"
-        width="100%" height="800"
-        style="border:0;max-width:600px;margin:0 auto;display:block"
-        loading="lazy"></iframe>
-```
+Si usás plugin de caché, excluí `/juegos-fuxia/data/*.json` o ponele un TTL corto.
 
-## 6.1 Cómo navega el lector
+---
 
-Dentro de los juegos hay dos clases de link y se comportan distinto a propósito:
+## 8. Cómo navega el lector
 
 | Elemento | A dónde va | Sale del iframe |
 |---|---|---|
-| El logo de la cabecera | portada de **Manso Diario** | sí (`target="_top"`) |
-| "Manso Diario" en el pie | portada de **Manso Diario** | sí (`target="_top"`) |
-| "← Juegos" | portada de **juegos** (`index.html`) | no |
-| "Ver los otros juegos" | portada de **juegos** (`index.html`) | no |
-| "Fuxia Games" en el pie | **instagram.com/fuxiagames** | pestaña nueva (`target="_blank"`) |
-| "Leer la nota" (Trivia) | la nota que diga el JSON | pestaña nueva (`target="_blank"`) |
+| `MANSO!DIARIO` del encabezado | portada de **Manso Diario** | sí (`target="_top"`) |
+| `← Juegos` del titlebar | portada de **juegos** | no |
+| `FUXIA GAMES` del pie, y su logo | **instagram.com/fuxiagames** | pestaña nueva |
+| `mansodiario.com` del pie | portada de **Manso Diario** | pestaña nueva |
+| "Leer la nota" (cuando exista) | la nota del JSON | pestaña nueva |
 
-El `target="_top"` no es decorativo: **sin eso, al tocar el logo Manso Diario se cargaría
-entero adentro del recuadro de 900 px embebido en la nota**, con el diario metido dentro
-de sí mismo. Con `_top` la navegación reemplaza la ventana completa, que es lo que espera
-el lector.
+El `target="_top"` del encabezado no es decorativo: sin eso, al tocar la marca Manso Diario
+se cargaría entero adentro del recuadro embebido en la nota. Instagram y las notas abren en
+pestaña nueva en vez de reemplazar la ventana, porque el lector suele estar en medio de una
+partida.
 
-Instagram y las notas abren en **pestaña nueva** en vez de reemplazar la ventana: el lector
-suele estar en medio de una partida y sacarlo del juego le costaría el intento del día.
-
-El área de toque del logo es de 44×44 px aunque el dibujo mida 30: se agranda con un
-pseudo-elemento invisible, así entra cómodo con el dedo sin correr el logo de lugar.
-
-### Cambiar el dominio
-
-La URL de la portada está escrita en dos lugares de cada uno de los 4 HTML (el logo y el
-pie), más la constante `URL_MANSO` de `shared.js` que arma el texto de compartir. El
-Instagram de Fuxia Games está en el pie de los mismos 4 archivos. Si alguna vez cambia
-alguno de los dos:
+Si cambia alguno de los dos dominios:
 
 ```bash
 cd juegos-fuxia
 grep -rn "mansodiario.com\|instagram.com" *.html shared.js
 ```
 
-### Notas sobre el iframe
-
-- **El alto es fijo.** El iframe no se estira solo con el contenido. Los valores de arriba
-  dan aire de sobra en celular; si ves una barra de scroll interna, subí el `height`.
-- **Poné cada juego en su propia página de WordPress.** Los links internos ("← Juegos",
-  "Ver los otros juegos") navegan dentro del iframe, lo cual funciona pero deja al lector
-  con la cabecera de WordPress de otra página. Si querés que salten a la página de WordPress
-  correspondiente, hay que cambiar esos `href` por las URLs reales de tu sitio.
-- **No le pongas `sandbox` al iframe** sin incluir `allow-top-navigation-by-user-activation`,
-  o el logo deja de poder volver a la portada (ver §6.1).
-- El botón "Leer la nota" abre en **pestaña nueva** (`target="_blank"`), así el lector no
-  pierde la partida.
-- No hace falta `allow` ni `sandbox`. Si tu tema o un plugin de seguridad agrega
-  `sandbox`, tiene que incluir al menos `allow-scripts allow-same-origin allow-popups`.
-- Si usás un plugin de caché (WP Rocket, LiteSpeed, W3 Total Cache), **excluí
-  `/juegos-fuxia/data/*.json` de la caché** o al menos ponele un TTL corto, para que los
-  cambios de contenido se vean el mismo día.
-
 ---
 
-## 7. Tests
+## 9. Tests
 
 ```bash
-# lógica de fechas, rachas y utilidades (no necesita navegador)
-node juegos-fuxia/tests/test-shared.js
-
-# los 3 juegos en Chromium, incluido el embebido en iframe
-pip install playwright && playwright install chromium
 cd juegos-fuxia && python3 -m http.server 8777 &
-python3 juegos-fuxia/tests/test-juegos.py
-
-# la navegación del logo y del pie, dentro y fuera del iframe
-python3 juegos-fuxia/tests/test-logo.py
+python3 tests/test-juegos.py
 ```
 
-Cubren: el corte a medianoche de San Juan (incluido el cruce de UTC), el ciclado del banco,
-el comportamiento antes del día 1, el pintado de letras repetidas al estilo Wordle, las
-rachas, el "ya jugaste hoy", que el texto compartido no filtre la respuesta, que el botón
-"Leer la nota" aparezca solo con URL válida, que ninguna página salga a internet, y que el
-logo vuelva a la portada del diario rompiendo el iframe mientras "← Juegos" navega adentro.
+35 casos en Chromium: las 3 pantallas, una partida completa de Palabra del Día y otra de
+Agrupá, las rachas, el "ya jugaste hoy", que el texto que se comparte no filtre la respuesta
+ni las categorías, y que los links se comporten bien embebidos en una nota (el logo
+reemplaza la ventana entera, Instagram abre pestaña nueva y deja la partida intacta).
 
----
-
-## 8. Colores y logo
-
-Los juegos usan la paleta de Manso Diario, no una propia. Los valores salieron de
-muestrear la home del diario, y viven todos juntos arriba de `shared.css`:
-
-```css
-:root {
-  --md-naranja:       #E76F2E;   /* banda del header y badges del diario */
-  --md-naranja-hover: #D15E1F;
-  --md-naranja-texto: #A8450E;   /* links: ver la nota de contraste abajo */
-  --md-tinta:         #252525;   /* titulares y pills de categoría */
-  --md-texto-suave:   #4A4A4A;   /* bajadas */
-  --md-fondo:         #E7E7E5;   /* fondo de página */
-  --md-superficie:    #FFFFFF;   /* tarjetas */
-  --md-borde:         #D6D6D4;   /* divisores */
-}
-```
-
-El fondo de los juegos es **el mismo gris que el cuerpo del diario**, así que el iframe
-no aparece como un recuadro pegado encima de la nota: se funde con la página.
-
-Tres decisiones que conviene no revertir sin mirar el contraste:
-
-- **Los botones naranjas llevan texto oscuro, no blanco.** Blanco sobre `#E76F2E` da
-  3.13:1 y no llega al 4.5:1 que pide WCAG para texto normal; con tinta da 4.90:1. Además
-  es lo que hace el propio diario: el "MUNDO" del header y los números de los badges van
-  en oscuro sobre naranja.
-- **Los links usan `--md-naranja-texto` (`#A8450E`), no el naranja de marca.** El naranja
-  puro como color de texto sobre el gris de fondo da 2.53:1, ilegible. El oscurecido da 4.81:1.
-- **Las celdas verde y amarilla de Palabra del Día llevan texto oscuro.** Wordle las pone en
-  blanco, pero ahí el contraste es 2.78:1 y 2.07:1. Con tinta pasan a 5.51:1 y 7.41:1.
-
-Los cuatro colores de dificultad de Agrupá (`--juego-amarillo`, `--juego-verde`,
-`--juego-azul`, `--juego-morado`) **no son de Manso Diario**: son la convención de
-Connections y por eso están en un bloque aparte. Conviene dejarlos como están, porque el
-lector ya los tiene aprendidos de ese juego y los lee sin pensar. La ficha seleccionada va
-en tinta y no en naranja justamente para que el naranja no se lea como un quinto grupo.
-
-### El logo
-
-`assets/logo-fuxia-games.svg` (completo, para la portada) y
-`assets/logo-fuxia-games-icono.svg` (solo el cuadrado, para la cabecera de los juegos) son
-**provisorios**: los armé porque no tenía acceso al repo de Fuxia Games. Están dibujados en
-la paleta del diario —cuadrado en tinta, puntos en naranja y blanco— para que no compitan
-con la identidad de Manso Diario.
-
-Para poner los reales, pisá esos dos archivos conservando el nombre: no hay que tocar ni el
-HTML ni el CSS. Si el logo real viene en la paleta fucsia de Fuxia Games, va a destacar
-bastante sobre el gris del diario; en ese caso conviene pedir una versión monocromática para
-la cabecera.
-
-### Tipografía
-
-Los títulos van en la sans del sistema en peso 800 con tracking negativo, para acercarse a
-la sans pesada de los titulares del diario. No se cargan fuentes externas (ni Google Fonts
-ni ningún CDN), así que el juego funciona offline y no agrega peso en mobile. Si querés
-usar la fuente real de Manso Diario, se cambia en `--md-titulo` y hay que servir el archivo
-de la fuente desde el mismo dominio.
+El script levanta Chromium solo; `mansodiario.com` e `instagram.com` se interceptan porque
+el entorno de prueba no los alcanza.

@@ -1,2157 +1,2185 @@
 {
-  "juego": "trivia-cuyana",
-  "fecha_dia_1": "2026-10-01",
-  "revisar": {
-    "verificar": [
-      {
-        "dia": 3,
-        "preguntas": [
-          3,
-          4,
-          5
-        ]
-      },
-      {
-        "dia": 4,
-        "preguntas": [
-          3
-        ]
-      },
-      {
-        "dia": 6,
-        "preguntas": [
-          2,
-          4
-        ]
-      },
-      {
-        "dia": 8,
-        "preguntas": [
-          1,
-          4,
-          5
-        ]
-      },
-      {
-        "dia": 11,
-        "preguntas": [
-          3,
-          4,
-          5
-        ]
-      },
-      {
-        "dia": 12,
-        "preguntas": [
-          3
-        ]
-      },
-      {
-        "dia": 14,
-        "preguntas": [
-          2,
-          4
-        ]
-      },
-      {
-        "dia": 16,
-        "preguntas": [
-          1,
-          4,
-          5
-        ]
-      },
-      {
-        "dia": 19,
-        "preguntas": [
-          3,
-          4,
-          5
-        ]
-      },
-      {
-        "dia": 20,
-        "preguntas": [
-          3
-        ]
-      },
-      {
-        "dia": 22,
-        "preguntas": [
-          2,
-          4
-        ]
-      },
-      {
-        "dia": 24,
-        "preguntas": [
-          1,
-          4,
-          5
-        ]
-      },
-      {
-        "dia": 27,
-        "preguntas": [
-          3,
-          4,
-          5
-        ]
-      },
-      {
-        "dia": 28,
-        "preguntas": [
-          3
-        ]
-      },
-      {
-        "dia": 30,
-        "preguntas": [
-          2,
-          4
-        ]
-      }
-    ],
-    "dias_duplicados": [
-      [
-        1,
-        9,
-        17,
-        25
-      ],
-      [
-        2,
-        10,
-        18,
-        26
-      ],
-      [
-        3,
-        11,
-        19,
-        27
-      ],
-      [
-        4,
-        12,
-        20,
-        28
-      ],
-      [
-        5,
-        13,
-        21,
-        29
-      ],
-      [
-        6,
-        14,
-        22,
-        30
-      ],
-      [
-        7,
-        15,
-        23
-      ],
-      [
-        8,
-        16,
-        24
-      ]
-    ],
-    "preguntas_unicas": 40,
-    "preguntas_totales": 150,
-    "con_link_nota": 0,
-    "notas": [
-      "verificar: preguntas marcadas \"Si\" en la planilla. Confirmar el dato antes de publicarlas como respuesta correcta. No se muestra en pantalla al lector.",
-      "dias_duplicados: el banco tiene solo 8 dias distintos de preguntas repetidos en ciclo, asi que el lector ve las mismas 5 preguntas cada 8 dias.",
-      "con_link_nota: cuantas preguntas tienen URL cargada. En 0 el boton \"Leer la nota\" nunca aparece; se activa solo al completar la columna \"Link nota\" de la planilla."
-    ]
-  },
-  "dias": [
+ "dia1": "2026-10-07",
+ "dias": [
+  {
+   "dia": 1,
+   "preguntas": [
     {
-      "dia": 1,
-      "preguntas": [
-        {
-          "n": 1,
-          "pregunta": "¿En qué provincia argentina nació Domingo Faustino Sarmiento?",
-          "opciones": [
-            "San Juan",
-            "Mendoza",
-            "San Luis",
-            "La Rioja"
-          ],
-          "respuesta": 0,
-          "link_nota": null
-        },
-        {
-          "n": 2,
-          "pregunta": "¿Cómo se llama el viento cálido y seco típico de la región de Cuyo?",
-          "opciones": [
-            "Pampero",
-            "Zonda",
-            "Sudestada",
-            "Puelche"
-          ],
-          "respuesta": 1,
-          "link_nota": null
-        },
-        {
-          "n": 3,
-          "pregunta": "¿Cuál es la actividad económica histórica más asociada a San Juan?",
-          "opciones": [
-            "Pesca",
-            "Vitivinicultura",
-            "Ganadería ovina",
-            "Forestación"
-          ],
-          "respuesta": 1,
-          "link_nota": null
-        },
-        {
-          "n": 4,
-          "pregunta": "¿Qué cordillera bordea a la provincia de San Juan?",
-          "opciones": [
-            "Sierras Pampeanas",
-            "Andes",
-            "Sierra de la Ventana",
-            "Macizo del Deseado"
-          ],
-          "respuesta": 1,
-          "link_nota": null
-        },
-        {
-          "n": 5,
-          "pregunta": "La 'Fiesta Nacional del Sol' se celebra principalmente en:",
-          "opciones": [
-            "San Juan",
-            "Mendoza",
-            "Catamarca",
-            "Salta"
-          ],
-          "respuesta": 0,
-          "link_nota": null
-        }
-      ]
+     "pregunta": "¿En qué provincia argentina nació Domingo Faustino Sarmiento?",
+     "opciones": [
+      "San Juan",
+      "Mendoza",
+      "La Rioja",
+      "San Luis"
+     ],
+     "respuesta": "A",
+     "tema": "san-juan",
+     "link_nota": null,
+     "verificar": false
     },
     {
-      "dia": 2,
-      "preguntas": [
-        {
-          "n": 1,
-          "pregunta": "¿Qué fruto es la base de la vitivinicultura cuyana?",
-          "opciones": [
-            "Manzana",
-            "Uva",
-            "Durazno",
-            "Ciruela"
-          ],
-          "respuesta": 1,
-          "link_nota": null
-        },
-        {
-          "n": 2,
-          "pregunta": "¿Cómo se llama la danza tradicional emblemática de Cuyo?",
-          "opciones": [
-            "Chamamé",
-            "Cueca cuyana",
-            "Malambo puro",
-            "Candombe"
-          ],
-          "respuesta": 1,
-          "link_nota": null
-        },
-        {
-          "n": 3,
-          "pregunta": "¿Qué instrumento es central en la música folklórica cuyana?",
-          "opciones": [
-            "Bandoneón",
-            "Guitarra",
-            "Trompeta",
-            "Saxo"
-          ],
-          "respuesta": 1,
-          "link_nota": null
-        },
-        {
-          "n": 4,
-          "pregunta": "Un sistema de canales para llevar agua a los cultivos se llama:",
-          "opciones": [
-            "Acequia",
-            "Tranquera",
-            "Alambrado",
-            "Corral"
-          ],
-          "respuesta": 0,
-          "link_nota": null
-        },
-        {
-          "n": 5,
-          "pregunta": "San Juan suele describirse, por su clima árido y sus oasis de cultivo, como:",
-          "opciones": [
-            "Un oasis en el desierto",
-            "Una selva subtropical",
-            "Una zona de estepa fría",
-            "Un humedal"
-          ],
-          "respuesta": 0,
-          "link_nota": null
-        }
-      ]
+     "pregunta": "¿En qué año se declaró la Independencia de la Argentina?",
+     "opciones": [
+      "1853",
+      "1816",
+      "1810",
+      "1820"
+     ],
+     "respuesta": "B",
+     "tema": "argentina",
+     "link_nota": null,
+     "verificar": false
     },
     {
-      "dia": 3,
-      "preguntas": [
-        {
-          "n": 1,
-          "pregunta": "¿Cuál es la capital de la provincia de San Juan?",
-          "opciones": [
-            "Rawson",
-            "Chimbas",
-            "San Juan (Capital)",
-            "Pocito"
-          ],
-          "respuesta": 2,
-          "link_nota": null
-        },
-        {
-          "n": 2,
-          "pregunta": "¿Qué departamento sanjuanino le da nombre al viento característico de la región?",
-          "opciones": [
-            "Ullum",
-            "Zonda",
-            "Iglesia",
-            "Calingasta"
-          ],
-          "respuesta": 1,
-          "link_nota": null
-        },
-        {
-          "n": 3,
-          "pregunta": "El embalse Ullum se usa principalmente para:",
-          "opciones": [
-            "Riego y generación de energía",
-            "Pesca deportiva exclusiva",
-            "Navegación de carga",
-            "Extracción de sal"
-          ],
-          "respuesta": 0,
-          "link_nota": null,
-          "verificar": true
-        },
-        {
-          "n": 4,
-          "pregunta": "¿Qué cultivo, además de la vid, es tradicional en el departamento de Pocito?",
-          "opciones": [
-            "Nuez",
-            "Café",
-            "Cacao",
-            "Arroz"
-          ],
-          "respuesta": 0,
-          "link_nota": null,
-          "verificar": true
-        },
-        {
-          "n": 5,
-          "pregunta": "El fruto emblemático de la localidad de Media Agua es:",
-          "opciones": [
-            "El melón",
-            "El coco",
-            "La piña",
-            "El plátano"
-          ],
-          "respuesta": 0,
-          "link_nota": null,
-          "verificar": true
-        }
-      ]
+     "pregunta": "¿En qué año ganó Argentina su primer Mundial de fútbol?",
+     "opciones": [
+      "1986",
+      "1930",
+      "1990",
+      "1978"
+     ],
+     "respuesta": "D",
+     "tema": "deportes",
+     "link_nota": null,
+     "verificar": false
     },
     {
-      "dia": 4,
-      "preguntas": [
-        {
-          "n": 1,
-          "pregunta": "¿Qué recipiente se usa tradicionalmente para añejar el vino?",
-          "opciones": [
-            "Tonel de madera",
-            "Bidón plástico",
-            "Damajuana de vidrio solamente",
-            "Bolsa de arpillera"
-          ],
-          "respuesta": 0,
-          "link_nota": null
-        },
-        {
-          "n": 2,
-          "pregunta": "¿Cómo se llama la comida a base de maíz, típica del norte y Cuyo argentino?",
-          "opciones": [
-            "Locro",
-            "Sushi",
-            "Paella",
-            "Risotto"
-          ],
-          "respuesta": 0,
-          "link_nota": null
-        },
-        {
-          "n": 3,
-          "pregunta": "El 'arrope' es un dulce tradicional cuyano elaborado principalmente con:",
-          "opciones": [
-            "Frutas cocidas en almíbar",
-            "Leche condensada",
-            "Chocolate",
-            "Miel de caña"
-          ],
-          "respuesta": 0,
-          "link_nota": null,
-          "verificar": true
-        },
-        {
-          "n": 4,
-          "pregunta": "¿Qué ave es un símbolo habitual de los Andes en la fauna regional?",
-          "opciones": [
-            "Pingüino",
-            "Cóndor",
-            "Flamenco rosado",
-            "Tucán"
-          ],
-          "respuesta": 1,
-          "link_nota": null
-        },
-        {
-          "n": 5,
-          "pregunta": "El guanaco es un animal típico de:",
-          "opciones": [
-            "La selva misionera",
-            "Las zonas andinas y precordilleranas",
-            "Los esteros del litoral",
-            "Las costas patagónicas"
-          ],
-          "respuesta": 1,
-          "link_nota": null
-        }
-      ]
+     "pregunta": "¿A qué poeta está dedicada la canción 'Alfonsina y el mar'?",
+     "opciones": [
+      "Gabriela Mistral",
+      "Olga Orozco",
+      "Juana de Ibarbourou",
+      "Alfonsina Storni"
+     ],
+     "respuesta": "D",
+     "tema": "espectaculos",
+     "link_nota": null,
+     "verificar": false
     },
     {
-      "dia": 5,
-      "preguntas": [
-        {
-          "n": 1,
-          "pregunta": "¿Qué material se usa tradicionalmente para las paredes de las construcciones rurales cuyanas?",
-          "opciones": [
-            "Adobe",
-            "Concreto armado exclusivamente",
-            "Vidrio",
-            "Bambú"
-          ],
-          "respuesta": 0,
-          "link_nota": null
-        },
-        {
-          "n": 2,
-          "pregunta": "La 'tonada' es, en la música cuyana, principalmente:",
-          "opciones": [
-            "Un género/canción de raíz cuyana",
-            "Un instrumento de percusión",
-            "Un tipo de vino",
-            "Una danza de salón europea"
-          ],
-          "respuesta": 0,
-          "link_nota": null
-        },
-        {
-          "n": 3,
-          "pregunta": "¿Qué se celebra tradicionalmente en la Fiesta de la Vendimia?",
-          "opciones": [
-            "La cosecha de la uva",
-            "El inicio del invierno",
-            "La siembra de trigo",
-            "La llegada de la lluvia"
-          ],
-          "respuesta": 0,
-          "link_nota": null
-        },
-        {
-          "n": 4,
-          "pregunta": "El desierto que rodea a los oasis cultivados de San Juan se conoce, en general, como parte de:",
-          "opciones": [
-            "La región de Cuyo árido",
-            "La selva amazónica",
-            "La puna húmeda",
-            "El litoral fluvial"
-          ],
-          "respuesta": 0,
-          "link_nota": null
-        },
-        {
-          "n": 5,
-          "pregunta": "¿Qué tipo de clima predomina en la provincia de San Juan?",
-          "opciones": [
-            "Árido y seco, con oasis de riego",
-            "Tropical húmedo",
-            "Polar",
-            "Ecuatorial"
-          ],
-          "respuesta": 0,
-          "link_nota": null
-        }
-      ]
-    },
-    {
-      "dia": 6,
-      "preguntas": [
-        {
-          "n": 1,
-          "pregunta": "El 'horno de barro' se usa tradicionalmente en el campo cuyano para:",
-          "opciones": [
-            "Cocinar pan y comidas al rescoldo",
-            "Fundir metales industriales",
-            "Calentar agua de pileta",
-            "Secar ladrillos únicamente"
-          ],
-          "respuesta": 0,
-          "link_nota": null
-        },
-        {
-          "n": 2,
-          "pregunta": "¿Qué fruto seco es un cultivo tradicional en Caucete y Pocito?",
-          "opciones": [
-            "La nuez",
-            "El maní",
-            "La almendra amazónica",
-            "El anacardo"
-          ],
-          "respuesta": 0,
-          "link_nota": null,
-          "verificar": true
-        },
-        {
-          "n": 3,
-          "pregunta": "¿Cómo se le llama comúnmente a la persona que trabaja podando la vid?",
-          "opciones": [
-            "Podador/viñatero",
-            "Tornero",
-            "Herrero",
-            "Cantero"
-          ],
-          "respuesta": 0,
-          "link_nota": null
-        },
-        {
-          "n": 4,
-          "pregunta": "La expresión 'tierra del sol y del buen vino' suele asociarse a:",
-          "opciones": [
-            "San Juan",
-            "Ushuaia",
-            "Formosa",
-            "Bariloche"
-          ],
-          "respuesta": 0,
-          "link_nota": null,
-          "verificar": true
-        },
-        {
-          "n": 5,
-          "pregunta": "¿Qué elemento del paisaje sanjuanino se forma al embalsar un río con una presa?",
-          "opciones": [
-            "Un dique/embalse",
-            "Un volcán",
-            "Un géiser",
-            "Un arrecife"
-          ],
-          "respuesta": 0,
-          "link_nota": null
-        }
-      ]
-    },
-    {
-      "dia": 7,
-      "preguntas": [
-        {
-          "n": 1,
-          "pregunta": "¿Qué bebida se produce principalmente con la uva cosechada en Cuyo?",
-          "opciones": [
-            "Vino",
-            "Cerveza",
-            "Sidra",
-            "Whisky"
-          ],
-          "respuesta": 0,
-          "link_nota": null
-        },
-        {
-          "n": 2,
-          "pregunta": "El 'chivito' o cabrito es una carne tradicional asociada a la cocina:",
-          "opciones": [
-            "Cuyana/criolla",
-            "Nórdica",
-            "Mediterránea",
-            "Asiática"
-          ],
-          "respuesta": 0,
-          "link_nota": null
-        },
-        {
-          "n": 3,
-          "pregunta": "¿Cómo se llama la planta trepadora de la que se cosecha la uva?",
-          "opciones": [
-            "Parra/vid",
-            "Palmera",
-            "Helecho",
-            "Bambú"
-          ],
-          "respuesta": 0,
-          "link_nota": null
-        },
-        {
-          "n": 4,
-          "pregunta": "El 'malbec' es principalmente un:",
-          "opciones": [
-            "Tipo de uva/vino",
-            "Instrumento musical",
-            "Baile folklórico",
-            "Plato criollo"
-          ],
-          "respuesta": 0,
-          "link_nota": null
-        },
-        {
-          "n": 5,
-          "pregunta": "En una peña folklórica, el 'fogón' es:",
-          "opciones": [
-            "El fuego alrededor del cual se canta y comparte",
-            "Un tipo de guitarra",
-            "Una prenda de vestir",
-            "Un plato de pastas"
-          ],
-          "respuesta": 0,
-          "link_nota": null
-        }
-      ]
-    },
-    {
-      "dia": 8,
-      "preguntas": [
-        {
-          "n": 1,
-          "pregunta": "¿Qué elemento de riego se abre y cierra para distribuir el agua entre fincas?",
-          "opciones": [
-            "La compuerta/toma",
-            "El molino de viento",
-            "El silo",
-            "El invernadero"
-          ],
-          "respuesta": 0,
-          "link_nota": null,
-          "verificar": true
-        },
-        {
-          "n": 2,
-          "pregunta": "La 'humita' es una comida tradicional a base de:",
-          "opciones": [
-            "Maíz",
-            "Papa",
-            "Arroz",
-            "Lentejas"
-          ],
-          "respuesta": 0,
-          "link_nota": null
-        },
-        {
-          "n": 3,
-          "pregunta": "¿Qué tipo de paisaje predomina entre los viñedos y el pie de la cordillera en San Juan?",
-          "opciones": [
-            "Precordillera árida con oasis de cultivo",
-            "Selva tropical densa",
-            "Pantano costero",
-            "Tundra helada"
-          ],
-          "respuesta": 0,
-          "link_nota": null
-        },
-        {
-          "n": 4,
-          "pregunta": "El 'zorro' que habita zonas áridas y de monte cuyano suele ser de la especie:",
-          "opciones": [
-            "Zorro gris/colorado regional",
-            "Zorro ártico",
-            "Zorro voador",
-            "No hay zorros en la región"
-          ],
-          "respuesta": 0,
-          "link_nota": null,
-          "verificar": true
-        },
-        {
-          "n": 5,
-          "pregunta": "¿Qué tradición está asociada a marcar el ganado con hierro caliente?",
-          "opciones": [
-            "La marcada/yerra",
-            "La vendimia",
-            "El carnaval",
-            "La trilla"
-          ],
-          "respuesta": 0,
-          "link_nota": null,
-          "verificar": true
-        }
-      ]
-    },
-    {
-      "dia": 9,
-      "preguntas": [
-        {
-          "n": 1,
-          "pregunta": "¿En qué provincia argentina nació Domingo Faustino Sarmiento?",
-          "opciones": [
-            "San Juan",
-            "Mendoza",
-            "San Luis",
-            "La Rioja"
-          ],
-          "respuesta": 0,
-          "link_nota": null
-        },
-        {
-          "n": 2,
-          "pregunta": "¿Cómo se llama el viento cálido y seco típico de la región de Cuyo?",
-          "opciones": [
-            "Pampero",
-            "Zonda",
-            "Sudestada",
-            "Puelche"
-          ],
-          "respuesta": 1,
-          "link_nota": null
-        },
-        {
-          "n": 3,
-          "pregunta": "¿Cuál es la actividad económica histórica más asociada a San Juan?",
-          "opciones": [
-            "Pesca",
-            "Vitivinicultura",
-            "Ganadería ovina",
-            "Forestación"
-          ],
-          "respuesta": 1,
-          "link_nota": null
-        },
-        {
-          "n": 4,
-          "pregunta": "¿Qué cordillera bordea a la provincia de San Juan?",
-          "opciones": [
-            "Sierras Pampeanas",
-            "Andes",
-            "Sierra de la Ventana",
-            "Macizo del Deseado"
-          ],
-          "respuesta": 1,
-          "link_nota": null
-        },
-        {
-          "n": 5,
-          "pregunta": "La 'Fiesta Nacional del Sol' se celebra principalmente en:",
-          "opciones": [
-            "San Juan",
-            "Mendoza",
-            "Catamarca",
-            "Salta"
-          ],
-          "respuesta": 0,
-          "link_nota": null
-        }
-      ]
-    },
-    {
-      "dia": 10,
-      "preguntas": [
-        {
-          "n": 1,
-          "pregunta": "¿Qué fruto es la base de la vitivinicultura cuyana?",
-          "opciones": [
-            "Manzana",
-            "Uva",
-            "Durazno",
-            "Ciruela"
-          ],
-          "respuesta": 1,
-          "link_nota": null
-        },
-        {
-          "n": 2,
-          "pregunta": "¿Cómo se llama la danza tradicional emblemática de Cuyo?",
-          "opciones": [
-            "Chamamé",
-            "Cueca cuyana",
-            "Malambo puro",
-            "Candombe"
-          ],
-          "respuesta": 1,
-          "link_nota": null
-        },
-        {
-          "n": 3,
-          "pregunta": "¿Qué instrumento es central en la música folklórica cuyana?",
-          "opciones": [
-            "Bandoneón",
-            "Guitarra",
-            "Trompeta",
-            "Saxo"
-          ],
-          "respuesta": 1,
-          "link_nota": null
-        },
-        {
-          "n": 4,
-          "pregunta": "Un sistema de canales para llevar agua a los cultivos se llama:",
-          "opciones": [
-            "Acequia",
-            "Tranquera",
-            "Alambrado",
-            "Corral"
-          ],
-          "respuesta": 0,
-          "link_nota": null
-        },
-        {
-          "n": 5,
-          "pregunta": "San Juan suele describirse, por su clima árido y sus oasis de cultivo, como:",
-          "opciones": [
-            "Un oasis en el desierto",
-            "Una selva subtropical",
-            "Una zona de estepa fría",
-            "Un humedal"
-          ],
-          "respuesta": 0,
-          "link_nota": null
-        }
-      ]
-    },
-    {
-      "dia": 11,
-      "preguntas": [
-        {
-          "n": 1,
-          "pregunta": "¿Cuál es la capital de la provincia de San Juan?",
-          "opciones": [
-            "Rawson",
-            "Chimbas",
-            "San Juan (Capital)",
-            "Pocito"
-          ],
-          "respuesta": 2,
-          "link_nota": null
-        },
-        {
-          "n": 2,
-          "pregunta": "¿Qué departamento sanjuanino le da nombre al viento característico de la región?",
-          "opciones": [
-            "Ullum",
-            "Zonda",
-            "Iglesia",
-            "Calingasta"
-          ],
-          "respuesta": 1,
-          "link_nota": null
-        },
-        {
-          "n": 3,
-          "pregunta": "El embalse Ullum se usa principalmente para:",
-          "opciones": [
-            "Riego y generación de energía",
-            "Pesca deportiva exclusiva",
-            "Navegación de carga",
-            "Extracción de sal"
-          ],
-          "respuesta": 0,
-          "link_nota": null,
-          "verificar": true
-        },
-        {
-          "n": 4,
-          "pregunta": "¿Qué cultivo, además de la vid, es tradicional en el departamento de Pocito?",
-          "opciones": [
-            "Nuez",
-            "Café",
-            "Cacao",
-            "Arroz"
-          ],
-          "respuesta": 0,
-          "link_nota": null,
-          "verificar": true
-        },
-        {
-          "n": 5,
-          "pregunta": "El fruto emblemático de la localidad de Media Agua es:",
-          "opciones": [
-            "El melón",
-            "El coco",
-            "La piña",
-            "El plátano"
-          ],
-          "respuesta": 0,
-          "link_nota": null,
-          "verificar": true
-        }
-      ]
-    },
-    {
-      "dia": 12,
-      "preguntas": [
-        {
-          "n": 1,
-          "pregunta": "¿Qué recipiente se usa tradicionalmente para añejar el vino?",
-          "opciones": [
-            "Tonel de madera",
-            "Bidón plástico",
-            "Damajuana de vidrio solamente",
-            "Bolsa de arpillera"
-          ],
-          "respuesta": 0,
-          "link_nota": null
-        },
-        {
-          "n": 2,
-          "pregunta": "¿Cómo se llama la comida a base de maíz, típica del norte y Cuyo argentino?",
-          "opciones": [
-            "Locro",
-            "Sushi",
-            "Paella",
-            "Risotto"
-          ],
-          "respuesta": 0,
-          "link_nota": null
-        },
-        {
-          "n": 3,
-          "pregunta": "El 'arrope' es un dulce tradicional cuyano elaborado principalmente con:",
-          "opciones": [
-            "Frutas cocidas en almíbar",
-            "Leche condensada",
-            "Chocolate",
-            "Miel de caña"
-          ],
-          "respuesta": 0,
-          "link_nota": null,
-          "verificar": true
-        },
-        {
-          "n": 4,
-          "pregunta": "¿Qué ave es un símbolo habitual de los Andes en la fauna regional?",
-          "opciones": [
-            "Pingüino",
-            "Cóndor",
-            "Flamenco rosado",
-            "Tucán"
-          ],
-          "respuesta": 1,
-          "link_nota": null
-        },
-        {
-          "n": 5,
-          "pregunta": "El guanaco es un animal típico de:",
-          "opciones": [
-            "La selva misionera",
-            "Las zonas andinas y precordilleranas",
-            "Los esteros del litoral",
-            "Las costas patagónicas"
-          ],
-          "respuesta": 1,
-          "link_nota": null
-        }
-      ]
-    },
-    {
-      "dia": 13,
-      "preguntas": [
-        {
-          "n": 1,
-          "pregunta": "¿Qué material se usa tradicionalmente para las paredes de las construcciones rurales cuyanas?",
-          "opciones": [
-            "Adobe",
-            "Concreto armado exclusivamente",
-            "Vidrio",
-            "Bambú"
-          ],
-          "respuesta": 0,
-          "link_nota": null
-        },
-        {
-          "n": 2,
-          "pregunta": "La 'tonada' es, en la música cuyana, principalmente:",
-          "opciones": [
-            "Un género/canción de raíz cuyana",
-            "Un instrumento de percusión",
-            "Un tipo de vino",
-            "Una danza de salón europea"
-          ],
-          "respuesta": 0,
-          "link_nota": null
-        },
-        {
-          "n": 3,
-          "pregunta": "¿Qué se celebra tradicionalmente en la Fiesta de la Vendimia?",
-          "opciones": [
-            "La cosecha de la uva",
-            "El inicio del invierno",
-            "La siembra de trigo",
-            "La llegada de la lluvia"
-          ],
-          "respuesta": 0,
-          "link_nota": null
-        },
-        {
-          "n": 4,
-          "pregunta": "El desierto que rodea a los oasis cultivados de San Juan se conoce, en general, como parte de:",
-          "opciones": [
-            "La región de Cuyo árido",
-            "La selva amazónica",
-            "La puna húmeda",
-            "El litoral fluvial"
-          ],
-          "respuesta": 0,
-          "link_nota": null
-        },
-        {
-          "n": 5,
-          "pregunta": "¿Qué tipo de clima predomina en la provincia de San Juan?",
-          "opciones": [
-            "Árido y seco, con oasis de riego",
-            "Tropical húmedo",
-            "Polar",
-            "Ecuatorial"
-          ],
-          "respuesta": 0,
-          "link_nota": null
-        }
-      ]
-    },
-    {
-      "dia": 14,
-      "preguntas": [
-        {
-          "n": 1,
-          "pregunta": "El 'horno de barro' se usa tradicionalmente en el campo cuyano para:",
-          "opciones": [
-            "Cocinar pan y comidas al rescoldo",
-            "Fundir metales industriales",
-            "Calentar agua de pileta",
-            "Secar ladrillos únicamente"
-          ],
-          "respuesta": 0,
-          "link_nota": null
-        },
-        {
-          "n": 2,
-          "pregunta": "¿Qué fruto seco es un cultivo tradicional en Caucete y Pocito?",
-          "opciones": [
-            "La nuez",
-            "El maní",
-            "La almendra amazónica",
-            "El anacardo"
-          ],
-          "respuesta": 0,
-          "link_nota": null,
-          "verificar": true
-        },
-        {
-          "n": 3,
-          "pregunta": "¿Cómo se le llama comúnmente a la persona que trabaja podando la vid?",
-          "opciones": [
-            "Podador/viñatero",
-            "Tornero",
-            "Herrero",
-            "Cantero"
-          ],
-          "respuesta": 0,
-          "link_nota": null
-        },
-        {
-          "n": 4,
-          "pregunta": "La expresión 'tierra del sol y del buen vino' suele asociarse a:",
-          "opciones": [
-            "San Juan",
-            "Ushuaia",
-            "Formosa",
-            "Bariloche"
-          ],
-          "respuesta": 0,
-          "link_nota": null,
-          "verificar": true
-        },
-        {
-          "n": 5,
-          "pregunta": "¿Qué elemento del paisaje sanjuanino se forma al embalsar un río con una presa?",
-          "opciones": [
-            "Un dique/embalse",
-            "Un volcán",
-            "Un géiser",
-            "Un arrecife"
-          ],
-          "respuesta": 0,
-          "link_nota": null
-        }
-      ]
-    },
-    {
-      "dia": 15,
-      "preguntas": [
-        {
-          "n": 1,
-          "pregunta": "¿Qué bebida se produce principalmente con la uva cosechada en Cuyo?",
-          "opciones": [
-            "Vino",
-            "Cerveza",
-            "Sidra",
-            "Whisky"
-          ],
-          "respuesta": 0,
-          "link_nota": null
-        },
-        {
-          "n": 2,
-          "pregunta": "El 'chivito' o cabrito es una carne tradicional asociada a la cocina:",
-          "opciones": [
-            "Cuyana/criolla",
-            "Nórdica",
-            "Mediterránea",
-            "Asiática"
-          ],
-          "respuesta": 0,
-          "link_nota": null
-        },
-        {
-          "n": 3,
-          "pregunta": "¿Cómo se llama la planta trepadora de la que se cosecha la uva?",
-          "opciones": [
-            "Parra/vid",
-            "Palmera",
-            "Helecho",
-            "Bambú"
-          ],
-          "respuesta": 0,
-          "link_nota": null
-        },
-        {
-          "n": 4,
-          "pregunta": "El 'malbec' es principalmente un:",
-          "opciones": [
-            "Tipo de uva/vino",
-            "Instrumento musical",
-            "Baile folklórico",
-            "Plato criollo"
-          ],
-          "respuesta": 0,
-          "link_nota": null
-        },
-        {
-          "n": 5,
-          "pregunta": "En una peña folklórica, el 'fogón' es:",
-          "opciones": [
-            "El fuego alrededor del cual se canta y comparte",
-            "Un tipo de guitarra",
-            "Una prenda de vestir",
-            "Un plato de pastas"
-          ],
-          "respuesta": 0,
-          "link_nota": null
-        }
-      ]
-    },
-    {
-      "dia": 16,
-      "preguntas": [
-        {
-          "n": 1,
-          "pregunta": "¿Qué elemento de riego se abre y cierra para distribuir el agua entre fincas?",
-          "opciones": [
-            "La compuerta/toma",
-            "El molino de viento",
-            "El silo",
-            "El invernadero"
-          ],
-          "respuesta": 0,
-          "link_nota": null,
-          "verificar": true
-        },
-        {
-          "n": 2,
-          "pregunta": "La 'humita' es una comida tradicional a base de:",
-          "opciones": [
-            "Maíz",
-            "Papa",
-            "Arroz",
-            "Lentejas"
-          ],
-          "respuesta": 0,
-          "link_nota": null
-        },
-        {
-          "n": 3,
-          "pregunta": "¿Qué tipo de paisaje predomina entre los viñedos y el pie de la cordillera en San Juan?",
-          "opciones": [
-            "Precordillera árida con oasis de cultivo",
-            "Selva tropical densa",
-            "Pantano costero",
-            "Tundra helada"
-          ],
-          "respuesta": 0,
-          "link_nota": null
-        },
-        {
-          "n": 4,
-          "pregunta": "El 'zorro' que habita zonas áridas y de monte cuyano suele ser de la especie:",
-          "opciones": [
-            "Zorro gris/colorado regional",
-            "Zorro ártico",
-            "Zorro voador",
-            "No hay zorros en la región"
-          ],
-          "respuesta": 0,
-          "link_nota": null,
-          "verificar": true
-        },
-        {
-          "n": 5,
-          "pregunta": "¿Qué tradición está asociada a marcar el ganado con hierro caliente?",
-          "opciones": [
-            "La marcada/yerra",
-            "La vendimia",
-            "El carnaval",
-            "La trilla"
-          ],
-          "respuesta": 0,
-          "link_nota": null,
-          "verificar": true
-        }
-      ]
-    },
-    {
-      "dia": 17,
-      "preguntas": [
-        {
-          "n": 1,
-          "pregunta": "¿En qué provincia argentina nació Domingo Faustino Sarmiento?",
-          "opciones": [
-            "San Juan",
-            "Mendoza",
-            "San Luis",
-            "La Rioja"
-          ],
-          "respuesta": 0,
-          "link_nota": null
-        },
-        {
-          "n": 2,
-          "pregunta": "¿Cómo se llama el viento cálido y seco típico de la región de Cuyo?",
-          "opciones": [
-            "Pampero",
-            "Zonda",
-            "Sudestada",
-            "Puelche"
-          ],
-          "respuesta": 1,
-          "link_nota": null
-        },
-        {
-          "n": 3,
-          "pregunta": "¿Cuál es la actividad económica histórica más asociada a San Juan?",
-          "opciones": [
-            "Pesca",
-            "Vitivinicultura",
-            "Ganadería ovina",
-            "Forestación"
-          ],
-          "respuesta": 1,
-          "link_nota": null
-        },
-        {
-          "n": 4,
-          "pregunta": "¿Qué cordillera bordea a la provincia de San Juan?",
-          "opciones": [
-            "Sierras Pampeanas",
-            "Andes",
-            "Sierra de la Ventana",
-            "Macizo del Deseado"
-          ],
-          "respuesta": 1,
-          "link_nota": null
-        },
-        {
-          "n": 5,
-          "pregunta": "La 'Fiesta Nacional del Sol' se celebra principalmente en:",
-          "opciones": [
-            "San Juan",
-            "Mendoza",
-            "Catamarca",
-            "Salta"
-          ],
-          "respuesta": 0,
-          "link_nota": null
-        }
-      ]
-    },
-    {
-      "dia": 18,
-      "preguntas": [
-        {
-          "n": 1,
-          "pregunta": "¿Qué fruto es la base de la vitivinicultura cuyana?",
-          "opciones": [
-            "Manzana",
-            "Uva",
-            "Durazno",
-            "Ciruela"
-          ],
-          "respuesta": 1,
-          "link_nota": null
-        },
-        {
-          "n": 2,
-          "pregunta": "¿Cómo se llama la danza tradicional emblemática de Cuyo?",
-          "opciones": [
-            "Chamamé",
-            "Cueca cuyana",
-            "Malambo puro",
-            "Candombe"
-          ],
-          "respuesta": 1,
-          "link_nota": null
-        },
-        {
-          "n": 3,
-          "pregunta": "¿Qué instrumento es central en la música folklórica cuyana?",
-          "opciones": [
-            "Bandoneón",
-            "Guitarra",
-            "Trompeta",
-            "Saxo"
-          ],
-          "respuesta": 1,
-          "link_nota": null
-        },
-        {
-          "n": 4,
-          "pregunta": "Un sistema de canales para llevar agua a los cultivos se llama:",
-          "opciones": [
-            "Acequia",
-            "Tranquera",
-            "Alambrado",
-            "Corral"
-          ],
-          "respuesta": 0,
-          "link_nota": null
-        },
-        {
-          "n": 5,
-          "pregunta": "San Juan suele describirse, por su clima árido y sus oasis de cultivo, como:",
-          "opciones": [
-            "Un oasis en el desierto",
-            "Una selva subtropical",
-            "Una zona de estepa fría",
-            "Un humedal"
-          ],
-          "respuesta": 0,
-          "link_nota": null
-        }
-      ]
-    },
-    {
-      "dia": 19,
-      "preguntas": [
-        {
-          "n": 1,
-          "pregunta": "¿Cuál es la capital de la provincia de San Juan?",
-          "opciones": [
-            "Rawson",
-            "Chimbas",
-            "San Juan (Capital)",
-            "Pocito"
-          ],
-          "respuesta": 2,
-          "link_nota": null
-        },
-        {
-          "n": 2,
-          "pregunta": "¿Qué departamento sanjuanino le da nombre al viento característico de la región?",
-          "opciones": [
-            "Ullum",
-            "Zonda",
-            "Iglesia",
-            "Calingasta"
-          ],
-          "respuesta": 1,
-          "link_nota": null
-        },
-        {
-          "n": 3,
-          "pregunta": "El embalse Ullum se usa principalmente para:",
-          "opciones": [
-            "Riego y generación de energía",
-            "Pesca deportiva exclusiva",
-            "Navegación de carga",
-            "Extracción de sal"
-          ],
-          "respuesta": 0,
-          "link_nota": null,
-          "verificar": true
-        },
-        {
-          "n": 4,
-          "pregunta": "¿Qué cultivo, además de la vid, es tradicional en el departamento de Pocito?",
-          "opciones": [
-            "Nuez",
-            "Café",
-            "Cacao",
-            "Arroz"
-          ],
-          "respuesta": 0,
-          "link_nota": null,
-          "verificar": true
-        },
-        {
-          "n": 5,
-          "pregunta": "El fruto emblemático de la localidad de Media Agua es:",
-          "opciones": [
-            "El melón",
-            "El coco",
-            "La piña",
-            "El plátano"
-          ],
-          "respuesta": 0,
-          "link_nota": null,
-          "verificar": true
-        }
-      ]
-    },
-    {
-      "dia": 20,
-      "preguntas": [
-        {
-          "n": 1,
-          "pregunta": "¿Qué recipiente se usa tradicionalmente para añejar el vino?",
-          "opciones": [
-            "Tonel de madera",
-            "Bidón plástico",
-            "Damajuana de vidrio solamente",
-            "Bolsa de arpillera"
-          ],
-          "respuesta": 0,
-          "link_nota": null
-        },
-        {
-          "n": 2,
-          "pregunta": "¿Cómo se llama la comida a base de maíz, típica del norte y Cuyo argentino?",
-          "opciones": [
-            "Locro",
-            "Sushi",
-            "Paella",
-            "Risotto"
-          ],
-          "respuesta": 0,
-          "link_nota": null
-        },
-        {
-          "n": 3,
-          "pregunta": "El 'arrope' es un dulce tradicional cuyano elaborado principalmente con:",
-          "opciones": [
-            "Frutas cocidas en almíbar",
-            "Leche condensada",
-            "Chocolate",
-            "Miel de caña"
-          ],
-          "respuesta": 0,
-          "link_nota": null,
-          "verificar": true
-        },
-        {
-          "n": 4,
-          "pregunta": "¿Qué ave es un símbolo habitual de los Andes en la fauna regional?",
-          "opciones": [
-            "Pingüino",
-            "Cóndor",
-            "Flamenco rosado",
-            "Tucán"
-          ],
-          "respuesta": 1,
-          "link_nota": null
-        },
-        {
-          "n": 5,
-          "pregunta": "El guanaco es un animal típico de:",
-          "opciones": [
-            "La selva misionera",
-            "Las zonas andinas y precordilleranas",
-            "Los esteros del litoral",
-            "Las costas patagónicas"
-          ],
-          "respuesta": 1,
-          "link_nota": null
-        }
-      ]
-    },
-    {
-      "dia": 21,
-      "preguntas": [
-        {
-          "n": 1,
-          "pregunta": "¿Qué material se usa tradicionalmente para las paredes de las construcciones rurales cuyanas?",
-          "opciones": [
-            "Adobe",
-            "Concreto armado exclusivamente",
-            "Vidrio",
-            "Bambú"
-          ],
-          "respuesta": 0,
-          "link_nota": null
-        },
-        {
-          "n": 2,
-          "pregunta": "La 'tonada' es, en la música cuyana, principalmente:",
-          "opciones": [
-            "Un género/canción de raíz cuyana",
-            "Un instrumento de percusión",
-            "Un tipo de vino",
-            "Una danza de salón europea"
-          ],
-          "respuesta": 0,
-          "link_nota": null
-        },
-        {
-          "n": 3,
-          "pregunta": "¿Qué se celebra tradicionalmente en la Fiesta de la Vendimia?",
-          "opciones": [
-            "La cosecha de la uva",
-            "El inicio del invierno",
-            "La siembra de trigo",
-            "La llegada de la lluvia"
-          ],
-          "respuesta": 0,
-          "link_nota": null
-        },
-        {
-          "n": 4,
-          "pregunta": "El desierto que rodea a los oasis cultivados de San Juan se conoce, en general, como parte de:",
-          "opciones": [
-            "La región de Cuyo árido",
-            "La selva amazónica",
-            "La puna húmeda",
-            "El litoral fluvial"
-          ],
-          "respuesta": 0,
-          "link_nota": null
-        },
-        {
-          "n": 5,
-          "pregunta": "¿Qué tipo de clima predomina en la provincia de San Juan?",
-          "opciones": [
-            "Árido y seco, con oasis de riego",
-            "Tropical húmedo",
-            "Polar",
-            "Ecuatorial"
-          ],
-          "respuesta": 0,
-          "link_nota": null
-        }
-      ]
-    },
-    {
-      "dia": 22,
-      "preguntas": [
-        {
-          "n": 1,
-          "pregunta": "El 'horno de barro' se usa tradicionalmente en el campo cuyano para:",
-          "opciones": [
-            "Cocinar pan y comidas al rescoldo",
-            "Fundir metales industriales",
-            "Calentar agua de pileta",
-            "Secar ladrillos únicamente"
-          ],
-          "respuesta": 0,
-          "link_nota": null
-        },
-        {
-          "n": 2,
-          "pregunta": "¿Qué fruto seco es un cultivo tradicional en Caucete y Pocito?",
-          "opciones": [
-            "La nuez",
-            "El maní",
-            "La almendra amazónica",
-            "El anacardo"
-          ],
-          "respuesta": 0,
-          "link_nota": null,
-          "verificar": true
-        },
-        {
-          "n": 3,
-          "pregunta": "¿Cómo se le llama comúnmente a la persona que trabaja podando la vid?",
-          "opciones": [
-            "Podador/viñatero",
-            "Tornero",
-            "Herrero",
-            "Cantero"
-          ],
-          "respuesta": 0,
-          "link_nota": null
-        },
-        {
-          "n": 4,
-          "pregunta": "La expresión 'tierra del sol y del buen vino' suele asociarse a:",
-          "opciones": [
-            "San Juan",
-            "Ushuaia",
-            "Formosa",
-            "Bariloche"
-          ],
-          "respuesta": 0,
-          "link_nota": null,
-          "verificar": true
-        },
-        {
-          "n": 5,
-          "pregunta": "¿Qué elemento del paisaje sanjuanino se forma al embalsar un río con una presa?",
-          "opciones": [
-            "Un dique/embalse",
-            "Un volcán",
-            "Un géiser",
-            "Un arrecife"
-          ],
-          "respuesta": 0,
-          "link_nota": null
-        }
-      ]
-    },
-    {
-      "dia": 23,
-      "preguntas": [
-        {
-          "n": 1,
-          "pregunta": "¿Qué bebida se produce principalmente con la uva cosechada en Cuyo?",
-          "opciones": [
-            "Vino",
-            "Cerveza",
-            "Sidra",
-            "Whisky"
-          ],
-          "respuesta": 0,
-          "link_nota": null
-        },
-        {
-          "n": 2,
-          "pregunta": "El 'chivito' o cabrito es una carne tradicional asociada a la cocina:",
-          "opciones": [
-            "Cuyana/criolla",
-            "Nórdica",
-            "Mediterránea",
-            "Asiática"
-          ],
-          "respuesta": 0,
-          "link_nota": null
-        },
-        {
-          "n": 3,
-          "pregunta": "¿Cómo se llama la planta trepadora de la que se cosecha la uva?",
-          "opciones": [
-            "Parra/vid",
-            "Palmera",
-            "Helecho",
-            "Bambú"
-          ],
-          "respuesta": 0,
-          "link_nota": null
-        },
-        {
-          "n": 4,
-          "pregunta": "El 'malbec' es principalmente un:",
-          "opciones": [
-            "Tipo de uva/vino",
-            "Instrumento musical",
-            "Baile folklórico",
-            "Plato criollo"
-          ],
-          "respuesta": 0,
-          "link_nota": null
-        },
-        {
-          "n": 5,
-          "pregunta": "En una peña folklórica, el 'fogón' es:",
-          "opciones": [
-            "El fuego alrededor del cual se canta y comparte",
-            "Un tipo de guitarra",
-            "Una prenda de vestir",
-            "Un plato de pastas"
-          ],
-          "respuesta": 0,
-          "link_nota": null
-        }
-      ]
-    },
-    {
-      "dia": 24,
-      "preguntas": [
-        {
-          "n": 1,
-          "pregunta": "¿Qué elemento de riego se abre y cierra para distribuir el agua entre fincas?",
-          "opciones": [
-            "La compuerta/toma",
-            "El molino de viento",
-            "El silo",
-            "El invernadero"
-          ],
-          "respuesta": 0,
-          "link_nota": null,
-          "verificar": true
-        },
-        {
-          "n": 2,
-          "pregunta": "La 'humita' es una comida tradicional a base de:",
-          "opciones": [
-            "Maíz",
-            "Papa",
-            "Arroz",
-            "Lentejas"
-          ],
-          "respuesta": 0,
-          "link_nota": null
-        },
-        {
-          "n": 3,
-          "pregunta": "¿Qué tipo de paisaje predomina entre los viñedos y el pie de la cordillera en San Juan?",
-          "opciones": [
-            "Precordillera árida con oasis de cultivo",
-            "Selva tropical densa",
-            "Pantano costero",
-            "Tundra helada"
-          ],
-          "respuesta": 0,
-          "link_nota": null
-        },
-        {
-          "n": 4,
-          "pregunta": "El 'zorro' que habita zonas áridas y de monte cuyano suele ser de la especie:",
-          "opciones": [
-            "Zorro gris/colorado regional",
-            "Zorro ártico",
-            "Zorro voador",
-            "No hay zorros en la región"
-          ],
-          "respuesta": 0,
-          "link_nota": null,
-          "verificar": true
-        },
-        {
-          "n": 5,
-          "pregunta": "¿Qué tradición está asociada a marcar el ganado con hierro caliente?",
-          "opciones": [
-            "La marcada/yerra",
-            "La vendimia",
-            "El carnaval",
-            "La trilla"
-          ],
-          "respuesta": 0,
-          "link_nota": null,
-          "verificar": true
-        }
-      ]
-    },
-    {
-      "dia": 25,
-      "preguntas": [
-        {
-          "n": 1,
-          "pregunta": "¿En qué provincia argentina nació Domingo Faustino Sarmiento?",
-          "opciones": [
-            "San Juan",
-            "Mendoza",
-            "San Luis",
-            "La Rioja"
-          ],
-          "respuesta": 0,
-          "link_nota": null
-        },
-        {
-          "n": 2,
-          "pregunta": "¿Cómo se llama el viento cálido y seco típico de la región de Cuyo?",
-          "opciones": [
-            "Pampero",
-            "Zonda",
-            "Sudestada",
-            "Puelche"
-          ],
-          "respuesta": 1,
-          "link_nota": null
-        },
-        {
-          "n": 3,
-          "pregunta": "¿Cuál es la actividad económica histórica más asociada a San Juan?",
-          "opciones": [
-            "Pesca",
-            "Vitivinicultura",
-            "Ganadería ovina",
-            "Forestación"
-          ],
-          "respuesta": 1,
-          "link_nota": null
-        },
-        {
-          "n": 4,
-          "pregunta": "¿Qué cordillera bordea a la provincia de San Juan?",
-          "opciones": [
-            "Sierras Pampeanas",
-            "Andes",
-            "Sierra de la Ventana",
-            "Macizo del Deseado"
-          ],
-          "respuesta": 1,
-          "link_nota": null
-        },
-        {
-          "n": 5,
-          "pregunta": "La 'Fiesta Nacional del Sol' se celebra principalmente en:",
-          "opciones": [
-            "San Juan",
-            "Mendoza",
-            "Catamarca",
-            "Salta"
-          ],
-          "respuesta": 0,
-          "link_nota": null
-        }
-      ]
-    },
-    {
-      "dia": 26,
-      "preguntas": [
-        {
-          "n": 1,
-          "pregunta": "¿Qué fruto es la base de la vitivinicultura cuyana?",
-          "opciones": [
-            "Manzana",
-            "Uva",
-            "Durazno",
-            "Ciruela"
-          ],
-          "respuesta": 1,
-          "link_nota": null
-        },
-        {
-          "n": 2,
-          "pregunta": "¿Cómo se llama la danza tradicional emblemática de Cuyo?",
-          "opciones": [
-            "Chamamé",
-            "Cueca cuyana",
-            "Malambo puro",
-            "Candombe"
-          ],
-          "respuesta": 1,
-          "link_nota": null
-        },
-        {
-          "n": 3,
-          "pregunta": "¿Qué instrumento es central en la música folklórica cuyana?",
-          "opciones": [
-            "Bandoneón",
-            "Guitarra",
-            "Trompeta",
-            "Saxo"
-          ],
-          "respuesta": 1,
-          "link_nota": null
-        },
-        {
-          "n": 4,
-          "pregunta": "Un sistema de canales para llevar agua a los cultivos se llama:",
-          "opciones": [
-            "Acequia",
-            "Tranquera",
-            "Alambrado",
-            "Corral"
-          ],
-          "respuesta": 0,
-          "link_nota": null
-        },
-        {
-          "n": 5,
-          "pregunta": "San Juan suele describirse, por su clima árido y sus oasis de cultivo, como:",
-          "opciones": [
-            "Un oasis en el desierto",
-            "Una selva subtropical",
-            "Una zona de estepa fría",
-            "Un humedal"
-          ],
-          "respuesta": 0,
-          "link_nota": null
-        }
-      ]
-    },
-    {
-      "dia": 27,
-      "preguntas": [
-        {
-          "n": 1,
-          "pregunta": "¿Cuál es la capital de la provincia de San Juan?",
-          "opciones": [
-            "Rawson",
-            "Chimbas",
-            "San Juan (Capital)",
-            "Pocito"
-          ],
-          "respuesta": 2,
-          "link_nota": null
-        },
-        {
-          "n": 2,
-          "pregunta": "¿Qué departamento sanjuanino le da nombre al viento característico de la región?",
-          "opciones": [
-            "Ullum",
-            "Zonda",
-            "Iglesia",
-            "Calingasta"
-          ],
-          "respuesta": 1,
-          "link_nota": null
-        },
-        {
-          "n": 3,
-          "pregunta": "El embalse Ullum se usa principalmente para:",
-          "opciones": [
-            "Riego y generación de energía",
-            "Pesca deportiva exclusiva",
-            "Navegación de carga",
-            "Extracción de sal"
-          ],
-          "respuesta": 0,
-          "link_nota": null,
-          "verificar": true
-        },
-        {
-          "n": 4,
-          "pregunta": "¿Qué cultivo, además de la vid, es tradicional en el departamento de Pocito?",
-          "opciones": [
-            "Nuez",
-            "Café",
-            "Cacao",
-            "Arroz"
-          ],
-          "respuesta": 0,
-          "link_nota": null,
-          "verificar": true
-        },
-        {
-          "n": 5,
-          "pregunta": "El fruto emblemático de la localidad de Media Agua es:",
-          "opciones": [
-            "El melón",
-            "El coco",
-            "La piña",
-            "El plátano"
-          ],
-          "respuesta": 0,
-          "link_nota": null,
-          "verificar": true
-        }
-      ]
-    },
-    {
-      "dia": 28,
-      "preguntas": [
-        {
-          "n": 1,
-          "pregunta": "¿Qué recipiente se usa tradicionalmente para añejar el vino?",
-          "opciones": [
-            "Tonel de madera",
-            "Bidón plástico",
-            "Damajuana de vidrio solamente",
-            "Bolsa de arpillera"
-          ],
-          "respuesta": 0,
-          "link_nota": null
-        },
-        {
-          "n": 2,
-          "pregunta": "¿Cómo se llama la comida a base de maíz, típica del norte y Cuyo argentino?",
-          "opciones": [
-            "Locro",
-            "Sushi",
-            "Paella",
-            "Risotto"
-          ],
-          "respuesta": 0,
-          "link_nota": null
-        },
-        {
-          "n": 3,
-          "pregunta": "El 'arrope' es un dulce tradicional cuyano elaborado principalmente con:",
-          "opciones": [
-            "Frutas cocidas en almíbar",
-            "Leche condensada",
-            "Chocolate",
-            "Miel de caña"
-          ],
-          "respuesta": 0,
-          "link_nota": null,
-          "verificar": true
-        },
-        {
-          "n": 4,
-          "pregunta": "¿Qué ave es un símbolo habitual de los Andes en la fauna regional?",
-          "opciones": [
-            "Pingüino",
-            "Cóndor",
-            "Flamenco rosado",
-            "Tucán"
-          ],
-          "respuesta": 1,
-          "link_nota": null
-        },
-        {
-          "n": 5,
-          "pregunta": "El guanaco es un animal típico de:",
-          "opciones": [
-            "La selva misionera",
-            "Las zonas andinas y precordilleranas",
-            "Los esteros del litoral",
-            "Las costas patagónicas"
-          ],
-          "respuesta": 1,
-          "link_nota": null
-        }
-      ]
-    },
-    {
-      "dia": 29,
-      "preguntas": [
-        {
-          "n": 1,
-          "pregunta": "¿Qué material se usa tradicionalmente para las paredes de las construcciones rurales cuyanas?",
-          "opciones": [
-            "Adobe",
-            "Concreto armado exclusivamente",
-            "Vidrio",
-            "Bambú"
-          ],
-          "respuesta": 0,
-          "link_nota": null
-        },
-        {
-          "n": 2,
-          "pregunta": "La 'tonada' es, en la música cuyana, principalmente:",
-          "opciones": [
-            "Un género/canción de raíz cuyana",
-            "Un instrumento de percusión",
-            "Un tipo de vino",
-            "Una danza de salón europea"
-          ],
-          "respuesta": 0,
-          "link_nota": null
-        },
-        {
-          "n": 3,
-          "pregunta": "¿Qué se celebra tradicionalmente en la Fiesta de la Vendimia?",
-          "opciones": [
-            "La cosecha de la uva",
-            "El inicio del invierno",
-            "La siembra de trigo",
-            "La llegada de la lluvia"
-          ],
-          "respuesta": 0,
-          "link_nota": null
-        },
-        {
-          "n": 4,
-          "pregunta": "El desierto que rodea a los oasis cultivados de San Juan se conoce, en general, como parte de:",
-          "opciones": [
-            "La región de Cuyo árido",
-            "La selva amazónica",
-            "La puna húmeda",
-            "El litoral fluvial"
-          ],
-          "respuesta": 0,
-          "link_nota": null
-        },
-        {
-          "n": 5,
-          "pregunta": "¿Qué tipo de clima predomina en la provincia de San Juan?",
-          "opciones": [
-            "Árido y seco, con oasis de riego",
-            "Tropical húmedo",
-            "Polar",
-            "Ecuatorial"
-          ],
-          "respuesta": 0,
-          "link_nota": null
-        }
-      ]
-    },
-    {
-      "dia": 30,
-      "preguntas": [
-        {
-          "n": 1,
-          "pregunta": "El 'horno de barro' se usa tradicionalmente en el campo cuyano para:",
-          "opciones": [
-            "Cocinar pan y comidas al rescoldo",
-            "Fundir metales industriales",
-            "Calentar agua de pileta",
-            "Secar ladrillos únicamente"
-          ],
-          "respuesta": 0,
-          "link_nota": null
-        },
-        {
-          "n": 2,
-          "pregunta": "¿Qué fruto seco es un cultivo tradicional en Caucete y Pocito?",
-          "opciones": [
-            "La nuez",
-            "El maní",
-            "La almendra amazónica",
-            "El anacardo"
-          ],
-          "respuesta": 0,
-          "link_nota": null,
-          "verificar": true
-        },
-        {
-          "n": 3,
-          "pregunta": "¿Cómo se le llama comúnmente a la persona que trabaja podando la vid?",
-          "opciones": [
-            "Podador/viñatero",
-            "Tornero",
-            "Herrero",
-            "Cantero"
-          ],
-          "respuesta": 0,
-          "link_nota": null
-        },
-        {
-          "n": 4,
-          "pregunta": "La expresión 'tierra del sol y del buen vino' suele asociarse a:",
-          "opciones": [
-            "San Juan",
-            "Ushuaia",
-            "Formosa",
-            "Bariloche"
-          ],
-          "respuesta": 0,
-          "link_nota": null,
-          "verificar": true
-        },
-        {
-          "n": 5,
-          "pregunta": "¿Qué elemento del paisaje sanjuanino se forma al embalsar un río con una presa?",
-          "opciones": [
-            "Un dique/embalse",
-            "Un volcán",
-            "Un géiser",
-            "Un arrecife"
-          ],
-          "respuesta": 0,
-          "link_nota": null
-        }
-      ]
+     "pregunta": "¿Cuál es el planeta más grande del sistema solar?",
+     "opciones": [
+      "Saturno",
+      "Júpiter",
+      "Neptuno",
+      "Urano"
+     ],
+     "respuesta": "B",
+     "tema": "ciencia",
+     "link_nota": null,
+     "verificar": false
     }
-  ]
+   ]
+  },
+  {
+   "dia": 2,
+   "preguntas": [
+    {
+     "pregunta": "¿Cómo se llama el viento cálido y seco típico de la región de Cuyo?",
+     "opciones": [
+      "Puelche",
+      "Zonda",
+      "Sudestada",
+      "Pampero"
+     ],
+     "respuesta": "B",
+     "tema": "san-juan",
+     "link_nota": null,
+     "verificar": false
+    },
+    {
+     "pregunta": "¿Qué bebida se produce principalmente con la uva cosechada en Cuyo?",
+     "opciones": [
+      "Sidra",
+      "Vino",
+      "Cerveza",
+      "Whisky"
+     ],
+     "respuesta": "B",
+     "tema": "san-juan",
+     "link_nota": null,
+     "verificar": false
+    },
+    {
+     "pregunta": "¿En qué ciudad se declaró la Independencia argentina?",
+     "opciones": [
+      "San Miguel de Tucumán",
+      "Rosario",
+      "Buenos Aires",
+      "Córdoba"
+     ],
+     "respuesta": "A",
+     "tema": "argentina",
+     "link_nota": null,
+     "verificar": false
+    },
+    {
+     "pregunta": "¿Cuántos Mundiales de fútbol ganó la Selección Argentina?",
+     "opciones": [
+      "2",
+      "4",
+      "1",
+      "3"
+     ],
+     "respuesta": "D",
+     "tema": "deportes",
+     "link_nota": null,
+     "verificar": true
+    },
+    {
+     "pregunta": "¿Quién es considerado el máximo exponente del tango cantado?",
+     "opciones": [
+      "Aníbal Troilo",
+      "Astor Piazzolla",
+      "Roberto Goyeneche",
+      "Carlos Gardel"
+     ],
+     "respuesta": "D",
+     "tema": "espectaculos",
+     "link_nota": null,
+     "verificar": false
+    }
+   ]
+  },
+  {
+   "dia": 3,
+   "preguntas": [
+    {
+     "pregunta": "¿Cuál es la actividad económica histórica más asociada a San Juan?",
+     "opciones": [
+      "Pesca",
+      "Vitivinicultura",
+      "Ganadería ovina",
+      "Forestación"
+     ],
+     "respuesta": "B",
+     "tema": "san-juan",
+     "link_nota": null,
+     "verificar": false
+    },
+    {
+     "pregunta": "¿Cuál es el planeta más cercano al Sol?",
+     "opciones": [
+      "Marte",
+      "Mercurio",
+      "Venus",
+      "La Tierra"
+     ],
+     "respuesta": "B",
+     "tema": "ciencia",
+     "link_nota": null,
+     "verificar": false
+    },
+    {
+     "pregunta": "El 'chivito' o cabrito es una carne tradicional asociada a la cocina:",
+     "opciones": [
+      "Nórdica",
+      "Mediterránea",
+      "Asiática",
+      "Cuyana/criolla"
+     ],
+     "respuesta": "D",
+     "tema": "san-juan",
+     "link_nota": null,
+     "verificar": false
+    },
+    {
+     "pregunta": "¿Quién creó la bandera argentina?",
+     "opciones": [
+      "José de San Martín",
+      "Bernardino Rivadavia",
+      "Domingo Sarmiento",
+      "Manuel Belgrano"
+     ],
+     "respuesta": "D",
+     "tema": "argentina",
+     "link_nota": null,
+     "verificar": false
+    },
+    {
+     "pregunta": "¿En qué país se jugó el Mundial de fútbol 2022?",
+     "opciones": [
+      "Brasil",
+      "Qatar",
+      "Rusia",
+      "Sudáfrica"
+     ],
+     "respuesta": "B",
+     "tema": "deportes",
+     "link_nota": null,
+     "verificar": false
+    }
+   ]
+  },
+  {
+   "dia": 4,
+   "preguntas": [
+    {
+     "pregunta": "¿Qué cordillera bordea a la provincia de San Juan?",
+     "opciones": [
+      "Andes",
+      "Sierra de la Ventana",
+      "Sierras Pampeanas",
+      "Macizo del Deseado"
+     ],
+     "respuesta": "A",
+     "tema": "san-juan",
+     "link_nota": null,
+     "verificar": false
+    },
+    {
+     "pregunta": "¿Qué instrumento es el más característico del tango?",
+     "opciones": [
+      "El acordeón",
+      "El charango",
+      "La trompeta",
+      "El bandoneón"
+     ],
+     "respuesta": "D",
+     "tema": "espectaculos",
+     "link_nota": null,
+     "verificar": false
+    },
+    {
+     "pregunta": "¿Cuántos huesos tiene aproximadamente el cuerpo humano adulto?",
+     "opciones": [
+      "206",
+      "150",
+      "300",
+      "450"
+     ],
+     "respuesta": "A",
+     "tema": "ciencia",
+     "link_nota": null,
+     "verificar": true
+    },
+    {
+     "pregunta": "¿Cómo se llama la planta trepadora de la que se cosecha la uva?",
+     "opciones": [
+      "Bambú",
+      "Palmera",
+      "Parra/vid",
+      "Helecho"
+     ],
+     "respuesta": "C",
+     "tema": "san-juan",
+     "link_nota": null,
+     "verificar": false
+    },
+    {
+     "pregunta": "¿Cuál es el pico más alto de América?",
+     "opciones": [
+      "El Aconcagua",
+      "El Ojos del Salado",
+      "El Llullaillaco",
+      "El Tupungato"
+     ],
+     "respuesta": "A",
+     "tema": "argentina",
+     "link_nota": null,
+     "verificar": false
+    }
+   ]
+  },
+  {
+   "dia": 5,
+   "preguntas": [
+    {
+     "pregunta": "La 'Fiesta Nacional del Sol' se celebra principalmente en:",
+     "opciones": [
+      "San Juan",
+      "Catamarca",
+      "Salta",
+      "Mendoza"
+     ],
+     "respuesta": "A",
+     "tema": "san-juan",
+     "link_nota": null,
+     "verificar": false
+    },
+    {
+     "pregunta": "¿A qué selección le ganó Argentina la final del Mundial 2022?",
+     "opciones": [
+      "Brasil",
+      "Francia",
+      "Alemania",
+      "Croacia"
+     ],
+     "respuesta": "B",
+     "tema": "deportes",
+     "link_nota": null,
+     "verificar": false
+    },
+    {
+     "pregunta": "¿Quién compuso 'Libertango'?",
+     "opciones": [
+      "Aníbal Troilo",
+      "Astor Piazzolla",
+      "Carlos Gardel",
+      "Osvaldo Pugliese"
+     ],
+     "respuesta": "B",
+     "tema": "espectaculos",
+     "link_nota": null,
+     "verificar": false
+    },
+    {
+     "pregunta": "¿Cuál es el órgano más extenso del cuerpo humano?",
+     "opciones": [
+      "El pulmón",
+      "El hígado",
+      "El intestino",
+      "La piel"
+     ],
+     "respuesta": "D",
+     "tema": "ciencia",
+     "link_nota": null,
+     "verificar": false
+    },
+    {
+     "pregunta": "El 'malbec' es principalmente un:",
+     "opciones": [
+      "Baile folklórico",
+      "Tipo de uva/vino",
+      "Plato criollo",
+      "Instrumento musical"
+     ],
+     "respuesta": "B",
+     "tema": "san-juan",
+     "link_nota": null,
+     "verificar": false
+    }
+   ]
+  },
+  {
+   "dia": 6,
+   "preguntas": [
+    {
+     "pregunta": "¿Qué fruto es la base de la vitivinicultura cuyana?",
+     "opciones": [
+      "Manzana",
+      "Durazno",
+      "Ciruela",
+      "Uva"
+     ],
+     "respuesta": "D",
+     "tema": "san-juan",
+     "link_nota": null,
+     "verificar": false
+    },
+    {
+     "pregunta": "¿En qué provincia se encuentra el cerro Aconcagua?",
+     "opciones": [
+      "La Rioja",
+      "Mendoza",
+      "San Juan",
+      "Neuquén"
+     ],
+     "respuesta": "B",
+     "tema": "argentina",
+     "link_nota": null,
+     "verificar": false
+    },
+    {
+     "pregunta": "¿Quién fue el capitán de Argentina en el Mundial de 1986?",
+     "opciones": [
+      "Jorge Burruchaga",
+      "Diego Maradona",
+      "Daniel Passarella",
+      "Jorge Valdano"
+     ],
+     "respuesta": "B",
+     "tema": "deportes",
+     "link_nota": null,
+     "verificar": false
+    },
+    {
+     "pregunta": "¿Cómo se llamaba el dúo de Charly García y Nito Mestre?",
+     "opciones": [
+      "Serú Girán",
+      "Los Gatos",
+      "Sui Generis",
+      "Almendra"
+     ],
+     "respuesta": "C",
+     "tema": "espectaculos",
+     "link_nota": null,
+     "verificar": false
+    },
+    {
+     "pregunta": "¿Cuál es el hueso más largo del cuerpo humano?",
+     "opciones": [
+      "El fémur",
+      "El húmero",
+      "La tibia",
+      "El peroné"
+     ],
+     "respuesta": "A",
+     "tema": "ciencia",
+     "link_nota": null,
+     "verificar": false
+    }
+   ]
+  },
+  {
+   "dia": 7,
+   "preguntas": [
+    {
+     "pregunta": "¿Cómo se llama la danza tradicional emblemática de Cuyo?",
+     "opciones": [
+      "Cueca cuyana",
+      "Candombe",
+      "Malambo puro",
+      "Chamamé"
+     ],
+     "respuesta": "A",
+     "tema": "san-juan",
+     "link_nota": null,
+     "verificar": false
+    },
+    {
+     "pregunta": "En una peña folklórica, el 'fogón' es:",
+     "opciones": [
+      "Un plato de pastas",
+      "Un tipo de guitarra",
+      "Una prenda de vestir",
+      "El fuego alrededor del cual se canta y comparte"
+     ],
+     "respuesta": "D",
+     "tema": "san-juan",
+     "link_nota": null,
+     "verificar": false
+    },
+    {
+     "pregunta": "¿Cuál es la provincia argentina más extensa?",
+     "opciones": [
+      "Santa Cruz",
+      "Buenos Aires",
+      "Río Negro",
+      "Chubut"
+     ],
+     "respuesta": "B",
+     "tema": "argentina",
+     "link_nota": null,
+     "verificar": true
+    },
+    {
+     "pregunta": "¿Contra qué selección convirtió Maradona el llamado 'gol del siglo'?",
+     "opciones": [
+      "Bélgica",
+      "Uruguay",
+      "Inglaterra",
+      "Alemania"
+     ],
+     "respuesta": "C",
+     "tema": "deportes",
+     "link_nota": null,
+     "verificar": false
+    },
+    {
+     "pregunta": "¿Qué banda lideró Luis Alberto Spinetta en sus comienzos?",
+     "opciones": [
+      "Soda Stereo",
+      "Almendra",
+      "Patricio Rey",
+      "Los Abuelos de la Nada"
+     ],
+     "respuesta": "B",
+     "tema": "espectaculos",
+     "link_nota": null,
+     "verificar": false
+    }
+   ]
+  },
+  {
+   "dia": 8,
+   "preguntas": [
+    {
+     "pregunta": "¿Qué instrumento es central en la música folklórica cuyana?",
+     "opciones": [
+      "Bandoneón",
+      "Trompeta",
+      "Saxo",
+      "Guitarra"
+     ],
+     "respuesta": "D",
+     "tema": "san-juan",
+     "link_nota": null,
+     "verificar": false
+    },
+    {
+     "pregunta": "¿Cuál es el gas más abundante en la atmósfera terrestre?",
+     "opciones": [
+      "El hidrógeno",
+      "El nitrógeno",
+      "El oxígeno",
+      "El dióxido de carbono"
+     ],
+     "respuesta": "B",
+     "tema": "ciencia",
+     "link_nota": null,
+     "verificar": false
+    },
+    {
+     "pregunta": "¿Qué elemento de riego se abre y cierra para distribuir el agua entre fincas?",
+     "opciones": [
+      "El silo",
+      "La compuerta/toma",
+      "El invernadero",
+      "El molino de viento"
+     ],
+     "respuesta": "B",
+     "tema": "san-juan",
+     "link_nota": null,
+     "verificar": true
+    },
+    {
+     "pregunta": "Sin contar la Ciudad de Buenos Aires, ¿cuántas provincias tiene la Argentina?",
+     "opciones": [
+      "23",
+      "22",
+      "24",
+      "25"
+     ],
+     "respuesta": "A",
+     "tema": "argentina",
+     "link_nota": null,
+     "verificar": false
+    },
+    {
+     "pregunta": "¿En qué club italiano jugó Diego Maradona?",
+     "opciones": [
+      "Napoli",
+      "Roma",
+      "Milan",
+      "Juventus"
+     ],
+     "respuesta": "A",
+     "tema": "deportes",
+     "link_nota": null,
+     "verificar": false
+    }
+   ]
+  },
+  {
+   "dia": 9,
+   "preguntas": [
+    {
+     "pregunta": "Un sistema de canales para llevar agua a los cultivos se llama:",
+     "opciones": [
+      "Corral",
+      "Alambrado",
+      "Acequia",
+      "Tranquera"
+     ],
+     "respuesta": "C",
+     "tema": "san-juan",
+     "link_nota": null,
+     "verificar": false
+    },
+    {
+     "pregunta": "¿De qué banda fue cantante Gustavo Cerati?",
+     "opciones": [
+      "Sumo",
+      "Virus",
+      "Los Piojos",
+      "Soda Stereo"
+     ],
+     "respuesta": "D",
+     "tema": "espectaculos",
+     "link_nota": null,
+     "verificar": false
+    },
+    {
+     "pregunta": "¿Qué metal es líquido a temperatura ambiente?",
+     "opciones": [
+      "El mercurio",
+      "El plomo",
+      "La plata",
+      "El aluminio"
+     ],
+     "respuesta": "A",
+     "tema": "ciencia",
+     "link_nota": null,
+     "verificar": false
+    },
+    {
+     "pregunta": "La 'humita' es una comida tradicional a base de:",
+     "opciones": [
+      "Lentejas",
+      "Papa",
+      "Maíz",
+      "Arroz"
+     ],
+     "respuesta": "C",
+     "tema": "san-juan",
+     "link_nota": null,
+     "verificar": false
+    },
+    {
+     "pregunta": "¿Qué río marca buena parte del límite entre Argentina y Uruguay?",
+     "opciones": [
+      "El Pilcomayo",
+      "El Paraguay",
+      "El río Uruguay",
+      "El Paraná"
+     ],
+     "respuesta": "C",
+     "tema": "argentina",
+     "link_nota": null,
+     "verificar": false
+    }
+   ]
+  },
+  {
+   "dia": 10,
+   "preguntas": [
+    {
+     "pregunta": "San Juan suele describirse, por su clima árido y sus oasis de cultivo, como:",
+     "opciones": [
+      "Un humedal",
+      "Una selva subtropical",
+      "Un oasis en el desierto",
+      "Una zona de estepa fría"
+     ],
+     "respuesta": "C",
+     "tema": "san-juan",
+     "link_nota": null,
+     "verificar": false
+    },
+    {
+     "pregunta": "¿En las inferiores de qué club rosarino jugó Lionel Messi?",
+     "opciones": [
+      "Rosario Central",
+      "River Plate",
+      "Boca Juniors",
+      "Newell's Old Boys"
+     ],
+     "respuesta": "D",
+     "tema": "deportes",
+     "link_nota": null,
+     "verificar": false
+    },
+    {
+     "pregunta": "¿Quién cantaba en Patricio Rey y sus Redonditos de Ricota?",
+     "opciones": [
+      "Gustavo Cerati",
+      "Andrés Calamaro",
+      "Charly García",
+      "El Indio Solari"
+     ],
+     "respuesta": "D",
+     "tema": "espectaculos",
+     "link_nota": null,
+     "verificar": false
+    },
+    {
+     "pregunta": "¿Quién formuló la teoría de la relatividad?",
+     "opciones": [
+      "Albert Einstein",
+      "Isaac Newton",
+      "Galileo Galilei",
+      "Stephen Hawking"
+     ],
+     "respuesta": "A",
+     "tema": "ciencia",
+     "link_nota": null,
+     "verificar": false
+    },
+    {
+     "pregunta": "¿Qué tipo de paisaje predomina entre los viñedos y el pie de la cordillera en San Juan?",
+     "opciones": [
+      "Precordillera árida con oasis de cultivo",
+      "Selva tropical densa",
+      "Tundra helada",
+      "Pantano costero"
+     ],
+     "respuesta": "A",
+     "tema": "san-juan",
+     "link_nota": null,
+     "verificar": false
+    }
+   ]
+  },
+  {
+   "dia": 11,
+   "preguntas": [
+    {
+     "pregunta": "¿Cuál es la capital de la provincia de San Juan?",
+     "opciones": [
+      "Rawson",
+      "Pocito",
+      "San Juan (Capital)",
+      "Chimbas"
+     ],
+     "respuesta": "C",
+     "tema": "san-juan",
+     "link_nota": null,
+     "verificar": false
+    },
+    {
+     "pregunta": "¿En qué provincia están las Cataratas del Iguazú?",
+     "opciones": [
+      "Formosa",
+      "Misiones",
+      "Corrientes",
+      "Chaco"
+     ],
+     "respuesta": "B",
+     "tema": "argentina",
+     "link_nota": null,
+     "verificar": false
+    },
+    {
+     "pregunta": "¿En qué club debutó Lionel Messi como profesional?",
+     "opciones": [
+      "Barcelona",
+      "Paris Saint-Germain",
+      "Newell's Old Boys",
+      "River Plate"
+     ],
+     "respuesta": "A",
+     "tema": "deportes",
+     "link_nota": null,
+     "verificar": false
+    },
+    {
+     "pregunta": "¿Qué banda argentina grabó 'De música ligera'?",
+     "opciones": [
+      "Los Fabulosos Cadillacs",
+      "Virus",
+      "Los Enanitos Verdes",
+      "Soda Stereo"
+     ],
+     "respuesta": "D",
+     "tema": "espectaculos",
+     "link_nota": null,
+     "verificar": false
+    },
+    {
+     "pregunta": "¿Quién propuso la evolución por selección natural?",
+     "opciones": [
+      "Gregor Mendel",
+      "Jean-Baptiste Lamarck",
+      "Louis Pasteur",
+      "Charles Darwin"
+     ],
+     "respuesta": "D",
+     "tema": "ciencia",
+     "link_nota": null,
+     "verificar": false
+    }
+   ]
+  },
+  {
+   "dia": 12,
+   "preguntas": [
+    {
+     "pregunta": "¿Qué departamento sanjuanino le da nombre al viento característico de la región?",
+     "opciones": [
+      "Iglesia",
+      "Calingasta",
+      "Ullum",
+      "Zonda"
+     ],
+     "respuesta": "D",
+     "tema": "san-juan",
+     "link_nota": null,
+     "verificar": false
+    },
+    {
+     "pregunta": "El 'zorro' que habita zonas áridas y de monte cuyano suele ser de la especie:",
+     "opciones": [
+      "Zorro voador",
+      "Zorro gris/colorado regional",
+      "No hay zorros en la región",
+      "Zorro ártico"
+     ],
+     "respuesta": "B",
+     "tema": "san-juan",
+     "link_nota": null,
+     "verificar": true
+    },
+    {
+     "pregunta": "¿Quién comandó el Cruce de los Andes?",
+     "opciones": [
+      "Martín Miguel de Güemes",
+      "José de San Martín",
+      "José Gervasio Artigas",
+      "Manuel Belgrano"
+     ],
+     "respuesta": "B",
+     "tema": "argentina",
+     "link_nota": null,
+     "verificar": false
+    },
+    {
+     "pregunta": "¿En qué Juegos Olímpicos ganó Argentina el oro en básquet?",
+     "opciones": [
+      "Pekín 2008",
+      "Sídney 2000",
+      "Londres 2012",
+      "Atenas 2004"
+     ],
+     "respuesta": "D",
+     "tema": "deportes",
+     "link_nota": null,
+     "verificar": false
+    },
+    {
+     "pregunta": "¿Qué banda argentina grabó 'Matador'?",
+     "opciones": [
+      "Divididos",
+      "Bersuit Vergarabat",
+      "Los Fabulosos Cadillacs",
+      "Los Auténticos Decadentes"
+     ],
+     "respuesta": "C",
+     "tema": "espectaculos",
+     "link_nota": null,
+     "verificar": false
+    }
+   ]
+  },
+  {
+   "dia": 13,
+   "preguntas": [
+    {
+     "pregunta": "El embalse Ullum se usa principalmente para:",
+     "opciones": [
+      "Riego y generación de energía",
+      "Extracción de sal",
+      "Navegación de carga",
+      "Pesca deportiva exclusiva"
+     ],
+     "respuesta": "A",
+     "tema": "san-juan",
+     "link_nota": null,
+     "verificar": true
+    },
+    {
+     "pregunta": "¿Cuántos Premios Nobel ganaron argentinos?",
+     "opciones": [
+      "2",
+      "3",
+      "5",
+      "7"
+     ],
+     "respuesta": "C",
+     "tema": "ciencia",
+     "link_nota": null,
+     "verificar": true
+    },
+    {
+     "pregunta": "¿Qué tradición está asociada a marcar el ganado con hierro caliente?",
+     "opciones": [
+      "La vendimia",
+      "La trilla",
+      "El carnaval",
+      "La marcada/yerra"
+     ],
+     "respuesta": "D",
+     "tema": "san-juan",
+     "link_nota": null,
+     "verificar": true
+    },
+    {
+     "pregunta": "¿En qué provincia se organizó el Ejército de los Andes?",
+     "opciones": [
+      "Córdoba",
+      "Santa Fe",
+      "San Juan",
+      "Mendoza"
+     ],
+     "respuesta": "D",
+     "tema": "argentina",
+     "link_nota": null,
+     "verificar": false
+    },
+    {
+     "pregunta": "¿Qué tenista argentino ganó más títulos de Grand Slam?",
+     "opciones": [
+      "David Nalbandian",
+      "Guillermo Vilas",
+      "Gastón Gaudio",
+      "Juan Martín del Potro"
+     ],
+     "respuesta": "B",
+     "tema": "deportes",
+     "link_nota": null,
+     "verificar": true
+    }
+   ]
+  },
+  {
+   "dia": 14,
+   "preguntas": [
+    {
+     "pregunta": "¿Qué cultivo, además de la vid, es tradicional en el departamento de Pocito?",
+     "opciones": [
+      "Nuez",
+      "Arroz",
+      "Cacao",
+      "Café"
+     ],
+     "respuesta": "A",
+     "tema": "san-juan",
+     "link_nota": null,
+     "verificar": true
+    },
+    {
+     "pregunta": "¿De qué provincia es la banda Los Enanitos Verdes?",
+     "opciones": [
+      "Buenos Aires",
+      "Mendoza",
+      "San Juan",
+      "Córdoba"
+     ],
+     "respuesta": "B",
+     "tema": "espectaculos",
+     "link_nota": null,
+     "verificar": false
+    },
+    {
+     "pregunta": "¿Qué argentino ganó el Premio Nobel de Química?",
+     "opciones": [
+      "César Milstein",
+      "Luis Federico Leloir",
+      "Bernardo Houssay",
+      "René Favaloro"
+     ],
+     "respuesta": "B",
+     "tema": "ciencia",
+     "link_nota": null,
+     "verificar": false
+    },
+    {
+     "pregunta": "¿Qué se conmemora el 25 de Mayo?",
+     "opciones": [
+      "El Día de la Bandera",
+      "La Revolución de Mayo de 1810",
+      "La Declaración de la Independencia",
+      "La Batalla de San Lorenzo"
+     ],
+     "respuesta": "B",
+     "tema": "argentina",
+     "link_nota": null,
+     "verificar": false
+    },
+    {
+     "pregunta": "¿Qué Grand Slam ganó Juan Martín del Potro?",
+     "opciones": [
+      "Roland Garros",
+      "Wimbledon",
+      "El Abierto de Australia",
+      "El US Open"
+     ],
+     "respuesta": "D",
+     "tema": "deportes",
+     "link_nota": null,
+     "verificar": false
+    }
+   ]
+  },
+  {
+   "dia": 15,
+   "preguntas": [
+    {
+     "pregunta": "El fruto emblemático de la localidad de Media Agua es:",
+     "opciones": [
+      "El melón",
+      "El coco",
+      "El plátano",
+      "La piña"
+     ],
+     "respuesta": "A",
+     "tema": "san-juan",
+     "link_nota": null,
+     "verificar": true
+    },
+    {
+     "pregunta": "¿Qué película argentina ganó el Oscar a Mejor Película Extranjera en 2010?",
+     "opciones": [
+      "La historia oficial",
+      "Nueve reinas",
+      "El secreto de sus ojos",
+      "Relatos salvajes"
+     ],
+     "respuesta": "C",
+     "tema": "espectaculos",
+     "link_nota": null,
+     "verificar": false
+    },
+    {
+     "pregunta": "¿Qué médico argentino desarrolló la técnica del bypass coronario?",
+     "opciones": [
+      "Bernardo Houssay",
+      "René Favaloro",
+      "César Milstein",
+      "Luis Leloir"
+     ],
+     "respuesta": "B",
+     "tema": "ciencia",
+     "link_nota": null,
+     "verificar": false
+    },
+    {
+     "pregunta": "¿Qué se conmemora el 9 de Julio?",
+     "opciones": [
+      "El Cruce de los Andes",
+      "La Revolución de Mayo",
+      "La Declaración de la Independencia",
+      "El Día de la Bandera"
+     ],
+     "respuesta": "C",
+     "tema": "argentina",
+     "link_nota": null,
+     "verificar": false
+    },
+    {
+     "pregunta": "¿Cuántos campeonatos mundiales de Fórmula 1 ganó Juan Manuel Fangio?",
+     "opciones": [
+      "5",
+      "3",
+      "4",
+      "7"
+     ],
+     "respuesta": "A",
+     "tema": "deportes",
+     "link_nota": null,
+     "verificar": false
+    }
+   ]
+  },
+  {
+   "dia": 16,
+   "preguntas": [
+    {
+     "pregunta": "¿Qué recipiente se usa tradicionalmente para añejar el vino?",
+     "opciones": [
+      "Damajuana de vidrio solamente",
+      "Tonel de madera",
+      "Bidón plástico",
+      "Bolsa de arpillera"
+     ],
+     "respuesta": "B",
+     "tema": "san-juan",
+     "link_nota": null,
+     "verificar": false
+    },
+    {
+     "pregunta": "¿Qué película argentina ganó el Oscar a Mejor Película Extranjera en 1986?",
+     "opciones": [
+      "La Patagonia rebelde",
+      "Camila",
+      "El secreto de sus ojos",
+      "La historia oficial"
+     ],
+     "respuesta": "D",
+     "tema": "espectaculos",
+     "link_nota": null,
+     "verificar": false
+    },
+    {
+     "pregunta": "¿Cuál es el animal más grande del planeta?",
+     "opciones": [
+      "La ballena azul",
+      "El tiburón ballena",
+      "El calamar gigante",
+      "El elefante africano"
+     ],
+     "respuesta": "A",
+     "tema": "ciencia",
+     "link_nota": null,
+     "verificar": false
+    },
+    {
+     "pregunta": "¿De qué color es la franja central de la bandera argentina?",
+     "opciones": [
+      "Amarillo",
+      "Blanco",
+      "Azul",
+      "Celeste"
+     ],
+     "respuesta": "B",
+     "tema": "argentina",
+     "link_nota": null,
+     "verificar": false
+    },
+    {
+     "pregunta": "¿Cómo se llama popularmente el estadio de Boca Juniors?",
+     "opciones": [
+      "El Cilindro",
+      "El Monumental",
+      "La Fortaleza",
+      "La Bombonera"
+     ],
+     "respuesta": "D",
+     "tema": "deportes",
+     "link_nota": null,
+     "verificar": false
+    }
+   ]
+  },
+  {
+   "dia": 17,
+   "preguntas": [
+    {
+     "pregunta": "¿Cómo se llama la comida a base de maíz, típica del norte y Cuyo argentino?",
+     "opciones": [
+      "Sushi",
+      "Locro",
+      "Risotto",
+      "Paella"
+     ],
+     "respuesta": "B",
+     "tema": "san-juan",
+     "link_nota": null,
+     "verificar": false
+    },
+    {
+     "pregunta": "¿Quién dirigió 'Relatos salvajes'?",
+     "opciones": [
+      "Damián Szifron",
+      "Pablo Trapero",
+      "Juan José Campanella",
+      "Fabián Bielinsky"
+     ],
+     "respuesta": "A",
+     "tema": "espectaculos",
+     "link_nota": null,
+     "verificar": false
+    },
+    {
+     "pregunta": "¿Cuál es el animal terrestre más grande?",
+     "opciones": [
+      "El rinoceronte",
+      "El hipopótamo",
+      "La jirafa",
+      "El elefante africano"
+     ],
+     "respuesta": "D",
+     "tema": "ciencia",
+     "link_nota": null,
+     "verificar": false
+    },
+    {
+     "pregunta": "¿Qué figura corona el Escudo Nacional Argentino?",
+     "opciones": [
+      "Una estrella",
+      "Una corona de laurel",
+      "Un sol",
+      "Un cóndor"
+     ],
+     "respuesta": "C",
+     "tema": "argentina",
+     "link_nota": null,
+     "verificar": false
+    },
+    {
+     "pregunta": "¿Cómo se llama popularmente el estadio de River Plate?",
+     "opciones": [
+      "El Monumental",
+      "La Bombonera",
+      "El Cilindro",
+      "El Gasómetro"
+     ],
+     "respuesta": "A",
+     "tema": "deportes",
+     "link_nota": null,
+     "verificar": false
+    }
+   ]
+  },
+  {
+   "dia": 18,
+   "preguntas": [
+    {
+     "pregunta": "El 'arrope' es un dulce tradicional cuyano elaborado principalmente con:",
+     "opciones": [
+      "Frutas cocidas en almíbar",
+      "Miel de caña",
+      "Leche condensada",
+      "Chocolate"
+     ],
+     "respuesta": "A",
+     "tema": "san-juan",
+     "link_nota": null,
+     "verificar": true
+    },
+    {
+     "pregunta": "¿Quién dirigió 'El secreto de sus ojos'?",
+     "opciones": [
+      "Juan José Campanella",
+      "Fernando Solanas",
+      "Damián Szifron",
+      "Adolfo Aristarain"
+     ],
+     "respuesta": "A",
+     "tema": "espectaculos",
+     "link_nota": null,
+     "verificar": false
+    },
+    {
+     "pregunta": "¿Cuántos corazones tiene un pulpo?",
+     "opciones": [
+      "4",
+      "1",
+      "2",
+      "3"
+     ],
+     "respuesta": "D",
+     "tema": "ciencia",
+     "link_nota": null,
+     "verificar": false
+    },
+    {
+     "pregunta": "¿En qué provincia está el glaciar Perito Moreno?",
+     "opciones": [
+      "Santa Cruz",
+      "Río Negro",
+      "Tierra del Fuego",
+      "Chubut"
+     ],
+     "respuesta": "A",
+     "tema": "argentina",
+     "link_nota": null,
+     "verificar": false
+    },
+    {
+     "pregunta": "¿Qué selección ganó la Copa América 2021?",
+     "opciones": [
+      "Argentina",
+      "Brasil",
+      "Colombia",
+      "Uruguay"
+     ],
+     "respuesta": "A",
+     "tema": "deportes",
+     "link_nota": null,
+     "verificar": false
+    }
+   ]
+  },
+  {
+   "dia": 19,
+   "preguntas": [
+    {
+     "pregunta": "¿Qué ave es un símbolo habitual de los Andes en la fauna regional?",
+     "opciones": [
+      "Pingüino",
+      "Tucán",
+      "Flamenco rosado",
+      "Cóndor"
+     ],
+     "respuesta": "D",
+     "tema": "san-juan",
+     "link_nota": null,
+     "verificar": false
+    },
+    {
+     "pregunta": "¿Qué actor interpretó a Benjamín Espósito en 'El secreto de sus ojos'?",
+     "opciones": [
+      "Darío Grandinetti",
+      "Guillermo Francella",
+      "Ricardo Darín",
+      "Leonardo Sbaraglia"
+     ],
+     "respuesta": "C",
+     "tema": "espectaculos",
+     "link_nota": null,
+     "verificar": false
+    },
+    {
+     "pregunta": "¿Cuál es el desierto cálido más extenso del mundo?",
+     "opciones": [
+      "El Gobi",
+      "El Sahara",
+      "El Atacama",
+      "El Kalahari"
+     ],
+     "respuesta": "B",
+     "tema": "ciencia",
+     "link_nota": null,
+     "verificar": true
+    },
+    {
+     "pregunta": "¿Qué océano baña las costas argentinas?",
+     "opciones": [
+      "El Ártico",
+      "El Índico",
+      "El Atlántico",
+      "El Pacífico"
+     ],
+     "respuesta": "C",
+     "tema": "argentina",
+     "link_nota": null,
+     "verificar": false
+    },
+    {
+     "pregunta": "¿En qué deporte se destacó Luciana Aymar?",
+     "opciones": [
+      "Vóley",
+      "Handball",
+      "Hockey sobre césped",
+      "Natación"
+     ],
+     "respuesta": "C",
+     "tema": "deportes",
+     "link_nota": null,
+     "verificar": false
+    }
+   ]
+  },
+  {
+   "dia": 20,
+   "preguntas": [
+    {
+     "pregunta": "El guanaco es un animal típico de:",
+     "opciones": [
+      "Los esteros del litoral",
+      "Las costas patagónicas",
+      "La selva misionera",
+      "Las zonas andinas y precordilleranas"
+     ],
+     "respuesta": "D",
+     "tema": "san-juan",
+     "link_nota": null,
+     "verificar": false
+    },
+    {
+     "pregunta": "¿Quién creó la historieta Mafalda?",
+     "opciones": [
+      "Caloi",
+      "Dante Quinterno",
+      "Quino",
+      "Roberto Fontanarrosa"
+     ],
+     "respuesta": "C",
+     "tema": "espectaculos",
+     "link_nota": null,
+     "verificar": false
+    },
+    {
+     "pregunta": "¿Cuál es el río más caudaloso del mundo?",
+     "opciones": [
+      "El Misisipi",
+      "El Nilo",
+      "El Amazonas",
+      "El Yangtsé"
+     ],
+     "respuesta": "C",
+     "tema": "ciencia",
+     "link_nota": null,
+     "verificar": true
+    },
+    {
+     "pregunta": "¿Cuál es la capital de Tierra del Fuego?",
+     "opciones": [
+      "Río Grande",
+      "Comodoro Rivadavia",
+      "Tolhuin",
+      "Ushuaia"
+     ],
+     "respuesta": "D",
+     "tema": "argentina",
+     "link_nota": null,
+     "verificar": false
+    },
+    {
+     "pregunta": "¿Cómo se llama la selección argentina de rugby?",
+     "opciones": [
+      "Los Pumas",
+      "Los Murciélagos",
+      "Los Leones",
+      "Los Cóndores"
+     ],
+     "respuesta": "A",
+     "tema": "deportes",
+     "link_nota": null,
+     "verificar": false
+    }
+   ]
+  },
+  {
+   "dia": 21,
+   "preguntas": [
+    {
+     "pregunta": "¿Qué material se usa tradicionalmente para las paredes de las construcciones rurales cuyanas?",
+     "opciones": [
+      "Vidrio",
+      "Concreto armado exclusivamente",
+      "Adobe",
+      "Bambú"
+     ],
+     "respuesta": "C",
+     "tema": "san-juan",
+     "link_nota": null,
+     "verificar": false
+    },
+    {
+     "pregunta": "¿Quién creó la historieta Patoruzú?",
+     "opciones": [
+      "Roberto Fontanarrosa",
+      "Héctor Oesterheld",
+      "Dante Quinterno",
+      "Quino"
+     ],
+     "respuesta": "C",
+     "tema": "espectaculos",
+     "link_nota": null,
+     "verificar": false
+    },
+    {
+     "pregunta": "¿Cuál es el océano más extenso?",
+     "opciones": [
+      "El Ártico",
+      "El Pacífico",
+      "El Índico",
+      "El Atlántico"
+     ],
+     "respuesta": "B",
+     "tema": "ciencia",
+     "link_nota": null,
+     "verificar": false
+    },
+    {
+     "pregunta": "¿En qué ciudad se sancionó la Constitución Nacional de 1853?",
+     "opciones": [
+      "Paraná",
+      "Tucumán",
+      "Buenos Aires",
+      "Santa Fe"
+     ],
+     "respuesta": "D",
+     "tema": "argentina",
+     "link_nota": null,
+     "verificar": false
+    },
+    {
+     "pregunta": "¿Cómo se llama la selección argentina femenina de hockey?",
+     "opciones": [
+      "Las Panteras",
+      "Las Leonas",
+      "Las Águilas",
+      "Las Murciélagas"
+     ],
+     "respuesta": "B",
+     "tema": "deportes",
+     "link_nota": null,
+     "verificar": false
+    }
+   ]
+  },
+  {
+   "dia": 22,
+   "preguntas": [
+    {
+     "pregunta": "La 'tonada' es, en la música cuyana, principalmente:",
+     "opciones": [
+      "Un género/canción de raíz cuyana",
+      "Un tipo de vino",
+      "Un instrumento de percusión",
+      "Una danza de salón europea"
+     ],
+     "respuesta": "A",
+     "tema": "san-juan",
+     "link_nota": null,
+     "verificar": false
+    },
+    {
+     "pregunta": "¿Quién escribió el guion de 'El Eternauta'?",
+     "opciones": [
+      "Héctor Germán Oesterheld",
+      "Quino",
+      "Roberto Fontanarrosa",
+      "Alberto Breccia"
+     ],
+     "respuesta": "A",
+     "tema": "espectaculos",
+     "link_nota": null,
+     "verificar": false
+    },
+    {
+     "pregunta": "¿Cuál es el país más extenso del mundo?",
+     "opciones": [
+      "China",
+      "Rusia",
+      "Estados Unidos",
+      "Canadá"
+     ],
+     "respuesta": "B",
+     "tema": "ciencia",
+     "link_nota": null,
+     "verificar": false
+    },
+    {
+     "pregunta": "¿Quién fue el primer presidente constitucional argentino?",
+     "opciones": [
+      "Bernardino Rivadavia",
+      "Bartolomé Mitre",
+      "Justo José de Urquiza",
+      "Domingo Sarmiento"
+     ],
+     "respuesta": "C",
+     "tema": "argentina",
+     "link_nota": null,
+     "verificar": false
+    },
+    {
+     "pregunta": "¿Cada cuántos años se disputa el Mundial de fútbol?",
+     "opciones": [
+      "Cada 5 años",
+      "Cada 3 años",
+      "Cada 4 años",
+      "Cada 2 años"
+     ],
+     "respuesta": "C",
+     "tema": "deportes",
+     "link_nota": null,
+     "verificar": false
+    }
+   ]
+  },
+  {
+   "dia": 23,
+   "preguntas": [
+    {
+     "pregunta": "¿Qué se celebra tradicionalmente en la Fiesta de la Vendimia?",
+     "opciones": [
+      "La llegada de la lluvia",
+      "La siembra de trigo",
+      "El inicio del invierno",
+      "La cosecha de la uva"
+     ],
+     "respuesta": "D",
+     "tema": "san-juan",
+     "link_nota": null,
+     "verificar": false
+    },
+    {
+     "pregunta": "¿Quién escribió 'El Aleph'?",
+     "opciones": [
+      "Adolfo Bioy Casares",
+      "Ernesto Sabato",
+      "Julio Cortázar",
+      "Jorge Luis Borges"
+     ],
+     "respuesta": "D",
+     "tema": "espectaculos",
+     "link_nota": null,
+     "verificar": false
+    },
+    {
+     "pregunta": "¿Cuál es la capital de Japón?",
+     "opciones": [
+      "Osaka",
+      "Seúl",
+      "Tokio",
+      "Kioto"
+     ],
+     "respuesta": "C",
+     "tema": "ciencia",
+     "link_nota": null,
+     "verificar": false
+    },
+    {
+     "pregunta": "¿Qué provincia produce la mayor parte de la yerba mate argentina?",
+     "opciones": [
+      "Entre Ríos",
+      "Chaco",
+      "Corrientes",
+      "Misiones"
+     ],
+     "respuesta": "D",
+     "tema": "argentina",
+     "link_nota": null,
+     "verificar": true
+    },
+    {
+     "pregunta": "¿Cuántos jugadores de cada equipo hay en una cancha de fútbol?",
+     "opciones": [
+      "9",
+      "10",
+      "11",
+      "12"
+     ],
+     "respuesta": "C",
+     "tema": "deportes",
+     "link_nota": null,
+     "verificar": false
+    }
+   ]
+  },
+  {
+   "dia": 24,
+   "preguntas": [
+    {
+     "pregunta": "El desierto que rodea a los oasis cultivados de San Juan se conoce, en general, como parte de:",
+     "opciones": [
+      "La puna húmeda",
+      "La selva amazónica",
+      "El litoral fluvial",
+      "La región de Cuyo árido"
+     ],
+     "respuesta": "D",
+     "tema": "san-juan",
+     "link_nota": null,
+     "verificar": false
+    },
+    {
+     "pregunta": "¿Quién escribió 'Rayuela'?",
+     "opciones": [
+      "Ernesto Sabato",
+      "Jorge Luis Borges",
+      "Roberto Arlt",
+      "Julio Cortázar"
+     ],
+     "respuesta": "D",
+     "tema": "espectaculos",
+     "link_nota": null,
+     "verificar": false
+    },
+    {
+     "pregunta": "¿En qué continente está Egipto?",
+     "opciones": [
+      "Europa",
+      "Asia",
+      "África",
+      "Oceanía"
+     ],
+     "respuesta": "C",
+     "tema": "ciencia",
+     "link_nota": null,
+     "verificar": false
+    },
+    {
+     "pregunta": "¿En qué provincias se encuentran las Salinas Grandes del noroeste?",
+     "opciones": [
+      "Mendoza y San Juan",
+      "Jujuy y Salta",
+      "Córdoba y San Luis",
+      "La Pampa y Río Negro"
+     ],
+     "respuesta": "B",
+     "tema": "argentina",
+     "link_nota": null,
+     "verificar": false
+    },
+    {
+     "pregunta": "¿Cuántos jugadores de cada equipo hay en una cancha de básquet?",
+     "opciones": [
+      "7",
+      "5",
+      "6",
+      "4"
+     ],
+     "respuesta": "B",
+     "tema": "deportes",
+     "link_nota": null,
+     "verificar": false
+    }
+   ]
+  },
+  {
+   "dia": 25,
+   "preguntas": [
+    {
+     "pregunta": "¿Qué tipo de clima predomina en la provincia de San Juan?",
+     "opciones": [
+      "Árido y seco, con oasis de riego",
+      "Tropical húmedo",
+      "Ecuatorial",
+      "Polar"
+     ],
+     "respuesta": "A",
+     "tema": "san-juan",
+     "link_nota": null,
+     "verificar": false
+    },
+    {
+     "pregunta": "¿Quién escribió el poema 'Martín Fierro'?",
+     "opciones": [
+      "José Hernández",
+      "Esteban Echeverría",
+      "Domingo Sarmiento",
+      "Leopoldo Lugones"
+     ],
+     "respuesta": "A",
+     "tema": "espectaculos",
+     "link_nota": null,
+     "verificar": false
+    },
+    {
+     "pregunta": "¿Cuál es la montaña más alta del mundo?",
+     "opciones": [
+      "El Aconcagua",
+      "El Kilimanjaro",
+      "El Everest",
+      "El K2"
+     ],
+     "respuesta": "C",
+     "tema": "ciencia",
+     "link_nota": null,
+     "verificar": false
+    },
+    {
+     "pregunta": "¿En qué provincia funciona el Tren a las Nubes?",
+     "opciones": [
+      "Jujuy",
+      "Chubut",
+      "Salta",
+      "Misiones"
+     ],
+     "respuesta": "C",
+     "tema": "argentina",
+     "link_nota": null,
+     "verificar": false
+    },
+    {
+     "pregunta": "¿En qué ciudad se hicieron los Juegos Olímpicos de la Juventud 2018?",
+     "opciones": [
+      "Buenos Aires",
+      "Río de Janeiro",
+      "Lima",
+      "Santiago de Chile"
+     ],
+     "respuesta": "A",
+     "tema": "deportes",
+     "link_nota": null,
+     "verificar": false
+    }
+   ]
+  },
+  {
+   "dia": 26,
+   "preguntas": [
+    {
+     "pregunta": "El 'horno de barro' se usa tradicionalmente en el campo cuyano para:",
+     "opciones": [
+      "Cocinar pan y comidas al rescoldo",
+      "Secar ladrillos únicamente",
+      "Fundir metales industriales",
+      "Calentar agua de pileta"
+     ],
+     "respuesta": "A",
+     "tema": "san-juan",
+     "link_nota": null,
+     "verificar": false
+    },
+    {
+     "pregunta": "¿Quién escribió 'Don Segundo Sombra'?",
+     "opciones": [
+      "Leopoldo Lugones",
+      "Ricardo Güiraldes",
+      "Roberto Payró",
+      "José Hernández"
+     ],
+     "respuesta": "B",
+     "tema": "espectaculos",
+     "link_nota": null,
+     "verificar": false
+    },
+    {
+     "pregunta": "¿En qué año llegó el ser humano a la Luna por primera vez?",
+     "opciones": [
+      "1959",
+      "1972",
+      "1969",
+      "1961"
+     ],
+     "respuesta": "C",
+     "tema": "ciencia",
+     "link_nota": null,
+     "verificar": false
+    },
+    {
+     "pregunta": "¿Cuál es la provincia argentina más poblada?",
+     "opciones": [
+      "Mendoza",
+      "Santa Fe",
+      "Buenos Aires",
+      "Córdoba"
+     ],
+     "respuesta": "C",
+     "tema": "argentina",
+     "link_nota": null,
+     "verificar": true
+    },
+    {
+     "pregunta": "¿A qué boxeador argentino apodan 'Maravilla'?",
+     "opciones": [
+      "Sergio Martínez",
+      "Oscar Bonavena",
+      "Nicolino Locche",
+      "Carlos Monzón"
+     ],
+     "respuesta": "A",
+     "tema": "deportes",
+     "link_nota": null,
+     "verificar": false
+    }
+   ]
+  },
+  {
+   "dia": 27,
+   "preguntas": [
+    {
+     "pregunta": "¿Qué fruto seco es un cultivo tradicional en Caucete y Pocito?",
+     "opciones": [
+      "El maní",
+      "El anacardo",
+      "La almendra amazónica",
+      "La nuez"
+     ],
+     "respuesta": "D",
+     "tema": "san-juan",
+     "link_nota": null,
+     "verificar": true
+    },
+    {
+     "pregunta": "¿En qué localidad cordobesa se realiza el Festival Nacional de Folklore?",
+     "opciones": [
+      "Jesús María",
+      "Villa María",
+      "Cosquín",
+      "La Falda"
+     ],
+     "respuesta": "C",
+     "tema": "espectaculos",
+     "link_nota": null,
+     "verificar": false
+    },
+    {
+     "pregunta": "¿Quién fue la primera persona en pisar la Luna?",
+     "opciones": [
+      "Neil Armstrong",
+      "Michael Collins",
+      "Buzz Aldrin",
+      "Yuri Gagarin"
+     ],
+     "respuesta": "A",
+     "tema": "ciencia",
+     "link_nota": null,
+     "verificar": false
+    },
+    {
+     "pregunta": "¿Qué estrecho separa la isla de Tierra del Fuego del continente?",
+     "opciones": [
+      "El Estrecho de Magallanes",
+      "El Estrecho de Le Maire",
+      "El Canal de Beagle",
+      "El Pasaje de Drake"
+     ],
+     "respuesta": "A",
+     "tema": "argentina",
+     "link_nota": null,
+     "verificar": false
+    },
+    {
+     "pregunta": "¿En qué deporte se destacó Carlos Monzón?",
+     "opciones": [
+      "Boxeo",
+      "Fútbol",
+      "Automovilismo",
+      "Tenis"
+     ],
+     "respuesta": "A",
+     "tema": "deportes",
+     "link_nota": null,
+     "verificar": false
+    }
+   ]
+  },
+  {
+   "dia": 28,
+   "preguntas": [
+    {
+     "pregunta": "¿Cómo se le llama comúnmente a la persona que trabaja podando la vid?",
+     "opciones": [
+      "Cantero",
+      "Herrero",
+      "Podador/viñatero",
+      "Tornero"
+     ],
+     "respuesta": "C",
+     "tema": "san-juan",
+     "link_nota": null,
+     "verificar": false
+    },
+    {
+     "pregunta": "¿A qué cantante argentina apodaban 'La Negra'?",
+     "opciones": [
+      "Nelly Omar",
+      "Mercedes Sosa",
+      "Suma Paz",
+      "Soledad Pastorutti"
+     ],
+     "respuesta": "B",
+     "tema": "espectaculos",
+     "link_nota": null,
+     "verificar": false
+    },
+    {
+     "pregunta": "¿Quién fue el primer ser humano en viajar al espacio?",
+     "opciones": [
+      "Yuri Gagarin",
+      "Alan Shepard",
+      "John Glenn",
+      "Neil Armstrong"
+     ],
+     "respuesta": "A",
+     "tema": "ciencia",
+     "link_nota": null,
+     "verificar": false
+    },
+    {
+     "pregunta": "¿Cómo se llama la gran llanura fértil del centro-este argentino?",
+     "opciones": [
+      "El Chaco",
+      "La Pampa",
+      "La Mesopotamia",
+      "La Puna"
+     ],
+     "respuesta": "B",
+     "tema": "argentina",
+     "link_nota": null,
+     "verificar": false
+    },
+    {
+     "pregunta": "¿Qué club argentino ganó más veces la Copa Libertadores?",
+     "opciones": [
+      "Estudiantes de La Plata",
+      "Boca Juniors",
+      "Independiente",
+      "River Plate"
+     ],
+     "respuesta": "C",
+     "tema": "deportes",
+     "link_nota": null,
+     "verificar": true
+    }
+   ]
+  },
+  {
+   "dia": 29,
+   "preguntas": [
+    {
+     "pregunta": "La expresión 'tierra del sol y del buen vino' suele asociarse a:",
+     "opciones": [
+      "Formosa",
+      "Bariloche",
+      "Ushuaia",
+      "San Juan"
+     ],
+     "respuesta": "D",
+     "tema": "san-juan",
+     "link_nota": null,
+     "verificar": true
+    },
+    {
+     "pregunta": "¿De qué provincia era Mercedes Sosa?",
+     "opciones": [
+      "Tucumán",
+      "Salta",
+      "Jujuy",
+      "Santiago del Estero"
+     ],
+     "respuesta": "A",
+     "tema": "espectaculos",
+     "link_nota": null,
+     "verificar": false
+    },
+    {
+     "pregunta": "¿Cuántos días tiene un año bisiesto?",
+     "opciones": [
+      "367",
+      "366",
+      "364",
+      "365"
+     ],
+     "respuesta": "B",
+     "tema": "ciencia",
+     "link_nota": null,
+     "verificar": false
+    },
+    {
+     "pregunta": "¿Qué provincia es famosa por la Fiesta Nacional de la Vendimia?",
+     "opciones": [
+      "La Rioja",
+      "San Juan",
+      "Mendoza",
+      "Salta"
+     ],
+     "respuesta": "C",
+     "tema": "argentina",
+     "link_nota": null,
+     "verificar": false
+    },
+    {
+     "pregunta": "¿En qué país se jugó el primer Mundial de fútbol?",
+     "opciones": [
+      "Argentina",
+      "Brasil",
+      "Uruguay",
+      "Italia"
+     ],
+     "respuesta": "C",
+     "tema": "deportes",
+     "link_nota": null,
+     "verificar": false
+    }
+   ]
+  },
+  {
+   "dia": 30,
+   "preguntas": [
+    {
+     "pregunta": "¿Qué elemento del paisaje sanjuanino se forma al embalsar un río con una presa?",
+     "opciones": [
+      "Un arrecife",
+      "Un géiser",
+      "Un dique/embalse",
+      "Un volcán"
+     ],
+     "respuesta": "C",
+     "tema": "san-juan",
+     "link_nota": null,
+     "verificar": false
+    },
+    {
+     "pregunta": "¿Qué género musical rioplatense declaró la Unesco Patrimonio de la Humanidad en 2009?",
+     "opciones": [
+      "La milonga",
+      "El tango",
+      "La cumbia",
+      "El chamamé"
+     ],
+     "respuesta": "B",
+     "tema": "espectaculos",
+     "link_nota": null,
+     "verificar": true
+    },
+    {
+     "pregunta": "¿Qué mide la escala de Richter?",
+     "opciones": [
+      "La velocidad del viento",
+      "La lluvia caída",
+      "La magnitud de los terremotos",
+      "La temperatura"
+     ],
+     "respuesta": "C",
+     "tema": "ciencia",
+     "link_nota": null,
+     "verificar": false
+    },
+    {
+     "pregunta": "¿Qué nombre recibe la región del noreste formada por Entre Ríos, Corrientes y Misiones?",
+     "opciones": [
+      "La Puna",
+      "El Litoral andino",
+      "La Patagonia",
+      "La Mesopotamia"
+     ],
+     "respuesta": "D",
+     "tema": "argentina",
+     "link_nota": null,
+     "verificar": false
+    },
+    {
+     "pregunta": "¿Entre qué equipos se juega el 'Superclásico' del fútbol argentino?",
+     "opciones": [
+      "San Lorenzo y Huracán",
+      "Racing e Independiente",
+      "Boca Juniors y River Plate",
+      "Newell's y Rosario Central"
+     ],
+     "respuesta": "C",
+     "tema": "deportes",
+     "link_nota": null,
+     "verificar": false
+    }
+   ]
+  }
+ ],
+ "reserva": [
+  {
+   "pregunta": "¿A cuántos grados Celsius se congela el agua a presión normal?",
+   "opciones": [
+    "32",
+    "0",
+    "10",
+    "-10"
+   ],
+   "respuesta": "B",
+   "tema": "ciencia",
+   "link_nota": null,
+   "verificar": false
+  },
+  {
+   "pregunta": "¿En qué país nació el fútbol moderno con sus primeras reglas escritas?",
+   "opciones": [
+    "Italia",
+    "Inglaterra",
+    "Brasil",
+    "Uruguay"
+   ],
+   "respuesta": "B",
+   "tema": "deportes",
+   "link_nota": null,
+   "verificar": false
+  },
+  {
+   "pregunta": "¿Qué significa la sigla ADN?",
+   "opciones": [
+    "Ácido desoxirribonucleico",
+    "Agente de nutrición",
+    "Ácido dinámico natural",
+    "Átomo de núcleo"
+   ],
+   "respuesta": "A",
+   "tema": "ciencia",
+   "link_nota": null,
+   "verificar": false
+  },
+  {
+   "pregunta": "¿Cuál es el idioma con más hablantes nativos en el mundo?",
+   "opciones": [
+    "El inglés",
+    "El español",
+    "El chino mandarín",
+    "El hindi"
+   ],
+   "respuesta": "C",
+   "tema": "ciencia",
+   "link_nota": null,
+   "verificar": true
+  },
+  {
+   "pregunta": "¿En qué país está la Torre Eiffel?",
+   "opciones": [
+    "Inglaterra",
+    "Bélgica",
+    "Italia",
+    "Francia"
+   ],
+   "respuesta": "D",
+   "tema": "ciencia",
+   "link_nota": null,
+   "verificar": false
+  },
+  {
+   "pregunta": "¿Cuál es la moneda oficial de Brasil?",
+   "opciones": [
+    "El real",
+    "El guaraní",
+    "El sol",
+    "El peso"
+   ],
+   "respuesta": "A",
+   "tema": "ciencia",
+   "link_nota": null,
+   "verificar": false
+  }
+ ]
 }

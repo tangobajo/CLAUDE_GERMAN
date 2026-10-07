@@ -1,384 +1,181 @@
 <!DOCTYPE html>
-<html lang="es-AR">
+<html lang="es">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Palabra del Día · Fuxia Games</title>
-<link rel="icon" href="assets/logo-fuxia-games-icono.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@500;600;700&family=Barlow+Condensed:ital,wght@0,600;0,700;1,700;1,800&family=Merriweather:wght@700;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="shared.css">
 <style>
-  .pd-tablero {
-    display: grid;
-    grid-template-rows: repeat(6, 1fr);
-    gap: 6px;
-    margin: 0 auto;
-    width: min(330px, 92vw);
+  .board { display: grid; grid-template-rows: repeat(6, 1fr); gap: 6px; width: min(100%, 320px); margin: 0 auto 16px; }
+  .row { display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px; }
+  .row.shake { animation: fg-shake .4s; }
+  .tile {
+    aspect-ratio: 1; display: flex; align-items: center; justify-content: center;
+    font-family: var(--font-display); font-weight: 700; font-size: clamp(1.8rem, 9vw, 2.5rem); color: var(--md-dark);
+    border: 2px solid var(--md-line); border-radius: 4px; background: #fff; text-transform: uppercase;
+    transition: transform .12s;
   }
-  .pd-fila { display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px; }
-  .pd-celda {
-    aspect-ratio: 1 / 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 2px solid var(--juego-tecla);
-    border-radius: 4px;
-    background: var(--md-superficie);
-    color: var(--md-tinta);
-    font-family: var(--md-titulo);
-    font-size: clamp(1.4rem, 7vw, 2rem);
-    font-weight: 800;
-    text-transform: uppercase;
-    user-select: none;
-  }
-  .pd-celda[data-lleno] { border-color: var(--md-borde-fuerte); }
-  /* Verde y amarillo llevan texto oscuro: el blanco de Wordle sobre estos dos
-     colores da 2.8:1 y 2.1:1, muy por debajo del mínimo legible. */
-  .pd-celda[data-estado="correcta"] { background: var(--juego-correcta); border-color: var(--juego-correcta); color: var(--md-tinta); }
-  .pd-celda[data-estado="presente"] { background: var(--juego-presente); border-color: var(--juego-presente); color: var(--md-tinta); }
-  .pd-celda[data-estado="ausente"]  { background: var(--juego-ausente);  border-color: var(--juego-ausente);  color: #fff; }
+  .tile.fill { border-color: var(--md-dark); transform: scale(1.04); }
+  .tile.ok, .tile.near, .tile.miss { border-color: transparent; animation: flip .5s both; }
+  .tile.ok { background: var(--fg-ok); color: #fff; }
+  .tile.near { background: var(--fg-near); color: #1d1d1d; }
+  .tile.miss { background: var(--fg-miss); color: #fff; }
+  .tile.nofx { animation: none; }
+  @keyframes flip { 0% { transform: rotateX(0); } 50% { transform: rotateX(90deg); } 100% { transform: rotateX(0); } }
 
-  .pd-fila--error { animation: pd-sacudir .4s; }
-  @keyframes pd-sacudir {
-    0%, 100% { transform: translateX(0); }
-    20%, 60% { transform: translateX(-6px); }
-    40%, 80% { transform: translateX(6px); }
+  .kb { display: flex; flex-direction: column; gap: 7px; user-select: none; }
+  .kb-row { display: flex; gap: 5px; justify-content: center; }
+  .key {
+    flex: 1; max-width: 42px; height: 52px; border: none; border-radius: 4px; cursor: pointer;
+    background: var(--md-line); color: var(--md-dark); font-family: var(--font-display); font-weight: 700; font-size: 1.15rem; padding: 0;
   }
-
-  .pd-teclado { display: flex; flex-direction: column; gap: 6px; }
-  .pd-teclado__fila { display: flex; gap: 5px; justify-content: center; }
-  .pd-tecla {
-    flex: 1 1 auto;
-    min-width: 0;
-    height: 52px;
-    border: 0;
-    border-radius: 4px;
-    background: var(--juego-tecla);
-    color: var(--md-tinta);
-    font-family: inherit;
-    font-size: .92rem;
-    font-weight: 700;
-    cursor: pointer;
-    text-transform: uppercase;
-    padding: 0 2px;
-  }
-  .pd-tecla:hover { background: var(--md-borde-fuerte); }
-  .pd-tecla--ancha { flex: 1.6 1 auto; font-size: .74rem; }
-  .pd-tecla[data-estado="correcta"] { background: var(--juego-correcta); color: var(--md-tinta); }
-  .pd-tecla[data-estado="presente"] { background: var(--juego-presente); color: var(--md-tinta); }
-  .pd-tecla[data-estado="ausente"]  { background: var(--juego-ausente);  color: #fff; }
-
-  .pd-pista {
-    text-align: center;
-    font-size: .88rem;
-    color: var(--md-texto-suave);
-    line-height: 1.5;
-    margin: 0;
-  }
-  .pd-pista strong { color: var(--md-tinta); font-weight: 700; }
-
-  @media (max-height: 700px) { .pd-tecla { height: 44px; } }
+  .key.wide { flex: 1.6; max-width: 66px; font-size: .85rem; letter-spacing: .5px; }
+  .key.ok { background: var(--fg-ok); color: #fff; }
+  .key.near { background: var(--fg-near); color: #1d1d1d; }
+  .key.miss { background: #6d6d6a; color: #fff; }
+  .kb.off { opacity: .35; pointer-events: none; }
+  .pista { margin-top: 10px; font-size: .98rem; color: var(--md-muted); }
+  .pista b { color: var(--md-orange); font-family: var(--font-display); text-transform: uppercase; letter-spacing: 1px; }
 </style>
 </head>
 <body>
-
-<header class="fx-header">
-  <div class="fx-header__marca">
-    <a class="fx-header__home" href="https://mansodiario.com" target="_top" rel="noopener"
-       aria-label="Ir a la portada de Manso Diario">
-      <img class="fx-header__logo fx-header__logo--icono" src="assets/logo-fuxia-games-icono.svg" alt="Fuxia Games">
-    </a>
-    <h1 class="fx-header__juego" id="fx-nombre-juego">Palabra del Día</h1>
-  </div>
-  <a class="fx-volver" href="index.html">← Juegos</a>
+<header class="fg-masthead">
+  <a class="fg-brand" href="https://mansodiario.com" target="_top" rel="noopener"
+     aria-label="Ir a la portada de Manso Diario"><span class="logo">MANSO<b>!</b>DIARIO</span><small>Juegos · San Juan · Argentina</small></a>
+  <div class="fg-streak" id="racha" title="Racha">🔥 0</div>
 </header>
-
-<main class="fx-main" id="pd-app">
-  <p class="fx-aviso" id="pd-cargando">Cargando la palabra de hoy…</p>
-</main>
-
-<template id="pd-plantilla">
-  <p class="pd-pista"><strong>Pista:</strong> <span id="pd-texto-pista"></span></p>
-  <div class="pd-tablero" id="pd-tablero" role="group" aria-label="Tablero de intentos"></div>
-  <div class="pd-teclado" id="pd-teclado"></div>
-</template>
-
-<footer class="fx-footer">
-  <a href="https://instagram.com/fuxiagames" target="_blank" rel="noopener noreferrer">Fuxia Games</a> para <a href="https://mansodiario.com" target="_top" rel="noopener">Manso Diario</a>.
-</footer>
-
-<div class="fx-toast" id="fx-toast" role="status" aria-live="polite"></div>
+<div class="fg-titlebar"><h1>PALABRA DEL DÍA<b>!</b></h1><a class="fg-back" href="index.html">← Juegos</a></div>
+<div class="fg-wrap">
+  <div id="app"><p class="fg-sub">Cargando…</p></div>
+</div>
 
 <script src="shared.js"></script>
 <script>
 (function () {
-  'use strict';
+  var JUEGO = 'palabra', INTENTOS = 6, LARGO = 5;
+  var FILAS = ['QWERTYUIOP', 'ASDFGHJKL', '*ZXCVBNM#'];   // * = ENTER, # = borrar
 
-  var FG = window.FuxiaGames;
-  var JUEGO = 'palabra';
-  var LARGO = 5;
-  var INTENTOS = 6;
-  var EMOJI = { correcta: '🟩', presente: '🟨', ausente: '⬜' };
-  var FILAS_TECLADO = [
-    ['Q','W','E','R','T','Y','U','I','O','P'],
-    ['A','S','D','F','G','H','J','K','L','Ñ'],
-    ['ENTER','Z','X','C','V','B','N','M','BORRAR']
-  ];
-
-  var app = document.getElementById('pd-app');
-  var palabra, palabraDisplay, numeroDia;
-  var intentos = [];        /* intentos ya confirmados */
-  var actual = '';          /* lo que se está tipeando */
-  var terminado = false, gano = false;
-
-  FG.pintarCabecera('Palabra del Día');
-
-  FG.cargarDatos('data/palabras.json').then(arrancar).catch(function (e) {
-    app.innerHTML = '<p class="fx-aviso fx-aviso--error">No se pudo cargar el juego de hoy. ' +
-      'Recargá la página en un rato.<br><small>' + String(e.message || e) + '</small></p>';
-  });
-
-  function arrancar(datos) {
-    var dia = FG.diaDelBanco(datos);
-    numeroDia = dia.numero;
-    palabra = FG.normalizar(dia.contenido.palabra);
-    palabraDisplay = dia.contenido.palabra_display || dia.contenido.palabra;
-
-    app.innerHTML = '';
-    app.appendChild(document.getElementById('pd-plantilla').content.cloneNode(true));
-    document.getElementById('pd-texto-pista').textContent = dia.contenido.pista;
-
-    dibujarTablero();
-    dibujarTeclado();
-
-    /* Si ya jugó hoy, reponemos la partida tal cual quedó y no lo dejamos
-       volver a intentar: solo ve el resultado. */
-    var guardado = FG.cargarEstado(JUEGO);
-    if (guardado.jugadoHoy && guardado.estado && guardado.estado.intentos) {
-      intentos = guardado.estado.intentos.slice(0, INTENTOS);
-      terminado = true;
-      gano = !!guardado.estado.gano;
-      pintarTodo();
-      mostrarResultado(true);
-    } else {
-      document.addEventListener('keydown', alTeclado);
-    }
-  }
-
-  /* ------------------------------------------------------------ dibujado */
-
-  function dibujarTablero() {
-    var tablero = document.getElementById('pd-tablero');
-    for (var f = 0; f < INTENTOS; f++) {
-      var fila = document.createElement('div');
-      fila.className = 'pd-fila';
-      fila.id = 'pd-fila-' + f;
-      for (var c = 0; c < LARGO; c++) {
-        var celda = document.createElement('div');
-        celda.className = 'pd-celda';
-        celda.id = 'pd-celda-' + f + '-' + c;
-        fila.appendChild(celda);
-      }
-      tablero.appendChild(fila);
-    }
-  }
-
-  function dibujarTeclado() {
-    var teclado = document.getElementById('pd-teclado');
-    FILAS_TECLADO.forEach(function (filaTeclas) {
-      var fila = document.createElement('div');
-      fila.className = 'pd-teclado__fila';
-      filaTeclas.forEach(function (t) {
-        var b = document.createElement('button');
-        b.type = 'button';
-        b.className = 'pd-tecla' + (t.length > 1 ? ' pd-tecla--ancha' : '');
-        b.textContent = t === 'BORRAR' ? '⌫' : t;
-        b.setAttribute('aria-label', t === 'BORRAR' ? 'Borrar' : t);
-        b.dataset.tecla = t;
-        b.addEventListener('click', function () { procesar(t); });
-        fila.appendChild(b);
-      });
-      teclado.appendChild(fila);
-    });
-  }
-
-  /* ------------------------------------------------------------ evaluación */
-
-  /**
-   * Devuelve un estado por letra al estilo Wordle. Se hace en dos pasadas
-   * para que las letras repetidas no se marquen de más: primero se sacan
-   * las que están en su lugar, y recién después se reparten las amarillas
-   * entre las que sobraron.
-   */
-  function evaluar(intento) {
-    var res = new Array(LARGO);
-    var restantes = {};
-    var i, ch;
-
-    for (i = 0; i < LARGO; i++) {
-      if (intento[i] === palabra[i]) {
-        res[i] = 'correcta';
-      } else {
-        ch = palabra[i];
-        restantes[ch] = (restantes[ch] || 0) + 1;
-      }
+  function evaluar(intento, resp) {            // dos pasadas: maneja letras repetidas como Wordle
+    var res = new Array(LARGO).fill('miss'), resto = {};
+    for (var i = 0; i < LARGO; i++) {
+      if (intento[i] === resp[i]) res[i] = 'ok'; else resto[resp[i]] = (resto[resp[i]] || 0) + 1;
     }
     for (i = 0; i < LARGO; i++) {
-      if (res[i]) continue;
-      ch = intento[i];
-      if (restantes[ch] > 0) { res[i] = 'presente'; restantes[ch]--; }
-      else { res[i] = 'ausente'; }
+      if (res[i] !== 'ok' && resto[intento[i]] > 0) { res[i] = 'near'; resto[intento[i]]--; }
     }
     return res;
   }
 
-  /* ------------------------------------------------------------ interacción */
+  FG.iniciar({ json: 'data/palabras.json', clave: 'palabras' }, function (entrada, ctx) {
+    var resp = entrada.palabra;
+    var estado = FG.estadoDeHoy(JUEGO, ctx.diaN) || { dia: ctx.diaN, intentos: [], terminado: false, gano: false };
+    var actual = '';
+    var app = document.getElementById('app');
+    var elRacha = document.getElementById('racha');
+    var prioridad = { miss: 1, near: 2, ok: 3 };
 
-  function alTeclado(e) {
-    if (e.ctrlKey || e.metaKey || e.altKey) return;
-    var k = e.key;
-    if (k === 'Enter') { e.preventDefault(); procesar('ENTER'); }
-    else if (k === 'Backspace') { e.preventDefault(); procesar('BORRAR'); }
-    else if (/^[a-zA-ZñÑáéíóúÁÉÍÓÚ]$/.test(k)) { procesar(FG.normalizar(k)); }
-  }
+    app.innerHTML = '<p class="fg-sub">Adiviná la palabra de 5 letras en 6 intentos · tema Cuyo / San Juan</p>' +
+      '<div class="board" id="board"></div><div id="resultado"></div><div class="kb" id="kb"></div>';
+    var board = document.getElementById('board'), kb = document.getElementById('kb');
 
-  function procesar(tecla) {
-    if (terminado) return;
-
-    if (tecla === 'BORRAR') {
-      actual = actual.slice(0, -1);
-      pintarFila(intentos.length);
-      return;
+    for (var r = 0; r < INTENTOS; r++) {
+      var fila = document.createElement('div'); fila.className = 'row';
+      for (var c = 0; c < LARGO; c++) fila.appendChild(Object.assign(document.createElement('div'), { className: 'tile' }));
+      board.appendChild(fila);
     }
-    if (tecla === 'ENTER') {
-      if (actual.length < LARGO) {
-        sacudir('Faltan letras');
-      } else {
-        confirmar();
-      }
-      return;
-    }
-    if (actual.length < LARGO) {
-      actual += tecla;
-      pintarFila(intentos.length);
-    }
-  }
-
-  function confirmar() {
-    var estados = evaluar(actual);
-    intentos.push({ texto: actual, estados: estados });
-    gano = actual === palabra;
-    actual = '';
-
-    pintarTodo();
-    terminado = gano || intentos.length >= INTENTOS;
-
-    if (terminado) {
-      document.removeEventListener('keydown', alTeclado);
-      FG.guardarEstado(JUEGO, { intentos: intentos, gano: gano });
-      FG.registrarPartida(JUEGO, gano);
-      mostrarResultado(false);
-    } else {
-      /* Guardamos también la partida a medio hacer: si recarga, no la pierde. */
-      FG.guardarEstado(JUEGO, { intentos: intentos, gano: false });
-    }
-  }
-
-  function sacudir(mensaje) {
-    var fila = document.getElementById('pd-fila-' + intentos.length);
-    if (!fila) return;
-    fila.classList.add('pd-fila--error');
-    setTimeout(function () { fila.classList.remove('pd-fila--error'); }, 400);
-    FG.toast(mensaje);
-  }
-
-  function pintarFila(f) {
-    for (var c = 0; c < LARGO; c++) {
-      var celda = document.getElementById('pd-celda-' + f + '-' + c);
-      if (!celda) continue;
-      var letra = actual[c] || '';
-      celda.textContent = letra;
-      if (letra) celda.setAttribute('data-lleno', '1');
-      else celda.removeAttribute('data-lleno');
-    }
-  }
-
-  function pintarTodo() {
-    /* Prioridad de color en el teclado: verde pisa amarillo, amarillo pisa gris. */
-    var rango = { correcta: 3, presente: 2, ausente: 1 };
-    var mejor = {};
-
-    intentos.forEach(function (it, f) {
-      for (var c = 0; c < LARGO; c++) {
-        var celda = document.getElementById('pd-celda-' + f + '-' + c);
-        celda.textContent = it.texto[c];
-        celda.setAttribute('data-lleno', '1');
-        celda.setAttribute('data-estado', it.estados[c]);
-        var l = it.texto[c];
-        if (!mejor[l] || rango[it.estados[c]] > rango[mejor[l]]) mejor[l] = it.estados[c];
-      }
-    });
-
-    Array.prototype.forEach.call(document.querySelectorAll('.pd-tecla'), function (b) {
-      var e = mejor[b.dataset.tecla];
-      if (e) b.setAttribute('data-estado', e);
-    });
-
-    if (intentos.length < INTENTOS) pintarFila(intentos.length);
-  }
-
-  /* ------------------------------------------------------------ resultado */
-
-  function mostrarResultado(esRepaso) {
-    var racha = FG.cargarEstado(JUEGO);
-    var marcador = gano ? intentos.length + '/' + INTENTOS : 'X/' + INTENTOS;
-
-    var panel = document.createElement('section');
-    panel.className = 'fx-resultado';
-    panel.innerHTML =
-      '<h2>' + (gano ? tituloVictoria(intentos.length) : '¡Casi!') + '</h2>' +
-      '<p style="margin:0;color:var(--md-texto-suave);font-size:.9rem">' +
-        (gano ? 'La resolviste en ' + intentos.length + (intentos.length === 1 ? ' intento.' : ' intentos.')
-              : 'La palabra era <strong style="color:var(--md-tinta)">' + escapar(palabraDisplay) + '</strong>.') +
-      '</p>' +
-      '<div class="fx-resultado__stats">' +
-        stat(racha.racha, 'Racha') +
-        stat(racha.maxRacha, 'Mejor racha') +
-        stat(racha.jugados, 'Jugadas') +
-      '</div>' +
-      '<button class="fx-btn" id="pd-compartir">Compartir resultado</button>' +
-      '<a class="fx-btn fx-btn--secundario" href="index.html">Ver los otros juegos</a>' +
-      '<p class="fx-proximo">' + (esRepaso ? 'Ya jugaste hoy. ' : '') +
-        'Palabra nueva en ' + FG.faltaParaElProximo() + '.</p>';
-
-    document.getElementById('pd-app').appendChild(panel);
-    panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-
-    document.getElementById('pd-compartir').addEventListener('click', function () {
-      /* La grilla no revela la palabra: solo los colores de cada intento. */
-      var grilla = intentos.map(function (it) {
-        return it.estados.map(function (e) { return EMOJI[e]; }).join('');
+    FILAS.forEach(function (f) {
+      var d = document.createElement('div'); d.className = 'kb-row';
+      f.split('').forEach(function (ch) {
+        var b = document.createElement('button');
+        b.className = 'key' + (ch === '*' || ch === '#' ? ' wide' : '');
+        b.textContent = ch === '*' ? 'ENVIAR' : ch === '#' ? '⌫' : ch;
+        b.dataset.k = ch; b.setAttribute('aria-label', ch === '*' ? 'Enviar' : ch === '#' ? 'Borrar' : ch);
+        b.addEventListener('click', function () { tecla(ch); });
+        d.appendChild(b);
       });
-      FG.compartirResultado(
-        FG.armarTextoCompartir('Palabra del Día', numeroDia, marcador, grilla),
-        function (m) { FG.toast(m); }
-      );
+      kb.appendChild(d);
     });
-  }
 
-  function tituloVictoria(n) {
-    return ['¡Bárbaro!', '¡Genial!', '¡Muy bien!', '¡Bien ahí!', '¡Zafaste!', '¡Uf, por poco!'][n - 1] || '¡Ganaste!';
-  }
+    function actualizarRacha() { elRacha.textContent = '🔥 ' + FG.rachaVigente(JUEGO, ctx.diaN); }
+    function pintarFila(i, intento, anim) {
+      var res = evaluar(intento, resp), tiles = board.children[i].children;
+      for (var j = 0; j < LARGO; j++) {
+        tiles[j].textContent = intento[j];
+        tiles[j].className = 'tile ' + res[j] + (anim ? '' : ' nofx');
+        if (anim) tiles[j].style.animationDelay = (j * 0.12) + 's';
+        var key = kb.querySelector('[data-k="' + intento[j] + '"]');
+        if (key) {
+          var prev = (key.className.match(/\b(ok|near|miss)\b/) || [])[1];
+          if (!prev || prioridad[res[j]] > prioridad[prev]) key.className = 'key ' + res[j];
+        }
+      }
+    }
+    function pintarActual() {
+      var tiles = board.children[estado.intentos.length].children;
+      for (var j = 0; j < LARGO; j++) {
+        tiles[j].textContent = actual[j] || '';
+        tiles[j].className = 'tile' + (actual[j] ? ' fill' : '');
+      }
+    }
+    function tecla(ch) {
+      if (estado.terminado) return;
+      if (ch === '#') { actual = actual.slice(0, -1); pintarActual(); }
+      else if (ch === '*') enviar();
+      else if (actual.length < LARGO) { actual += ch; pintarActual(); }
+    }
+    function enviar() {
+      if (actual.length < LARGO) {
+        var f = board.children[estado.intentos.length]; f.classList.remove('shake'); void f.offsetWidth; f.classList.add('shake');
+        FG.toast('Faltan letras'); return;
+      }
+      var i = estado.intentos.length;
+      estado.intentos.push(actual);
+      pintarFila(i, actual, true);
+      var gano = actual === resp;
+      actual = '';
+      if (gano || estado.intentos.length === INTENTOS) {
+        estado.terminado = true; estado.gano = gano;
+        FG.registrarFin(JUEGO, ctx.diaN, gano);
+        FG.guardar(JUEGO, 'hoy', estado);
+        setTimeout(mostrarResultado, 900);
+      } else FG.guardar(JUEGO, 'hoy', estado);
+      actualizarRacha();
+    }
+    function textoCompartir() {
+      var grilla = estado.intentos.map(function (it) {
+        return evaluar(it, resp).map(function (x) { return x === 'ok' ? '🟩' : x === 'near' ? '🟨' : '⬛'; }).join('');
+      }).join('\n');
+      return 'FUXIA GAMES · Palabra del Día #' + ctx.diaN + ' ' + (estado.gano ? estado.intentos.length : 'X') + '/' + INTENTOS + '\n' + grilla;
+    }
+    function mostrarResultado() {
+      kb.classList.add('off');
+      var el = document.getElementById('resultado');
+      el.innerHTML = '<div class="fg-result"><h2 class="gradient-text">' + (estado.gano ? '¡Bien ahí!' : 'Casi…') + '</h2>' +
+        '<p>' + (estado.gano ? 'La resolviste en ' + estado.intentos.length + ' de ' + INTENTOS + '.' : 'La palabra de hoy era:') + '</p>' +
+        '<p style="font-family:var(--font-display);font-weight:800;font-style:italic;text-transform:uppercase;font-size:2.4rem;color:var(--md-dark);margin:2px 0">' + FG.esc(entrada.mostrar) + '</p>' +
+        (entrada.pista ? '<p class="pista"><b>¿Sabías que?</b> ' + FG.esc(entrada.pista) + '</p>' : '') +
+        '<div class="fg-actions"><button class="btn btn-primary" id="share">Compartir resultado</button></div>' +
+        '<p class="fg-next">Próxima palabra en <b id="cuenta"></b></p></div>';
+      document.getElementById('share').onclick = function () { FG.compartir(textoCompartir()); };
+      FG.cuentaRegresiva(document.getElementById('cuenta'));
+    }
 
-  function stat(valor, rotulo) {
-    return '<span class="fx-stat"><span class="fx-stat__num">' + valor +
-           '</span><span class="fx-stat__rotulo">' + rotulo + '</span></span>';
-  }
+    // Estado guardado de hoy: se repinta sin animación
+    estado.intentos.forEach(function (it, i) { pintarFila(i, it, false); });
+    if (estado.terminado) mostrarResultado(); else pintarActual();
+    actualizarRacha();
 
-  function escapar(s) {
-    return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-  }
+    document.addEventListener('keydown', function (e) {
+      if (e.ctrlKey || e.metaKey || e.altKey) return;
+      if (e.key === 'Enter') { e.preventDefault(); tecla('*'); }
+      else if (e.key === 'Backspace') tecla('#');
+      else if (/^[a-zA-Z]$/.test(e.key)) tecla(e.key.toUpperCase());
+    });
+  });
 })();
 </script>
-
 </body>
 </html>

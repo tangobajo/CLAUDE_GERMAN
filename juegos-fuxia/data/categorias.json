@@ -1,1488 +1,1475 @@
 {
-  "juego": "agrupa",
-  "fecha_dia_1": "2026-10-01",
-  "revisar": {
-    "verificar": [
-      1,
-      2,
-      3,
-      4,
-      5,
-      6,
-      7,
-      8,
-      9,
-      10,
-      11,
-      13,
-      14,
-      15,
-      16,
-      17,
-      18,
-      19,
-      20,
-      21,
-      22,
-      23,
-      25,
-      26,
-      27,
-      28,
-      29,
-      30
-    ],
-    "dias_duplicados": [
-      [
-        5,
-        17,
-        29
-      ],
-      [
-        6,
-        18,
-        30
-      ],
-      [
-        7,
-        19
-      ],
-      [
-        8,
-        20
-      ],
-      [
-        9,
-        21
-      ]
-    ],
-    "items_duplicados_en_el_dia": [
-      {
-        "dia": 5,
-        "items": [
-          "OASIS"
-        ]
-      },
-      {
-        "dia": 17,
-        "items": [
-          "OASIS"
-        ]
-      },
-      {
-        "dia": 29,
-        "items": [
-          "OASIS"
-        ]
-      }
-    ],
-    "notas": [
-      "items_duplicados_en_el_dia: el mismo item aparece en dos categorias del mismo dia. La grilla muestra dos fichas con el mismo texto y el jugador no puede saber cual va en cada grupo. Reemplazar uno de los dos en la planilla antes de publicar.",
-      "dias_duplicados: esos dias tienen exactamente las mismas 4 categorias y los mismos 16 items, asi que el lector repite el mismo puzzle dentro del mismo mes."
-    ]
-  },
-  "dias": [
+ "dia1": "2026-10-07",
+ "dias": [
+  {
+   "dia": 1,
+   "grupos": [
     {
-      "dia": 1,
-      "grupos": [
-        {
-          "dificultad": "amarillo",
-          "categoria": "Comidas típicas de Cuyo",
-          "items": [
-            "EMPANADA",
-            "LOCRO",
-            "HUMITA",
-            "ASADO"
-          ]
-        },
-        {
-          "dificultad": "verde",
-          "categoria": "Instrumentos del folklore",
-          "items": [
-            "GUITARRA",
-            "BOMBO",
-            "ACORDEON",
-            "VIOLIN"
-          ]
-        },
-        {
-          "dificultad": "azul",
-          "categoria": "Palabras del mundo del vino",
-          "items": [
-            "COSECHA",
-            "RACIMO",
-            "BODEGA",
-            "VARIETAL"
-          ]
-        },
-        {
-          "dificultad": "morado",
-          "categoria": "Departamentos de San Juan",
-          "items": [
-            "CAPITAL",
-            "RAWSON",
-            "CHIMBAS",
-            "POCITO"
-          ],
-          "verificar": true
-        }
-      ]
+     "dificultad": "amarillo",
+     "categoria": "Comidas típicas de Cuyo",
+     "items": [
+      "EMPANADA",
+      "LOCRO",
+      "HUMITA",
+      "ASADO"
+     ],
+     "verificar": false
     },
     {
-      "dia": 2,
-      "grupos": [
-        {
-          "dificultad": "amarillo",
-          "categoria": "Instrumentos del folklore",
-          "items": [
-            "CHARANGO",
-            "QUENA",
-            "RONDIN",
-            "PIANO"
-          ]
-        },
-        {
-          "dificultad": "verde",
-          "categoria": "Palabras del mundo del vino",
-          "items": [
-            "TONEL",
-            "BARRICA",
-            "MALBEC",
-            "TANINO"
-          ]
-        },
-        {
-          "dificultad": "azul",
-          "categoria": "Departamentos de San Juan",
-          "items": [
-            "RIVADAVIA",
-            "SANTA LUCIA",
-            "CAUCETE",
-            "ANGACO"
-          ],
-          "verificar": true
-        },
-        {
-          "dificultad": "morado",
-          "categoria": "Accidentes geográficos cuyanos",
-          "items": [
-            "CERRO",
-            "VALLE",
-            "RIO",
-            "DIQUE"
-          ],
-          "verificar": true
-        }
-      ]
+     "dificultad": "verde",
+     "categoria": "Instrumentos del folklore",
+     "items": [
+      "GUITARRA",
+      "BOMBO",
+      "ACORDEON",
+      "VIOLIN"
+     ],
+     "verificar": false
     },
     {
-      "dia": 3,
-      "grupos": [
-        {
-          "dificultad": "amarillo",
-          "categoria": "Palabras del mundo del vino",
-          "items": [
-            "COSECHA",
-            "RACIMO",
-            "BODEGA",
-            "VARIETAL"
-          ]
-        },
-        {
-          "dificultad": "verde",
-          "categoria": "Departamentos de San Juan",
-          "items": [
-            "ZONDA",
-            "ULLUM",
-            "CALINGASTA",
-            "IGLESIA"
-          ],
-          "verificar": true
-        },
-        {
-          "dificultad": "azul",
-          "categoria": "Accidentes geográficos cuyanos",
-          "items": [
-            "CORDILLERA",
-            "QUEBRADA",
-            "OASIS",
-            "LAGUNA"
-          ],
-          "verificar": true
-        },
-        {
-          "dificultad": "morado",
-          "categoria": "Bailes tradicionales",
-          "items": [
-            "CUECA",
-            "GATO",
-            "ZAMBA",
-            "TONADA"
-          ]
-        }
-      ]
+     "dificultad": "azul",
+     "categoria": "Palabras del mundo del vino",
+     "items": [
+      "COSECHA",
+      "RACIMO",
+      "BODEGA",
+      "VARIETAL"
+     ],
+     "verificar": false
     },
     {
-      "dia": 4,
-      "grupos": [
-        {
-          "dificultad": "amarillo",
-          "categoria": "Departamentos de San Juan",
-          "items": [
-            "JACHAL",
-            "SARMIENTO",
-            "ALBARDON",
-            "9 DE JULIO"
-          ],
-          "verificar": true
-        },
-        {
-          "dificultad": "verde",
-          "categoria": "Accidentes geográficos cuyanos",
-          "items": [
-            "CERRO",
-            "VALLE",
-            "RIO",
-            "DIQUE"
-          ],
-          "verificar": true
-        },
-        {
-          "dificultad": "azul",
-          "categoria": "Bailes tradicionales",
-          "items": [
-            "CHACARERA",
-            "ESCONDIDO",
-            "REFALOSA",
-            "MALAMBO"
-          ]
-        },
-        {
-          "dificultad": "morado",
-          "categoria": "Frutos y cultivos de Cuyo",
-          "items": [
-            "UVA",
-            "NUEZ",
-            "OLIVO",
-            "MEMBRILLO"
-          ],
-          "verificar": true
-        }
-      ]
-    },
-    {
-      "dia": 5,
-      "grupos": [
-        {
-          "dificultad": "amarillo",
-          "categoria": "Accidentes geográficos cuyanos",
-          "items": [
-            "CORDILLERA",
-            "QUEBRADA",
-            "OASIS",
-            "LAGUNA"
-          ],
-          "verificar": true
-        },
-        {
-          "dificultad": "verde",
-          "categoria": "Bailes tradicionales",
-          "items": [
-            "CUECA",
-            "GATO",
-            "ZAMBA",
-            "TONADA"
-          ]
-        },
-        {
-          "dificultad": "azul",
-          "categoria": "Frutos y cultivos de Cuyo",
-          "items": [
-            "MELON",
-            "SANDIA",
-            "TOMATE",
-            "AJO"
-          ],
-          "verificar": true
-        },
-        {
-          "dificultad": "morado",
-          "categoria": "Elementos del paisaje sanjuanino",
-          "items": [
-            "DESIERTO",
-            "OASIS",
-            "MONTANA",
-            "VINEDO"
-          ]
-        }
-      ]
-    },
-    {
-      "dia": 6,
-      "grupos": [
-        {
-          "dificultad": "amarillo",
-          "categoria": "Bailes tradicionales",
-          "items": [
-            "CHACARERA",
-            "ESCONDIDO",
-            "REFALOSA",
-            "MALAMBO"
-          ]
-        },
-        {
-          "dificultad": "verde",
-          "categoria": "Frutos y cultivos de Cuyo",
-          "items": [
-            "UVA",
-            "NUEZ",
-            "OLIVO",
-            "MEMBRILLO"
-          ],
-          "verificar": true
-        },
-        {
-          "dificultad": "azul",
-          "categoria": "Elementos del paisaje sanjuanino",
-          "items": [
-            "PRECORDILLERA",
-            "MEDANO",
-            "ESTEPA",
-            "SALAR"
-          ]
-        },
-        {
-          "dificultad": "morado",
-          "categoria": "Fiestas y tradiciones",
-          "items": [
-            "VENDIMIA",
-            "SOL",
-            "CARNAVAL",
-            "FOLKLORE"
-          ],
-          "verificar": true
-        }
-      ]
-    },
-    {
-      "dia": 7,
-      "grupos": [
-        {
-          "dificultad": "amarillo",
-          "categoria": "Frutos y cultivos de Cuyo",
-          "items": [
-            "MELON",
-            "SANDIA",
-            "TOMATE",
-            "AJO"
-          ],
-          "verificar": true
-        },
-        {
-          "dificultad": "verde",
-          "categoria": "Elementos del paisaje sanjuanino",
-          "items": [
-            "DESIERTO",
-            "OASIS",
-            "MONTANA",
-            "VINEDO"
-          ]
-        },
-        {
-          "dificultad": "azul",
-          "categoria": "Fiestas y tradiciones",
-          "items": [
-            "PERAS Y MANZANAS",
-            "DOMA",
-            "PERICON",
-            "ASADO CRIOLLO"
-          ],
-          "verificar": true
-        },
-        {
-          "dificultad": "morado",
-          "categoria": "Palabras del riego cuyano",
-          "items": [
-            "ACEQUIA",
-            "CANAL",
-            "DIQUE",
-            "TOMA"
-          ]
-        }
-      ]
-    },
-    {
-      "dia": 8,
-      "grupos": [
-        {
-          "dificultad": "amarillo",
-          "categoria": "Elementos del paisaje sanjuanino",
-          "items": [
-            "PRECORDILLERA",
-            "MEDANO",
-            "ESTEPA",
-            "SALAR"
-          ]
-        },
-        {
-          "dificultad": "verde",
-          "categoria": "Fiestas y tradiciones",
-          "items": [
-            "VENDIMIA",
-            "SOL",
-            "CARNAVAL",
-            "FOLKLORE"
-          ],
-          "verificar": true
-        },
-        {
-          "dificultad": "azul",
-          "categoria": "Palabras del riego cuyano",
-          "items": [
-            "COMPUERTA",
-            "TURNO",
-            "ZANJA",
-            "EMBALSE"
-          ]
-        },
-        {
-          "dificultad": "morado",
-          "categoria": "Fauna del monte cuyano",
-          "items": [
-            "ZORRO",
-            "GUANACO",
-            "CONDOR",
-            "IGUANA"
-          ],
-          "verificar": true
-        }
-      ]
-    },
-    {
-      "dia": 9,
-      "grupos": [
-        {
-          "dificultad": "amarillo",
-          "categoria": "Fiestas y tradiciones",
-          "items": [
-            "PERAS Y MANZANAS",
-            "DOMA",
-            "PERICON",
-            "ASADO CRIOLLO"
-          ],
-          "verificar": true
-        },
-        {
-          "dificultad": "verde",
-          "categoria": "Palabras del riego cuyano",
-          "items": [
-            "ACEQUIA",
-            "CANAL",
-            "DIQUE",
-            "TOMA"
-          ]
-        },
-        {
-          "dificultad": "azul",
-          "categoria": "Fauna del monte cuyano",
-          "items": [
-            "MARA",
-            "PUMA",
-            "AGUILA",
-            "VIZCACHA"
-          ],
-          "verificar": true
-        },
-        {
-          "dificultad": "morado",
-          "categoria": "Oficios rurales tradicionales",
-          "items": [
-            "VIÑATERO",
-            "ARRIERO",
-            "TROPERO",
-            "PODADOR"
-          ]
-        }
-      ]
-    },
-    {
-      "dia": 10,
-      "grupos": [
-        {
-          "dificultad": "amarillo",
-          "categoria": "Palabras del riego cuyano",
-          "items": [
-            "COMPUERTA",
-            "TURNO",
-            "ZANJA",
-            "EMBALSE"
-          ]
-        },
-        {
-          "dificultad": "verde",
-          "categoria": "Fauna del monte cuyano",
-          "items": [
-            "ZORRO",
-            "GUANACO",
-            "CONDOR",
-            "IGUANA"
-          ],
-          "verificar": true
-        },
-        {
-          "dificultad": "azul",
-          "categoria": "Oficios rurales tradicionales",
-          "items": [
-            "ALBAÑIL",
-            "TAMBERO",
-            "HORNERO",
-            "COSECHERO"
-          ]
-        },
-        {
-          "dificultad": "morado",
-          "categoria": "Comidas típicas de Cuyo",
-          "items": [
-            "CHIVITO",
-            "TAMAL",
-            "GUISO",
-            "PUCHERO"
-          ]
-        }
-      ]
-    },
-    {
-      "dia": 11,
-      "grupos": [
-        {
-          "dificultad": "amarillo",
-          "categoria": "Fauna del monte cuyano",
-          "items": [
-            "MARA",
-            "PUMA",
-            "AGUILA",
-            "VIZCACHA"
-          ],
-          "verificar": true
-        },
-        {
-          "dificultad": "verde",
-          "categoria": "Oficios rurales tradicionales",
-          "items": [
-            "VIÑATERO",
-            "ARRIERO",
-            "TROPERO",
-            "PODADOR"
-          ]
-        },
-        {
-          "dificultad": "azul",
-          "categoria": "Comidas típicas de Cuyo",
-          "items": [
-            "ARROPE",
-            "PASAS",
-            "NUECES",
-            "MEMBRILLO"
-          ]
-        },
-        {
-          "dificultad": "morado",
-          "categoria": "Instrumentos del folklore",
-          "items": [
-            "GUITARRA",
-            "BOMBO",
-            "ACORDEON",
-            "VIOLIN"
-          ]
-        }
-      ]
-    },
-    {
-      "dia": 12,
-      "grupos": [
-        {
-          "dificultad": "amarillo",
-          "categoria": "Oficios rurales tradicionales",
-          "items": [
-            "ALBAÑIL",
-            "TAMBERO",
-            "HORNERO",
-            "COSECHERO"
-          ]
-        },
-        {
-          "dificultad": "verde",
-          "categoria": "Comidas típicas de Cuyo",
-          "items": [
-            "EMPANADA",
-            "LOCRO",
-            "HUMITA",
-            "ASADO"
-          ]
-        },
-        {
-          "dificultad": "azul",
-          "categoria": "Instrumentos del folklore",
-          "items": [
-            "CHARANGO",
-            "QUENA",
-            "RONDIN",
-            "PIANO"
-          ]
-        },
-        {
-          "dificultad": "morado",
-          "categoria": "Palabras del mundo del vino",
-          "items": [
-            "TONEL",
-            "BARRICA",
-            "MALBEC",
-            "TANINO"
-          ]
-        }
-      ]
-    },
-    {
-      "dia": 13,
-      "grupos": [
-        {
-          "dificultad": "amarillo",
-          "categoria": "Comidas típicas de Cuyo",
-          "items": [
-            "CHIVITO",
-            "TAMAL",
-            "GUISO",
-            "PUCHERO"
-          ]
-        },
-        {
-          "dificultad": "verde",
-          "categoria": "Instrumentos del folklore",
-          "items": [
-            "GUITARRA",
-            "BOMBO",
-            "ACORDEON",
-            "VIOLIN"
-          ]
-        },
-        {
-          "dificultad": "azul",
-          "categoria": "Palabras del mundo del vino",
-          "items": [
-            "COSECHA",
-            "RACIMO",
-            "BODEGA",
-            "VARIETAL"
-          ]
-        },
-        {
-          "dificultad": "morado",
-          "categoria": "Departamentos de San Juan",
-          "items": [
-            "VALLE FERTIL",
-            "25 DE MAYO",
-            "SAN MARTIN",
-            "CAPITAL"
-          ],
-          "verificar": true
-        }
-      ]
-    },
-    {
-      "dia": 14,
-      "grupos": [
-        {
-          "dificultad": "amarillo",
-          "categoria": "Instrumentos del folklore",
-          "items": [
-            "CHARANGO",
-            "QUENA",
-            "RONDIN",
-            "PIANO"
-          ]
-        },
-        {
-          "dificultad": "verde",
-          "categoria": "Palabras del mundo del vino",
-          "items": [
-            "TONEL",
-            "BARRICA",
-            "MALBEC",
-            "TANINO"
-          ]
-        },
-        {
-          "dificultad": "azul",
-          "categoria": "Departamentos de San Juan",
-          "items": [
-            "CAPITAL",
-            "RAWSON",
-            "CHIMBAS",
-            "POCITO"
-          ],
-          "verificar": true
-        },
-        {
-          "dificultad": "morado",
-          "categoria": "Accidentes geográficos cuyanos",
-          "items": [
-            "CERRO",
-            "VALLE",
-            "RIO",
-            "DIQUE"
-          ],
-          "verificar": true
-        }
-      ]
-    },
-    {
-      "dia": 15,
-      "grupos": [
-        {
-          "dificultad": "amarillo",
-          "categoria": "Palabras del mundo del vino",
-          "items": [
-            "COSECHA",
-            "RACIMO",
-            "BODEGA",
-            "VARIETAL"
-          ]
-        },
-        {
-          "dificultad": "verde",
-          "categoria": "Departamentos de San Juan",
-          "items": [
-            "RIVADAVIA",
-            "SANTA LUCIA",
-            "CAUCETE",
-            "ANGACO"
-          ],
-          "verificar": true
-        },
-        {
-          "dificultad": "azul",
-          "categoria": "Accidentes geográficos cuyanos",
-          "items": [
-            "CORDILLERA",
-            "QUEBRADA",
-            "OASIS",
-            "LAGUNA"
-          ],
-          "verificar": true
-        },
-        {
-          "dificultad": "morado",
-          "categoria": "Bailes tradicionales",
-          "items": [
-            "CUECA",
-            "GATO",
-            "ZAMBA",
-            "TONADA"
-          ]
-        }
-      ]
-    },
-    {
-      "dia": 16,
-      "grupos": [
-        {
-          "dificultad": "amarillo",
-          "categoria": "Departamentos de San Juan",
-          "items": [
-            "ZONDA",
-            "ULLUM",
-            "CALINGASTA",
-            "IGLESIA"
-          ],
-          "verificar": true
-        },
-        {
-          "dificultad": "verde",
-          "categoria": "Accidentes geográficos cuyanos",
-          "items": [
-            "CERRO",
-            "VALLE",
-            "RIO",
-            "DIQUE"
-          ],
-          "verificar": true
-        },
-        {
-          "dificultad": "azul",
-          "categoria": "Bailes tradicionales",
-          "items": [
-            "CHACARERA",
-            "ESCONDIDO",
-            "REFALOSA",
-            "MALAMBO"
-          ]
-        },
-        {
-          "dificultad": "morado",
-          "categoria": "Frutos y cultivos de Cuyo",
-          "items": [
-            "UVA",
-            "NUEZ",
-            "OLIVO",
-            "MEMBRILLO"
-          ],
-          "verificar": true
-        }
-      ]
-    },
-    {
-      "dia": 17,
-      "grupos": [
-        {
-          "dificultad": "amarillo",
-          "categoria": "Accidentes geográficos cuyanos",
-          "items": [
-            "CORDILLERA",
-            "QUEBRADA",
-            "OASIS",
-            "LAGUNA"
-          ],
-          "verificar": true
-        },
-        {
-          "dificultad": "verde",
-          "categoria": "Bailes tradicionales",
-          "items": [
-            "CUECA",
-            "GATO",
-            "ZAMBA",
-            "TONADA"
-          ]
-        },
-        {
-          "dificultad": "azul",
-          "categoria": "Frutos y cultivos de Cuyo",
-          "items": [
-            "MELON",
-            "SANDIA",
-            "TOMATE",
-            "AJO"
-          ],
-          "verificar": true
-        },
-        {
-          "dificultad": "morado",
-          "categoria": "Elementos del paisaje sanjuanino",
-          "items": [
-            "DESIERTO",
-            "OASIS",
-            "MONTANA",
-            "VINEDO"
-          ]
-        }
-      ]
-    },
-    {
-      "dia": 18,
-      "grupos": [
-        {
-          "dificultad": "amarillo",
-          "categoria": "Bailes tradicionales",
-          "items": [
-            "CHACARERA",
-            "ESCONDIDO",
-            "REFALOSA",
-            "MALAMBO"
-          ]
-        },
-        {
-          "dificultad": "verde",
-          "categoria": "Frutos y cultivos de Cuyo",
-          "items": [
-            "UVA",
-            "NUEZ",
-            "OLIVO",
-            "MEMBRILLO"
-          ],
-          "verificar": true
-        },
-        {
-          "dificultad": "azul",
-          "categoria": "Elementos del paisaje sanjuanino",
-          "items": [
-            "PRECORDILLERA",
-            "MEDANO",
-            "ESTEPA",
-            "SALAR"
-          ]
-        },
-        {
-          "dificultad": "morado",
-          "categoria": "Fiestas y tradiciones",
-          "items": [
-            "VENDIMIA",
-            "SOL",
-            "CARNAVAL",
-            "FOLKLORE"
-          ],
-          "verificar": true
-        }
-      ]
-    },
-    {
-      "dia": 19,
-      "grupos": [
-        {
-          "dificultad": "amarillo",
-          "categoria": "Frutos y cultivos de Cuyo",
-          "items": [
-            "MELON",
-            "SANDIA",
-            "TOMATE",
-            "AJO"
-          ],
-          "verificar": true
-        },
-        {
-          "dificultad": "verde",
-          "categoria": "Elementos del paisaje sanjuanino",
-          "items": [
-            "DESIERTO",
-            "OASIS",
-            "MONTANA",
-            "VINEDO"
-          ]
-        },
-        {
-          "dificultad": "azul",
-          "categoria": "Fiestas y tradiciones",
-          "items": [
-            "PERAS Y MANZANAS",
-            "DOMA",
-            "PERICON",
-            "ASADO CRIOLLO"
-          ],
-          "verificar": true
-        },
-        {
-          "dificultad": "morado",
-          "categoria": "Palabras del riego cuyano",
-          "items": [
-            "ACEQUIA",
-            "CANAL",
-            "DIQUE",
-            "TOMA"
-          ]
-        }
-      ]
-    },
-    {
-      "dia": 20,
-      "grupos": [
-        {
-          "dificultad": "amarillo",
-          "categoria": "Elementos del paisaje sanjuanino",
-          "items": [
-            "PRECORDILLERA",
-            "MEDANO",
-            "ESTEPA",
-            "SALAR"
-          ]
-        },
-        {
-          "dificultad": "verde",
-          "categoria": "Fiestas y tradiciones",
-          "items": [
-            "VENDIMIA",
-            "SOL",
-            "CARNAVAL",
-            "FOLKLORE"
-          ],
-          "verificar": true
-        },
-        {
-          "dificultad": "azul",
-          "categoria": "Palabras del riego cuyano",
-          "items": [
-            "COMPUERTA",
-            "TURNO",
-            "ZANJA",
-            "EMBALSE"
-          ]
-        },
-        {
-          "dificultad": "morado",
-          "categoria": "Fauna del monte cuyano",
-          "items": [
-            "ZORRO",
-            "GUANACO",
-            "CONDOR",
-            "IGUANA"
-          ],
-          "verificar": true
-        }
-      ]
-    },
-    {
-      "dia": 21,
-      "grupos": [
-        {
-          "dificultad": "amarillo",
-          "categoria": "Fiestas y tradiciones",
-          "items": [
-            "PERAS Y MANZANAS",
-            "DOMA",
-            "PERICON",
-            "ASADO CRIOLLO"
-          ],
-          "verificar": true
-        },
-        {
-          "dificultad": "verde",
-          "categoria": "Palabras del riego cuyano",
-          "items": [
-            "ACEQUIA",
-            "CANAL",
-            "DIQUE",
-            "TOMA"
-          ]
-        },
-        {
-          "dificultad": "azul",
-          "categoria": "Fauna del monte cuyano",
-          "items": [
-            "MARA",
-            "PUMA",
-            "AGUILA",
-            "VIZCACHA"
-          ],
-          "verificar": true
-        },
-        {
-          "dificultad": "morado",
-          "categoria": "Oficios rurales tradicionales",
-          "items": [
-            "VIÑATERO",
-            "ARRIERO",
-            "TROPERO",
-            "PODADOR"
-          ]
-        }
-      ]
-    },
-    {
-      "dia": 22,
-      "grupos": [
-        {
-          "dificultad": "amarillo",
-          "categoria": "Palabras del riego cuyano",
-          "items": [
-            "COMPUERTA",
-            "TURNO",
-            "ZANJA",
-            "EMBALSE"
-          ]
-        },
-        {
-          "dificultad": "verde",
-          "categoria": "Fauna del monte cuyano",
-          "items": [
-            "ZORRO",
-            "GUANACO",
-            "CONDOR",
-            "IGUANA"
-          ],
-          "verificar": true
-        },
-        {
-          "dificultad": "azul",
-          "categoria": "Oficios rurales tradicionales",
-          "items": [
-            "ALBAÑIL",
-            "TAMBERO",
-            "HORNERO",
-            "COSECHERO"
-          ]
-        },
-        {
-          "dificultad": "morado",
-          "categoria": "Comidas típicas de Cuyo",
-          "items": [
-            "ARROPE",
-            "PASAS",
-            "NUECES",
-            "MEMBRILLO"
-          ]
-        }
-      ]
-    },
-    {
-      "dia": 23,
-      "grupos": [
-        {
-          "dificultad": "amarillo",
-          "categoria": "Fauna del monte cuyano",
-          "items": [
-            "MARA",
-            "PUMA",
-            "AGUILA",
-            "VIZCACHA"
-          ],
-          "verificar": true
-        },
-        {
-          "dificultad": "verde",
-          "categoria": "Oficios rurales tradicionales",
-          "items": [
-            "VIÑATERO",
-            "ARRIERO",
-            "TROPERO",
-            "PODADOR"
-          ]
-        },
-        {
-          "dificultad": "azul",
-          "categoria": "Comidas típicas de Cuyo",
-          "items": [
-            "EMPANADA",
-            "LOCRO",
-            "HUMITA",
-            "ASADO"
-          ]
-        },
-        {
-          "dificultad": "morado",
-          "categoria": "Instrumentos del folklore",
-          "items": [
-            "GUITARRA",
-            "BOMBO",
-            "ACORDEON",
-            "VIOLIN"
-          ]
-        }
-      ]
-    },
-    {
-      "dia": 24,
-      "grupos": [
-        {
-          "dificultad": "amarillo",
-          "categoria": "Oficios rurales tradicionales",
-          "items": [
-            "ALBAÑIL",
-            "TAMBERO",
-            "HORNERO",
-            "COSECHERO"
-          ]
-        },
-        {
-          "dificultad": "verde",
-          "categoria": "Comidas típicas de Cuyo",
-          "items": [
-            "CHIVITO",
-            "TAMAL",
-            "GUISO",
-            "PUCHERO"
-          ]
-        },
-        {
-          "dificultad": "azul",
-          "categoria": "Instrumentos del folklore",
-          "items": [
-            "CHARANGO",
-            "QUENA",
-            "RONDIN",
-            "PIANO"
-          ]
-        },
-        {
-          "dificultad": "morado",
-          "categoria": "Palabras del mundo del vino",
-          "items": [
-            "TONEL",
-            "BARRICA",
-            "MALBEC",
-            "TANINO"
-          ]
-        }
-      ]
-    },
-    {
-      "dia": 25,
-      "grupos": [
-        {
-          "dificultad": "amarillo",
-          "categoria": "Comidas típicas de Cuyo",
-          "items": [
-            "ARROPE",
-            "PASAS",
-            "NUECES",
-            "MEMBRILLO"
-          ]
-        },
-        {
-          "dificultad": "verde",
-          "categoria": "Instrumentos del folklore",
-          "items": [
-            "GUITARRA",
-            "BOMBO",
-            "ACORDEON",
-            "VIOLIN"
-          ]
-        },
-        {
-          "dificultad": "azul",
-          "categoria": "Palabras del mundo del vino",
-          "items": [
-            "COSECHA",
-            "RACIMO",
-            "BODEGA",
-            "VARIETAL"
-          ]
-        },
-        {
-          "dificultad": "morado",
-          "categoria": "Departamentos de San Juan",
-          "items": [
-            "JACHAL",
-            "SARMIENTO",
-            "ALBARDON",
-            "9 DE JULIO"
-          ],
-          "verificar": true
-        }
-      ]
-    },
-    {
-      "dia": 26,
-      "grupos": [
-        {
-          "dificultad": "amarillo",
-          "categoria": "Instrumentos del folklore",
-          "items": [
-            "CHARANGO",
-            "QUENA",
-            "RONDIN",
-            "PIANO"
-          ]
-        },
-        {
-          "dificultad": "verde",
-          "categoria": "Palabras del mundo del vino",
-          "items": [
-            "TONEL",
-            "BARRICA",
-            "MALBEC",
-            "TANINO"
-          ]
-        },
-        {
-          "dificultad": "azul",
-          "categoria": "Departamentos de San Juan",
-          "items": [
-            "VALLE FERTIL",
-            "25 DE MAYO",
-            "SAN MARTIN",
-            "CAPITAL"
-          ],
-          "verificar": true
-        },
-        {
-          "dificultad": "morado",
-          "categoria": "Accidentes geográficos cuyanos",
-          "items": [
-            "CERRO",
-            "VALLE",
-            "RIO",
-            "DIQUE"
-          ],
-          "verificar": true
-        }
-      ]
-    },
-    {
-      "dia": 27,
-      "grupos": [
-        {
-          "dificultad": "amarillo",
-          "categoria": "Palabras del mundo del vino",
-          "items": [
-            "COSECHA",
-            "RACIMO",
-            "BODEGA",
-            "VARIETAL"
-          ]
-        },
-        {
-          "dificultad": "verde",
-          "categoria": "Departamentos de San Juan",
-          "items": [
-            "CAPITAL",
-            "RAWSON",
-            "CHIMBAS",
-            "POCITO"
-          ],
-          "verificar": true
-        },
-        {
-          "dificultad": "azul",
-          "categoria": "Accidentes geográficos cuyanos",
-          "items": [
-            "CORDILLERA",
-            "QUEBRADA",
-            "OASIS",
-            "LAGUNA"
-          ],
-          "verificar": true
-        },
-        {
-          "dificultad": "morado",
-          "categoria": "Bailes tradicionales",
-          "items": [
-            "CUECA",
-            "GATO",
-            "ZAMBA",
-            "TONADA"
-          ]
-        }
-      ]
-    },
-    {
-      "dia": 28,
-      "grupos": [
-        {
-          "dificultad": "amarillo",
-          "categoria": "Departamentos de San Juan",
-          "items": [
-            "RIVADAVIA",
-            "SANTA LUCIA",
-            "CAUCETE",
-            "ANGACO"
-          ],
-          "verificar": true
-        },
-        {
-          "dificultad": "verde",
-          "categoria": "Accidentes geográficos cuyanos",
-          "items": [
-            "CERRO",
-            "VALLE",
-            "RIO",
-            "DIQUE"
-          ],
-          "verificar": true
-        },
-        {
-          "dificultad": "azul",
-          "categoria": "Bailes tradicionales",
-          "items": [
-            "CHACARERA",
-            "ESCONDIDO",
-            "REFALOSA",
-            "MALAMBO"
-          ]
-        },
-        {
-          "dificultad": "morado",
-          "categoria": "Frutos y cultivos de Cuyo",
-          "items": [
-            "UVA",
-            "NUEZ",
-            "OLIVO",
-            "MEMBRILLO"
-          ],
-          "verificar": true
-        }
-      ]
-    },
-    {
-      "dia": 29,
-      "grupos": [
-        {
-          "dificultad": "amarillo",
-          "categoria": "Accidentes geográficos cuyanos",
-          "items": [
-            "CORDILLERA",
-            "QUEBRADA",
-            "OASIS",
-            "LAGUNA"
-          ],
-          "verificar": true
-        },
-        {
-          "dificultad": "verde",
-          "categoria": "Bailes tradicionales",
-          "items": [
-            "CUECA",
-            "GATO",
-            "ZAMBA",
-            "TONADA"
-          ]
-        },
-        {
-          "dificultad": "azul",
-          "categoria": "Frutos y cultivos de Cuyo",
-          "items": [
-            "MELON",
-            "SANDIA",
-            "TOMATE",
-            "AJO"
-          ],
-          "verificar": true
-        },
-        {
-          "dificultad": "morado",
-          "categoria": "Elementos del paisaje sanjuanino",
-          "items": [
-            "DESIERTO",
-            "OASIS",
-            "MONTANA",
-            "VINEDO"
-          ]
-        }
-      ]
-    },
-    {
-      "dia": 30,
-      "grupos": [
-        {
-          "dificultad": "amarillo",
-          "categoria": "Bailes tradicionales",
-          "items": [
-            "CHACARERA",
-            "ESCONDIDO",
-            "REFALOSA",
-            "MALAMBO"
-          ]
-        },
-        {
-          "dificultad": "verde",
-          "categoria": "Frutos y cultivos de Cuyo",
-          "items": [
-            "UVA",
-            "NUEZ",
-            "OLIVO",
-            "MEMBRILLO"
-          ],
-          "verificar": true
-        },
-        {
-          "dificultad": "azul",
-          "categoria": "Elementos del paisaje sanjuanino",
-          "items": [
-            "PRECORDILLERA",
-            "MEDANO",
-            "ESTEPA",
-            "SALAR"
-          ]
-        },
-        {
-          "dificultad": "morado",
-          "categoria": "Fiestas y tradiciones",
-          "items": [
-            "VENDIMIA",
-            "SOL",
-            "CARNAVAL",
-            "FOLKLORE"
-          ],
-          "verificar": true
-        }
-      ]
+     "dificultad": "morado",
+     "categoria": "Departamentos de San Juan",
+     "items": [
+      "CAPITAL",
+      "RAWSON",
+      "CHIMBAS",
+      "POCITO"
+     ],
+     "verificar": true
     }
-  ]
+   ]
+  },
+  {
+   "dia": 2,
+   "grupos": [
+    {
+     "dificultad": "amarillo",
+     "categoria": "Instrumentos del folklore",
+     "items": [
+      "CHARANGO",
+      "QUENA",
+      "RONDIN",
+      "PIANO"
+     ],
+     "verificar": false
+    },
+    {
+     "dificultad": "verde",
+     "categoria": "Palabras del mundo del vino",
+     "items": [
+      "TONEL",
+      "BARRICA",
+      "MALBEC",
+      "TANINO"
+     ],
+     "verificar": false
+    },
+    {
+     "dificultad": "azul",
+     "categoria": "Departamentos de San Juan",
+     "items": [
+      "RIVADAVIA",
+      "SANTA LUCIA",
+      "CAUCETE",
+      "ANGACO"
+     ],
+     "verificar": true
+    },
+    {
+     "dificultad": "morado",
+     "categoria": "Accidentes geográficos cuyanos",
+     "items": [
+      "CERRO",
+      "VALLE",
+      "RIO",
+      "DIQUE"
+     ],
+     "verificar": true
+    }
+   ]
+  },
+  {
+   "dia": 3,
+   "grupos": [
+    {
+     "dificultad": "amarillo",
+     "categoria": "Palabras del mundo del vino",
+     "items": [
+      "COSECHA",
+      "RACIMO",
+      "BODEGA",
+      "VARIETAL"
+     ],
+     "verificar": false
+    },
+    {
+     "dificultad": "verde",
+     "categoria": "Departamentos de San Juan",
+     "items": [
+      "ZONDA",
+      "ULLUM",
+      "CALINGASTA",
+      "IGLESIA"
+     ],
+     "verificar": true
+    },
+    {
+     "dificultad": "azul",
+     "categoria": "Accidentes geográficos cuyanos",
+     "items": [
+      "CORDILLERA",
+      "QUEBRADA",
+      "OASIS",
+      "LAGUNA"
+     ],
+     "verificar": true
+    },
+    {
+     "dificultad": "morado",
+     "categoria": "Bailes tradicionales",
+     "items": [
+      "CUECA",
+      "GATO",
+      "ZAMBA",
+      "TONADA"
+     ],
+     "verificar": false
+    }
+   ]
+  },
+  {
+   "dia": 4,
+   "grupos": [
+    {
+     "dificultad": "amarillo",
+     "categoria": "Departamentos de San Juan",
+     "items": [
+      "JACHAL",
+      "SARMIENTO",
+      "ALBARDON",
+      "9 DE JULIO"
+     ],
+     "verificar": true
+    },
+    {
+     "dificultad": "verde",
+     "categoria": "Accidentes geográficos cuyanos",
+     "items": [
+      "CERRO",
+      "VALLE",
+      "RIO",
+      "DIQUE"
+     ],
+     "verificar": true
+    },
+    {
+     "dificultad": "azul",
+     "categoria": "Bailes tradicionales",
+     "items": [
+      "CHACARERA",
+      "ESCONDIDO",
+      "REFALOSA",
+      "MALAMBO"
+     ],
+     "verificar": false
+    },
+    {
+     "dificultad": "morado",
+     "categoria": "Frutos y cultivos de Cuyo",
+     "items": [
+      "UVA",
+      "NUEZ",
+      "OLIVO",
+      "MEMBRILLO"
+     ],
+     "verificar": true
+    }
+   ]
+  },
+  {
+   "dia": 5,
+   "grupos": [
+    {
+     "dificultad": "amarillo",
+     "categoria": "Accidentes geográficos cuyanos",
+     "items": [
+      "CORDILLERA",
+      "QUEBRADA",
+      "OASIS",
+      "LAGUNA"
+     ],
+     "verificar": true
+    },
+    {
+     "dificultad": "verde",
+     "categoria": "Bailes tradicionales",
+     "items": [
+      "CUECA",
+      "GATO",
+      "ZAMBA",
+      "TONADA"
+     ],
+     "verificar": false
+    },
+    {
+     "dificultad": "azul",
+     "categoria": "Frutos y cultivos de Cuyo",
+     "items": [
+      "MELON",
+      "SANDIA",
+      "TOMATE",
+      "AJO"
+     ],
+     "verificar": true
+    },
+    {
+     "dificultad": "morado",
+     "categoria": "Elementos del paisaje sanjuanino",
+     "items": [
+      "DESIERTO",
+      "OASIS",
+      "MONTANA",
+      "VINEDO"
+     ],
+     "verificar": false
+    }
+   ]
+  },
+  {
+   "dia": 6,
+   "grupos": [
+    {
+     "dificultad": "amarillo",
+     "categoria": "Bailes tradicionales",
+     "items": [
+      "CHACARERA",
+      "ESCONDIDO",
+      "REFALOSA",
+      "MALAMBO"
+     ],
+     "verificar": false
+    },
+    {
+     "dificultad": "verde",
+     "categoria": "Frutos y cultivos de Cuyo",
+     "items": [
+      "UVA",
+      "NUEZ",
+      "OLIVO",
+      "MEMBRILLO"
+     ],
+     "verificar": true
+    },
+    {
+     "dificultad": "azul",
+     "categoria": "Elementos del paisaje sanjuanino",
+     "items": [
+      "PRECORDILLERA",
+      "MEDANO",
+      "ESTEPA",
+      "SALAR"
+     ],
+     "verificar": false
+    },
+    {
+     "dificultad": "morado",
+     "categoria": "Fiestas y tradiciones",
+     "items": [
+      "VENDIMIA",
+      "SOL",
+      "CARNAVAL",
+      "FOLKLORE"
+     ],
+     "verificar": true
+    }
+   ]
+  },
+  {
+   "dia": 7,
+   "grupos": [
+    {
+     "dificultad": "amarillo",
+     "categoria": "Frutos y cultivos de Cuyo",
+     "items": [
+      "MELON",
+      "SANDIA",
+      "TOMATE",
+      "AJO"
+     ],
+     "verificar": true
+    },
+    {
+     "dificultad": "verde",
+     "categoria": "Elementos del paisaje sanjuanino",
+     "items": [
+      "DESIERTO",
+      "OASIS",
+      "MONTANA",
+      "VINEDO"
+     ],
+     "verificar": false
+    },
+    {
+     "dificultad": "azul",
+     "categoria": "Fiestas y tradiciones",
+     "items": [
+      "PERAS Y MANZANAS",
+      "DOMA",
+      "PERICON",
+      "ASADO CRIOLLO"
+     ],
+     "verificar": true
+    },
+    {
+     "dificultad": "morado",
+     "categoria": "Palabras del riego cuyano",
+     "items": [
+      "ACEQUIA",
+      "CANAL",
+      "DIQUE",
+      "TOMA"
+     ],
+     "verificar": false
+    }
+   ]
+  },
+  {
+   "dia": 8,
+   "grupos": [
+    {
+     "dificultad": "amarillo",
+     "categoria": "Elementos del paisaje sanjuanino",
+     "items": [
+      "PRECORDILLERA",
+      "MEDANO",
+      "ESTEPA",
+      "SALAR"
+     ],
+     "verificar": false
+    },
+    {
+     "dificultad": "verde",
+     "categoria": "Fiestas y tradiciones",
+     "items": [
+      "VENDIMIA",
+      "SOL",
+      "CARNAVAL",
+      "FOLKLORE"
+     ],
+     "verificar": true
+    },
+    {
+     "dificultad": "azul",
+     "categoria": "Palabras del riego cuyano",
+     "items": [
+      "COMPUERTA",
+      "TURNO",
+      "ZANJA",
+      "EMBALSE"
+     ],
+     "verificar": false
+    },
+    {
+     "dificultad": "morado",
+     "categoria": "Fauna del monte cuyano",
+     "items": [
+      "ZORRO",
+      "GUANACO",
+      "CONDOR",
+      "IGUANA"
+     ],
+     "verificar": true
+    }
+   ]
+  },
+  {
+   "dia": 9,
+   "grupos": [
+    {
+     "dificultad": "amarillo",
+     "categoria": "Fiestas y tradiciones",
+     "items": [
+      "PERAS Y MANZANAS",
+      "DOMA",
+      "PERICON",
+      "ASADO CRIOLLO"
+     ],
+     "verificar": true
+    },
+    {
+     "dificultad": "verde",
+     "categoria": "Palabras del riego cuyano",
+     "items": [
+      "ACEQUIA",
+      "CANAL",
+      "DIQUE",
+      "TOMA"
+     ],
+     "verificar": false
+    },
+    {
+     "dificultad": "azul",
+     "categoria": "Fauna del monte cuyano",
+     "items": [
+      "MARA",
+      "PUMA",
+      "AGUILA",
+      "VIZCACHA"
+     ],
+     "verificar": true
+    },
+    {
+     "dificultad": "morado",
+     "categoria": "Oficios rurales tradicionales",
+     "items": [
+      "VIÑATERO",
+      "ARRIERO",
+      "TROPERO",
+      "PODADOR"
+     ],
+     "verificar": false
+    }
+   ]
+  },
+  {
+   "dia": 10,
+   "grupos": [
+    {
+     "dificultad": "amarillo",
+     "categoria": "Palabras del riego cuyano",
+     "items": [
+      "COMPUERTA",
+      "TURNO",
+      "ZANJA",
+      "EMBALSE"
+     ],
+     "verificar": false
+    },
+    {
+     "dificultad": "verde",
+     "categoria": "Fauna del monte cuyano",
+     "items": [
+      "ZORRO",
+      "GUANACO",
+      "CONDOR",
+      "IGUANA"
+     ],
+     "verificar": true
+    },
+    {
+     "dificultad": "azul",
+     "categoria": "Oficios rurales tradicionales",
+     "items": [
+      "ALBAÑIL",
+      "TAMBERO",
+      "HORNERO",
+      "COSECHERO"
+     ],
+     "verificar": false
+    },
+    {
+     "dificultad": "morado",
+     "categoria": "Comidas típicas de Cuyo",
+     "items": [
+      "CHIVITO",
+      "TAMAL",
+      "GUISO",
+      "PUCHERO"
+     ],
+     "verificar": false
+    }
+   ]
+  },
+  {
+   "dia": 11,
+   "grupos": [
+    {
+     "dificultad": "amarillo",
+     "categoria": "Fauna del monte cuyano",
+     "items": [
+      "MARA",
+      "PUMA",
+      "AGUILA",
+      "VIZCACHA"
+     ],
+     "verificar": true
+    },
+    {
+     "dificultad": "verde",
+     "categoria": "Oficios rurales tradicionales",
+     "items": [
+      "VIÑATERO",
+      "ARRIERO",
+      "TROPERO",
+      "PODADOR"
+     ],
+     "verificar": false
+    },
+    {
+     "dificultad": "azul",
+     "categoria": "Comidas típicas de Cuyo",
+     "items": [
+      "ARROPE",
+      "PASAS",
+      "NUECES",
+      "MEMBRILLO"
+     ],
+     "verificar": false
+    },
+    {
+     "dificultad": "morado",
+     "categoria": "Instrumentos del folklore",
+     "items": [
+      "GUITARRA",
+      "BOMBO",
+      "ACORDEON",
+      "VIOLIN"
+     ],
+     "verificar": false
+    }
+   ]
+  },
+  {
+   "dia": 12,
+   "grupos": [
+    {
+     "dificultad": "amarillo",
+     "categoria": "Oficios rurales tradicionales",
+     "items": [
+      "ALBAÑIL",
+      "TAMBERO",
+      "HORNERO",
+      "COSECHERO"
+     ],
+     "verificar": false
+    },
+    {
+     "dificultad": "verde",
+     "categoria": "Comidas típicas de Cuyo",
+     "items": [
+      "EMPANADA",
+      "LOCRO",
+      "HUMITA",
+      "ASADO"
+     ],
+     "verificar": false
+    },
+    {
+     "dificultad": "azul",
+     "categoria": "Instrumentos del folklore",
+     "items": [
+      "CHARANGO",
+      "QUENA",
+      "RONDIN",
+      "PIANO"
+     ],
+     "verificar": false
+    },
+    {
+     "dificultad": "morado",
+     "categoria": "Palabras del mundo del vino",
+     "items": [
+      "TONEL",
+      "BARRICA",
+      "MALBEC",
+      "TANINO"
+     ],
+     "verificar": false
+    }
+   ]
+  },
+  {
+   "dia": 13,
+   "grupos": [
+    {
+     "dificultad": "amarillo",
+     "categoria": "Comidas típicas de Cuyo",
+     "items": [
+      "CHIVITO",
+      "TAMAL",
+      "GUISO",
+      "PUCHERO"
+     ],
+     "verificar": false
+    },
+    {
+     "dificultad": "verde",
+     "categoria": "Instrumentos del folklore",
+     "items": [
+      "GUITARRA",
+      "BOMBO",
+      "ACORDEON",
+      "VIOLIN"
+     ],
+     "verificar": false
+    },
+    {
+     "dificultad": "azul",
+     "categoria": "Palabras del mundo del vino",
+     "items": [
+      "COSECHA",
+      "RACIMO",
+      "BODEGA",
+      "VARIETAL"
+     ],
+     "verificar": false
+    },
+    {
+     "dificultad": "morado",
+     "categoria": "Departamentos de San Juan",
+     "items": [
+      "VALLE FERTIL",
+      "25 DE MAYO",
+      "SAN MARTIN",
+      "CAPITAL"
+     ],
+     "verificar": true
+    }
+   ]
+  },
+  {
+   "dia": 14,
+   "grupos": [
+    {
+     "dificultad": "amarillo",
+     "categoria": "Instrumentos del folklore",
+     "items": [
+      "CHARANGO",
+      "QUENA",
+      "RONDIN",
+      "PIANO"
+     ],
+     "verificar": false
+    },
+    {
+     "dificultad": "verde",
+     "categoria": "Palabras del mundo del vino",
+     "items": [
+      "TONEL",
+      "BARRICA",
+      "MALBEC",
+      "TANINO"
+     ],
+     "verificar": false
+    },
+    {
+     "dificultad": "azul",
+     "categoria": "Departamentos de San Juan",
+     "items": [
+      "CAPITAL",
+      "RAWSON",
+      "CHIMBAS",
+      "POCITO"
+     ],
+     "verificar": true
+    },
+    {
+     "dificultad": "morado",
+     "categoria": "Accidentes geográficos cuyanos",
+     "items": [
+      "CERRO",
+      "VALLE",
+      "RIO",
+      "DIQUE"
+     ],
+     "verificar": true
+    }
+   ]
+  },
+  {
+   "dia": 15,
+   "grupos": [
+    {
+     "dificultad": "amarillo",
+     "categoria": "Palabras del mundo del vino",
+     "items": [
+      "COSECHA",
+      "RACIMO",
+      "BODEGA",
+      "VARIETAL"
+     ],
+     "verificar": false
+    },
+    {
+     "dificultad": "verde",
+     "categoria": "Departamentos de San Juan",
+     "items": [
+      "RIVADAVIA",
+      "SANTA LUCIA",
+      "CAUCETE",
+      "ANGACO"
+     ],
+     "verificar": true
+    },
+    {
+     "dificultad": "azul",
+     "categoria": "Accidentes geográficos cuyanos",
+     "items": [
+      "CORDILLERA",
+      "QUEBRADA",
+      "OASIS",
+      "LAGUNA"
+     ],
+     "verificar": true
+    },
+    {
+     "dificultad": "morado",
+     "categoria": "Bailes tradicionales",
+     "items": [
+      "CUECA",
+      "GATO",
+      "ZAMBA",
+      "TONADA"
+     ],
+     "verificar": false
+    }
+   ]
+  },
+  {
+   "dia": 16,
+   "grupos": [
+    {
+     "dificultad": "amarillo",
+     "categoria": "Departamentos de San Juan",
+     "items": [
+      "ZONDA",
+      "ULLUM",
+      "CALINGASTA",
+      "IGLESIA"
+     ],
+     "verificar": true
+    },
+    {
+     "dificultad": "verde",
+     "categoria": "Accidentes geográficos cuyanos",
+     "items": [
+      "CERRO",
+      "VALLE",
+      "RIO",
+      "DIQUE"
+     ],
+     "verificar": true
+    },
+    {
+     "dificultad": "azul",
+     "categoria": "Bailes tradicionales",
+     "items": [
+      "CHACARERA",
+      "ESCONDIDO",
+      "REFALOSA",
+      "MALAMBO"
+     ],
+     "verificar": false
+    },
+    {
+     "dificultad": "morado",
+     "categoria": "Frutos y cultivos de Cuyo",
+     "items": [
+      "UVA",
+      "NUEZ",
+      "OLIVO",
+      "MEMBRILLO"
+     ],
+     "verificar": true
+    }
+   ]
+  },
+  {
+   "dia": 17,
+   "grupos": [
+    {
+     "dificultad": "amarillo",
+     "categoria": "Accidentes geográficos cuyanos",
+     "items": [
+      "CORDILLERA",
+      "QUEBRADA",
+      "OASIS",
+      "LAGUNA"
+     ],
+     "verificar": true
+    },
+    {
+     "dificultad": "verde",
+     "categoria": "Bailes tradicionales",
+     "items": [
+      "CUECA",
+      "GATO",
+      "ZAMBA",
+      "TONADA"
+     ],
+     "verificar": false
+    },
+    {
+     "dificultad": "azul",
+     "categoria": "Frutos y cultivos de Cuyo",
+     "items": [
+      "MELON",
+      "SANDIA",
+      "TOMATE",
+      "AJO"
+     ],
+     "verificar": true
+    },
+    {
+     "dificultad": "morado",
+     "categoria": "Elementos del paisaje sanjuanino",
+     "items": [
+      "DESIERTO",
+      "OASIS",
+      "MONTANA",
+      "VINEDO"
+     ],
+     "verificar": false
+    }
+   ]
+  },
+  {
+   "dia": 18,
+   "grupos": [
+    {
+     "dificultad": "amarillo",
+     "categoria": "Bailes tradicionales",
+     "items": [
+      "CHACARERA",
+      "ESCONDIDO",
+      "REFALOSA",
+      "MALAMBO"
+     ],
+     "verificar": false
+    },
+    {
+     "dificultad": "verde",
+     "categoria": "Frutos y cultivos de Cuyo",
+     "items": [
+      "UVA",
+      "NUEZ",
+      "OLIVO",
+      "MEMBRILLO"
+     ],
+     "verificar": true
+    },
+    {
+     "dificultad": "azul",
+     "categoria": "Elementos del paisaje sanjuanino",
+     "items": [
+      "PRECORDILLERA",
+      "MEDANO",
+      "ESTEPA",
+      "SALAR"
+     ],
+     "verificar": false
+    },
+    {
+     "dificultad": "morado",
+     "categoria": "Fiestas y tradiciones",
+     "items": [
+      "VENDIMIA",
+      "SOL",
+      "CARNAVAL",
+      "FOLKLORE"
+     ],
+     "verificar": true
+    }
+   ]
+  },
+  {
+   "dia": 19,
+   "grupos": [
+    {
+     "dificultad": "amarillo",
+     "categoria": "Frutos y cultivos de Cuyo",
+     "items": [
+      "MELON",
+      "SANDIA",
+      "TOMATE",
+      "AJO"
+     ],
+     "verificar": true
+    },
+    {
+     "dificultad": "verde",
+     "categoria": "Elementos del paisaje sanjuanino",
+     "items": [
+      "DESIERTO",
+      "OASIS",
+      "MONTANA",
+      "VINEDO"
+     ],
+     "verificar": false
+    },
+    {
+     "dificultad": "azul",
+     "categoria": "Fiestas y tradiciones",
+     "items": [
+      "PERAS Y MANZANAS",
+      "DOMA",
+      "PERICON",
+      "ASADO CRIOLLO"
+     ],
+     "verificar": true
+    },
+    {
+     "dificultad": "morado",
+     "categoria": "Palabras del riego cuyano",
+     "items": [
+      "ACEQUIA",
+      "CANAL",
+      "DIQUE",
+      "TOMA"
+     ],
+     "verificar": false
+    }
+   ]
+  },
+  {
+   "dia": 20,
+   "grupos": [
+    {
+     "dificultad": "amarillo",
+     "categoria": "Elementos del paisaje sanjuanino",
+     "items": [
+      "PRECORDILLERA",
+      "MEDANO",
+      "ESTEPA",
+      "SALAR"
+     ],
+     "verificar": false
+    },
+    {
+     "dificultad": "verde",
+     "categoria": "Fiestas y tradiciones",
+     "items": [
+      "VENDIMIA",
+      "SOL",
+      "CARNAVAL",
+      "FOLKLORE"
+     ],
+     "verificar": true
+    },
+    {
+     "dificultad": "azul",
+     "categoria": "Palabras del riego cuyano",
+     "items": [
+      "COMPUERTA",
+      "TURNO",
+      "ZANJA",
+      "EMBALSE"
+     ],
+     "verificar": false
+    },
+    {
+     "dificultad": "morado",
+     "categoria": "Fauna del monte cuyano",
+     "items": [
+      "ZORRO",
+      "GUANACO",
+      "CONDOR",
+      "IGUANA"
+     ],
+     "verificar": true
+    }
+   ]
+  },
+  {
+   "dia": 21,
+   "grupos": [
+    {
+     "dificultad": "amarillo",
+     "categoria": "Fiestas y tradiciones",
+     "items": [
+      "PERAS Y MANZANAS",
+      "DOMA",
+      "PERICON",
+      "ASADO CRIOLLO"
+     ],
+     "verificar": true
+    },
+    {
+     "dificultad": "verde",
+     "categoria": "Palabras del riego cuyano",
+     "items": [
+      "ACEQUIA",
+      "CANAL",
+      "DIQUE",
+      "TOMA"
+     ],
+     "verificar": false
+    },
+    {
+     "dificultad": "azul",
+     "categoria": "Fauna del monte cuyano",
+     "items": [
+      "MARA",
+      "PUMA",
+      "AGUILA",
+      "VIZCACHA"
+     ],
+     "verificar": true
+    },
+    {
+     "dificultad": "morado",
+     "categoria": "Oficios rurales tradicionales",
+     "items": [
+      "VIÑATERO",
+      "ARRIERO",
+      "TROPERO",
+      "PODADOR"
+     ],
+     "verificar": false
+    }
+   ]
+  },
+  {
+   "dia": 22,
+   "grupos": [
+    {
+     "dificultad": "amarillo",
+     "categoria": "Palabras del riego cuyano",
+     "items": [
+      "COMPUERTA",
+      "TURNO",
+      "ZANJA",
+      "EMBALSE"
+     ],
+     "verificar": false
+    },
+    {
+     "dificultad": "verde",
+     "categoria": "Fauna del monte cuyano",
+     "items": [
+      "ZORRO",
+      "GUANACO",
+      "CONDOR",
+      "IGUANA"
+     ],
+     "verificar": true
+    },
+    {
+     "dificultad": "azul",
+     "categoria": "Oficios rurales tradicionales",
+     "items": [
+      "ALBAÑIL",
+      "TAMBERO",
+      "HORNERO",
+      "COSECHERO"
+     ],
+     "verificar": false
+    },
+    {
+     "dificultad": "morado",
+     "categoria": "Comidas típicas de Cuyo",
+     "items": [
+      "ARROPE",
+      "PASAS",
+      "NUECES",
+      "MEMBRILLO"
+     ],
+     "verificar": false
+    }
+   ]
+  },
+  {
+   "dia": 23,
+   "grupos": [
+    {
+     "dificultad": "amarillo",
+     "categoria": "Fauna del monte cuyano",
+     "items": [
+      "MARA",
+      "PUMA",
+      "AGUILA",
+      "VIZCACHA"
+     ],
+     "verificar": true
+    },
+    {
+     "dificultad": "verde",
+     "categoria": "Oficios rurales tradicionales",
+     "items": [
+      "VIÑATERO",
+      "ARRIERO",
+      "TROPERO",
+      "PODADOR"
+     ],
+     "verificar": false
+    },
+    {
+     "dificultad": "azul",
+     "categoria": "Comidas típicas de Cuyo",
+     "items": [
+      "EMPANADA",
+      "LOCRO",
+      "HUMITA",
+      "ASADO"
+     ],
+     "verificar": false
+    },
+    {
+     "dificultad": "morado",
+     "categoria": "Instrumentos del folklore",
+     "items": [
+      "GUITARRA",
+      "BOMBO",
+      "ACORDEON",
+      "VIOLIN"
+     ],
+     "verificar": false
+    }
+   ]
+  },
+  {
+   "dia": 24,
+   "grupos": [
+    {
+     "dificultad": "amarillo",
+     "categoria": "Oficios rurales tradicionales",
+     "items": [
+      "ALBAÑIL",
+      "TAMBERO",
+      "HORNERO",
+      "COSECHERO"
+     ],
+     "verificar": false
+    },
+    {
+     "dificultad": "verde",
+     "categoria": "Comidas típicas de Cuyo",
+     "items": [
+      "CHIVITO",
+      "TAMAL",
+      "GUISO",
+      "PUCHERO"
+     ],
+     "verificar": false
+    },
+    {
+     "dificultad": "azul",
+     "categoria": "Instrumentos del folklore",
+     "items": [
+      "CHARANGO",
+      "QUENA",
+      "RONDIN",
+      "PIANO"
+     ],
+     "verificar": false
+    },
+    {
+     "dificultad": "morado",
+     "categoria": "Palabras del mundo del vino",
+     "items": [
+      "TONEL",
+      "BARRICA",
+      "MALBEC",
+      "TANINO"
+     ],
+     "verificar": false
+    }
+   ]
+  },
+  {
+   "dia": 25,
+   "grupos": [
+    {
+     "dificultad": "amarillo",
+     "categoria": "Comidas típicas de Cuyo",
+     "items": [
+      "ARROPE",
+      "PASAS",
+      "NUECES",
+      "MEMBRILLO"
+     ],
+     "verificar": false
+    },
+    {
+     "dificultad": "verde",
+     "categoria": "Instrumentos del folklore",
+     "items": [
+      "GUITARRA",
+      "BOMBO",
+      "ACORDEON",
+      "VIOLIN"
+     ],
+     "verificar": false
+    },
+    {
+     "dificultad": "azul",
+     "categoria": "Palabras del mundo del vino",
+     "items": [
+      "COSECHA",
+      "RACIMO",
+      "BODEGA",
+      "VARIETAL"
+     ],
+     "verificar": false
+    },
+    {
+     "dificultad": "morado",
+     "categoria": "Departamentos de San Juan",
+     "items": [
+      "JACHAL",
+      "SARMIENTO",
+      "ALBARDON",
+      "9 DE JULIO"
+     ],
+     "verificar": true
+    }
+   ]
+  },
+  {
+   "dia": 26,
+   "grupos": [
+    {
+     "dificultad": "amarillo",
+     "categoria": "Instrumentos del folklore",
+     "items": [
+      "CHARANGO",
+      "QUENA",
+      "RONDIN",
+      "PIANO"
+     ],
+     "verificar": false
+    },
+    {
+     "dificultad": "verde",
+     "categoria": "Palabras del mundo del vino",
+     "items": [
+      "TONEL",
+      "BARRICA",
+      "MALBEC",
+      "TANINO"
+     ],
+     "verificar": false
+    },
+    {
+     "dificultad": "azul",
+     "categoria": "Departamentos de San Juan",
+     "items": [
+      "VALLE FERTIL",
+      "25 DE MAYO",
+      "SAN MARTIN",
+      "CAPITAL"
+     ],
+     "verificar": true
+    },
+    {
+     "dificultad": "morado",
+     "categoria": "Accidentes geográficos cuyanos",
+     "items": [
+      "CERRO",
+      "VALLE",
+      "RIO",
+      "DIQUE"
+     ],
+     "verificar": true
+    }
+   ]
+  },
+  {
+   "dia": 27,
+   "grupos": [
+    {
+     "dificultad": "amarillo",
+     "categoria": "Palabras del mundo del vino",
+     "items": [
+      "COSECHA",
+      "RACIMO",
+      "BODEGA",
+      "VARIETAL"
+     ],
+     "verificar": false
+    },
+    {
+     "dificultad": "verde",
+     "categoria": "Departamentos de San Juan",
+     "items": [
+      "CAPITAL",
+      "RAWSON",
+      "CHIMBAS",
+      "POCITO"
+     ],
+     "verificar": true
+    },
+    {
+     "dificultad": "azul",
+     "categoria": "Accidentes geográficos cuyanos",
+     "items": [
+      "CORDILLERA",
+      "QUEBRADA",
+      "OASIS",
+      "LAGUNA"
+     ],
+     "verificar": true
+    },
+    {
+     "dificultad": "morado",
+     "categoria": "Bailes tradicionales",
+     "items": [
+      "CUECA",
+      "GATO",
+      "ZAMBA",
+      "TONADA"
+     ],
+     "verificar": false
+    }
+   ]
+  },
+  {
+   "dia": 28,
+   "grupos": [
+    {
+     "dificultad": "amarillo",
+     "categoria": "Departamentos de San Juan",
+     "items": [
+      "RIVADAVIA",
+      "SANTA LUCIA",
+      "CAUCETE",
+      "ANGACO"
+     ],
+     "verificar": true
+    },
+    {
+     "dificultad": "verde",
+     "categoria": "Accidentes geográficos cuyanos",
+     "items": [
+      "CERRO",
+      "VALLE",
+      "RIO",
+      "DIQUE"
+     ],
+     "verificar": true
+    },
+    {
+     "dificultad": "azul",
+     "categoria": "Bailes tradicionales",
+     "items": [
+      "CHACARERA",
+      "ESCONDIDO",
+      "REFALOSA",
+      "MALAMBO"
+     ],
+     "verificar": false
+    },
+    {
+     "dificultad": "morado",
+     "categoria": "Frutos y cultivos de Cuyo",
+     "items": [
+      "UVA",
+      "NUEZ",
+      "OLIVO",
+      "MEMBRILLO"
+     ],
+     "verificar": true
+    }
+   ]
+  },
+  {
+   "dia": 29,
+   "grupos": [
+    {
+     "dificultad": "amarillo",
+     "categoria": "Accidentes geográficos cuyanos",
+     "items": [
+      "CORDILLERA",
+      "QUEBRADA",
+      "OASIS",
+      "LAGUNA"
+     ],
+     "verificar": true
+    },
+    {
+     "dificultad": "verde",
+     "categoria": "Bailes tradicionales",
+     "items": [
+      "CUECA",
+      "GATO",
+      "ZAMBA",
+      "TONADA"
+     ],
+     "verificar": false
+    },
+    {
+     "dificultad": "azul",
+     "categoria": "Frutos y cultivos de Cuyo",
+     "items": [
+      "MELON",
+      "SANDIA",
+      "TOMATE",
+      "AJO"
+     ],
+     "verificar": true
+    },
+    {
+     "dificultad": "morado",
+     "categoria": "Elementos del paisaje sanjuanino",
+     "items": [
+      "DESIERTO",
+      "OASIS",
+      "MONTANA",
+      "VINEDO"
+     ],
+     "verificar": false
+    }
+   ]
+  },
+  {
+   "dia": 30,
+   "grupos": [
+    {
+     "dificultad": "amarillo",
+     "categoria": "Bailes tradicionales",
+     "items": [
+      "CHACARERA",
+      "ESCONDIDO",
+      "REFALOSA",
+      "MALAMBO"
+     ],
+     "verificar": false
+    },
+    {
+     "dificultad": "verde",
+     "categoria": "Frutos y cultivos de Cuyo",
+     "items": [
+      "UVA",
+      "NUEZ",
+      "OLIVO",
+      "MEMBRILLO"
+     ],
+     "verificar": true
+    },
+    {
+     "dificultad": "azul",
+     "categoria": "Elementos del paisaje sanjuanino",
+     "items": [
+      "PRECORDILLERA",
+      "MEDANO",
+      "ESTEPA",
+      "SALAR"
+     ],
+     "verificar": false
+    },
+    {
+     "dificultad": "morado",
+     "categoria": "Fiestas y tradiciones",
+     "items": [
+      "VENDIMIA",
+      "SOL",
+      "CARNAVAL",
+      "FOLKLORE"
+     ],
+     "verificar": true
+    }
+   ]
+  }
+ ]
 }

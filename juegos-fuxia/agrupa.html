@@ -1,387 +1,200 @@
 <!DOCTYPE html>
-<html lang="es-AR">
+<html lang="es">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Agrupá · Fuxia Games</title>
-<link rel="icon" href="assets/logo-fuxia-games-icono.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@500;600;700&family=Barlow+Condensed:ital,wght@0,600;0,700;1,700;1,800&family=Merriweather:wght@700;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="shared.css">
 <style>
-  .ag-consigna { text-align: center; font-size: .9rem; color: var(--md-texto-suave); margin: 0; }
+  .solved { display: flex; flex-direction: column; gap: 6px; margin-bottom: 6px; }
+  .grupo { border-radius: 4px; padding: 10px 8px; text-align: center; color: #1d1d1d; animation: fg-pop .25s ease-out; }
+  .grupo b { display: block; font-family: var(--font-display); font-weight: 800; font-style: italic; font-size: 1.1rem; text-transform: uppercase; letter-spacing: .4px; }
+  .grupo span { font-size: .88rem; font-weight: 600; }
+  .lvl-amarillo { background: var(--lvl-amarillo); }
+  .lvl-verde { background: var(--lvl-verde); }
+  .lvl-azul { background: var(--lvl-azul); }
+  .lvl-morado { background: var(--lvl-morado); }
+  .grupo.revelado { opacity: .85; }
 
-  .ag-resueltos { display: flex; flex-direction: column; gap: 8px; }
-  .ag-resuelto {
-    border-radius: 6px;
-    padding: 10px 12px;
-    text-align: center;
-    color: var(--md-tinta);
-    animation: ag-aparecer .3s ease-out;
+  .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; }
+  .item {
+    min-height: 62px; border: 2px solid var(--md-line); border-radius: 4px; cursor: pointer;
+    background: #fff; color: var(--md-dark); font-family: var(--font-base); font-weight: 700; text-transform: uppercase;
+    font-size: clamp(.6rem, 2.9vw, .82rem); padding: 4px; overflow-wrap: anywhere; line-height: 1.1;
+    transition: transform .1s, background .1s;
   }
-  @keyframes ag-aparecer { from { opacity: 0; transform: scale(.94); } to { opacity: 1; transform: scale(1); } }
-  .ag-resuelto__cat { font-weight: 800; font-size: .88rem; text-transform: uppercase; letter-spacing: .4px; }
-  .ag-resuelto__items { font-size: .84rem; margin-top: 2px; }
-  /* Los cuatro pasteles de Connections llevan texto oscuro, no blanco. */
-  .ag-resuelto[data-dif="amarillo"] { background: var(--juego-amarillo); }
-  .ag-resuelto[data-dif="verde"]    { background: var(--juego-verde); }
-  .ag-resuelto[data-dif="azul"]     { background: var(--juego-azul); }
-  .ag-resuelto[data-dif="morado"]   { background: var(--juego-morado); }
+  .item:hover { border-color: var(--md-dark); }
+  .item:active { transform: translateY(1px); }
+  .item.sel { background: var(--md-dark); color: #fff; border-color: var(--md-orange); }
+  .grid.shake { animation: fg-shake .4s; }
+  .grid.off .item { pointer-events: none; }
 
-  .ag-grilla { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
-  .ag-ficha {
-    aspect-ratio: 1 / 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 4px 3px;
-    border: 1px solid var(--md-borde);
-    border-radius: 6px;
-    background: var(--md-superficie);
-    color: var(--md-tinta);
-    font-family: inherit;
-    font-weight: 700;
-    font-size: clamp(.58rem, 2.7vw, .86rem);
-    line-height: 1.15;
-    text-transform: uppercase;
-    cursor: pointer;
-    word-break: break-word;
-    hyphens: auto;
-    transition: background .12s, transform .12s;
-  }
-  /* El :not([aria-pressed="true"]) no es decorativo: sin el, el hover le gana
-     en especificidad al estado elegido y la ficha queda ilegible. */
-  .ag-ficha:hover:not([disabled]):not([aria-pressed="true"]) {
-    background: var(--md-superficie-2);
-    border-color: var(--md-borde-fuerte);
-  }
-  /* La ficha elegida va en tinta, no en el naranja de marca: el naranja al
-     lado de los cuatro colores de dificultad se lee como un quinto grupo. */
-  .ag-ficha[aria-pressed="true"] {
-    background: var(--md-tinta);
-    border-color: var(--md-tinta);
-    color: #fff;
-    transform: scale(.96);
-  }
-  .ag-ficha[disabled] { opacity: .4; cursor: default; }
-  .ag-ficha--error { animation: ag-sacudir .4s; }
-  @keyframes ag-sacudir {
-    0%,100% { transform: translateX(0); } 20%,60% { transform: translateX(-5px); } 40%,80% { transform: translateX(5px); }
-  }
-
-  .ag-vidas { display: flex; align-items: center; justify-content: center; gap: 8px; font-size: .84rem; color: var(--md-texto-suave); }
-  .ag-vida { width: 13px; height: 13px; border-radius: 50%; background: var(--md-naranja); display: inline-block; }
-  .ag-vida[data-gastada] { background: var(--md-borde); }
-
-  .ag-acciones { display: flex; gap: 8px; }
-  .ag-acciones .fx-btn { flex: 1; }
+  .vidas { display: flex; align-items: center; justify-content: center; gap: 8px; margin: 14px 0 4px; color: var(--md-muted); font-family: var(--font-display); text-transform: uppercase; letter-spacing: .8px; font-size: .95rem; font-weight: 600; }
+  .vida { width: 12px; height: 12px; border-radius: 50%; background: var(--md-orange); transition: transform .2s, background .2s; }
+  .vida.off { background: #c4c4c1; transform: scale(.7); }
 </style>
 </head>
 <body>
-
-<header class="fx-header">
-  <div class="fx-header__marca">
-    <a class="fx-header__home" href="https://mansodiario.com" target="_top" rel="noopener"
-       aria-label="Ir a la portada de Manso Diario">
-      <img class="fx-header__logo fx-header__logo--icono" src="assets/logo-fuxia-games-icono.svg" alt="Fuxia Games">
-    </a>
-    <h1 class="fx-header__juego" id="fx-nombre-juego">Agrupá</h1>
-  </div>
-  <a class="fx-volver" href="index.html">← Juegos</a>
+<header class="fg-masthead">
+  <a class="fg-brand" href="https://mansodiario.com" target="_top" rel="noopener"
+     aria-label="Ir a la portada de Manso Diario"><span class="logo">MANSO<b>!</b>DIARIO</span><small>Juegos · San Juan · Argentina</small></a>
+  <div class="fg-streak" id="racha" title="Racha">🔥 0</div>
 </header>
-
-<main class="fx-main" id="ag-app">
-  <p class="fx-aviso" id="ag-cargando">Cargando el desafío de hoy…</p>
-</main>
-
-<template id="ag-plantilla">
-  <p class="ag-consigna">Encontrá los 4 grupos de 4. Tenés 4 errores.</p>
-  <div class="ag-resueltos" id="ag-resueltos"></div>
-  <div class="ag-grilla" id="ag-grilla" role="group" aria-label="Palabras para agrupar"></div>
-  <div class="ag-vidas" id="ag-vidas"></div>
-  <div class="ag-acciones">
-    <button class="fx-btn fx-btn--secundario" id="ag-mezclar" type="button">Mezclar</button>
-    <button class="fx-btn fx-btn--secundario" id="ag-limpiar" type="button">Borrar selección</button>
-  </div>
-  <button class="fx-btn" id="ag-enviar" type="button" disabled>Enviar</button>
-</template>
-
-<footer class="fx-footer">
-  <a href="https://instagram.com/fuxiagames" target="_blank" rel="noopener noreferrer">Fuxia Games</a> para <a href="https://mansodiario.com" target="_top" rel="noopener">Manso Diario</a>.
-</footer>
-
-<div class="fx-toast" id="fx-toast" role="status" aria-live="polite"></div>
+<div class="fg-titlebar"><h1>AGRUPÁ<b>!</b></h1><a class="fg-back" href="index.html">← Juegos</a></div>
+<div class="fg-wrap">
+  <div id="app"><p class="fg-sub">Cargando…</p></div>
+</div>
 
 <script src="shared.js"></script>
 <script>
 (function () {
-  'use strict';
+  var JUEGO = 'agrupa', MAX_ERRORES = 4;
+  var EMOJI = { amarillo: '🟨', verde: '🟩', azul: '🟦', morado: '🟪' };
+  var ORDEN_NIVEL = ['amarillo', 'verde', 'azul', 'morado'];
 
-  var FG = window.FuxiaGames;
-  var JUEGO = 'agrupa';
-  var ERRORES_MAX = 4;
-  var ORDEN = ['amarillo', 'verde', 'azul', 'morado'];
-  var EMOJI = {
-    amarillo: '🟨', verde: '🟩',
-    azul: '🟦', morado: '🟪'
-  };
-
-  var app = document.getElementById('ag-app');
-  var grupos;               /* los 4 del día, en orden de dificultad */
-  var fichas = [];          /* {id, texto, dif} — el id sobrevive al mezclado */
-  var numeroDia;
-  var seleccion = [];       /* ids seleccionados */
-  var resueltos = [];       /* dificultades ya resueltas, en orden de acierto */
-  var historial = [];       /* cada envío, como array de 4 dificultades */
-  var yaProbadas = [];      /* combinaciones ya enviadas, para no cobrarlas dos veces */
-  var errores = 0;
-  var terminado = false;
-
-  FG.pintarCabecera('Agrupá');
-
-  FG.cargarDatos('data/categorias.json').then(arrancar).catch(function (e) {
-    app.innerHTML = '<p class="fx-aviso fx-aviso--error">No se pudo cargar el juego de hoy. ' +
-      'Recargá la página en un rato.<br><small>' + String(e.message || e) + '</small></p>';
-  });
-
-  function arrancar(datos) {
-    var dia = FG.diaDelBanco(datos);
-    numeroDia = dia.numero;
-    grupos = dia.contenido.grupos.slice().sort(function (a, b) {
-      return ORDEN.indexOf(a.dificultad) - ORDEN.indexOf(b.dificultad);
-    });
-
-    /* Cada ficha lleva su propio id. Es lo que permite que dos fichas con el
-       mismo texto —el banco tiene algún día así— se sigan tratando por
-       separado en vez de pisarse entre ellas. */
-    var id = 0;
-    grupos.forEach(function (g) {
-      g.items.forEach(function (it) {
-        fichas.push({ id: id++, texto: it, dif: g.dificultad });
-      });
-    });
-    /* Mismo orden para todo el mundo y estable entre recargas. */
-    fichas = FG.barajarConSemilla(fichas, numeroDia * 7919 + 13);
-
-    app.innerHTML = '';
-    app.appendChild(document.getElementById('ag-plantilla').content.cloneNode(true));
-
-    document.getElementById('ag-enviar').addEventListener('click', enviar);
-    document.getElementById('ag-limpiar').addEventListener('click', function () {
-      seleccion = []; pintar();
-    });
-    document.getElementById('ag-mezclar').addEventListener('click', function () {
-      if (terminado) return;
-      fichas = FG.barajarConSemilla(fichas, Date.now() & 0x7fffffff);
-      pintar();
-    });
-
-    var guardado = FG.cargarEstado(JUEGO);
-    if (guardado.jugadoHoy && guardado.estado) {
-      historial = guardado.estado.historial || [];
-      resueltos = guardado.estado.resueltos || [];
-      errores = guardado.estado.errores || 0;
-      yaProbadas = guardado.estado.yaProbadas || [];
-      terminado = true;
-      revelarTodo();
-      pintar();
-      mostrarResultado(true);
-    } else {
-      pintar();
-    }
+  function semilla(n) {                       // mezcla reproducible (mulberry32)
+    return function () { n |= 0; n = n + 0x6D2B79F5 | 0; var t = Math.imul(n ^ n >>> 15, 1 | n);
+      t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; };
+  }
+  function mezclar(arr, rnd) {
+    for (var i = arr.length - 1; i > 0; i--) { var j = Math.floor(rnd() * (i + 1)); var t = arr[i]; arr[i] = arr[j]; arr[j] = t; }
+    return arr;
+  }
+  function clave(palabras) { return palabras.slice().sort().join('|'); }
+  function comunes(a, b) {                     // cuántas palabras comparten (como multiconjunto)
+    var m = {}, n = 0; b.forEach(function (w) { m[w] = (m[w] || 0) + 1; });
+    a.forEach(function (w) { if (m[w] > 0) { m[w]--; n++; } });
+    return n;
   }
 
-  /* ------------------------------------------------------------ dibujado */
+  FG.iniciar({ json: 'data/categorias.json', clave: 'dias' }, function (entrada, ctx) {
+    var grupos = entrada.grupos;                 // 4 grupos: {dificultad, categoria, items[4]}
+    var tiles = [];                              // 16 fichas; el id es su posición (permite palabras repetidas)
+    grupos.forEach(function (g) { g.items.forEach(function (w) { tiles.push(w); }); });
 
-  function pintar() {
-    var cajaRes = document.getElementById('ag-resueltos');
-    cajaRes.innerHTML = '';
-    resueltos.forEach(function (dif) {
-      var g = grupoDe(dif);
-      var div = document.createElement('div');
-      div.className = 'ag-resuelto';
-      div.setAttribute('data-dif', dif);
-      div.innerHTML = '<div class="ag-resuelto__cat">' + escapar(g.categoria) + '</div>' +
-                      '<div class="ag-resuelto__items">' + g.items.map(escapar).join(', ') + '</div>';
-      cajaRes.appendChild(div);
-    });
-
-    var grilla = document.getElementById('ag-grilla');
-    grilla.innerHTML = '';
-    fichas.filter(function (f) { return resueltos.indexOf(f.dif) === -1; })
-          .forEach(function (f) {
-      var b = document.createElement('button');
-      b.type = 'button';
-      b.className = 'ag-ficha';
-      b.textContent = f.texto;
-      b.id = 'ag-ficha-' + f.id;
-      b.setAttribute('aria-pressed', seleccion.indexOf(f.id) !== -1 ? 'true' : 'false');
-      if (terminado) b.disabled = true;
-      else b.addEventListener('click', function () { alternar(f.id); });
-      grilla.appendChild(b);
-    });
-
-    var vidas = document.getElementById('ag-vidas');
-    vidas.innerHTML = 'Errores restantes: ';
-    for (var i = 0; i < ERRORES_MAX; i++) {
-      vidas.innerHTML += '<span class="ag-vida"' + (i < errores ? ' data-gastada' : '') + '></span>';
+    var estado = FG.estadoDeHoy(JUEGO, ctx.diaN);
+    if (!estado) {
+      var ids = tiles.map(function (_, i) { return i; });
+      estado = { dia: ctx.diaN, orden: mezclar(ids, semilla(ctx.diaN * 7919 + 13)), resueltos: [], errores: 0,
+                 intentos: [], filas: [], terminado: false, gano: false };
+      FG.guardar(JUEGO, 'hoy', estado);
     }
+    var sel = [];
+    var app = document.getElementById('app'), elRacha = document.getElementById('racha');
+    app.innerHTML = '<p class="fg-sub">Encontrá 4 grupos de 4 palabras con algo en común.</p>' +
+      '<div class="solved" id="solved"></div><div class="grid" id="grid"></div>' +
+      '<div class="vidas" id="vidas"></div>' +
+      '<div class="fg-actions" id="acciones"><button class="btn btn-ghost" id="bMezclar">Mezclar</button>' +
+      '<button class="btn btn-ghost" id="bQuitar">Deseleccionar</button><button class="btn btn-primary" id="bEnviar" disabled>Enviar</button></div>' +
+      '<div id="resultado"></div>';
+    var elSolved = document.getElementById('solved'), elGrid = document.getElementById('grid');
+    var bEnviar = document.getElementById('bEnviar');
 
-    var enviar = document.getElementById('ag-enviar');
-    enviar.disabled = terminado || seleccion.length !== 4;
-    enviar.classList.toggle('oculto', terminado);
-    document.querySelector('.ag-acciones').classList.toggle('oculto', terminado);
-  }
-
-  function alternar(id) {
-    if (terminado) return;
-    var i = seleccion.indexOf(id);
-    if (i !== -1) seleccion.splice(i, 1);
-    else if (seleccion.length < 4) seleccion.push(id);
-    else { FG.toast('Ya elegiste 4'); return; }
-    pintar();
-  }
-
-  /* ------------------------------------------------------------ jugada */
-
-  function enviar() {
-    if (terminado || seleccion.length !== 4) return;
-
-    /* Tras un error las fichas quedan seleccionadas, igual que en el original.
-       Si reenvía la misma combinación no le cobramos otra vida: solo avisamos. */
-    var firma = seleccion.slice().sort(function (a, b) { return a - b; }).join('-');
-    if (yaProbadas.indexOf(firma) !== -1) {
-      FG.toast('Esa combinación ya la probaste');
-      return;
+    function actualizarRacha() { elRacha.textContent = '🔥 ' + FG.rachaVigente(JUEGO, ctx.diaN); }
+    function guardar() { FG.guardar(JUEGO, 'hoy', estado); }
+    function grupoHTML(gi, revelado) {
+      var g = grupos[gi];
+      return '<div class="grupo lvl-' + g.dificultad + (revelado ? ' revelado' : '') + '"><b>' + FG.esc(g.categoria) + '</b><span>' +
+        g.items.map(FG.esc).join(', ') + '</span></div>';
     }
-    yaProbadas.push(firma);
-
-    var elegidas = seleccion.map(fichaPorId);
-    var difs = elegidas.map(function (f) { return f.dif; });
-    historial.push(difs.slice());
-
-    var unica = difs.filter(function (d, i) { return difs.indexOf(d) === i; });
-
-    if (unica.length === 1) {
-      resueltos.push(unica[0]);
-      seleccion = [];
-      if (resueltos.length === 4) {
-        terminar(true);
-      } else {
-        FG.toast(nombreDif(unica[0]) + ': ¡correcto!');
-        pintar();
-        guardarParcial();
+    function pintar() {
+      elSolved.innerHTML = estado.resueltos.map(function (gi) { return grupoHTML(gi, false); }).join('');
+      if (estado.terminado && !estado.gano) {      // derrota: se muestran los grupos que faltaban
+        var faltan = [0, 1, 2, 3].filter(function (g) { return estado.resueltos.indexOf(g) < 0; });
+        faltan.sort(function (a, b) { return ORDEN_NIVEL.indexOf(grupos[a].dificultad) - ORDEN_NIVEL.indexOf(grupos[b].dificultad); });
+        elSolved.innerHTML += faltan.map(function (g) { return grupoHTML(g, true); }).join('');
       }
-      return;
-    }
-
-    errores++;
-    /* Igual que en el original: avisamos cuando le erró por una sola ficha. */
-    var mayor = Math.max.apply(null, unica.map(function (d) {
-      return difs.filter(function (x) { return x === d; }).length;
-    }));
-    sacudirSeleccion();
-    FG.toast(mayor === 3 ? 'Te falta una…' : 'No es por ahí');
-
-    if (errores >= ERRORES_MAX) {
-      revelarTodo();
-      terminar(false);
-    } else {
-      pintar();
-      guardarParcial();
-    }
-  }
-
-  function sacudirSeleccion() {
-    seleccion.forEach(function (id) {
-      var b = document.getElementById('ag-ficha-' + id);
-      if (!b) return;
-      b.classList.add('ag-ficha--error');
-      setTimeout(function () { b.classList.remove('ag-ficha--error'); }, 400);
-    });
-  }
-
-  function revelarTodo() {
-    ORDEN.forEach(function (d) { if (resueltos.indexOf(d) === -1) resueltos.push(d); });
-  }
-
-  function terminar(gano) {
-    terminado = true;
-    seleccion = [];
-    pintar();
-    FG.guardarEstado(JUEGO, { historial: historial, resueltos: resueltos, errores: errores,
-                              yaProbadas: yaProbadas, gano: gano });
-    FG.registrarPartida(JUEGO, gano);
-    mostrarResultado(false);
-  }
-
-  function guardarParcial() {
-    FG.guardarEstado(JUEGO, { historial: historial, resueltos: resueltos, errores: errores,
-                              yaProbadas: yaProbadas, gano: false });
-  }
-
-  /* ------------------------------------------------------------ resultado */
-
-  function mostrarResultado(esRepaso) {
-    var gano = errores < ERRORES_MAX;
-    var est = FG.cargarEstado(JUEGO);
-
-    var panel = document.createElement('section');
-    panel.className = 'fx-resultado';
-    panel.innerHTML =
-      '<h2>' + (gano ? '¡Los cuatro grupos!' : 'Se te acabaron los errores') + '</h2>' +
-      '<p style="margin:0;color:var(--md-texto-suave);font-size:.9rem">' +
-        (gano ? 'Con ' + errores + (errores === 1 ? ' error.' : ' errores.')
-              : 'Arriba quedan las 4 categorías de hoy.') + '</p>' +
-      '<div class="fx-resultado__stats">' +
-        stat(est.racha, 'Racha') + stat(est.maxRacha, 'Mejor racha') + stat(est.jugados, 'Jugadas') +
-      '</div>' +
-      '<button class="fx-btn" id="ag-compartir">Compartir resultado</button>' +
-      '<a class="fx-btn fx-btn--secundario" href="index.html">Ver los otros juegos</a>' +
-      '<p class="fx-proximo">' + (esRepaso ? 'Ya jugaste hoy. ' : '') +
-        'Desafío nuevo en ' + FG.faltaParaElProximo() + '.</p>';
-
-    app.appendChild(panel);
-    panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-
-    document.getElementById('ag-compartir').addEventListener('click', function () {
-      /* Cada fila es un envío: los colores muestran de qué grupo era cada
-         ficha elegida, sin decir nunca cuál era la categoría. */
-      var grilla = historial.map(function (difs) {
-        return difs.map(function (d) { return EMOJI[d]; }).join('');
+      elGrid.innerHTML = '';
+      restantes().forEach(function (id) {
+        var b = document.createElement('button');
+        b.className = 'item' + (sel.indexOf(id) >= 0 ? ' sel' : '');
+        b.textContent = tiles[id]; b.dataset.id = id;
+        b.addEventListener('click', function () { alternar(id); });
+        elGrid.appendChild(b);
       });
-      FG.compartirResultado(
-        FG.armarTextoCompartir('Agrupá', numeroDia, gano ? errores + '/' + ERRORES_MAX + ' errores' : 'No salió', grilla),
-        function (m) { FG.toast(m); }
-      );
-    });
-  }
+      elGrid.style.display = (estado.terminado || restantes().length === 0) ? 'none' : '';
+      var v = '';
+      for (var i = 0; i < MAX_ERRORES; i++) v += '<span class="vida' + (i < MAX_ERRORES - estado.errores ? '' : ' off') + '"></span>';
+      document.getElementById('vidas').innerHTML = 'Intentos restantes ' + v;
+      bEnviar.disabled = sel.length !== 4 || estado.terminado;
+      document.getElementById('acciones').style.display = estado.terminado ? 'none' : '';
+    }
+    function restantes() {                       // fichas que siguen en el tablero, en el orden mezclado
+      var quitadas = {};
+      estado.resueltos.forEach(function (gi) { (estado.fichasResueltas || {})[gi] && estado.fichasResueltas[gi].forEach(function (id) { quitadas[id] = 1; }); });
+      return estado.orden.filter(function (id) { return !quitadas[id]; });
+    }
+    function alternar(id) {
+      if (estado.terminado) return;
+      var i = sel.indexOf(id);
+      if (i >= 0) sel.splice(i, 1); else if (sel.length < 4) sel.push(id);
+      pintar();
+    }
+    function enviar() {
+      if (sel.length !== 4 || estado.terminado) return;
+      var palabras = sel.map(function (id) { return tiles[id]; }), k = clave(palabras);
+      if (estado.intentos.indexOf(k) >= 0) { FG.toast('Esa combinación ya la probaste'); return; }
+      var libres = [0, 1, 2, 3].filter(function (g) { return estado.resueltos.indexOf(g) < 0; });
+      var acierto = null, cerca = false;
+      libres.forEach(function (g) {
+        var n = comunes(palabras, grupos[g].items);
+        if (n === 4) acierto = g; else if (n === 3) cerca = true;
+      });
+      estado.intentos.push(k);
+      if (acierto !== null) {
+        estado.filas.push(EMOJI[grupos[acierto].dificultad].repeat(4));
+        estado.fichasResueltas = estado.fichasResueltas || {};
+        estado.fichasResueltas[acierto] = sel.slice();
+        estado.resueltos.push(acierto);
+        sel = [];
+        if (estado.resueltos.length === 4) fin(true);
+      } else {
+        // fila de emojis: color del grupo al que pertenece cada palabra elegida (no revela cuál es la respuesta)
+        estado.filas.push(palabras.map(function (w) {
+          for (var g = 0; g < 4; g++) if (grupos[g].items.indexOf(w) >= 0) return EMOJI[grupos[g].dificultad];
+          return '⬛';
+        }).join(''));
+        estado.errores++;
+        elGrid.classList.remove('shake'); void elGrid.offsetWidth; elGrid.classList.add('shake');
+        FG.toast(cerca ? '¡Te falta una!' : 'Ese grupo no es');
+        if (estado.errores >= MAX_ERRORES) fin(false);
+      }
+      guardar(); pintar();
+    }
+    function fin(gano) {
+      estado.terminado = true; estado.gano = gano; sel = [];
+      FG.registrarFin(JUEGO, ctx.diaN, gano); guardar(); actualizarRacha();
+      setTimeout(mostrarResultado, 250);
+    }
+    function textoCompartir() {
+      return 'FUXIA GAMES · Agrupá #' + ctx.diaN + ' ' + (estado.gano ? (estado.errores === 0 ? '¡perfecto!' : estado.errores + ' error' + (estado.errores > 1 ? 'es' : '')) : 'X') +
+        '\n' + estado.filas.join('\n');
+    }
+    function mostrarResultado() {
+      var el = document.getElementById('resultado');
+      el.innerHTML = '<div class="fg-result"><h2 class="gradient-text">' + (estado.gano ? (estado.errores === 0 ? '¡Perfecto!' : '¡Lo lograste!') : 'Se acabaron los intentos') + '</h2>' +
+        '<p>' + (estado.gano ? 'Errores: ' + estado.errores + ' de ' + MAX_ERRORES + '.' : 'Estos eran los grupos que faltaban.') + '</p>' +
+        '<div class="fg-grid-share">' + FG.esc(estado.filas.join('\n')) + '</div>' +
+        '<div class="fg-actions"><button class="btn btn-primary" id="share">Compartir resultado</button></div>' +
+        '<p class="fg-next">Nuevo desafío en <b id="cuenta"></b></p></div>';
+      document.getElementById('share').onclick = function () { FG.compartir(textoCompartir()); };
+      FG.cuentaRegresiva(document.getElementById('cuenta'));
+      pintar();
+    }
 
-  /* ------------------------------------------------------------ helpers */
+    document.getElementById('bMezclar').onclick = function () {
+      mezclar(estado.orden, Math.random); guardar(); pintar();
+    };
+    document.getElementById('bQuitar').onclick = function () { sel = []; pintar(); };
+    bEnviar.onclick = enviar;
 
-  function grupoDe(dif) {
-    for (var i = 0; i < grupos.length; i++) if (grupos[i].dificultad === dif) return grupos[i];
-    return null;
-  }
-
-  function fichaPorId(id) {
-    for (var i = 0; i < fichas.length; i++) if (fichas[i].id === id) return fichas[i];
-    return null;
-  }
-
-  function nombreDif(d) {
-    return { amarillo: 'Amarillo', verde: 'Verde', azul: 'Azul', morado: 'Morado' }[d] || d;
-  }
-
-  function stat(valor, rotulo) {
-    return '<span class="fx-stat"><span class="fx-stat__num">' + valor +
-           '</span><span class="fx-stat__rotulo">' + rotulo + '</span></span>';
-  }
-
-  function escapar(s) {
-    return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-  }
+    pintar(); actualizarRacha();
+    if (estado.terminado) mostrarResultado();
+  });
 })();
 </script>
-
 </body>
 </html>

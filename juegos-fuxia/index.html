@@ -1,104 +1,113 @@
 <!DOCTYPE html>
-<html lang="es-AR">
+<html lang="es">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Juegos · Fuxia Games para Manso Diario</title>
-<meta name="description" content="Tres juegos nuevos todos los días: Palabra del Día, Agrupá y Trivia Cuyana. Temática de San Juan y Cuyo.">
-<link rel="icon" href="assets/logo-fuxia-games.svg" type="image/svg+xml">
+<title>Juegos · Manso Diario · Fuxia Games</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@500;600;700&family=Barlow+Condensed:ital,wght@0,600;0,700;1,700;1,800&family=Merriweather:wght@700;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="shared.css">
+<style>
+  .ticker {
+    background: var(--md-orange); color: #1d1d1d; display: flex; align-items: center; gap: 12px;
+    padding: 8px 14px; font-weight: 700; font-size: .95rem;
+  }
+  .ticker .tag {
+    background: var(--md-dark); color: #fff; font-family: var(--font-display); font-weight: 800; font-style: italic;
+    text-transform: uppercase; letter-spacing: .6px; font-size: .85rem; padding: 3px 9px; border-radius: 2px; white-space: nowrap;
+  }
+  .intro { margin: 0 0 14px; }
+  .intro h1 { font-family: var(--font-serif); font-weight: 900; font-size: 1.55rem; color: var(--md-dark); }
+  .intro p { color: var(--md-muted); margin-top: 6px; }
+
+  .cards { display: flex; flex-direction: column; gap: 12px; }
+  .card {
+    display: block; text-decoration: none; color: inherit; background: var(--md-card);
+    border: 1px solid var(--md-line); border-top: 4px solid var(--md-orange); padding: 14px 16px 14px;
+    transition: transform .12s, box-shadow .12s;
+  }
+  .card:hover { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(0,0,0,.12); }
+  .card h2 { font-family: var(--font-serif); font-weight: 900; font-size: 1.3rem; margin: 4px 0 6px; color: var(--md-dark); }
+  .card p { color: var(--md-muted); font-size: 1rem; line-height: 1.4; }
+  .card .pie { display: flex; align-items: center; justify-content: space-between; margin-top: 12px; gap: 8px; }
+  .estado { font-family: var(--font-display); font-weight: 600; font-size: .95rem; letter-spacing: .6px; text-transform: uppercase; color: var(--md-dim); }
+  .estado.hecho { color: var(--fg-ok); }
+  .pie .btn { padding: .45rem 1.1rem; }
+  .card:hover .btn { background: var(--md-dark); border-color: var(--md-dark); color: #fff; }
+
+  .foot {
+    display: flex; align-items: center; justify-content: center; gap: 10px; margin-top: 22px;
+    color: var(--md-dim); font-size: .85rem; text-align: left;
+  }
+  .foot img { width: 38px; height: 38px; border-radius: 4px; }
+  .foot a { color: var(--md-muted); }
+</style>
 </head>
 <body>
-
-<header class="fx-header">
-  <a class="fx-header__home" href="https://mansodiario.com" target="_top" rel="noopener"
-     aria-label="Ir a la portada de Manso Diario">
-    <img class="fx-header__logo" src="assets/logo-fuxia-games.svg" alt="Fuxia Games">
-  </a>
-  <span class="fx-header__fecha" id="fx-fecha"></span>
+<header class="fg-masthead">
+  <a class="fg-brand" href="https://mansodiario.com" target="_top" rel="noopener"
+     aria-label="Ir a la portada de Manso Diario"><span class="logo">MANSO<b>!</b>DIARIO</span><small>Juegos · San Juan · Argentina</small></a>
 </header>
+<div class="ticker"><span class="tag">Hoy</span><span id="hoy">Cargando…</span></div>
 
-<main class="fx-main fx-main--ancho">
-
-  <section class="fx-intro">
-    <h1>Tres juegos nuevos. Todos los días.</h1>
-    <p>Cuyo, San Juan y un poco de trampa. Jugá gratis, sin registrarte.</p>
-  </section>
-
-  <div class="fx-grilla-juegos">
-
-    <a class="fx-tarjeta" href="palabra-del-dia.html" data-juego="palabra">
-      <span class="fx-tarjeta__emojis" aria-hidden="true">⬜🟩⬜🟨⬜</span>
-      <h2 class="fx-tarjeta__titulo">Palabra del Día</h2>
-      <p class="fx-tarjeta__desc">Adiviná la palabra de 5 letras en 6 intentos.</p>
-      <span class="fx-tarjeta__estado" data-estado></span>
-      <span class="fx-btn" data-accion>Jugar →</span>
-    </a>
-
-    <a class="fx-tarjeta" href="agrupa.html" data-juego="agrupa">
-      <span class="fx-tarjeta__emojis" aria-hidden="true">🟨🟩🟦🟪</span>
-      <h2 class="fx-tarjeta__titulo">Agrupá</h2>
-      <p class="fx-tarjeta__desc">Encontrá los 4 grupos escondidos entre 16 palabras.</p>
-      <span class="fx-tarjeta__estado" data-estado></span>
-      <span class="fx-btn" data-accion>Jugar →</span>
-    </a>
-
-    <a class="fx-tarjeta" href="trivia-cuyana.html" data-juego="trivia">
-      <span class="fx-tarjeta__emojis" aria-hidden="true">❓🟩🟥🟩🟩</span>
-      <h2 class="fx-tarjeta__titulo">Trivia Cuyana</h2>
-      <p class="fx-tarjeta__desc">5 preguntas por día sobre San Juan y la región.</p>
-      <span class="fx-tarjeta__estado" data-estado></span>
-      <span class="fx-btn" data-accion>Jugar →</span>
-    </a>
-
+<div class="fg-wrap">
+  <div class="intro">
+    <h1>Tres desafíos nuevos cada día</h1>
+    <p>Jugá, compará tu racha y desafiá a tus amigos. Todo con tema Cuyo y San Juan.</p>
   </div>
 
-  <p class="fx-aviso oculto" id="fx-sin-storage">
-    Tu navegador no está guardando datos de esta página (modo privado o cookies
-    bloqueadas). Vas a poder jugar igual, pero no se guarda la racha.
-  </p>
+  <div class="cards">
+    <a class="card" href="palabra-del-dia.html" data-juego="palabra">
+      <span class="fg-kicker">Letras</span><h2>Palabra del Día</h2>
+      <p>Adiviná la palabra de 5 letras en 6 intentos.</p>
+      <div class="pie"><span class="estado" data-estado>Racha: 0 🔥</span><span class="btn btn-primary" data-boton>Jugar ▶</span></div>
+    </a>
+    <a class="card" href="agrupa.html" data-juego="agrupa">
+      <span class="fg-kicker">Lógica</span><h2>Agrupá</h2>
+      <p>16 palabras, 4 grupos escondidos. ¿Los encontrás sin equivocarte?</p>
+      <div class="pie"><span class="estado" data-estado>Racha: 0 🔥</span><span class="btn btn-primary" data-boton>Jugar ▶</span></div>
+    </a>
+    <a class="card" href="trivia-cuyana.html" data-juego="trivia">
+      <span class="fg-kicker">Cultura</span><h2>Trivia Cuyana</h2>
+      <p>5 preguntas sobre San Juan y Cuyo. Cuánto sabés de tu tierra.</p>
+      <div class="pie"><span class="estado" data-estado>Racha: 0 🔥</span><span class="btn btn-primary" data-boton>Jugar ▶</span></div>
+    </a>
+  </div>
 
-</main>
-
-<footer class="fx-footer">
-  <a href="https://instagram.com/fuxiagames" target="_blank" rel="noopener noreferrer">Fuxia Games</a> para <a href="https://mansodiario.com" target="_top" rel="noopener">Manso Diario</a>.<br>
-  Tu progreso se guarda solo en este navegador. Los juegos se renuevan a las 00:00 de San Juan.
-</footer>
-
-<div class="fx-toast" id="fx-toast" role="status" aria-live="polite"></div>
+  <div class="foot">
+    <a href="https://instagram.com/fuxiagames" target="_blank" rel="noopener noreferrer"
+       aria-label="Fuxia Games en Instagram"><img src="logo-fuxia-games.png" alt="Fuxia Games" width="38" height="38"></a>
+    <span>Un juego de <a href="https://instagram.com/fuxiagames" target="_blank" rel="noopener noreferrer"><b>FUXIA GAMES</b></a> para <a href="https://mansodiario.com" target="_blank" rel="noopener">mansodiario.com</a><br>Tu racha se guarda en este dispositivo.</span>
+  </div>
+</div>
 
 <script src="shared.js"></script>
 <script>
 (function () {
-  'use strict';
-  var FG = window.FuxiaGames;
-  FG.pintarCabecera();
-
-  if (!FG.hayAlmacenamiento()) {
-    document.getElementById('fx-sin-storage').classList.remove('oculto');
-  }
-
-  /* Cada tarjeta lee el localStorage de su juego para mostrar racha y si ya
-     jugó hoy. No hace falta cargar los JSON acá: el estado alcanza. */
-  Array.prototype.forEach.call(document.querySelectorAll('[data-juego]'), function (tarjeta) {
-    var est = FG.cargarEstado(tarjeta.getAttribute('data-juego'));
-    var zonaEstado = tarjeta.querySelector('[data-estado]');
-    var boton = tarjeta.querySelector('[data-accion]');
-    var partes = [];
-
-    if (est.jugadoHoy) {
-      partes.push('<span class="fx-chip fx-chip--jugado">✓ Jugado hoy</span>');
-      boton.textContent = 'Ver resultado →';
+  // El día 1 del ciclo sale de los datos (data/palabras.json), igual que en los juegos.
+  fetch('data/palabras.json', { cache: 'no-cache' }).then(function (r) { return r.json(); }).then(function (d) {
+    var diaN = FG.numeroDeDia(d.dia1), hoy = document.getElementById('hoy');
+    if (diaN < 1) {
+      var p = d.dia1.split('-');
+      hoy.textContent = 'Arrancamos el ' + parseInt(p[2], 10) + '/' + parseInt(p[1], 10) + ' con los juegos de Manso Diario';
+      return;
     }
-    if (est.racha > 0) {
-      partes.push('🔥 Racha: ' + est.racha + (est.racha === 1 ? ' día' : ' días'));
-    } else if (!est.jugadoHoy) {
-      partes.push('Sin jugar todavía');
-    }
-    zonaEstado.innerHTML = partes.join(' ');
-  });
+    hoy.textContent = FG.fechaLarga() + ' · desafío #' + diaN + ' · nuevos juegos a las 00:00';
+    Array.prototype.forEach.call(document.querySelectorAll('.card'), function (card) {
+      var j = card.dataset.juego, h = FG.estadoDeHoy(j, diaN), racha = FG.rachaVigente(j, diaN);
+      var est = card.querySelector('[data-estado]'), btn = card.querySelector('[data-boton]');
+      if (h && h.terminado) {
+        var txt = j === 'trivia' ? '✔ Completada hoy' : h.gano ? '✔ Resuelto hoy' : 'Hoy no salió';
+        est.textContent = txt + ' · 🔥 ' + racha; est.classList.add('hecho');
+        btn.textContent = 'Ver resultado'; btn.className = 'btn btn-ghost';
+      } else {
+        est.textContent = h ? 'En curso · 🔥 ' + racha : 'Racha: ' + racha + ' 🔥';
+        btn.textContent = h ? 'Seguir ▶' : 'Jugar ▶';
+      }
+    });
+  }).catch(function () { document.getElementById('hoy').textContent = 'Juegos diarios'; });
 })();
 </script>
-
 </body>
 </html>

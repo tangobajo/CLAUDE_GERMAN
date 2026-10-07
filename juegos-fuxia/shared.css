@@ -1,432 +1,148 @@
-/* ==========================================================================
-   Fuxia Games para Manso Diario — estilos comunes
-   Sin dependencias externas: no hay @import, ni fuentes de Google, ni CDNs.
-   ========================================================================== */
+/* FUXIA GAMES · Juegos de Manso Diario — estilos comunes
+   Estética tomada de mansodiario.com: franja y acentos naranja (#e76f2e), barras gris carbón (#252525),
+   fondo gris claro (#e7e7e5), tarjetas blancas, títulos en Barlow Condensed cursiva y notas en Merriweather.
+   Las fuentes se cargan con <link> a Google Fonts en cada HTML; si no cargan, cae al stack del sistema. */
 
 :root {
+  --md-orange: #e76f2e;
+  --md-orange-soft: rgba(231, 111, 46, .16);
+  --md-dark: #252525;
+  --md-bg: #e7e7e5;
+  --md-card: #ffffff;
+  --md-line: #d2d2d0;
+  --md-text: #252525;
+  --md-muted: #5f5f5c;
+  --md-dim: #8a8a87;
 
-  /* ------------------------------------------------------------------------
-     PALETA DE MANSO DIARIO
-     Estos son los únicos colores que hay que tocar para alinear los juegos
-     con el diario. Salieron de muestrear la home: el naranja del header, la
-     tinta de los titulares y el gris del fondo de página.
-     ---------------------------------------------------------------------- */
-  --md-naranja:       #E76F2E;   /* acento de marca: botones, rachas, foco */
-  --md-naranja-hover: #D15E1F;
-  --md-naranja-suave: rgba(231, 111, 46, .13);
-  --md-naranja-texto: #A8450E;   /* el naranja oscurecido, para texto y links:
-                                    el naranja de marca sobre fondo claro da 2.5:1
-                                    y no llega al mínimo de contraste */
-  --md-tinta:         #252525;   /* titulares, pills, texto principal */
-  --md-texto-suave:   #4A4A4A;   /* bajadas, texto secundario */
-  --md-fondo:         #E7E7E5;   /* fondo de página del diario */
-  --md-superficie:    #FFFFFF;   /* tarjetas y paneles */
-  --md-superficie-2:  #F0F0EE;   /* hover, teclado, celdas */
-  --md-borde:         #D6D6D4;   /* divisores */
-  --md-borde-fuerte:  #B9B9B6;
+  /* estados de juego */
+  --fg-ok: #2f9e5b;        /* letra bien / respuesta correcta */
+  --fg-near: #f0be2d;      /* letra en otro lugar */
+  --fg-miss: #8b8b88;      /* letra que no está */
+  --fg-error: #d64545;
 
-  /* ------------------------------------------------------------------------
-     COLORES DE JUEGO
-     No son de Manso Diario: son la convención de Wordle y Connections. Salvo
-     que haya una razón fuerte, conviene dejarlos — el lector ya los tiene
-     aprendidos de esos juegos y los lee sin pensar.
-     ---------------------------------------------------------------------- */
-  --juego-correcta:   #6AAA64;   /* Wordle: letra en su lugar */
-  --juego-presente:   #C9B458;   /* Wordle: letra en otra posición */
-  --juego-ausente:    #787C7E;   /* Wordle: letra que no está */
-  --juego-tecla:      #D3D6DA;   /* Wordle: tecla sin usar */
-  --juego-amarillo:   #F9DF6D;   /* Connections: grupo más fácil */
-  --juego-verde:      #A0C35A;
-  --juego-azul:       #B0C4EF;
-  --juego-morado:     #BA81C5;   /* Connections: el que tiene trampa */
-  --juego-error:      #C0392B;   /* respuesta incorrecta en Trivia */
+  /* niveles de Agrupá (convención Connections) */
+  --lvl-amarillo: #f2cb4b;
+  --lvl-verde: #79c47f;
+  --lvl-azul: #6aa7dc;
+  --lvl-morado: #b07cd1;
 
-  --md-radio:  10px;
-  --md-sombra: 0 1px 3px rgba(37, 37, 37, .10);
-
-  /* El titular del diario es una sans muy pesada, así que los títulos van en
-     sans bold y no en serif: una serif al lado de esos titulares desentona. */
-  --md-titulo: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  --md-texto-fuente: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --font-display: 'Barlow Condensed', 'Barlow', 'Arial Narrow', sans-serif;
+  --font-serif: 'Merriweather', Georgia, 'Times New Roman', serif;
+  --font-base: 'Barlow', -apple-system, 'Segoe UI', Roboto, sans-serif;
 }
 
-* { box-sizing: border-box; }
+* { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
 
 html, body {
-  margin: 0;
-  padding: 0;
-  background: var(--md-fondo);
-  color: var(--md-tinta);
-  font-family: var(--md-texto-fuente);
-  -webkit-text-size-adjust: 100%;
+  margin: 0; padding: 0; min-height: 100%;
+  background: var(--md-bg); color: var(--md-text);
+  font-family: var(--font-base); font-weight: 500; font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3 { margin: 0; line-height: 1.15; }
+p { margin: 0; }
+button { font-family: inherit; }
+
+/* ── Cabecera tipo diario: marca + barra de título ── */
+.fg-masthead {
+  background: var(--md-dark); color: #fff;
+  display: flex; align-items: center; justify-content: space-between; gap: 10px;
+  padding: 10px 14px;
+}
+.fg-brand { text-decoration: none; color: #fff; display: block; line-height: 1; }
+.fg-brand .logo {
+  display: block; font-family: var(--font-display); font-weight: 800; font-style: italic;
+  font-size: 1.9rem; letter-spacing: -.2px; text-transform: uppercase;
+}
+.fg-brand .logo b { color: var(--md-orange); font-weight: 800; }
+.fg-brand small {
+  display: block; margin-top: 3px; color: var(--md-orange); font-family: var(--font-display);
+  font-weight: 700; font-style: italic; font-size: .72rem; letter-spacing: 1.6px; text-transform: uppercase;
+}
+.fg-streak {
+  font-family: var(--font-display); font-weight: 700; font-size: 1.1rem; letter-spacing: .5px;
+  background: var(--md-orange); color: #1d1d1d; padding: 4px 11px; border-radius: var(--radius-sm); white-space: nowrap;
+}
+.fg-titlebar {
+  background: var(--md-dark); border-bottom: 3px solid var(--md-orange); border-top: 1px solid #3a3a3a;
+  display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 9px 14px;
+}
+.fg-titlebar h1 {
+  font-family: var(--font-display); font-weight: 800; font-style: italic; text-transform: uppercase;
+  font-size: 1.35rem; color: #fff; letter-spacing: .3px;
+}
+.fg-titlebar h1 b { color: var(--md-orange); }
+.fg-back {
+  color: #fff; text-decoration: none; font-family: var(--font-display); font-weight: 700; font-size: .95rem;
+  letter-spacing: 1px; text-transform: uppercase; opacity: .85;
+}
+.fg-back:hover { opacity: 1; color: var(--md-orange); }
+
+.fg-wrap { max-width: 520px; margin: 0 auto; padding: 16px 14px 28px; }
+.fg-sub { text-align: center; color: var(--md-muted); font-size: .98rem; margin: 0 0 14px; }
+
+/* ── Etiqueta de sección (como "SINDICAL" / "CULTURA") ── */
+.fg-kicker {
+  font-family: var(--font-display); font-weight: 700; font-size: .9rem; letter-spacing: 1.2px;
+  text-transform: uppercase; color: var(--md-orange);
 }
 
-body {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+/* ── Botones ── */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: .4rem;
+  border: 2px solid var(--md-dark); border-radius: var(--radius-sm); padding: .65rem 1.2rem;
+  font-family: var(--font-display); font-size: 1.05rem; font-weight: 700; letter-spacing: .8px; text-transform: uppercase;
+  cursor: pointer; color: var(--md-dark); background: #fff; text-decoration: none;
+  transition: transform .1s, background .12s, color .12s;
 }
+.btn:hover { background: var(--md-dark); color: #fff; }
+.btn:active { transform: translateY(1px); }
+.btn:disabled { opacity: .4; cursor: not-allowed; pointer-events: none; }
+.btn-primary { background: var(--md-orange); border-color: var(--md-orange); color: #1d1d1d; }
+.btn-primary:hover { background: var(--md-dark); border-color: var(--md-dark); color: #fff; }
+.btn-cyan { background: var(--md-dark); border-color: var(--md-dark); color: #fff; }   /* "Leer la nota" */
+.btn-cyan:hover { background: var(--md-orange); border-color: var(--md-orange); color: #1d1d1d; }
+.btn-ghost { background: transparent; }
+.btn-block { width: 100%; }
+.fg-actions { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-top: 14px; }
 
-/* ---------- Cabecera ----------
-   Deliberadamente sobria: el diario ya tiene su propia banda naranja arriba
-   del iframe, y repetirla acá se leería como una segunda barra de navegación. */
-
-.fx-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  padding: 11px 16px;
-  background: var(--md-superficie);
-  border-bottom: 2px solid var(--md-tinta);
+/* ── Panel de resultado ── */
+.fg-result {
+  background: var(--md-card); border: 1px solid var(--md-line); border-top: 4px solid var(--md-orange);
+  padding: 18px 16px; margin-top: 16px; text-align: center;
+  animation: fg-pop .25s ease-out;
 }
+.fg-result h2 { font-family: var(--font-serif); font-weight: 900; font-size: 1.4rem; margin-bottom: 6px; color: var(--md-dark); }
+.fg-result p { color: var(--md-muted); font-size: 1rem; }
+.fg-result .fg-grid-share { font-size: 1.25rem; line-height: 1.35; margin: 12px 0 4px; white-space: pre; letter-spacing: 1px; }
+.fg-next { margin-top: 14px; font-size: .9rem; color: var(--md-dim); text-transform: uppercase; letter-spacing: .8px; font-family: var(--font-display); font-weight: 600; }
+.fg-next b { color: var(--md-orange); font-variant-numeric: tabular-nums; font-size: 1.1rem; }
 
-.fx-header__marca {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  min-width: 0;
+/* ── Aviso / toast ── */
+.fg-toast {
+  position: fixed; left: 50%; top: 14px; transform: translate(-50%, -80px);
+  background: var(--md-dark); color: #fff; font-weight: 700; padding: 10px 16px; border-radius: var(--radius-sm);
+  border-left: 4px solid var(--md-orange);
+  font-size: .95rem; z-index: 50; transition: transform .25s ease-out;
+  max-width: 90vw; text-align: center; box-shadow: 0 6px 20px rgba(0,0,0,.3);
 }
+.fg-toast.show { transform: translate(-50%, 0); }
 
-/* El logo lleva a la portada del diario, no a la de juegos: para volver a los
-   juegos está el "← Juegos" de la derecha. El target="_top" del HTML es lo que
-   hace que salga del iframe — sin eso, Manso Diario se cargaría entero adentro
-   de la cajita embebida en la nota. */
-.fx-header__home {
-  display: inline-flex;
-  align-items: center;
-  flex: 0 0 auto;
-  text-decoration: none;
-  color: inherit;
-  border-radius: 6px;
-  position: relative;
+.fg-error-box {
+  background: var(--md-card); border: 1px solid var(--md-line); border-top: 4px solid var(--md-orange);
+  padding: 18px 16px; color: var(--md-muted); text-align: center; margin-top: 20px;
 }
+.fg-error-box h2 { font-family: var(--font-serif); font-weight: 900; color: var(--md-dark); }
 
-/* El logo dibuja 30px pero el dedo necesita 44. Lo agrandamos con un
-   pseudo-elemento invisible en vez de con padding, así el área de toque crece
-   sin correr el logo de lugar ni empujar el título. */
-.fx-header__home::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 44px;
-  height: 44px;
-  transform: translate(-50%, -50%);
+/* utilidad: se mantiene el nombre de la clase por compatibilidad */
+.gradient-text { color: var(--md-dark); }
+
+@keyframes fg-pop { from { transform: translateY(6px); opacity: 0; } to { transform: none; opacity: 1; } }
+@keyframes fg-shake {
+  0%,100% { transform: translateX(0); } 20%,60% { transform: translateX(-7px); } 40%,80% { transform: translateX(7px); }
 }
-
-.fx-header__home:hover { opacity: .75; }
-
-.fx-header__home:focus-visible {
-  outline: 3px solid var(--md-naranja);
-  outline-offset: 3px;
-}
-
-.fx-header__logo { height: 34px; width: auto; display: block; }
-.fx-header__logo--icono { height: 30px; }
-
-.fx-header__juego {
-  font-family: var(--md-titulo);
-  font-size: 1.05rem;
-  font-weight: 800;
-  letter-spacing: -.2px;
-  margin: 0;
-  line-height: 1.15;
-}
-
-.fx-header__fecha {
-  font-size: .76rem;
-  color: var(--md-texto-suave);
-  white-space: nowrap;
-}
-
-.fx-volver {
-  font-size: .8rem;
-  color: var(--md-tinta);
-  text-decoration: none;
-  border: 1px solid var(--md-borde-fuerte);
-  border-radius: 999px;
-  padding: 5px 12px;
-  white-space: nowrap;
-}
-
-.fx-volver:hover { border-color: var(--md-naranja); color: var(--md-naranja-texto); }
-
-/* ---------- Layout ---------- */
-
-.fx-main {
-  flex: 1;
-  width: 100%;
-  max-width: 560px;
-  margin: 0 auto;
-  padding: 16px;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.fx-main--ancho { max-width: 860px; }
-
-.fx-intro { text-align: center; }
-
-.fx-intro h1 {
-  font-family: var(--md-titulo);
-  font-size: 1.75rem;
-  font-weight: 800;
-  letter-spacing: -.6px;
-  line-height: 1.12;
-  margin: 0 0 6px;
-}
-
-.fx-intro p {
-  margin: 0;
-  color: var(--md-texto-suave);
-  font-size: .95rem;
-  line-height: 1.5;
-}
-
-/* ---------- Tarjetas de la portada ---------- */
-
-.fx-grilla-juegos {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 14px;
-}
-
-.fx-tarjeta {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  background: var(--md-superficie);
-  border: 1px solid var(--md-borde);
-  border-radius: var(--md-radio);
-  padding: 18px;
-  text-decoration: none;
-  color: inherit;
-  box-shadow: var(--md-sombra);
-  transition: border-color .15s, transform .15s;
-}
-
-.fx-tarjeta:hover { border-color: var(--md-naranja); transform: translateY(-2px); }
-
-.fx-tarjeta__emojis { font-size: 1.25rem; letter-spacing: 2px; line-height: 1; }
-
-.fx-tarjeta__titulo {
-  font-family: var(--md-titulo);
-  font-size: 1.25rem;
-  font-weight: 800;
-  letter-spacing: -.3px;
-  margin: 0;
-}
-
-.fx-tarjeta__desc {
-  margin: 0;
-  color: var(--md-texto-suave);
-  font-size: .9rem;
-  line-height: 1.45;
-  flex: 1;
-}
-
-.fx-tarjeta__estado {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  flex-wrap: wrap;
-  font-size: .82rem;
-  color: var(--md-texto-suave);
-  min-height: 24px;
-}
-
-.fx-chip {
-  display: inline-block;
-  border-radius: 999px;
-  padding: 3px 10px;
-  font-size: .74rem;
-  font-weight: 700;
-  border: 1px solid var(--md-borde-fuerte);
-}
-
-/* El chip "jugado hoy" copia el pill de categoría del diario: fondo tinta,
-   texto blanco, versalitas. */
-.fx-chip--jugado {
-  background: var(--md-tinta);
-  border-color: var(--md-tinta);
-  color: #fff;
-  letter-spacing: .4px;
-}
-
-/* ---------- Botones ---------- */
-
-.fx-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  width: 100%;
-  border: 1px solid var(--md-naranja);
-  border-radius: 8px;
-  padding: 12px 16px;
-  background: var(--md-naranja);
-  color: var(--md-tinta);
-  font-family: inherit;
-  font-size: .95rem;
-  font-weight: 700;
-  cursor: pointer;
-  text-decoration: none;
-  text-align: center;
-}
-
-.fx-btn:hover { background: var(--md-naranja-hover); border-color: var(--md-naranja-hover); }
-/* Deshabilitado va a gris, no a naranja translucido: un naranja al 40% se
-   sigue leyendo como boton activo. */
-.fx-btn:disabled {
-  background: var(--md-borde);
-  border-color: var(--md-borde);
-  color: var(--md-texto-suave);
-  cursor: not-allowed;
-}
-
-.fx-btn--secundario {
-  background: var(--md-superficie);
-  border-color: var(--md-borde-fuerte);
-  color: var(--md-tinta);
-  font-weight: 600;
-}
-
-.fx-btn--secundario:hover {
-  background: var(--md-superficie-2);
-  border-color: var(--md-naranja);
-  color: var(--md-naranja-texto);
-}
-
-.fx-btn--auto { width: auto; }
-
-/* Foco visible con el naranja de marca, para teclado y lectores de pantalla. */
-.fx-btn:focus-visible,
-.fx-volver:focus-visible,
-.fx-tarjeta:focus-visible,
-button:focus-visible {
-  outline: 3px solid var(--md-naranja);
-  outline-offset: 2px;
-}
-
-/* ---------- Mensajes ---------- */
-
-.fx-aviso {
-  border: 1px solid var(--md-borde);
-  border-left: 3px solid var(--md-naranja);
-  border-radius: 6px;
-  background: var(--md-superficie);
-  padding: 12px 14px;
-  font-size: .88rem;
-  line-height: 1.5;
-  color: var(--md-texto-suave);
-}
-
-.fx-aviso--error { border-left-color: var(--juego-error); }
-
-.fx-toast {
-  position: fixed;
-  left: 50%;
-  bottom: 24px;
-  transform: translateX(-50%) translateY(12px);
-  background: var(--md-tinta);
-  color: #fff;
-  border-radius: 999px;
-  padding: 10px 18px;
-  font-size: .85rem;
-  font-weight: 600;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity .2s, transform .2s;
-  z-index: 50;
-  box-shadow: 0 4px 14px rgba(37, 37, 37, .25);
-}
-
-.fx-toast.visible { opacity: 1; transform: translateX(-50%) translateY(0); }
-
-/* ---------- Panel de resultado ---------- */
-
-.fx-resultado {
-  background: var(--md-superficie);
-  border: 1px solid var(--md-borde);
-  border-radius: var(--md-radio);
-  box-shadow: var(--md-sombra);
-  padding: 18px;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.fx-resultado h2 {
-  font-family: var(--md-titulo);
-  font-size: 1.35rem;
-  font-weight: 800;
-  letter-spacing: -.3px;
-  margin: 0;
-}
-
-.fx-resultado__grilla {
-  font-size: 1.15rem;
-  line-height: 1.35;
-  letter-spacing: 3px;
-  white-space: pre;
-  margin: 0;
-}
-
-.fx-resultado__stats {
-  display: flex;
-  justify-content: center;
-  gap: 22px;
-  flex-wrap: wrap;
-}
-
-.fx-stat { display: flex; flex-direction: column; gap: 2px; }
-
-.fx-stat__num {
-  font-size: 1.55rem;
-  font-weight: 800;
-  font-family: var(--md-titulo);
-  letter-spacing: -.5px;
-}
-
-.fx-stat__rotulo {
-  font-size: .7rem;
-  color: var(--md-texto-suave);
-  text-transform: uppercase;
-  letter-spacing: .7px;
-}
-
-.fx-proximo { font-size: .82rem; color: var(--md-texto-suave); margin: 0; }
-
-/* ---------- Pie ---------- */
-
-.fx-footer {
-  padding: 18px 16px 26px;
-  text-align: center;
-  font-size: .76rem;
-  line-height: 1.6;
-  color: var(--md-texto-suave);
-  border-top: 1px solid var(--md-borde);
-}
-
-.fx-footer a { color: var(--md-naranja-texto); }
-
-/* ---------- Utilidades ---------- */
-
-.oculto { display: none !important; }
-
-.fx-sr {
-  position: absolute;
-  width: 1px; height: 1px;
-  padding: 0; margin: -1px;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
-  white-space: nowrap;
-  border: 0;
-}
-
 @media (prefers-reduced-motion: reduce) {
   * { animation: none !important; transition: none !important; }
 }
