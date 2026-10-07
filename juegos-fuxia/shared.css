@@ -85,9 +85,41 @@ body {
   display: flex;
   align-items: center;
   gap: 10px;
+  min-width: 0;
+}
+
+/* El logo lleva a la portada del diario, no a la de juegos: para volver a los
+   juegos está el "← Juegos" de la derecha. El target="_top" del HTML es lo que
+   hace que salga del iframe — sin eso, Manso Diario se cargaría entero adentro
+   de la cajita embebida en la nota. */
+.fx-header__home {
+  display: inline-flex;
+  align-items: center;
+  flex: 0 0 auto;
   text-decoration: none;
   color: inherit;
-  min-width: 0;
+  border-radius: 6px;
+  position: relative;
+}
+
+/* El logo dibuja 30px pero el dedo necesita 44. Lo agrandamos con un
+   pseudo-elemento invisible en vez de con padding, así el área de toque crece
+   sin correr el logo de lugar ni empujar el título. */
+.fx-header__home::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 44px;
+  height: 44px;
+  transform: translate(-50%, -50%);
+}
+
+.fx-header__home:hover { opacity: .75; }
+
+.fx-header__home:focus-visible {
+  outline: 3px solid var(--md-naranja);
+  outline-offset: 3px;
 }
 
 .fx-header__logo { height: 34px; width: auto; display: block; }

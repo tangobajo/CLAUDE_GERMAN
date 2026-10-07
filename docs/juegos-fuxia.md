@@ -405,6 +405,37 @@ Cada juego es un archivo independiente y se embebe solo. Creá una página de Wo
         loading="lazy"></iframe>
 ```
 
+## 6.1 Cómo navega el lector
+
+Dentro de los juegos hay dos clases de link y se comportan distinto a propósito:
+
+| Elemento | A dónde va | Sale del iframe |
+|---|---|---|
+| El logo de la cabecera | portada de **Manso Diario** | sí (`target="_top"`) |
+| "Manso Diario" en el pie | portada de **Manso Diario** | sí (`target="_top"`) |
+| "← Juegos" | portada de **juegos** (`index.html`) | no |
+| "Ver los otros juegos" | portada de **juegos** (`index.html`) | no |
+| "Leer la nota" (Trivia) | la nota que diga el JSON | pestaña nueva (`target="_blank"`) |
+
+El `target="_top"` no es decorativo: **sin eso, al tocar el logo Manso Diario se cargaría
+entero adentro del recuadro de 900 px embebido en la nota**, con el diario metido dentro
+de sí mismo. Con `_top` la navegación reemplaza la ventana completa, que es lo que espera
+el lector.
+
+El área de toque del logo es de 44×44 px aunque el dibujo mida 30: se agranda con un
+pseudo-elemento invisible, así entra cómodo con el dedo sin correr el logo de lugar.
+
+### Cambiar el dominio
+
+La URL de la portada está escrita en dos lugares de cada uno de los 4 HTML (el logo y el
+pie), más la constante `URL_MANSO` de `shared.js` que arma el texto de compartir. Si alguna
+vez cambia el dominio:
+
+```bash
+cd juegos-fuxia
+grep -rn "mansodiario.com" *.html shared.js
+```
+
 ### Notas sobre el iframe
 
 - **El alto es fijo.** El iframe no se estira solo con el contenido. Los valores de arriba
@@ -413,6 +444,8 @@ Cada juego es un archivo independiente y se embebe solo. Creá una página de Wo
   "Ver los otros juegos") navegan dentro del iframe, lo cual funciona pero deja al lector
   con la cabecera de WordPress de otra página. Si querés que salten a la página de WordPress
   correspondiente, hay que cambiar esos `href` por las URLs reales de tu sitio.
+- **No le pongas `sandbox` al iframe** sin incluir `allow-top-navigation-by-user-activation`,
+  o el logo deja de poder volver a la portada (ver §6.1).
 - El botón "Leer la nota" abre en **pestaña nueva** (`target="_blank"`), así el lector no
   pierde la partida.
 - No hace falta `allow` ni `sandbox`. Si tu tema o un plugin de seguridad agrega
@@ -433,12 +466,16 @@ node juegos-fuxia/tests/test-shared.js
 pip install playwright && playwright install chromium
 cd juegos-fuxia && python3 -m http.server 8777 &
 python3 juegos-fuxia/tests/test-juegos.py
+
+# la navegación del logo y del pie, dentro y fuera del iframe
+python3 juegos-fuxia/tests/test-logo.py
 ```
 
 Cubren: el corte a medianoche de San Juan (incluido el cruce de UTC), el ciclado del banco,
 el comportamiento antes del día 1, el pintado de letras repetidas al estilo Wordle, las
 rachas, el "ya jugaste hoy", que el texto compartido no filtre la respuesta, que el botón
-"Leer la nota" aparezca solo con URL válida, y que ninguna página salga a internet.
+"Leer la nota" aparezca solo con URL válida, que ninguna página salga a internet, y que el
+logo vuelva a la portada del diario rompiendo el iframe mientras "← Juegos" navega adentro.
 
 ---
 
